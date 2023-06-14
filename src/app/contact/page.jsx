@@ -9,7 +9,7 @@ export default function ContactUs() {
         Contact Us
       </h2>
       <p className="my-8 ">
-        {`Questions? Suggestions? Would you like to participate in the planning? We need your help! We can't emphasis enough that this con is what each one of us brings to it. Please think about planning a workshop, a worship, or start practices a few songs to perform. If you would like to participate we need help with the following roles`}
+        {`Questions? Suggestions? Would you like to participate in the planning? We need your help! We can't emphasis enough that this conference is what each one of us brings to it. Please think about planning a workshop, a worship, or start practicing a few songs to perform. If you would like to participate we need help with the following roles.`}
       </p>
       <ul className="m-8 fade-in">
         <li className="list-disc ">Yearbook Coordinator</li>
@@ -23,6 +23,12 @@ export default function ContactUs() {
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
         Workshop Coordinator
       </h2>
+      <p className="my-8 ">
+        {`I believe that at the moment Sarah Mc is our workshop coordinator. The workshops that will be available will be the ones that attendees plan! So please think if there is something you would like to share? A report back from an important demonstration or protest? A history of a niche subject? Making pottery from foraged clay? `}
+      </p>
+      <p className="my-8 ">
+        {`I'll put Sarah's email here once I get consent from her.`}
+      </p>
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
         Reflections Coordinator
       </h2>

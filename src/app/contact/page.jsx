@@ -27,7 +27,7 @@ export default function ContactUs() {
         {`I believe that at the moment Sarah Mc is our workshop coordinator. The workshops that will be available will be the ones that attendees plan! So please think if there is something you would like to share? A report back from an important demonstration or protest? A history of a niche subject? Making pottery from foraged clay? `}
       </p>
       <p className="my-8 ">
-        {`I'll put Sarah's email here once I get consent from her.`}
+        {`You can reach Sarah at smcmullen719@gmail.com.`}
       </p>
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
         Reflections Coordinator
@@ -47,7 +47,7 @@ export default function ContactUs() {
         {`We also need volunteers for people to lead family groups! If you have any experience or interest please reach out to Matty! Family groups are a space to break the ice with other conferees.`}
       </p>
       <p className="my-8 ">
-        {`I'll put Matty's email here once I get his consent`}
+        {`Please reach out to Matty at matthewpatrickmorin@gmail.com`}
       </p>
     </div>
   );

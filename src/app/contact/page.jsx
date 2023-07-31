@@ -1,12 +1,13 @@
-import { amatic, special } from '../fonts'
+import { amatic, special } from "../fonts";
 
 export default function ContactUs() {
-
   return (
     <div
       className={`${special.className} p-4 sm:p-16 max-w-screen-xl mx-auto leading-8 min-h-screen `}
     >
-      <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>Contact Us</h2>
+      <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
+        Contact Us
+      </h2>
       <p className="my-8 ">
         {`Questions? Suggestions? Would you like to participate in the planning? We need your help! We can't emphasis enough that this con is what each one of us brings to it. Please think about planning a workshop, a worship, or start practices a few songs to perform. If you would like to participate we need help with the following roles`}
       </p>
@@ -23,9 +24,18 @@ export default function ContactUs() {
         Workshop Coordinator
       </h2>
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
-        Worship Coordinator
+        Reflections Coordinator
       </h2>
+      <p className="my-8 ">
+        {`Each night, we're planning on having guided meditations, reflections, or some spaces we've been in have called them worships. These require community input! If you or a few others would like to lead a reflection please reach out to Meghan, our Reflections Coordinator.`}
+      </p>
+      <p className="my-8 ">
+        {`Meghan can be reached at mkguilfoyle90@gmail.com`}
+      </p>
       <h2 className={amatic.className + " mb-12 text-5xl"}>Meal Coordinator</h2>
+      <p className="my-8 ">
+        {`Jared will be coordinating food for us! If you have any dietary restrictions or concerns you can reach Jared at jareddefrancesco@gmail.com`}
+      </p>
     </div>
   );
 }

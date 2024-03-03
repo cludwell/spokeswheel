@@ -1,6 +1,7 @@
 import seawoodmap from "../../../public/images/seawoodmap.png";
 import Image from "next/image";
 import { Amatic_SC, Special_Elite } from "next/font/google";
+import CountDown from "@/components/CountDown";
 const amatic = Amatic_SC({
   weight: "700",
   subsets: ["latin"],
@@ -41,6 +42,11 @@ export default function Plans2024() {
         height={2000}
         className=" w-1/2 mx-auto my-12 rounded-lg"
       />
+
+      <h2 className={amatic.className + " mb-12 text-5xl"}>When? Aug 15-19</h2>
+      <div className="flex flex-col items-center">
+        <CountDown />
+      </div>
     </div>
   );
 }

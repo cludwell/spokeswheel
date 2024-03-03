@@ -39,6 +39,7 @@ export default function Header() {
         <Link href={`aboutus`}>about us</Link>
         <Link href={'plans2024'}>2024 plans</Link>
         <Link href={'contact'}>contact</Link>
+        <span>sign in</span>
         <span>register</span>
       </div>
     </div>

@@ -22,13 +22,23 @@ model Users {
 }
 
 model Bookings {
-    id           Int         @id @default(autoincrement())
-    userId       Int         @map("userId")
-    conferenceId Int         @map("conferenceId")
-    createdAt    DateTime    @default(now()) @db.Timestamptz()
-    updatedAt    DateTime    @default(now()) @db.Timestamptz()
-    user         Users?      @relation(fields: [userId], references: [id])
-    conference   Conferences @relation(fields: [conferenceId], references: [id])
+    id                   Int         @id @default(autoincrement())
+    userId               Int         @map("userId")
+    conferenceId         Int         @map("conferenceId")
+    photo_consent        Boolean
+    paid                 Boolean
+    emergencyName        String      @db.VarChar(255)
+    emergencyNumber      String      @db.VarChar(255)
+    emailList            Boolean
+    textUpdates          Boolean
+    dietaryRestrictions  String      @db.VarChar(255)
+    allergies            String?     @db.Text
+    notes                String?     @db.Text
+    specialAccomodations String?     @db.Text
+    user                 Users?      @relation(fields: [userId], references: [id])
+    conference           Conferences @relation(fields: [conferenceId], references: [id])
+    createdAt            DateTime    @default(now()) @db.Timestamptz()
+    updatedAt            DateTime    @default(now()) @db.Timestamptz()
 
     @@map("bookings")
 }

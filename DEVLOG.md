@@ -9,3 +9,7 @@ Splash page
 ✅ Figured out Next.js 14 routing system
 
 ✅ Got started on the router
+
+✅ Got google fonts working as expected
+
+✅ Got general header laid out

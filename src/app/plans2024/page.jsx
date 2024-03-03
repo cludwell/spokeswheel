@@ -47,41 +47,37 @@ export default function Plans2024() {
       <div className="flex flex-col items-center">
         <CountDown />
       </div>
-      <h2 className={amatic.className + " mb-12 text-5xl"}>
-        Workshop Coordinator
+      <h2 className={amatic.className + " my-12 text-5xl"}>
+        Workshops
       </h2>
-      <div className="overflow-x-auto">
-        <table className="table table-zebra">
+      <div className="overflow-x-auto ">
+        <table className="table-lg table-zebra">
           {/* head */}
           <thead>
             <tr>
-              <th></th>
               <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Title</th>
+              <th>Description</th>
             </tr>
           </thead>
           <tbody>
             {/* row 1 */}
             <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
+              <td>Sarah</td>
+              <td>Happy Accidents</td>
+              <td>Come get a stick and poke from Sarah!</td>
             </tr>
             {/* row 2 */}
             <tr>
-              <th>2</th>
-              <td>Hart Hagerty</td>
-              <td>Desktop Support Technician</td>
-              <td>Purple</td>
+              <td>Matty Mo</td>
+              <td>Bunnies 101</td>
+              <td>We catch a wild jackrabbit and go over bunnycare basics</td>
             </tr>
             {/* row 3 */}
             <tr>
-              <th>3</th>
-              <td>Brice Swyre</td>
-              <td>Tax Accountant</td>
-              <td>Red</td>
+              <td>Bryce</td>
+              <td>Gen Z Slang</td>
+              <td>Gonna be lit fam, on god.</td>
             </tr>
           </tbody>
         </table>

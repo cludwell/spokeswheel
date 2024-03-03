@@ -25,13 +25,14 @@ model Bookings {
     id                   Int         @id @default(autoincrement())
     userId               Int         @map("userId")
     conferenceId         Int         @map("conferenceId")
-    photo_consent        Boolean
-    paid                 Boolean
+    photoConsent         Boolean?
+    paid                 Boolean?
     emergencyName        String      @db.VarChar(255)
     emergencyNumber      String      @db.VarChar(255)
-    emailList            Boolean
-    textUpdates          Boolean
-    dietaryRestrictions  String      @db.VarChar(255)
+    emergencyRelation    String      @db.VarChar(255)
+    emailList            Boolean?
+    textUpdates          Boolean?
+    dietaryRestrictions  String?     @db.VarChar(255)
     allergies            String?     @db.Text
     notes                String?     @db.Text
     specialAccomodations String?     @db.Text
@@ -45,15 +46,15 @@ model Bookings {
 }
 
 model Conferences {
-    id                  Int        @id @default(autoincrement())
-    date                DateTime
-    registration_cutoff DateTime
-    locationName        String     @db.VarChar(255)
-    locationLat         Float
-    locationLong        Float
-    createdAt           DateTime   @default(now()) @db.Timestamptz()
-    updatedAt           DateTime   @default(now()) @db.Timestamptz()
-    bookings            Bookings[]
+    id                 Int        @id @default(autoincrement())
+    date               DateTime
+    registrationCutoff DateTime
+    locationName       String     @db.VarChar(255)
+    locationLat        Float
+    locationLong       Float
+    createdAt          DateTime   @default(now()) @db.Timestamptz()
+    updatedAt          DateTime   @default(now()) @db.Timestamptz()
+    bookings           Bookings[]
 
     @@map("conferences")
 }

@@ -13,6 +13,11 @@ export default function Footer() {
                 <li>instagram</li>
                 <li>twitter</li>
             </ul>
+
+            <div className="flex flex-col w-full mx-auto items-center my-12">
+            <p className="w-96 italic ">{`“The ultimate, hidden truth of the world is that it is something that we make, and could just as easily make differently.”`}</p>
+            <span className="italic w-96 text-right">- David Graeber</span>
+            </div>
         </div>
     )
 }

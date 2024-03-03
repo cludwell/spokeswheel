@@ -13,9 +13,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="../components/FavIcon.jsx" type="image/svg"/>
+        <link
+          rel="icon"
+          href="/images/wheel.png"
+          type="image/png"
+          sizes="any"
+        />
       </Head>
-      <body className={inter.className } data-theme="dark">
+      <body className={inter.className} data-theme="dark">
         <Header />
         {children}
         <Footer />

@@ -26,7 +26,7 @@ export default function Plans2024() {
       <ul className="ml-12">
         <li className=" list-disc">{`Two main lodges, Thaxter's Lodge and Ranger's Roost, with 16 bunk beds each`}</li>
         <li className=" list-disc">
-          Adirondacks may also be rented for privacy with spouse/fmaily or light
+          Adirondacks may also be rented for privacy with spouse/family or light
           sleepers.
         </li>
         <li className=" list-disc">{`Ranger's Roose has a commercial kitchen with two stoves, double sinks, and a dishwasher. Also large industrial refrigerators and a standalone freezer.`}</li>

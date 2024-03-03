@@ -13,3 +13,5 @@ Splash page
 ✅ Got google fonts working as expected
 
 ✅ Got general header laid out
+
+✅ Layout is now working with content between header and footer

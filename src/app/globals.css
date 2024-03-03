@@ -33,3 +33,24 @@ body {
     text-wrap: balance;
   }
 }
+/* Keyframes for spinning animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Class to be applied to your SVG element */
+.svg-spin {
+  /* Smooth transition for transform property */
+  transition: transform 0.5s ease-out;
+}
+
+.svg-spin:hover {
+  /* Apply the animation on hover with ease-in-out */
+  animation: spin 2s ease-in-out infinite;
+}
+

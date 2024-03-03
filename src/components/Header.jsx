@@ -14,9 +14,12 @@ const gloria = Gloria_Hallelujah({
 export default function Header() {
   return (
     <div className=" max-w-screen-xl h-fit self-center flex flex-col items-center mx-auto bg-black">
-      <p className={amatic.className + ` z-10 text-white text-6xl`}>
+      <Link
+        href={"/"}
+        className={amatic.className + ` z-10 text-white text-6xl`}
+      >
         Spokeswheel Conference
-      </p>
+      </Link>
       <Image
         src={darkCampFire}
         alt={`friends are gathered around a campfire`}
@@ -24,7 +27,7 @@ export default function Header() {
         width={2000}
         height={2000}
       />
-      <div className=" w-32 z-10">
+      <div className=" w-32 z-10 svg-spin ease-in-out">
         <WagonWheel />
       </div>
       <div
@@ -33,9 +36,9 @@ export default function Header() {
           ` z-10 text-white flex flex-row w-full justify-around text-xl mt-44`
         }
       >
-        <span>about us</span>
-        <span>2024 plans</span>
-        <span>contact</span>
+        <Link href={`aboutus`}>about us</Link>
+        <Link href={'plans2024'}>2024 plans</Link>
+        <Link href={'contact'}>contact</Link>
         <span>register</span>
       </div>
     </div>

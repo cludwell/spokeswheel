@@ -27,7 +27,7 @@ export default function SplashHero() {
             To a conference for rad humans
           </p>
           <p className={gloria.className + " my-5 text-xl"}>
-            Where we learn to believe in people
+            Where we remember  to believe in people
           </p>
           <p className={gloria.className + " my-5 text-xl"}>
             And feel inspired through community

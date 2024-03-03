@@ -17,7 +17,7 @@ export default function AboutUs() {
       <h2 className={amatic.className + " mb-12 text-5xl"}>Who we are</h2>
       <p
         className={" my-8"}
-      >{`We are a group of radicals and leftists who grew up in Unitarian Universalist (UU) or UU adjacent spaces and conferences. Disillusioned by that community, by UUism, which seemed like virtue signaling without principal, we as adults have struggled to find spiritual spaces that do not bear the authoritarianism of organized religion, celebrate spiritual bypassing (using spiritual ideas and practices to avoid facing issues of psychological wounds caused by capitalism, the state, patriarchy, etc.) or the appropriative practices of what passes as "spirituality." You won't hear us saying corny shit like "low vibration frequency" 🤨. What the heck even is that?`}</p>
+      >{`We are a group of radicals and leftists who grew up in Unitarian Universalist (UU) or UU adjacent spaces and conferences. Disillusioned by that community, by UUism, which seemed like virtue signaling without principal, we as adults have struggled to find spiritual spaces that do not bear the authoritarianism of organized religion, celebrate spiritual bypassing (using spiritual ideas and practices to avoid facing psychological wounds caused by capitalism, the state, patriarchy, etc.) or the appropriative practices of what passes as "spirituality." You won't hear us saying corny shit like "low vibration frequency" 🤨. What the heck even is that?`}</p>
 
       <p className=" my-8">
         We are trying to build an intentional spiritual community, across
@@ -50,7 +50,7 @@ export default function AboutUs() {
         </li>
       </ul>
       <h2 className={amatic.className + " my-12 text-5xl"}>What To Expect</h2>
-      <p className=" my-8">{`This community is what we make of it. As this will be our first conference, we're still imagining what this could be. We've floated ideas of traveling the country together, going on a backpacking trip through a national park to an isolated hot spring, or staying in a haunted hotel on an isolated island. Everything here is a living document open to change with your participation. The general structure to expect is: `}</p>
+      <p className=" my-8">{`This community is what we make of it. As this will be our first conference, we're still imagining what this could be. We've floated ideas of traveling the country together, going on a backpacking trip through a national park to an isolated hot spring, or staying in a haunted hotel on an island. Everything here is a living document open to change with your participation. The general structure to expect is: `}</p>
       <ul className="ml-4">
         <li className="flex flex-row">
           <div className=" mr-2">🏕</div>
@@ -77,12 +77,10 @@ export default function AboutUs() {
           <div className=" mr-2">🎸</div>
           {`A coffee house at the end of the conference, a time to play music, sing, or share some other performance, completely voluntary. In the past this has looked like a punk show in the middle of the woods.`}
         </li>
-        {/* <li className=" list-disc">
-          Intentionally disconnecting from technology
-        </li>
-        <li className=" list-disc">Being anti-racist</li> */}
+
       </ul>
-      <p className=" my-8">Check out our plans for this year for specifics</p>
+
+      <p className=" my-8"><a className="link link-primary" href="plans2024">Check out our plans for this year for specifics</a></p>
       <h2 className={amatic.className + " my-12 text-5xl"}>Agreements</h2>
       <p className=" my-8">
         Attendance implies consent to the following agreements. All agreements

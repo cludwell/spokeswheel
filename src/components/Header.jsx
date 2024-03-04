@@ -5,6 +5,7 @@ import WagonWheel from "./WagonWheel";
 import Link from "next/link";
 import { Amatic_SC, Gloria_Hallelujah } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
+import LogInModal from "./LogInModal";
 const amatic = Amatic_SC({
   weight: "700",
   subsets: ["latin"],
@@ -23,13 +24,16 @@ export default function Header() {
   useEffect(() => {
     if (!showMenu) return;
     const closeMenu = (e) => {
-      if (ulRef.current && !ulRef.current.contains(e.target)) setShowMenu(false);
+      if (ulRef.current && !ulRef.current.contains(e.target))
+        setShowMenu(false);
     };
 
     document.addEventListener("click", closeMenu);
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
+  const closeMenu = () => setShowMenu(false);
 
+  let user;
   return (
     <div className=" max-w-screen-xl h-fit self-center flex flex-col items-center mx-auto bg-black">
       <Link
@@ -51,7 +55,7 @@ export default function Header() {
       <ul
         className={
           gloria.className +
-          ` menu menu-vertical lg:menu-horizontal rounded-box z-10 w-full justify-around text-xl mt-40`
+          ` menu menu-horizontal rounded-box z-10 w-full justify-around text-xl mt-40`
         }
       >
         <li>
@@ -63,26 +67,33 @@ export default function Header() {
         <li>
           <Link href={"contact"}>contact</Link>
         </li>
-        <li onClick={openMenu}>
-          <span>sign in</span>
-          <ul
-            className={`absolute right-0 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-64 z-10 border-solid border-[1px] border-gray-700 ${
-              showMenu ? "scale-100" : "scale-0"
-            }`}
-            ref={ulRef}
-          >
-            <li>
-              <a>Login</a>
-            </li>
-            <li>
-              <a>Sign Up</a>
-            </li>
-          </ul>
-        </li>
+        {!user ? (
+          <li onClick={openMenu}>
+            <span>sign in</span>
+            <ul
+              className={`absolute right-0 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-64 z-10 border-solid border-[1px] border-gray-700 ${
+                showMenu ? "scale-100" : "scale-0"
+              }`}
+              ref={ulRef}
+            >
+              <li onClick={closeMenu}>
+                <LogInModal />
+              </li>
+              <li>
+                <a>Sign Up</a>
+              </li>
+            </ul>
+          </li>
+        ) : (
+          <li onClick={closeMenu}>
+            <span>log out</span>
+          </li>
+        )}
         <li>
           <span>register</span>
         </li>
       </ul>
+
     </div>
   );
 }

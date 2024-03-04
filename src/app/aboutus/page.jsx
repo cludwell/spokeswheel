@@ -27,55 +27,60 @@ export default function AboutUs() {
 
       <ul className="ml-4">
         <li className="">
-          <span className=" mr-2">👩🏾‍🤝‍🧑🏻</span> Consensus decision making
+          <span className=" w-6 px-2">👩🏾‍🤝‍🧑🏻</span> Consensus decision making
         </li>
         <li className="">
-          <span className=" mr-2">🌎</span> Prefiguring the world we want to see
+          <span className=" w-6 px-2">🌎</span> Prefiguring the world we want to see
         </li>
         <li className="">
-          <span className=" mr-2">✊</span> Workshops on collective liberation
+          <span className=" w-6 px-2">✊</span> Workshops on collective liberation
         </li>
         <li className="">
-          <span className=" mr-2">🎁</span> Being present in the moment
+          <span className=" w-6 px-2">🎁</span> Being present in the moment
         </li>
         <li className="">
-          <span className=" mr-2">🚨</span> Not policing each other
+          <span className=" w-6 px-2">🚨</span> Not policing each other
         </li>
         <li className="">
-          <span className=" mr-2">👨🏼‍💻</span>
+          <span className=" w-6 px-2">👨🏼‍💻</span>
           Intentionally disconnecting from technology
         </li>
         <li className="">
-          <span className="mr-2">🤝🏼</span>Being anti-racist
+        <span className=" w-6 px-2">🤝🏼</span>Being anti-racist
         </li>
       </ul>
       <h2 className={amatic.className + " my-12 text-5xl"}>What To Expect</h2>
       <p className=" my-8">{`This community is what we make of it. As this will be our first conference, we're still imagining what this could be. We've floated ideas of traveling the country together, going on a backpacking trip through a national park to an isolated hot spring, or staying in a haunted hotel on an island. Everything here is a living document open to change with your participation. The general structure to expect is: `}</p>
       <ul className="ml-4">
         <li className="flex flex-row">
-          <div className=" mr-2">🏕</div>
+          <span className="text-center w-12">🏕</span>
+
           Summer camp, if summer camp were punk as fuck.
         </li>
         <li className="flex flex-row">
-          <div className=" mr-2">👨🏼‍🍳</div>
-          {`Cooking giant amounts of food and eating collective meals together.`}
+          <div className=" text-center w-12">👨🏼‍🍳</div>
+          <div>          {`Cooking giant amounts of food and eating collective meals together.`}
+</div>
         </li>
         <li className="flex flex-row">
-          <div className=" mr-2">👩🏼‍🏫</div>
+          <div className="text-center w-12">👩🏼‍🏫</div>
           {`Workshops on things we're passionate about during the day.`}
         </li>
         <li className="flex flex-row">
-          <div className=" mr-2">🧘‍♂️</div>
+          <div className="text-center w-12">🧘‍♂️</div>
           {`Evening worship, some reflection about this human experience, completely voluntary.`}
         </li>
         <li className="flex flex-row">
-          <div className=" mr-2">👨‍👩‍👦‍👦</div>
+          <div className=" text-center w-12">👨‍👩‍👦‍👦</div>
           Break out groups, called touch groups, to foster building connections
           with other conferees.
         </li>
         <li className="flex flex-row">
-          <div className=" mr-2">🎸</div>
+          <div className=" text-center w-12 px-4">🎸</div>
+          <div>
+
           {`A coffee house at the end of the conference, a time to play music, sing, or share some other performance, completely voluntary. In the past this has looked like a punk show in the middle of the woods.`}
+          </div>
         </li>
 
       </ul>

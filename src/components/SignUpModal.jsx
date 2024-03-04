@@ -36,7 +36,7 @@ export default function SignUpModal() {
         className="btn btn-ghost text-xl"
         onClick={toggleModal}
       >
-        log in
+        sign up
       </button>
       <dialog id="my_signup_modal" className="modal">
         <div className="modal-box">

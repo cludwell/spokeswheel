@@ -6,6 +6,9 @@ import Link from "next/link";
 import { Amatic_SC, Gloria_Hallelujah } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 import LogInModal from "./LogInModal";
+import OpenModalButton from "./OpenModalButton";
+import SignUpModal from "./SignUpModal";
+
 const amatic = Amatic_SC({
   weight: "700",
   subsets: ["latin"],
@@ -14,6 +17,7 @@ const gloria = Gloria_Hallelujah({
   weight: "400",
   subsets: ["latin"],
 });
+
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
@@ -24,14 +28,14 @@ export default function Header() {
   useEffect(() => {
     if (!showMenu) return;
     const closeMenu = (e) => {
-      if (ulRef.current && !ulRef.current.contains(e.target))
+      if (!ulRef.current?.contains(e.target)) {
         setShowMenu(false);
+      }
     };
-
     document.addEventListener("click", closeMenu);
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
-  const closeMenu = () => setShowMenu(false);
+  const closeMenu = (e) => setShowMenu(false);
 
   let user;
   return (
@@ -68,32 +72,37 @@ export default function Header() {
           <Link href={"contact"}>contact</Link>
         </li>
         {!user ? (
-          <li onClick={openMenu}>
-            <span>sign in</span>
+          <>
+          <div><LogInModal /></div>
+          <div><SignUpModal /></div>
+          {/* <li>
+            <span onClick={openMenu}>sign in</span>
             <ul
               className={`absolute right-0 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-64 z-10 border-solid border-[1px] border-gray-700 ${
                 showMenu ? "scale-100" : "scale-0"
               }`}
               ref={ulRef}
             >
-              <li onClick={closeMenu}>
-                <LogInModal />
+              <li>
+                <a>log in</a>
               </li>
               <li>
                 <a>Sign Up</a>
               </li>
             </ul>
-          </li>
+          </li> */}
+          </>
         ) : (
-          <li onClick={closeMenu}>
+          <>
+          <li>
             <span>log out</span>
           </li>
-        )}
         <li>
           <span>register</span>
         </li>
+          </>
+        )}
       </ul>
-
     </div>
   );
 }

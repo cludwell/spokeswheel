@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
 import getScrollbarWidth from "./scrollbarWidth";
-
-export default function LogInModal() {
+import { useState, useEffect } from "react";
+export default function SignUpModal() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -22,7 +21,7 @@ export default function LogInModal() {
   }, [isModalOpen]);
 
   const toggleModal = () => {
-    const modal = document.getElementById("my_login_modal");
+    const modal = document.getElementById("my_signup_modal");
     if (!isModalOpen) {
       modal.showModal();
     } else {
@@ -39,7 +38,7 @@ export default function LogInModal() {
       >
         log in
       </button>
-      <dialog id="my_login_modal" className="modal">
+      <dialog id="my_signup_modal" className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg">Hello!</h3>
           <p className="py-4">Press ESC key or click outside to close</p>

@@ -47,10 +47,8 @@ export default function Plans2024() {
       <div className="flex flex-col items-center">
         <CountDown />
       </div>
-      <h2 className={amatic.className + " my-12 text-5xl"}>
-        Workshops
-      </h2>
-      <div className="overflow-x-auto ">
+      <h2 className={amatic.className + " my-12 text-5xl"}>Workshops</h2>
+      <div className="overflow-x-auto flex flex-row w-full justify-center">
         <table className="table-lg table-zebra">
           {/* head */}
           <thead>

@@ -17,24 +17,28 @@ export default function CountDown() {
     const difference = +date - +now;
     let timeLeft = {};
     if (difference > 0) {
-        const months = date.getMonth() - now.getMonth();
-        let days = date.getDate() - now.getDate();
-        if (days < 0) {
-            const dateCopy = new Date(date);
-            dateCopy.setMonth(dateCopy.getMonth() - 1);
-            const totalDaysLastMonth = new Date(dateCopy.getFullYear(), dateCopy.getMonth() + 1, 0).getDate();
-            days += totalDaysLastMonth;
-        }
-        timeLeft = {
-            months,
-            days,
-            hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-            minutes: Math.floor((difference / 1000 / 60) % 60),
-            seconds: Math.floor((difference / 1000) % 60),
-        };
+      const months = date.getMonth() - now.getMonth();
+      let days = date.getDate() - now.getDate();
+      if (days < 0) {
+        const dateCopy = new Date(date);
+        dateCopy.setMonth(dateCopy.getMonth() - 1);
+        const totalDaysLastMonth = new Date(
+          dateCopy.getFullYear(),
+          dateCopy.getMonth() + 1,
+          0
+        ).getDate();
+        days += totalDaysLastMonth;
+      }
+      timeLeft = {
+        months,
+        days,
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
     }
     return timeLeft;
-}
+  }
 
   return (
     <>

@@ -1,0 +1,23 @@
+#modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Ensure this is high enough to be above other content */
+}
+#modal-background {
+  position: fixed; /* fixed */
+  top: 0; /* inset-0 */
+  right: 0; /* inset-0 */
+  bottom: 0; /* inset-0 */
+  left: 0; /* inset-0 */
+  display: flex; /* flex */
+  justify-content: center; /* justify-center */
+  align-items: center; /* items-center */
+  transition-duration: 0.3s;
+  z-index: 30;
+}

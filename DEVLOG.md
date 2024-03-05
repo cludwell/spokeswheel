@@ -15,3 +15,15 @@ Splash page
 ✅ Got general header laid out
 
 ✅ Layout is now working with content between header and footer
+
+✅ Debugged modals working with Next.js
+
+🔲 Setting up Prisma
+
+🔲 Seeding the database
+
+🔲 Backend Routes
+--🔲User CRUD
+--🔲Booking CRUD
+--🔲Conference CRUD
+

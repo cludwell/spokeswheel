@@ -103,6 +103,8 @@ async function seedUsers() {
     });
   } catch (error) {
     console.error("User 2 seeding error: ", error);
+  } finally {
+    await prisma.$disconnect();
   }
 }
 async function seedConferences() {
@@ -114,16 +116,17 @@ async function seedConferences() {
         locationName: "Camp Seawood",
         locationLat: 43.043368704656324,
         locationLong: -70.78873188956963,
-        // i don't know if the connection here will work as intended
-        bookings: {
-          // connect: [{ id: 1 }, { id: 2 }, { id: 3 }],
-        },
       },
     });
+    const cons = await prisma.conferences.findMany();
+    console.log("Seeded Conferences successfully", cons);
   } catch (error) {
     console.error("Error during Conference seeding:", error);
+  } finally {
+    await prisma.$disconnect();
   }
 }
+
 async function seedDatabase() {
   try {
     await seedConferences();

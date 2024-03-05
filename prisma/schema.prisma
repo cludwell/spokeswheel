@@ -43,10 +43,10 @@ model Bookings {
   notes                String?     @db.Text
   specialAccomodations String?     @db.Text
   lodging              String      @db.VarChar(255)
-  user                 Users?      @relation(fields: [userId], references: [id])
-  conference           Conferences @relation(fields: [conferenceId], references: [id])
   createdAt            DateTime    @default(now()) @db.Timestamptz()
   updatedAt            DateTime    @default(now()) @db.Timestamptz()
+  user                 Users      @relation(fields: [userId], references: [id])
+  conference           Conferences @relation(fields: [conferenceId], references: [id])
 
   @@map("bookings")
 }

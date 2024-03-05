@@ -17,13 +17,21 @@ Splash page
 ✅ Layout is now working with content between header and footer
 
 ✅ Debugged modals working with Next.js
+-SSR creates different behavior of mounting unmounting createPortals, meaning animations were not firing
 
-🔲 Setting up Prisma
+✅ Setting up Prisma
 
-🔲 Seeding the database
+✅ Seeding the database
+What was the problem? Why weren't the seedings working?
+-Inconsistent pluralization of relationship assignments
+-trying to connect before instances were created
+Lesson: Leave assignment of connections until the end
 
 🔲 Backend Routes
---🔲User CRUD
---🔲Booking CRUD
---🔲Conference CRUD
+--🔲User CRUD and forms
+--🔲Booking CRUD and forms
+--🔲Conference CRUD and forms
 
+🔲 Copy and paste Next/Auth functionality
+
+🔲 Create context to hold relevant data, user and user's bookings

@@ -81,6 +81,12 @@ export default function Register() {
         "Please let us know your relationship to this person.";
     setErrors(err);
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    validate();
+    console.log("userdata", userData);
+  };
   let booked = false;
 
   return (
@@ -101,7 +107,9 @@ export default function Register() {
             <p>{`Your registration is complete! We're looking forward to seeing you at the conference!`}</p>
           </div>
         ) : (
-          <form className=" grid grid-cols-2 gap-4 mx-auto w-3/4">
+          <form className=" flex flex-col items-center mx-auto w-3/4 " onSubmit={handleSubmit}>
+            <div className="grid grid-cols-2 gap-4">
+
             <div className=" text-2xl">Emergency Contact </div>
             <div></div>
             <label className=" font-bold text-xl" htmlFor="emergencyName">
@@ -143,12 +151,12 @@ export default function Register() {
               required
               className="input input-bordered input-accent w-full max-w-xs"
             />
-            <label className=" font-bold text-xl" htmlFor="dietaryRestrictions">
+            <label className=" font-bold text-xl mt-8" htmlFor="dietaryRestrictions">
               Dietary Restrictions
             </label>
 
             <select
-              className="select select-info w-full max-w-xs"
+              className="select select-info w-full max-w-xs mt-8"
               type="text"
               name="dietaryRestrictions"
               id="dietaryRestrictions"
@@ -231,6 +239,10 @@ export default function Register() {
               value={emailList}
               onChange={handleChange}
             />
+            </div>
+            <button className="btn btn-accent btn-wide mb-4 text-xl mt-12" type="submit">
+              Submit
+            </button>
           </form>
         )}
       </div>

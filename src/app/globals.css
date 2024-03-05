@@ -31,3 +31,19 @@
   /* Apply the animation on hover with ease-in-out */
   animation: spin 2s ease-in-out infinite;
 }
+
+/* transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}

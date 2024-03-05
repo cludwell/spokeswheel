@@ -28,10 +28,15 @@ What was the problem? Why weren't the seedings working?
 Lesson: Leave assignment of connections until the end
 
 🔲 Backend Routes
---🔲User CRUD and forms
+--🔲User CRUD and forms C✅R✅D✅
 --🔲Booking CRUD and forms
 --🔲Conference CRUD and forms
 
-🔲 Copy and paste Next/Auth functionality
+✅ Copy and paste Next/Auth functionality
+✅Tested and working
 
 🔲 Create context to hold relevant data, user and user's bookings
+
+🔲 Deploy Zustand and have it accessible in context
+
+🔲 On successful login, have dispatch sent to store user and booking in store

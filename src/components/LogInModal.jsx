@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import getScrollbarWidth from "./_scrollbarWidth";
 import IconExclamation from "./Icons/IconExclamation";
 import Modal from "./Modal";
-
+import { signIn } from "next-auth/react";
 export default function LogInModal() {
   const [open, setOpen] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -20,13 +20,23 @@ export default function LogInModal() {
     });
   };
 
-  const toggleModal = () => {
-    const modal = document.getElementById("my_login_modal");
-    if (!isModalOpen) modal.showModal();
-    else modal.close();
-    setIsModalOpen(!isModalOpen);
+  const validate = () => {
+    const err = [];
+    if (!email || !email.includes("@") || !email.includes("."))
+      err.push("Please enter a valid email.");
+    if (!password || password.length < 6 || !password)
+      err.push("Passwords must be at least 6 characters");
+    setErrors(err);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    validate();
+    if (errors.length) return;
+    if (email && password) {
+      await signIn("credentials", { email, password, action: 'signin' });
+    }
+  };
   return (
     <>
       <button className="btn btn-ghost text-xl" onClick={() => setOpen(true)}>
@@ -36,7 +46,7 @@ export default function LogInModal() {
         <h1 className={" text-center text-3xl font-bold mb-6 montserrat"}>
           Login
         </h1>
-        <form className="p-5">
+        <form className="p-5" onSubmit={handleSubmit}>
           <ul>
             {errors.map((error, i) => (
               <li
@@ -79,7 +89,7 @@ export default function LogInModal() {
               className="input input-bordered input-accent w-full max-w-xs"
             />
           </div>
-          <div className="flex flex-row justify-around mt-24">
+          <div className="flex flex-row justify-around mt-12">
             <button type="submit" className=" btn btn-primary btn-wide text-xl">
               Log In
             </button>

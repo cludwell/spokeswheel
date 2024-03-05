@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import { PrismaClient, Users } from "@prisma/client";
 const prisma = new PrismaClient();
-import { CredentialsProvider } from "next-auth/providers";
+import Credentials from "next-auth/providers/credentials";
 import { hashPassword, verifyPassword } from "../../../../../lib/auth";
 const handler = NextAuth({
   session: {
@@ -10,7 +10,7 @@ const handler = NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
     // Add your authentication providers here
-    CredentialsProvider({
+    Credentials({
       // The name to display on the sign-in form (e.g., 'Email')
       name: "Credentials",
       credentials: {

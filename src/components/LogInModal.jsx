@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import getScrollbarWidth from "./scrollbarWidth";
+import getScrollbarWidth from "./_scrollbarWidth";
 
 export default function LogInModal() {
   const [isModalOpen, setIsModalOpen] = useState(false);

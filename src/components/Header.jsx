@@ -3,11 +3,10 @@ import Image from "next/image";
 import darkCampFire from "../../public/images/dark-campfire.jpg";
 import WagonWheel from "./WagonWheel";
 import Link from "next/link";
-import { Amatic_SC, Gloria_Hallelujah } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 import LogInModal from "./LogInModal";
-import OpenModalButton from "./OpenModalButton";
 import SignUpModal from "./SignUpModal";
+import { Amatic_SC, Gloria_Hallelujah } from "next/font/google";
 
 const amatic = Amatic_SC({
   weight: "700",

@@ -25,6 +25,9 @@ async function seedUsers() {
               allergies: "N/A",
               notes: "Staff",
               lodging: "Lodges",
+              conference: {
+                connect: { id: 1 },
+              },
             },
           ],
         },
@@ -56,6 +59,9 @@ async function seedUsers() {
               allergies: "N/A",
               notes: "Staff",
               lodging: "Lodges",
+              conference: {
+                connect: { id: 1 },
+              },
             },
           ],
         },
@@ -87,6 +93,9 @@ async function seedUsers() {
               allergies: "N/A",
               notes: "Staff",
               lodging: "Lodges",
+              conference: {
+                connect: { id: 1 },
+              },
             },
           ],
         },
@@ -99,30 +108,26 @@ async function seedUsers() {
 async function seedConferences() {
   try {
     await prisma.conferences.create({
-        data: {
-            date: new Date(2024, 7, 15, 17),
-            registrationCutoff: new Date(2024, 7, 12, 17),
-            locationName: "Camp Seawood",
-            locationLat: 43.043368704656324,
-            locationLong: -70.78873188956963,
-            // i don't know if the connection here will work as intended
-            bookings: {
-                connect: [
-                    {id: 1},
-                    {id: 2},
-                    {id: 3}
-                ]
-            }
-        }
-    })
+      data: {
+        date: new Date(2024, 7, 15, 17),
+        registrationCutoff: new Date(2024, 7, 12, 17),
+        locationName: "Camp Seawood",
+        locationLat: 43.043368704656324,
+        locationLong: -70.78873188956963,
+        // i don't know if the connection here will work as intended
+        bookings: {
+          // connect: [{ id: 1 }, { id: 2 }, { id: 3 }],
+        },
+      },
+    });
   } catch (error) {
     console.error("Error during Conference seeding:", error);
   }
 }
 async function seedDatabase() {
   try {
-    await seedUsers();
     await seedConferences();
+    await seedUsers();
     console.log("Database seeding completed successfully");
   } catch (error) {
     console.error("Error during database seeding:", error);

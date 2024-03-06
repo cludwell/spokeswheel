@@ -8,6 +8,7 @@ import LogInModal from "./LogInModal";
 import SignUpModal from "./SignUpModal";
 import { signOut, useSession } from "next-auth/react";
 import { Amatic_SC, Gloria_Hallelujah } from "next/font/google";
+import { useStore } from "@/store/ZustandProvider";
 
 const amatic = Amatic_SC({
   weight: "700",
@@ -20,12 +21,17 @@ const gloria = Gloria_Hallelujah({
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
+  const { user, fetchUserData } = useStore((state) => ({
+    user: state.user,
+    fetchUserData: state.fetchUserData,
+  }));
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
   };
+
   useEffect(() => {
     if (!showMenu) return;
     const closeMenu = (e) => {
@@ -37,11 +43,18 @@ export default function Header() {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
   const closeMenu = (e) => setShowMenu(false);
-  if (session) console.log(session)
 
+  useEffect(() => {
+    const loadUser = async () => {
+      fetchUserData();
+    };
+    if (session) loadUser();
+  }, [session, fetchUserData]);
+
+  console.log("is state working correctly?", user);
   const handleSignOut = async () => {
-    const data = await signOut({redirect:false});
-  }
+    const data = await signOut({ redirect: false });
+  };
   return (
     <div className=" max-w-screen-xl h-fit self-center flex flex-col items-center mx-auto ">
       <Link
@@ -83,11 +96,10 @@ export default function Header() {
             <div>
               <SignUpModal />
             </div>
-
           </>
         ) : (
           <>
-                      {/* <li>
+            {/* <li>
             <span onClick={openMenu}>sign in</span>
             <ul
               className={`absolute right-0 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-64 z-10 border-solid border-[1px] border-gray-700 ${

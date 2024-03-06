@@ -7,17 +7,40 @@ const createStore = create((set) => ({
   bookings: [],
   setUser: (user) => set({ user }),
   setBookings: (bookings) => set({ bookings }),
+  fetchUserData: async () => {
+    try {
+      const response = await fetch("/api/auth/authenticated", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        const userData = await response.json();
+        set({ user: userData });
+      } else {
+        console.error("There was an authentication error on the backend");
+      }
+    } catch (error) {
+      console.error("Failed to fetch user data:", error);
+    }
+  },
 }));
 
 const ZustandContext = createContext(null);
+
 export const useStore = () => {
-  if (!ZustandContext)
+  const context = useContext(ZustandContext);
+  if (!context)
     throw new Error("useStore must be used within a ZustandProvider");
-  return useContext(ZustandContext);
+  return context;
 };
 
-const ZustandProvider = (store, children) => {
-    const [state] = useState(()=> createStore(store))
-    return <ZustandContext.Provider value={state}>{children}</ZustandContext.Provider>
-}
-export default ZustandProvider
+const ZustandProvider = ({ children }) => {
+  const store = createStore();
+  return (
+    <ZustandContext.Provider value={store}>{children}</ZustandContext.Provider>
+  );
+};
+
+export default ZustandProvider;

@@ -36,7 +36,7 @@ Lesson: Leave assignment of connections until the end
 ✅ Tested and working
 
 ✅ Registration Form (Form only, not connected to state or db)
-✅ Login Form (Form only, not connected to state or db)
+✅ Login Form 
 ✅ Signup Form (Form only, not connected to state or db)
 
 🔲 Create context to hold relevant data, user and user's bookings

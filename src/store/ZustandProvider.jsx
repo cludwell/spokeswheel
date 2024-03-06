@@ -27,61 +27,83 @@ const createStore = create((set) => ({
   },
   fetchUsersBookings: async () => {
     try {
-        const response = await fetch("/api/bookings/users", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        if (response.ok) {
-          const bookingData = await response.json();
-          set({ bookings: [...bookingData.bookings] });
-        } else {
-          console.error("There was an error on the backend or in assigned state.");
-        }
-      } catch (error) {
-        console.error("Failed to fetch users bookings:", error);
+      const response = await fetch("/api/bookings/users", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        const bookingData = await response.json();
+        set({ bookings: [...bookingData.bookings] });
+      } else {
+        console.error(
+          "There was an error on the backend or in assigned state."
+        );
       }
+    } catch (error) {
+      console.error("Failed to fetch users bookings:", error);
+    }
   },
   createBooking: async (userData) => {
     try {
-        const response = await fetch("/api/bookings/attending", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(userData)
-        })
-        if (response.ok) {
-            const bookingData = await response.json();
-            set({ bookings: [bookingData]})
-        } else {
-            console.error("There was an error assigning state or on backend.")
-        }
+      const response = await fetch("/api/bookings/attending", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+      if (response.ok) {
+        const bookingData = await response.json();
+        set({ bookings: [bookingData] });
+      } else {
+        console.error("There was an error assigning state or on backend.");
+      }
     } catch (error) {
-        console.error("There was a problem registering the user.")
+      console.error("There was a problem registering the user.");
     }
   },
   updateUserInfo: async (userData) => {
     try {
-
-      const response = await fetch('/api/auth/updateinfo', {
+      const response = await fetch("/api/auth/updateinfo", {
         method: "PUT",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(userData)
-      })
+        body: JSON.stringify(userData),
+      });
       if (response.ok) {
-        const updatedUser = await response.json()
-        set({ user: {...user, ...updatedUser}})
+        const updatedUser = await response.json();
+        set({ user: { ...user, ...updatedUser } });
       } else {
-        console.error("There was a problem with the response from the backend.")
+        console.error(
+          "There was a problem with the response from the backend."
+        );
       }
     } catch (error) {
-      console.error("There was a problem updating the user.")
+      console.error("There was a problem updating the user.");
     }
-  }
+  },
+  updateBookingInfo: async (userData) => {
+    try {
+      const response = await fetch("/api/bookings/update", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+      if (response.ok) {
+        const updatedBooking = await response.json();
+        set({ bookings: [...bookings, updatedBooking] });
+      } else {
+        console.error("There was a problem updating the booking.");
+      }
+    } catch (error) {
+      console.error("There was a problem updating the booking.");
+    }
+  },
 }));
 
 const ZustandContext = createContext(null);

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import IconExclamation from "@/components/Icons/IconExclamation";
 import { useSession } from "next-auth/react";
 import PleaseSignIn from "@/components/PleaseSignIn";
@@ -20,7 +20,7 @@ export default function UpdateRegistration() {
   const [emailList, setEmailList] = useState(false);
   const [photoConsent, setPhotoConsent] = useState(false);
   const [textUpdates, setTextUpdates] = useState(false);
-  const [updated, setUpdated] =useState(false)
+  const [updated, setUpdated] = useState(false);
   let [userData, setUserData] = useState({
     conferenceId: 1,
     photoConsent: false,
@@ -46,6 +46,7 @@ export default function UpdateRegistration() {
     notes,
     specialAccomodations,
     lodging,
+    id
   } = userData;
   function formatPhoneNumber(value) {
     if (!value) return value;
@@ -60,6 +61,44 @@ export default function UpdateRegistration() {
       6
     )}-${phoneNumber.slice(6, 10)}`;
   }
+
+  const booking = bookings.filter((b) => b.id == 1)[0];
+  console.log("booking", booking);
+  useEffect(() => {
+    setUserData({
+      emergencyName: booking?.emergencyName ? booking?.emergencyName : "",
+      emergencyNumber: booking?.emergencyNumber ? booking?.emergencyNumber : "",
+      emergencyRelation: booking?.emergencyRelation
+        ? booking?.emergencyRelation
+        : "",
+      dietaryRestrictions: booking?.dietaryRestrictions
+        ? booking?.dietaryRestrictions
+        : "",
+      allergies: booking?.allergies ? booking?.allergies : "",
+      notes: booking?.notes ? booking?.notes : "",
+      specialAccomodations: booking?.specialAccomodations
+        ? booking?.specialAccomodations
+        : "",
+      lodging: booking?.lodging ? booking?.lodging : "",
+    });
+    setEmailList(booking?.emailList ? booking.emailList : false);
+    setPhotoConsent(booking?.photoConsent ? booking.photoConsent : false);
+    setTextUpdates(booking?.textUpdates ? booking.textUpdates : false);
+  }, [
+    booking?.emergencyName,
+    booking?.emergencyNumber,
+    booking?.emergencyRelation,
+    booking?.dietaryRestrictions,
+    booking?.allergies,
+    booking?.notes,
+    booking?.specialAccomodations,
+    booking?.lodging,
+    bookings,
+    booking?.emailList,
+    booking?.photoConsent,
+    booking?.textUpdates,
+  ]);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (type == "checkbox") {

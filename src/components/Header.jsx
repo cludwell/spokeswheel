@@ -9,6 +9,8 @@ import SignUpModal from "./SignUpModal";
 import { signOut, useSession } from "next-auth/react";
 import { Amatic_SC, Gloria_Hallelujah } from "next/font/google";
 import { useStore } from "@/store/ZustandProvider";
+import IconUser from "./Icons/IconUser";
+import IconGear from "./Icons/IconGear";
 
 const amatic = Amatic_SC({
   weight: "700",
@@ -21,12 +23,14 @@ const gloria = Gloria_Hallelujah({
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
-  const { user, fetchUserData, bookings, fetchUsersBookings } = useStore((state) => ({
-    user: state.user,
-    fetchUserData: state.fetchUserData,
-    bookings: state.bookings,
-    fetchUsersBookings: state.fetchUsersBookings
-  }));
+  const { user, fetchUserData, bookings, fetchUsersBookings } = useStore(
+    (state) => ({
+      user: state.user,
+      fetchUserData: state.fetchUserData,
+      bookings: state.bookings,
+      fetchUsersBookings: state.fetchUsersBookings,
+    })
+  );
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
   const openMenu = () => {
@@ -49,12 +53,11 @@ export default function Header() {
   useEffect(() => {
     const loadUser = async () => {
       fetchUserData();
-      fetchUsersBookings()
+      fetchUsersBookings();
     };
     if (session) loadUser();
   }, [session, fetchUserData, fetchUsersBookings]);
 
-  // console.log("is state working correctly?", user);
   const handleSignOut = async () => {
     const data = await signOut({ redirect: false });
   };
@@ -102,28 +105,41 @@ export default function Header() {
           </>
         ) : (
           <>
-            {/* <li>
-            <span onClick={openMenu}>sign in</span>
-            <ul
-              className={`absolute right-0 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-64 z-10 border-solid border-[1px] border-gray-700 ${
-                showMenu ? "scale-100" : "scale-0"
-              }`}
-              ref={ulRef}
-            >
-              <li>
-                <a>log in</a>
-              </li>
-              <li>
-                <a>Sign Up</a>
-              </li>
-            </ul>
-          </li> */}
-            <li onClick={handleSignOut}>
-              <span>log out</span>
-            </li>
             <li>
-              <Link href={"register"}>register</Link>
+              <Link href={"register"}>register 2024</Link>
             </li>
+            <div
+              onClick={openMenu}
+              className="relative flex flex-row items-center btn btn-ghost"
+            >
+              <span className=" cursor-pointer scale-125">
+                <IconGear />
+              </span>
+              <div
+                className={`absolute right-0 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-64 z-10 ${
+                  showMenu ? "scale-100" : "scale-0"
+                } ${gloria.className}`}
+                ref={ulRef}
+              >
+                <div className=" flex flex-row ml-4 text-xl">
+                  <IconUser />{" "}
+                  <span className=" ml-4">
+                    {user?.firstName} {user?.lastName}
+                  </span>
+                </div>
+                <ul className="menu bg-base-200 w-56 rounded-box text-xl">
+                  <li>
+                    <Link href={"updateinfo"}>Item 1</Link>
+                  </li>
+                  <li>
+                    <a>Item 2</a>
+                  </li>
+                  <li onClick={handleSignOut}>
+                    <span>Log out</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </>
         )}
       </ul>

@@ -17,7 +17,10 @@ export default function Register() {
   const { data: session, status: loading } = useSession();
   const { bookings, createBooking } = useStore();
   const [errors, setErrors] = useState({});
-  const [userData, setUserData] = useState({
+  const [emailList, setEmailList] = useState(false)
+  const [photoConsent, setPhotoConsent] = useState(false)
+  const [textUpdates, setTextUpdates] = useState(false)
+  let [userData, setUserData] = useState({
     conferenceId: 1,
     photoConsent: false,
     paid: false,
@@ -34,12 +37,9 @@ export default function Register() {
   });
 
   const {
-    photoConsent,
     emergencyName,
     emergencyNumber,
     emergencyRelation,
-    emailList,
-    textUpdates,
     dietaryRestrictions,
     allergies,
     notes,
@@ -60,7 +60,14 @@ export default function Register() {
     )}-${phoneNumber.slice(6, 10)}`;
   }
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
+    if (type == "checkbox") {
+      let opposite = value
+      setUserData((prevState) => ({
+        ...prevState,
+        [name]: !opposite,
+      }));
+    }
     if (name === "emergencyNumber") {
       // Only format if the input name is 'emergencyNumber'
       const formattedPhoneNumber = formatPhoneNumber(value);
@@ -96,12 +103,12 @@ export default function Register() {
     const validationErrors = validate();
     if (validationErrors.length) return;
     else {
-     await createBooking(userData)
+      userData = {...userData, emailList, photoConsent, textUpdates}
+      await createBooking(userData);
     }
   };
   let booked = bookings.filter((b) => b.conferenceId == 1);
 
-  console.log("bookings", userData);
   if (!session) return <PleaseSignIn />;
   return (
     <>
@@ -157,7 +164,7 @@ export default function Register() {
                   id="emergencyNumber"
                   value={emergencyNumber}
                   onChange={handleChange}
-                  pattern="\d{10"
+                  pattern="\(\d{3}\) \d{3}-\d{4}"
                   placeholder="(123) 456-7890"
                   maxLength={14}
                   required
@@ -217,10 +224,7 @@ export default function Register() {
                   </div>
                 )}
               </div>
-              <label
-                className=" font-bold text-xl md:mt-8"
-                htmlFor="lodging"
-              >
+              <label className=" font-bold text-xl md:mt-8" htmlFor="lodging">
                 Lodging
               </label>
               <div>
@@ -292,7 +296,7 @@ export default function Register() {
                 name="photoConsent"
                 id="photoConsent"
                 value={photoConsent}
-                onChange={handleChange}
+                onChange={()=> setPhotoConsent(prev=>!prev)}
               />
               <label className=" font-bold text-xl" htmlFor="textUpdates">
                 Text Updates
@@ -303,7 +307,7 @@ export default function Register() {
                 name="textUpdates"
                 id="textUpdates"
                 value={textUpdates}
-                onChange={handleChange}
+                onChange={() => setTextUpdates(prev=>!prev)}
               />
               <label className=" font-bold text-xl" htmlFor="emailList">
                 Email List
@@ -314,7 +318,7 @@ export default function Register() {
                 name="emailList"
                 id="emailList"
                 value={emailList}
-                onChange={handleChange}
+                onChange={() => setEmailList(prev =>!prev)}
               />
             </div>
             <button

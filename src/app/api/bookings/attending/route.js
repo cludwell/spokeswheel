@@ -36,25 +36,25 @@ export async function POST(req, res) {
         notes,
         specialAccomodations,
         lodging,
-      } = req.body;
+      } = await req.json();
       const userId = parseInt(token.sub);
 
       const newBooking = await prisma.bookings.create({
         data: {
-          conferenceId,
-          photoConsent,
-          paid,
-          emergencyName,
-          emergencyNumber,
-          emergencyRelation,
-          emailList,
-          textUpdates,
-          dietaryRestrictions,
-          allergies,
-          notes,
-          specialAccomodations,
-          lodging,
-          userId,
+          conferenceId: conferenceId,
+          photoConsent: photoConsent,
+          paid: paid,
+          emergencyName: emergencyName,
+          emergencyNumber: emergencyNumber,
+          emergencyRelation: emergencyRelation,
+          emailList: emailList,
+          textUpdates: textUpdates,
+          dietaryRestrictions: dietaryRestrictions,
+          allergies: allergies,
+          notes: notes,
+          specialAccomodations: specialAccomodations,
+          lodging: lodging,
+          userId: userId,
         },
       });
       if (newBooking)

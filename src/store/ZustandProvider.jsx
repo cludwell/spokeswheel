@@ -43,8 +43,10 @@ const createStore = create((set) => ({
         console.error("Failed to fetch users bookings:", error);
       }
   },
-  createBooking: async ({userData}) => {
+  createBooking: async (userData) => {
     try {
+        console.log('userdata',userData)
+
         const response = await fetch("/api/bookings/attending", {
             method: "POST",
             headers: {

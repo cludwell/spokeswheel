@@ -6,8 +6,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import LogInModal from "./LogInModal";
 import SignUpModal from "./SignUpModal";
-import { Amatic_SC, Gloria_Hallelujah } from "next/font/google";
 import { signOut, useSession } from "next-auth/react";
+import { Amatic_SC, Gloria_Hallelujah } from "next/font/google";
 
 const amatic = Amatic_SC({
   weight: "700",

@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { Special_Elite, Amatic_SC } from "next/font/google";
 import IconExclamation from "@/components/Icons/IconExclamation";
+import { useSession } from "next-auth/react";
+import PleaseSignIn from "@/components/PleaseSignIn";
 const special = Special_Elite({
   weight: "400",
   subsets: ["latin"],
@@ -11,6 +13,7 @@ const amatic = Amatic_SC({
   subsets: ["latin"],
 });
 export default function Register() {
+  const { data: session, status: loading } = useSession();
   const [errors, setErrors] = useState({});
   const [userData, setUserData] = useState({
     conferenceId: 1,
@@ -93,6 +96,7 @@ export default function Register() {
   };
   let booked = false;
 
+  if (!session) return <PleaseSignIn />;
   return (
     <>
       <div

@@ -106,7 +106,7 @@ export default function Header() {
         ) : (
           <>
             <li>
-              <Link href={"registration"}>register 2024</Link>
+              <Link href={"/registration"}>register 2024</Link>
             </li>
             <div
               onClick={openMenu}

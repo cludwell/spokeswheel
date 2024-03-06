@@ -28,9 +28,9 @@ What was the problem? Why weren't the seedings working?
 Lesson: Leave assignment of connections until the end
 
 🔲 Backend Routes
---🔲User CRUD and forms C✅R✅D✅
---🔲Booking CRUD and forms C✅R✅
---🔲Conference CRUD and forms
+--🔲User CRUD and forms C✅R✅U🔲D✅
+--🔲Booking CRUD and forms C✅R✅U🔲D🔲
+--🔲Conference CRUD and forms => would be for the admin, not a high priority
 
 ✅ Copy and paste Next/Auth functionality
 ✅ Tested and working
@@ -45,10 +45,11 @@ Lesson: Leave assignment of connections until the end
 
 ✅ On successful login, have dispatch sent to store user and booking in store
 
-🔲Drop down menu
+✅Drop down menu
 🔲-update user info
 🔲-update booking
 🔲-delete booking
 🔲-create booking
 
+🔲 When user signs out, user is removed from state
 secret page for admin to see all bookings

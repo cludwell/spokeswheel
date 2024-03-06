@@ -26,7 +26,7 @@ const handler = NextAuth({
       authorize: async (credentials, req) => {
         // console.log("ENTERING THE ROUTE", credentials);
         if (credentials && credentials.action === "signup") {
-          console.log("ENTERING SIGNUP");
+          // console.log("ENTERING SIGNUP");
           const existingEmail = await prisma.users.findUnique({
             where: { email: credentials.email },
           });
@@ -44,7 +44,7 @@ const handler = NextAuth({
               dateOfBirth: credentials.dateOfBirth,
             },
           });
-          console.log("NEW USER", newUser);
+          // console.log("NEW USER", newUser);
           return newUser;
         }
         if (!credentials || !credentials.email || !credentials.password)

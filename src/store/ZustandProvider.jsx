@@ -45,8 +45,6 @@ const createStore = create((set) => ({
   },
   createBooking: async (userData) => {
     try {
-        console.log('userdata',userData)
-
         const response = await fetch("/api/bookings/attending", {
             method: "POST",
             headers: {
@@ -62,6 +60,26 @@ const createStore = create((set) => ({
         }
     } catch (error) {
         console.error("There was a problem registering the user.")
+    }
+  },
+  updateUserInfo: async (userData) => {
+    try {
+
+      const response = await fetch('/api/auth/updateinfo', {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userData)
+      })
+      if (response.ok) {
+        const updatedUser = await response.json()
+        set({ user: {...user, ...updatedUser}})
+      } else {
+        console.error("There was a problem with the response from the backend.")
+      }
+    } catch (error) {
+      console.error("There was a problem updating the user.")
     }
   }
 }));

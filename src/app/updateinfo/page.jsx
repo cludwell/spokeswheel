@@ -5,6 +5,8 @@ import IconExclamation from "@/components/Icons/IconExclamation";
 import PleaseSignIn from "@/components/PleaseSignIn";
 import { useSession } from "next-auth/react";
 import { useStore } from "@/store/ZustandProvider";
+import { useRouter } from "next/navigation";
+
 const special = Special_Elite({
   weight: "400",
   subsets: ["latin"],
@@ -13,12 +15,15 @@ const amatic = Amatic_SC({
   weight: "700",
   subsets: ["latin"],
 });
+
 export default function UpdateInfo() {
   const { data: session, status: loading } = useSession();
   const [errors, setErrors] = useState([]);
-  const { user, fetchUserData } = useStore((state) => ({
+  const router = useRouter();
+  const { user, fetchUserData, updateUserInfo } = useStore((state) => ({
     user: state.user,
     fetchUserData: state.fetchUserData,
+    updateUserInfo: state.updateUserInfo,
   }));
 
   useEffect(() => {
@@ -65,7 +70,7 @@ export default function UpdateInfo() {
       email.length < 6
     )
       err.push("Please enter a valid email.");
-    if (!password || password.length < 6)
+    if (password && password.length < 6)
       err.push("Passwords must be at least 6 characters.");
     if (password != confirmPassword) err.push("Passwords do not match.");
     if (!firstName || !lastName) err.push("Please enter your name.");
@@ -93,11 +98,15 @@ export default function UpdateInfo() {
       lastName &&
       dateOfBirth
     ) {
-      await signIn("credentials", {
-        ...userData,
+      await updateUserInfo({
+        firstName,
+        lastName,
         dateOfBirth: new Date(dateOfBirth).toISOString(),
-        action: "signup",
+        password,
+        email,
       });
+      await fetchUserData();
+      router.push('/')
     }
   };
   if (!session) return <PleaseSignIn />;
@@ -183,7 +192,7 @@ export default function UpdateInfo() {
               id="password"
               value={password}
               onChange={handleChange}
-              required
+
               className="input input-bordered input-warning w-full max-w-xs"
             />
             <label
@@ -198,7 +207,7 @@ export default function UpdateInfo() {
               id="confirmPassword"
               value={confirmPassword}
               onChange={handleChange}
-              required
+
               className="input input-bordered input-error w-full max-w-xs"
             />
           </div>

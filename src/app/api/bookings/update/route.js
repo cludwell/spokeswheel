@@ -1,8 +1,9 @@
 import { Prisma, PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
-import { NextApiRequest, NextApiResponse } from "next";
-export async function PUT(NextApiRequest, NextApiResponse) {
-  if (NextApiRequest.method == "PUT") {
+import { getToken } from "next-auth/jwt";
+
+export async function PUT(req, res) {
+  if (req.method == "PUT") {
     try {
       const token = await getToken({
         req,
@@ -37,7 +38,7 @@ export async function PUT(NextApiRequest, NextApiResponse) {
         specialAccomodations,
         lodging,
         id,
-      } = await NextApiRequest.json();
+      } = await req.json();
       const updatedBooking = await prisma.bookings.update({
         where: {
           id: id,

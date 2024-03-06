@@ -47,7 +47,7 @@ Lesson: Leave assignment of connections until the end
 
 ✅Drop down menu
 ✅-update user info
-🔲-update booking
+✅-update booking
 🔲-delete booking
 ✅-create booking
 

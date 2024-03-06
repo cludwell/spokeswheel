@@ -1,7 +1,7 @@
 import seawoodmap from "../../../public/images/seawoodmap.png";
 import Image from "next/image";
-import { Amatic_SC, Special_Elite } from "next/font/google";
 import CountDown from "@/components/CountDown";
+import { Amatic_SC, Special_Elite } from "next/font/google";
 const amatic = Amatic_SC({
   weight: "700",
   subsets: ["latin"],

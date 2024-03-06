@@ -62,7 +62,10 @@ export default function Header() {
     const data = await signOut({ redirect: false });
   };
   return (
-    <div className=" max-w-screen-xl h-fit self-center flex flex-col items-center mx-auto ">
+    <div
+      className=" max-w-screen-xl h-fit self-center flex flex-col items-center mx-auto "
+      id="header"
+    >
       <Link
         href={"/"}
         className={amatic.className + ` z-10 text-white text-6xl`}
@@ -126,13 +129,24 @@ export default function Header() {
                   <span className=" ml-4">
                     {user?.firstName} {user?.lastName}
                   </span>
+                  <div className="divider"></div>
                 </div>
-                <ul className="menu bg-base-200 w-56 rounded-box text-xl gap-4">
+                <div className="flex flex-col w-full h-4 my-0">
+                  <div className="divider"></div>
+                </div>
+                <ul className="menu bg-base-200 w-64 rounded-box text-xl gap-4">
                   <li>
-                    <Link href={"/updateinfo"}>Update Info</Link>
+                    <Link href={"/updateinfo"}>Update User Info</Link>
                   </li>
                   <li>
-                    <Link href={'/registration/update'}>Update Registration</Link>
+                    <Link href={"/registration/update"}>
+                      Update Registration
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={"/registration/cancel"}
+                    >{`Cancel Registration `}</Link>
                   </li>
                   <li onClick={handleSignOut} className="btn btn-info text-xl">
                     Log out

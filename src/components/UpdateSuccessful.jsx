@@ -20,6 +20,7 @@ export default function UpdateSuccessful() {
           {`😊Data successfully updated!`}
         </h2>
         <p className="fade-in">{`Hooray!`}</p>
+
       </div>
     </div>
   );

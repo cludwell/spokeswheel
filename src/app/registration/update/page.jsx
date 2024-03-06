@@ -5,6 +5,8 @@ import { useSession } from "next-auth/react";
 import PleaseSignIn from "@/components/PleaseSignIn";
 import { useStore } from "@/store/ZustandProvider";
 import { Special_Elite, Amatic_SC } from "next/font/google";
+import UpdateSuccessful from "@/components/UpdateSuccessful";
+
 const special = Special_Elite({
   weight: "400",
   subsets: ["latin"],
@@ -15,12 +17,12 @@ const amatic = Amatic_SC({
 });
 export default function UpdateRegistration() {
   const { data: session, status: loading } = useSession();
-  const { bookings, createBooking } = useStore();
+  const { bookings, updateBookingInfo } = useStore();
   const [errors, setErrors] = useState({});
   const [emailList, setEmailList] = useState(false);
   const [photoConsent, setPhotoConsent] = useState(false);
   const [textUpdates, setTextUpdates] = useState(false);
-  const [updated, setUpdated] = useState(false);
+  const [updated, setUpdated] = useState(null);
   let [userData, setUserData] = useState({
     conferenceId: 1,
     photoConsent: false,
@@ -46,7 +48,7 @@ export default function UpdateRegistration() {
     notes,
     specialAccomodations,
     lodging,
-    id
+    id,
   } = userData;
   function formatPhoneNumber(value) {
     if (!value) return value;
@@ -63,7 +65,7 @@ export default function UpdateRegistration() {
   }
 
   const booking = bookings.filter((b) => b.id == 1)[0];
-  console.log("booking", booking);
+  console.log("booking", userData);
   useEffect(() => {
     setUserData({
       emergencyName: booking?.emergencyName ? booking?.emergencyName : "",
@@ -81,9 +83,6 @@ export default function UpdateRegistration() {
         : "",
       lodging: booking?.lodging ? booking?.lodging : "",
     });
-    setEmailList(booking?.emailList ? booking.emailList : false);
-    setPhotoConsent(booking?.photoConsent ? booking.photoConsent : false);
-    setTextUpdates(booking?.textUpdates ? booking.textUpdates : false);
   }, [
     booking?.emergencyName,
     booking?.emergencyNumber,
@@ -143,8 +142,16 @@ export default function UpdateRegistration() {
     const validationErrors = validate();
     if (validationErrors.length) return;
     else {
-      userData = { ...userData, emailList, photoConsent, textUpdates };
-      await createBooking(userData);
+      userData = {
+        ...userData,
+        emailList,
+        photoConsent,
+        textUpdates,
+        id: booking?.id,
+      };
+      await updateBookingInfo(userData);
+      setUpdated(true);
+      window.location.href = "#header"
     }
   };
 
@@ -157,12 +164,7 @@ export default function UpdateRegistration() {
         2024 Registration At Camp Seawood!
       </h2>
       {updated ? (
-        <div className="w-full flex flex-col items-center justify-center">
-          <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
-            {`✅We'll see you there!`}
-          </h2>
-          <p className="fade-in">{`Your registration is complete! We're looking forward to seeing you at the conference!`}</p>
-        </div>
+        <UpdateSuccessful  />
       ) : (
         <form
           className=" flex flex-col items-center mx-auto w-3/4 fade-in"

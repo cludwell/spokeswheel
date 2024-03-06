@@ -1,10 +1,10 @@
 "use client";
-// import { Modal, ModalProvider } from "./Modal";
+import ZustandProvider from "@/store/ZustandProvider";
 import { SessionProvider } from "next-auth/react";
 export function Providers({ children }) {
   return (
-    <SessionProvider>
-      {children}
-    </SessionProvider>
+    <ZustandProvider>
+      <SessionProvider>{children}</SessionProvider>
+    </ZustandProvider>
   );
 }

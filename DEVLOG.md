@@ -35,6 +35,10 @@ Lesson: Leave assignment of connections until the end
 ✅ Copy and paste Next/Auth functionality
 ✅Tested and working
 
+✅ Registration Form (Form only, not connected to state)
+✅ Login Form (Form only, not connected to state)
+✅ Signup Form (Form only, not connected to state)
+
 🔲 Create context to hold relevant data, user and user's bookings
 
 🔲 Deploy Zustand and have it accessible in context

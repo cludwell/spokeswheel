@@ -6,7 +6,7 @@ const amatic = Amatic_SC({
 
 export default function Footer() {
   return (
-    <div className=" w-full bg-black p-16 max-w-screen-xl mx-auto">
+    <div className=" w-full p-16 max-w-screen-xl mx-auto">
       <h2 className={amatic.className + ` text-white text-5xl`}>SOCIALS</h2>
       <ul className=" list-disc ml-4">
         <li>youtube</li>

@@ -63,6 +63,7 @@ export default function SignUpModal() {
         sign up
       </button>
       <Modal open={open} setOpen={setOpen}>
+      <div class="overflow-y-auto xl:overflow-visible max-h-[80vh]">
         <h1 className={" text-center text-3xl font-bold mb-6 montserrat"}>
           Sign Up
         </h1>
@@ -172,6 +173,7 @@ export default function SignUpModal() {
             </button>
           </div>
         </form>
+        </div>
       </Modal>
     </>
   );

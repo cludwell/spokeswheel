@@ -43,7 +43,7 @@ export default function Header() {
     const data = await signOut({redirect:false});
   }
   return (
-    <div className=" max-w-screen-xl h-fit self-center flex flex-col items-center mx-auto bg-black">
+    <div className=" max-w-screen-xl h-fit self-center flex flex-col items-center mx-auto ">
       <Link
         href={"/"}
         className={amatic.className + ` z-10 text-white text-6xl`}
@@ -83,7 +83,11 @@ export default function Header() {
             <div>
               <SignUpModal />
             </div>
-            {/* <li>
+
+          </>
+        ) : (
+          <>
+                      {/* <li>
             <span onClick={openMenu}>sign in</span>
             <ul
               className={`absolute right-0 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-64 z-10 border-solid border-[1px] border-gray-700 ${
@@ -99,9 +103,6 @@ export default function Header() {
               </li>
             </ul>
           </li> */}
-          </>
-        ) : (
-          <>
             <li onClick={handleSignOut}>
               <span>log out</span>
             </li>

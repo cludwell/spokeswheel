@@ -86,13 +86,13 @@ export default function Header() {
         }
       >
         <li>
-          <Link href={`aboutus`}>about us</Link>
+          <Link href={`/aboutus`}>about us</Link>
         </li>
         <li>
-          <Link href={"plans2024"}>2024 plans</Link>
+          <Link href={"/plans2024"}>2024 plans</Link>
         </li>
         <li>
-          <Link href={"contact"}>contact</Link>
+          <Link href={"/contact"}>contact</Link>
         </li>
         {!session ? (
           <>
@@ -129,10 +129,10 @@ export default function Header() {
                 </div>
                 <ul className="menu bg-base-200 w-56 rounded-box text-xl gap-4">
                   <li>
-                    <Link href={"updateinfo"}>Update Info</Link>
+                    <Link href={"/updateinfo"}>Update Info</Link>
                   </li>
                   <li>
-                    <Link href={'registration/update'}>Update Registration</Link>
+                    <Link href={'/registration/update'}>Update Registration</Link>
                   </li>
                   <li onClick={handleSignOut} className="btn btn-info text-xl">
                     Log out

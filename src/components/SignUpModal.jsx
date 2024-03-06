@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Modal from "./Modal";
 import IconExclamation from "./Icons/IconExclamation";
 import { signIn } from "next-auth/react";
@@ -65,7 +65,7 @@ export default function SignUpModal() {
         sign up
       </button>
       <Modal open={open} setOpen={setOpen}>
-        <div className="overflow-y-auto xl:overflow-visible max-h-[80vh] tex-base">
+        <div className="overflow-y-auto xl:overflow-visible max-h-[80vh] text-base">
           <h1 className={" text-center text-3xl font-bold mb-6 montserrat"}>
             Sign Up
           </h1>
@@ -103,7 +103,7 @@ export default function SignUpModal() {
                 value={lastName}
                 onChange={handleChange}
                 required
-                className="input input-bordered input-primary w-full max-w-xs"
+                className="input input-bordered input-secondary w-full max-w-xs"
               />
               <label
                 className=" text-cyan-500 font-bold  "
@@ -118,7 +118,7 @@ export default function SignUpModal() {
                 value={dateOfBirth}
                 onChange={handleChange}
                 required
-                className="input input-bordered input-primary w-full max-w-xs"
+                className="input input-bordered input-accent w-full max-w-xs"
               />
               <label className=" text-cyan-500 font-bold  " htmlFor="email">
                 Email
@@ -130,10 +130,10 @@ export default function SignUpModal() {
                 value={email}
                 onChange={handleChange}
                 required
-                className="input input-bordered input-primary w-full max-w-xs"
+                className="input input-bordered input-info w-full max-w-xs"
               />
               <label
-                className=" text-cyan-500 thasadith font-bold  "
+                className=" text-cyan-500 font-bold  "
                 htmlFor="password"
               >
                 Password
@@ -145,10 +145,10 @@ export default function SignUpModal() {
                 value={password}
                 onChange={handleChange}
                 required
-                className="input input-bordered input-accent w-full max-w-xs"
+                className="input input-bordered input-error w-full max-w-xs"
               />
               <label
-                className=" text-cyan-500 thasadith font-bold  "
+                className=" text-cyan-500 font-bold  "
                 htmlFor="confirmPassword"
               >
                 Confirm Password
@@ -160,7 +160,7 @@ export default function SignUpModal() {
                 value={confirmPassword}
                 onChange={handleChange}
                 required
-                className="input input-bordered input-accent w-full max-w-xs"
+                className="input input-bordered input-warning w-full max-w-xs"
               />
             </div>
             <div className="flex flex-row justify-around mt-12">

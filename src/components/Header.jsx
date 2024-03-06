@@ -106,7 +106,7 @@ export default function Header() {
         ) : (
           <>
             <li>
-              <Link href={"register"}>register 2024</Link>
+              <Link href={"registration"}>register 2024</Link>
             </li>
             <div
               onClick={openMenu}
@@ -116,7 +116,7 @@ export default function Header() {
                 <IconGear />
               </span>
               <div
-                className={`absolute right-0 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-64 z-10 ${
+                className={`absolute right-0 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-fit z-10 ${
                   showMenu ? "scale-100" : "scale-0"
                 } ${gloria.className}`}
                 ref={ulRef}
@@ -127,15 +127,15 @@ export default function Header() {
                     {user?.firstName} {user?.lastName}
                   </span>
                 </div>
-                <ul className="menu bg-base-200 w-56 rounded-box text-xl">
+                <ul className="menu bg-base-200 w-56 rounded-box text-xl gap-4">
                   <li>
-                    <Link href={"updateinfo"}>Item 1</Link>
+                    <Link href={"updateinfo"}>Update Info</Link>
                   </li>
                   <li>
-                    <a>Item 2</a>
+                    <Link href={'registration/update'}>Update Registration</Link>
                   </li>
-                  <li onClick={handleSignOut}>
-                    <span>Log out</span>
+                  <li onClick={handleSignOut} className="btn btn-info text-xl">
+                    Log out
                   </li>
                 </ul>
               </div>

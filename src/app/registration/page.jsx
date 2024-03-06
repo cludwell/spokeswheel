@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import { Special_Elite, Amatic_SC } from "next/font/google";
 import IconExclamation from "@/components/Icons/IconExclamation";
 import { useSession } from "next-auth/react";
 import PleaseSignIn from "@/components/PleaseSignIn";
 import { useStore } from "@/store/ZustandProvider";
+import { Special_Elite, Amatic_SC } from "next/font/google";
 const special = Special_Elite({
   weight: "400",
   subsets: ["latin"],

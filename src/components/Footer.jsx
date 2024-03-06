@@ -1,6 +1,12 @@
-import { Amatic_SC } from "next/font/google";
+import { Amatic_SC, Special_Elite } from "next/font/google";
+import tornpaper from "../../public/images/tornpaper.png";
+import Image from "next/image";
 const amatic = Amatic_SC({
   weight: "700",
+  subsets: ["latin"],
+});
+const special = Special_Elite({
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -14,9 +20,24 @@ export default function Footer() {
         <li>twitter</li>
       </ul>
 
-      <div className="flex flex-col w-full mx-auto items-center my-12">
-        <p className="w-96 italic ">{`“The ultimate, hidden truth of the world is that it is something that we make, and could just as easily make differently.”`}</p>
-        <span className="italic w-96 text-right">- David Graeber</span>
+      <div
+        className={
+          special.className +
+          " flex flex-col w-full mx-auto items-center relative text-black"
+        }
+      >
+        <Image
+          src={tornpaper}
+          alt="torn paper behind a pithy quote"
+          className="object-contain w-[34rem] h-96 sepia contrast-75"
+        />
+        <p className="w-96 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+          “The ultimate, hidden truth of the world is that it is something that
+          we make, and could just as easily make differently.”
+          <br />
+          <br />
+          <span className=" w-96 text-right float-end">- David Graeber</span>
+        </p>
       </div>
     </div>
   );

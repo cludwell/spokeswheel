@@ -21,9 +21,11 @@ const gloria = Gloria_Hallelujah({
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
-  const { user, fetchUserData } = useStore((state) => ({
+  const { user, fetchUserData, bookings, fetchUsersBookings } = useStore((state) => ({
     user: state.user,
     fetchUserData: state.fetchUserData,
+    bookings: state.bookings,
+    fetchUsersBookings: state.fetchUsersBookings
   }));
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
@@ -47,11 +49,12 @@ export default function Header() {
   useEffect(() => {
     const loadUser = async () => {
       fetchUserData();
+      fetchUsersBookings()
     };
     if (session) loadUser();
-  }, [session, fetchUserData]);
+  }, [session, fetchUserData, fetchUsersBookings]);
 
-  console.log("is state working correctly?", user);
+  // console.log("is state working correctly?", user);
   const handleSignOut = async () => {
     const data = await signOut({ redirect: false });
   };

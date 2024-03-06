@@ -27,7 +27,7 @@ const createStore = create((set) => ({
   },
   fetchUsersBookings: async () => {
     try {
-        const response = await fetch("/api/bookings/user", {
+        const response = await fetch("/api/bookings/users", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -35,13 +35,32 @@ const createStore = create((set) => ({
         });
         if (response.ok) {
           const bookingData = await response.json();
-          set({ bookings: [...bookingData] });
+          set({ bookings: [...bookingData.bookings] });
         } else {
-          console.error("There was an error on the backend");
+          console.error("There was an error on the backend or in assigned state.");
         }
       } catch (error) {
         console.error("Failed to fetch users bookings:", error);
       }
+  },
+  createBooking: async ({userData}) => {
+    try {
+        const response = await fetch("/api/bookings/attending", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userData)
+        })
+        if (response.ok) {
+            const bookingData = await response.json();
+            set({ bookings: [bookingData]})
+        } else {
+            console.error("There was an error assigning state or on backend.")
+        }
+    } catch (error) {
+        console.error("There was a problem registering the user.")
+    }
   }
 }));
 

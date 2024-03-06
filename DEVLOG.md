@@ -29,7 +29,7 @@ Lesson: Leave assignment of connections until the end
 
 🔲 Backend Routes
 --🔲User CRUD and forms C✅R✅D✅
---🔲Booking CRUD and forms
+--🔲Booking CRUD and forms R✅
 --🔲Conference CRUD and forms
 
 ✅ Copy and paste Next/Auth functionality
@@ -37,10 +37,18 @@ Lesson: Leave assignment of connections until the end
 
 ✅ Registration Form (Form only, not connected to state or db)
 ✅ Login Form
-✅ Signup Form
+✅ Signup Form TESTED AND WORKING
 
-🔲 Create context to hold relevant data, user and user's bookings
+✅ Create context to hold relevant data, user and user's bookings
 
 ✅ Deploy Zustand and have it accessible in context
 
-🔲 On successful login, have dispatch sent to store user and booking in store
+✅ On successful login, have dispatch sent to store user and booking in store
+
+🔲Drop down menu
+🔲-update user info
+🔲-update booking
+🔲-delete booking
+🔲-create booking
+
+secret page for admin to see all bookings

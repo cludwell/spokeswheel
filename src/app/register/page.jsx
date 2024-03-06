@@ -4,6 +4,7 @@ import { Special_Elite, Amatic_SC } from "next/font/google";
 import IconExclamation from "@/components/Icons/IconExclamation";
 import { useSession } from "next-auth/react";
 import PleaseSignIn from "@/components/PleaseSignIn";
+import { useStore } from "@/store/ZustandProvider";
 const special = Special_Elite({
   weight: "400",
   subsets: ["latin"],
@@ -14,6 +15,7 @@ const amatic = Amatic_SC({
 });
 export default function Register() {
   const { data: session, status: loading } = useSession();
+  const { bookings, createBooking } = useStore();
   const [errors, setErrors] = useState({});
   const [userData, setUserData] = useState({
     conferenceId: 1,
@@ -86,16 +88,20 @@ export default function Register() {
     if (dietaryRestrictions.length < 5)
       err.dietaryRestrictions = "Please make a diet selection";
     setErrors(err);
+    return err;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    validate();
-    if (Object.values(errors).length) return;
-    else console.log("userdata", userData);
+    const validationErrors = validate();
+    if (validationErrors.length) return;
+    else {
+     await createBooking(userData)
+    }
   };
-  let booked = false;
+  let booked = bookings.filter((b) => b.conferenceId == 1);
 
+  console.log("bookings", userData);
   if (!session) return <PleaseSignIn />;
   return (
     <>
@@ -107,7 +113,7 @@ export default function Register() {
         <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
           2024 Registration At Camp Seawood!
         </h2>
-        {booked ? (
+        {booked.length ? (
           <div className="w-full flex flex-col items-center justify-center">
             <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
               {`✅We'll see you there!`}
@@ -119,7 +125,7 @@ export default function Register() {
             className=" flex flex-col items-center mx-auto w-3/4 fade-in"
             onSubmit={handleSubmit}
           >
-            <div className="grid grid-cols-2 gap-4">
+            <div className=" flex flex-col md:grid md:grid-cols-2 gap-4">
               <div className=" text-2xl">Emergency Contact </div>
               <div></div>
               <label className=" font-bold text-xl" htmlFor="emergencyName">
@@ -184,14 +190,14 @@ export default function Register() {
                 )}
               </div>
               <label
-                className=" font-bold text-xl mt-8"
+                className=" font-bold text-xl md:mt-8"
                 htmlFor="dietaryRestrictions"
               >
                 Dietary Restrictions
               </label>
               <div>
                 <select
-                  className="select select-info w-full max-w-xs mt-8"
+                  className="select select-info w-full max-w-xs md:mt-8"
                   type="text"
                   name="dietaryRestrictions"
                   id="dietaryRestrictions"
@@ -208,6 +214,33 @@ export default function Register() {
                 {errors && errors.dietaryRestrictions && (
                   <div className=" bg-red-300 text-red-950 rounded-2xl my-3 flex flex-row p-3 fade-in w-80">
                     <IconExclamation /> {errors.dietaryRestrictions}
+                  </div>
+                )}
+              </div>
+              <label
+                className=" font-bold text-xl md:mt-8"
+                htmlFor="lodging"
+              >
+                Lodging
+              </label>
+              <div>
+                <select
+                  className="select select-info w-full max-w-xs md:mt-8"
+                  type="text"
+                  name="lodging"
+                  id="lodging"
+                  value={lodging}
+                  onChange={handleChange}
+                >
+                  <option value="" disabled selected>
+                    Please make a selection
+                  </option>{" "}
+                  <option value={"Lodges"}>Lodges</option>
+                  <option value={"Adirondacks"}>Adirondacks</option>
+                </select>
+                {errors && errors.lodging && (
+                  <div className=" bg-red-300 text-red-950 rounded-2xl my-3 flex flex-row p-3 fade-in w-80">
+                    <IconExclamation /> {errors.lodging}
                   </div>
                 )}
               </div>

@@ -20,11 +20,11 @@ export async function GET(req, res) {
       const userId = parseInt(token.sub);
       const bookings = await prisma.bookings.findMany({
         where: {
-          userId: id,
+          userId: userId,
         },
       });
       if (bookings) {
-        return new Response(JSON.stringify({ bookings }), {
+        return new Response(JSON.stringify({ bookings: [...bookings] }), {
           status: 200,
           headers: {
             "Content-Type": "application/json",

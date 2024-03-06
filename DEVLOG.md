@@ -33,11 +33,11 @@ Lesson: Leave assignment of connections until the end
 --🔲Conference CRUD and forms
 
 ✅ Copy and paste Next/Auth functionality
-✅Tested and working
+✅ Tested and working
 
-✅ Registration Form (Form only, not connected to state)
-✅ Login Form (Form only, not connected to state)
-✅ Signup Form (Form only, not connected to state)
+✅ Registration Form (Form only, not connected to state or db)
+✅ Login Form (Form only, not connected to state or db)
+✅ Signup Form (Form only, not connected to state or db)
 
 🔲 Create context to hold relevant data, user and user's bookings
 

@@ -36,11 +36,11 @@ Lesson: Leave assignment of connections until the end
 ✅ Tested and working
 
 ✅ Registration Form (Form only, not connected to state or db)
-✅ Login Form 
-✅ Signup Form (Form only, not connected to state or db)
+✅ Login Form
+✅ Signup Form
 
 🔲 Create context to hold relevant data, user and user's bookings
 
-🔲 Deploy Zustand and have it accessible in context
+✅ Deploy Zustand and have it accessible in context
 
 🔲 On successful login, have dispatch sent to store user and booking in store

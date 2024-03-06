@@ -25,6 +25,24 @@ const createStore = create((set) => ({
       console.error("Failed to fetch user data:", error);
     }
   },
+  fetchUsersBookings: async () => {
+    try {
+        const response = await fetch("/api/bookings/user", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (response.ok) {
+          const bookingData = await response.json();
+          set({ bookings: [...bookingData] });
+        } else {
+          console.error("There was an error on the backend");
+        }
+      } catch (error) {
+        console.error("Failed to fetch users bookings:", error);
+      }
+  }
 }));
 
 const ZustandContext = createContext(null);

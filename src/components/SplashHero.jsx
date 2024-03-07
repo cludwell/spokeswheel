@@ -33,7 +33,7 @@ export default function SplashHero() {
             And feel inspired through community
           </p>
 
-          <Link href="/aboutus" className="btn btn-primary mt-12">
+          <Link href="/aboutus" className={gloria.className + " btn btn-primary  mt-12 text-xl"}>
             About Us
           </Link>
         </div>

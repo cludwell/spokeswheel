@@ -12,18 +12,18 @@ const special = Special_Elite({
 
 export default function Footer() {
   return (
-    <div className=" w-full p-16 max-w-screen-xl mx-auto">
-      <h2 className={amatic.className + ` text-white text-5xl`}>SOCIALS</h2>
+    <div className=" w-full max-w-screen-xl mx-auto ">
+      {/* <h2 className={amatic.className + ` text-white text-5xl`}>SOCIALS</h2>
       <ul className=" list-disc ml-4">
         <li>youtube</li>
         <li>instagram</li>
         <li>twitter</li>
-      </ul>
+      </ul> */}
 
       <div
         className={
           special.className +
-          " flex flex-col w-full mx-auto items-center relative text-black"
+          " flex flex-col w-full items-center relative text-black "
         }
       >
         <Image

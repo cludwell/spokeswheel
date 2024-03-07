@@ -17,13 +17,13 @@ export default function Plans2024() {
         special.className + " p-16 max-w-screen-xl mx-auto leading-8"
       }
     >
-      <h2 className={amatic.className + " mb-12 text-5xl"}>
+      <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
         Location - Camp Seawood
       </h2>
-      <p className=" my-8">
+      <p className=" my-8 fade-in">
         {`At the moment we are considering renting the Camp Seawood from the Girl Scouts as the location for our first conference. It's a walkable distance from the ocean and downtown Portsmouth, NH and a straight shot from Logan Airport going north on Rt 1. It's also very affordable. We wanted to keep things cheap while we gauge excitement for this new project.`}
       </p>
-      <ul className="ml-12">
+      <ul className="ml-12 fade-in">
         <li className=" list-disc">{`Two main lodges, Thaxter's Lodge and Ranger's Roost, with 16 bunk beds each`}</li>
         <li className=" list-disc">
           Adirondacks may also be rented for privacy with spouse/family or light

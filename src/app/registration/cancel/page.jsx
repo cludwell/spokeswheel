@@ -97,7 +97,7 @@ export default function CancelRegistration() {
                 </>
               )}
             </div>
-            {reveal1 && (
+            {reveal3 && (
               <button
                 className="btn btn-wide btn-error text-xl my-12"
                 type="submit"

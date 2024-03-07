@@ -20,6 +20,7 @@ export default function Register() {
   const [emailList, setEmailList] = useState(false)
   const [photoConsent, setPhotoConsent] = useState(false)
   const [textUpdates, setTextUpdates] = useState(false)
+  const [submitted, setSubmitted] =useState(false)
   let [userData, setUserData] = useState({
     conferenceId: 1,
     photoConsent: false,
@@ -105,6 +106,7 @@ export default function Register() {
     else {
       userData = {...userData, emailList, photoConsent, textUpdates}
       await createBooking(userData);
+      setSubmitted(true)
     }
   };
   let booked = bookings.filter((b) => b.conferenceId == 1);
@@ -120,7 +122,7 @@ export default function Register() {
         <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
           2024 Registration At Camp Seawood!
         </h2>
-        {booked.length ? (
+        {!!booked.length || submitted ? (
           <div className="w-full flex flex-col items-center justify-center">
             <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
               {`✅We'll see you there!`}

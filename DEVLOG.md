@@ -28,8 +28,8 @@ What was the problem? Why weren't the seedings working?
 Lesson: Leave assignment of connections until the end
 
 🔲 Backend Routes
---🔲User CRUD and forms C✅R✅U✅D✅
---🔲Booking CRUD and forms C✅R✅U🔲D🔲
+--✅User CRUD and forms C✅R✅U✅D✅
+--🔲Booking CRUD and forms C✅R✅U✅D🔲
 --🔲Conference CRUD and forms => would be for the admin, not a high priority
 
 ✅ Copy and paste Next/Auth functionality

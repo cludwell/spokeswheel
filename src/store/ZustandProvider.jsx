@@ -104,6 +104,28 @@ const createStore = create((set) => ({
       console.error("There was a problem updating the booking.");
     }
   },
+  deleteBookingInfo: async (data) => {
+    try {
+      console.log("======================", data);
+      const response = await fetch("/api/bookings/delete", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (response.ok) {
+        const message = await response.json();
+        const { bookingId } = data;
+        const editted = bookings.filter((b) => b.id != bookingId);
+        set({
+          bookings: [...editted],
+        });
+      }
+    } catch (error) {
+      console.error("There was a problem updating the booking.");
+    }
+  },
 }));
 
 const ZustandContext = createContext(null);

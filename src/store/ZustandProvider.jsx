@@ -106,7 +106,6 @@ const createStore = create((set) => ({
   },
   deleteBookingInfo: async (data) => {
     try {
-      console.log("======================", data);
       const response = await fetch("/api/bookings/delete", {
         method: "DELETE",
         headers: {

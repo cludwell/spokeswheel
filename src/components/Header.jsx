@@ -58,7 +58,7 @@ export default function Header() {
   }, [session, fetchUserData, fetchUsersBookings]);
 
   const handleSignOut = async () => {
-    const data = await signOut({ redirect: false });
+    const data = await signOut({ redirect: true, callbackUrl: "/" });
     await dismissUserData();
   };
   return (

@@ -1,6 +1,8 @@
 "use client";
 import CancellationSuccess from "@/components/CancellationSuccess";
+import PleaseSignIn from "@/components/PleaseSignIn";
 import { useStore } from "@/store/ZustandProvider";
+import { useSession } from "next-auth/react";
 import { Amatic_SC, Special_Elite } from "next/font/google";
 import Link from "next/link";
 import { useState } from "react";
@@ -14,6 +16,7 @@ const special = Special_Elite({
 });
 
 export default function CancelRegistration() {
+  const { data: session, loading: status } = useSession();
   const [reveal1, setReveal1] = useState(false);
   const [reveal2, setReveal2] = useState(false);
   const [reveal3, setReveal3] = useState(false);
@@ -23,8 +26,9 @@ export default function CancelRegistration() {
 
   const handleCancel = async (e) => {
     e.preventDefault();
-    await deleteBookingInfo({bookingId: booking.id});
+    await deleteBookingInfo({ bookingId: booking.id });
   };
+  if (!session) return <PleaseSignIn />
   return (
     <div
       className={
@@ -83,7 +87,7 @@ export default function CancelRegistration() {
               {reveal2 && (
                 <>
                   <label htmlFor="reveal3" className=" text-lg fade-in">
-                   <Link href={'/'}>You can still go back</Link>
+                    <Link href={"/"}>You can still go back</Link>
                   </label>
                   <div className=" flex flex-row items-center fade-in justify-end">
                     <input
@@ -104,7 +108,7 @@ export default function CancelRegistration() {
               >
                 Cancel
               </button>
-             )}
+            )}
           </form>
         </>
       ) : (

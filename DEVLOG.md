@@ -29,7 +29,7 @@ Lesson: Leave assignment of connections until the end
 
 🔲 Backend Routes
 --✅User CRUD and forms C✅R✅U✅D✅
---🔲Booking CRUD and forms C✅R✅U✅D🔲
+--✅Booking CRUD and forms C✅R✅U✅D✅
 --🔲Conference CRUD and forms => would be for the admin, not a high priority
 
 ✅ Copy and paste Next/Auth functionality
@@ -48,7 +48,7 @@ Lesson: Leave assignment of connections until the end
 ✅Drop down menu
 ✅-update user info
 ✅-update booking
-🔲-delete booking
+✅-delete booking
 ✅-create booking
 
 🔲 When user signs out, user is removed from state

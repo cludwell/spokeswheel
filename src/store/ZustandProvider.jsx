@@ -25,6 +25,9 @@ const createStore = create((set) => ({
       console.error("Failed to fetch user data:", error);
     }
   },
+  dismissUserData: async () => {
+    set({ user: null})
+  },
   fetchUsersBookings: async () => {
     try {
       const response = await fetch("/api/bookings/users", {

@@ -6,6 +6,8 @@ import PleaseSignIn from "@/components/PleaseSignIn";
 import { useStore } from "@/store/ZustandProvider";
 import { Special_Elite, Amatic_SC } from "next/font/google";
 import UpdateSuccessful from "@/components/UpdateSuccessful";
+import Loading from "@/components/Loading";
+import PleaseRegister from "@/components/PleaseRegister";
 
 const special = Special_Elite({
   weight: "400",
@@ -17,12 +19,13 @@ const amatic = Amatic_SC({
 });
 export default function UpdateRegistration() {
   const { data: session, status: loading } = useSession();
-  const { bookings, updateBookingInfo } = useStore();
+  const { bookings, updateBookingInfo, fetchUsersBookings } = useStore();
   const [errors, setErrors] = useState({});
   const [emailList, setEmailList] = useState(false);
   const [photoConsent, setPhotoConsent] = useState(false);
   const [textUpdates, setTextUpdates] = useState(false);
   const [updated, setUpdated] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
   let [userData, setUserData] = useState({
     conferenceId: 1,
     photoConsent: false,
@@ -64,8 +67,7 @@ export default function UpdateRegistration() {
     )}-${phoneNumber.slice(6, 10)}`;
   }
 
-  const booking = bookings.filter((b) => b.id == 1)[0];
-  console.log("booking", userData);
+  const booking = bookings.filter((b) => b.conferenceId == 1)[0];
   useEffect(() => {
     setUserData({
       emergencyName: booking?.emergencyName ? booking?.emergencyName : "",
@@ -98,6 +100,14 @@ export default function UpdateRegistration() {
     booking?.textUpdates,
   ]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      await fetchUsersBookings();
+      setIsLoaded(true);
+    };
+    fetchData();
+  }, [fetchUsersBookings]);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (type == "checkbox") {
@@ -122,6 +132,7 @@ export default function UpdateRegistration() {
       }));
     }
   };
+
   const validate = () => {
     const err = {};
     if (!emergencyName || emergencyName.length < 6)
@@ -151,11 +162,13 @@ export default function UpdateRegistration() {
       };
       await updateBookingInfo(userData);
       setUpdated(true);
-      window.location.href = "#header"
+      window.location.href = "#header";
     }
   };
 
   if (!session) return <PleaseSignIn />;
+  if (!isLoaded) return <Loading />;
+  if (!booking) return <PleaseRegister />
   return (
     <div
       className={special.className + " p-16 max-w-screen-xl mx-auto leading-8"}
@@ -164,7 +177,7 @@ export default function UpdateRegistration() {
         Update 2024 Registration
       </h2>
       {updated ? (
-        <UpdateSuccessful  />
+        <UpdateSuccessful />
       ) : (
         <form
           className=" flex flex-col items-center mx-auto w-3/4 fade-in"

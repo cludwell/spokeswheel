@@ -3,6 +3,7 @@ import CancellationSuccess from "@/components/CancellationSuccess";
 import PleaseSignIn from "@/components/PleaseSignIn";
 import { useStore } from "@/store/ZustandProvider";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { Amatic_SC, Special_Elite } from "next/font/google";
 import Link from "next/link";
 import { useState } from "react";
@@ -21,14 +22,22 @@ export default function CancelRegistration() {
   const [reveal2, setReveal2] = useState(false);
   const [reveal3, setReveal3] = useState(false);
   const [deleted, setDeleted] = useState(false);
+  const router = useRouter();
   const { bookings, deleteBookingInfo } = useStore();
   const booking = bookings.filter((b) => b.id == 1)[0];
 
   const handleCancel = async (e) => {
     e.preventDefault();
-    await deleteBookingInfo({ bookingId: booking.id });
+    if (booking.id) {
+      await deleteBookingInfo({ bookingId: booking.id });
+      setDeleted(true);
+    } else {
+      router.push("/");
+    }
   };
-  if (!session) return <PleaseSignIn />
+
+  if (!booking) router.push("/");
+  if (!session) return <PleaseSignIn />;
   return (
     <div
       className={
@@ -41,7 +50,7 @@ export default function CancelRegistration() {
           <h2 className={amatic.className + " mb-12 text-5xl"}>
             Cancel Registration 😟
           </h2>
-          <div className=" w-96 my-12 mx-auto">
+          <div className="mx-auto my-12  w-96">
             <p
               className={``}
             >{`Did something come up? Couldn't get time off work? Need to cancel?`}</p>
@@ -55,11 +64,11 @@ export default function CancelRegistration() {
             className={` flex flex-col items-center w-96 mx-auto`}
             onSubmit={handleCancel}
           >
-            <div className="grid grid-cols-2 gap-y-8 w-full">
-              <label htmlFor="reveal1" className=" text-lg">
+            <div className="grid w-full grid-cols-2 gap-y-8">
+              <label htmlFor="reveal1" className="text-lg ">
                 Are you sure?!
               </label>
-              <div className=" flex flex-row items-center justify-end">
+              <div className="flex flex-row items-center justify-end ">
                 <input
                   type="checkbox"
                   name="reveal1"
@@ -70,7 +79,7 @@ export default function CancelRegistration() {
               </div>
               {reveal1 && (
                 <>
-                  <div className=" flex flex-row items-center fade-in">
+                  <div className="flex flex-row items-center  fade-in">
                     <input
                       type="checkbox"
                       name="reveal2"
@@ -79,17 +88,17 @@ export default function CancelRegistration() {
                       className="checkbox border-orange-400 checked:border-indigo-800 [--chkbg:theme(colors.indigo.600)] [--chkfg:orange]"
                     />
                   </div>
-                  <label htmlFor="reveal2" className=" text-lg fade-in">
+                  <label htmlFor="reveal2" className="text-lg  fade-in">
                     Wait, like for real?
                   </label>
                 </>
               )}
               {reveal2 && (
                 <>
-                  <label htmlFor="reveal3" className=" text-lg fade-in">
+                  <label htmlFor="reveal3" className="text-lg  fade-in">
                     <Link href={"/"}>You can still go back</Link>
                   </label>
-                  <div className=" flex flex-row items-center fade-in justify-end">
+                  <div className="flex flex-row items-center justify-end  fade-in">
                     <input
                       type="checkbox"
                       name="reveal3"
@@ -103,7 +112,7 @@ export default function CancelRegistration() {
             </div>
             {reveal3 && (
               <button
-                className="btn btn-wide btn-error text-xl my-12"
+                className="my-12 text-xl btn btn-wide btn-error"
                 type="submit"
               >
                 Cancel

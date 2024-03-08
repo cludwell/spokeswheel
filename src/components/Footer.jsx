@@ -12,9 +12,9 @@ const special = Special_Elite({
 
 export default function Footer() {
   return (
-    <div className=" w-full max-w-screen-xl mx-auto ">
+    <div className="w-full max-w-screen-xl mx-auto ">
       {/* <h2 className={amatic.className + ` text-white text-5xl`}>SOCIALS</h2>
-      <ul className=" list-disc ml-4">
+      <ul className="ml-4 list-disc ">
         <li>youtube</li>
         <li>instagram</li>
         <li>twitter</li>
@@ -31,11 +31,11 @@ export default function Footer() {
           alt="torn paper behind a pithy quote"
           className="object-contain w-[34rem] h-96 sepia contrast-75"
         />
-        <p className="w-96 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+        <p className="absolute text-center transform -translate-x-1/2 -translate-y-1/2 w-96 top-1/2 left-1/2">
           “The ultimate, hidden truth of the world is that it is something that
           we make, and could just as easily make differently.”
           <br />
-          <span className=" w-96 text-right float-end">- David Graeber</span>
+          <span className="text-right  w-96 float-end">- David Graeber</span>
         </p>
       </div>
     </div>

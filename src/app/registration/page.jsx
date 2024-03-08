@@ -17,10 +17,10 @@ export default function Register() {
   const { data: session, status: loading } = useSession();
   const { bookings, createBooking } = useStore();
   const [errors, setErrors] = useState({});
-  const [emailList, setEmailList] = useState(false)
-  const [photoConsent, setPhotoConsent] = useState(false)
-  const [textUpdates, setTextUpdates] = useState(false)
-  const [submitted, setSubmitted] =useState(false)
+  const [emailList, setEmailList] = useState(false);
+  const [photoConsent, setPhotoConsent] = useState(false);
+  const [textUpdates, setTextUpdates] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   let [userData, setUserData] = useState({
     conferenceId: 1,
     photoConsent: false,
@@ -63,7 +63,7 @@ export default function Register() {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (type == "checkbox") {
-      let opposite = value
+      let opposite = value;
       setUserData((prevState) => ({
         ...prevState,
         [name]: !opposite,
@@ -104,26 +104,27 @@ export default function Register() {
     const validationErrors = validate();
     if (validationErrors.length) return;
     else {
-      userData = {...userData, emailList, photoConsent, textUpdates}
+      userData = { ...userData, emailList, photoConsent, textUpdates };
       await createBooking(userData);
-      setSubmitted(true)
+      setSubmitted(true);
     }
   };
   let booked = bookings.filter((b) => b.conferenceId == 1);
-  console.log('bookings',bookings)
+  console.log("bookings", bookings);
   if (!session) return <PleaseSignIn />;
   return (
     <>
       <div
         className={
-          special.className + " p-16 max-w-screen-xl mx-auto leading-8 min-h-[50vh]"
+          special.className +
+          " p-16 max-w-screen-xl mx-auto leading-8 min-h-[50vh]"
         }
       >
         <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
           2024 Registration At Camp Seawood!
         </h2>
         {!!booked.length || submitted ? (
-          <div className="w-full flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center w-full">
             <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
               {`✅We'll see you there!`}
             </h2>
@@ -131,13 +132,13 @@ export default function Register() {
           </div>
         ) : (
           <form
-            className=" flex flex-col items-center mx-auto w-3/4 fade-in"
+            className="flex flex-col items-center w-3/4 mx-auto  fade-in"
             onSubmit={handleSubmit}
           >
-            <div className=" flex flex-col md:grid md:grid-cols-2 gap-4">
-              <div className=" text-2xl">Emergency Contact </div>
+            <div className="flex flex-col gap-4  md:grid md:grid-cols-2">
+              <div className="text-2xl ">Emergency Contact </div>
               <div></div>
-              <label className=" font-bold text-xl" htmlFor="emergencyName">
+              <label className="text-xl font-bold " htmlFor="emergencyName">
                 - Name
               </label>
               <div>
@@ -148,15 +149,15 @@ export default function Register() {
                   value={emergencyName}
                   onChange={handleChange}
                   required
-                  className="input input-bordered input-primary w-full max-w-xs"
+                  className="w-full max-w-xs input input-bordered input-primary"
                 />
                 {errors && errors.emergencyName && (
-                  <div className=" bg-red-300 text-red-950 rounded-2xl my-3 flex flex-row p-3 fade-in w-80">
+                  <div className="flex flex-row p-3 my-3 bg-red-300  text-red-950 rounded-2xl fade-in w-80">
                     <IconExclamation /> {errors.emergencyName}
                   </div>
                 )}
               </div>
-              <label className=" font-bold text-xl" htmlFor="emergencyNumber">
+              <label className="text-xl font-bold " htmlFor="emergencyNumber">
                 - Number
               </label>
               <div>
@@ -170,16 +171,16 @@ export default function Register() {
                   placeholder="(123) 456-7890"
                   maxLength={14}
                   required
-                  className="input input-bordered input-secondary w-full max-w-xs"
+                  className="w-full max-w-xs input input-bordered input-secondary"
                 />
                 {errors && errors.emergencyNumber && (
-                  <div className="bg-red-300 text-red-950 rounded-2xl my-3 flex flex-row p-3 fade-in w-80">
+                  <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-2xl fade-in w-80">
                     <IconExclamation /> {errors.emergencyNumber}
                   </div>
                 )}
               </div>
 
-              <label className=" font-bold text-xl" htmlFor="emergencyRelation">
+              <label className="text-xl font-bold " htmlFor="emergencyRelation">
                 - Relation
               </label>
               <div>
@@ -190,23 +191,23 @@ export default function Register() {
                   value={emergencyRelation}
                   onChange={handleChange}
                   required
-                  className="input input-bordered input-accent w-full max-w-xs"
+                  className="w-full max-w-xs input input-bordered input-accent"
                 />
                 {errors && errors.emergencyRelation && (
-                  <div className=" bg-red-300 text-red-950 rounded-2xl my-3 flex flex-row p-3 fade-in w-80">
+                  <div className="flex flex-row p-3 my-3 bg-red-300  text-red-950 rounded-2xl fade-in w-80">
                     <IconExclamation /> {errors.emergencyRelation}
                   </div>
                 )}
               </div>
               <label
-                className=" font-bold text-xl md:mt-8"
+                className="text-xl font-bold  md:mt-8"
                 htmlFor="dietaryRestrictions"
               >
                 Dietary Restrictions
               </label>
               <div>
                 <select
-                  className="select select-info w-full max-w-xs md:mt-8"
+                  className="w-full max-w-xs select select-info md:mt-8"
                   type="text"
                   name="dietaryRestrictions"
                   id="dietaryRestrictions"
@@ -221,17 +222,17 @@ export default function Register() {
                   <option value={"Vegetarian"}>Vegetarian</option>
                 </select>
                 {errors && errors.dietaryRestrictions && (
-                  <div className=" bg-red-300 text-red-950 rounded-2xl my-3 flex flex-row p-3 fade-in w-80">
+                  <div className="flex flex-row p-3 my-3 bg-red-300  text-red-950 rounded-2xl fade-in w-80">
                     <IconExclamation /> {errors.dietaryRestrictions}
                   </div>
                 )}
               </div>
-              <label className=" font-bold text-xl md:mt-8" htmlFor="lodging">
+              <label className="text-xl font-bold  md:mt-8" htmlFor="lodging">
                 Lodging
               </label>
               <div>
                 <select
-                  className="select select-info w-full max-w-xs md:mt-8"
+                  className="w-full max-w-xs select select-info md:mt-8"
                   type="text"
                   name="lodging"
                   id="lodging"
@@ -245,12 +246,12 @@ export default function Register() {
                   <option value={"Adirondacks"}>Adirondacks</option>
                 </select>
                 {errors && errors.lodging && (
-                  <div className=" bg-red-300 text-red-950 rounded-2xl my-3 flex flex-row p-3 fade-in w-80">
+                  <div className="flex flex-row p-3 my-3 bg-red-300  text-red-950 rounded-2xl fade-in w-80">
                     <IconExclamation /> {errors.lodging}
                   </div>
                 )}
               </div>
-              <label className=" font-bold text-xl" htmlFor="allergies">
+              <label className="text-xl font-bold " htmlFor="allergies">
                 Allergies
               </label>
               <textarea
@@ -263,7 +264,7 @@ export default function Register() {
                 className="textarea textarea-warning min-h-40 w-80"
               />
               <label
-                className=" font-bold text-xl"
+                className="text-xl font-bold "
                 htmlFor="specialAccomodations"
               >
                 Special Accomodations
@@ -277,7 +278,7 @@ export default function Register() {
                 placeholder="Are there any special accomodations we can try to make for you? Is there medication you need refrigerated? Accessibility concerns?"
                 className="textarea textarea-error min-h-40 w-80"
               />
-              <label className=" font-bold text-xl" htmlFor="notes">
+              <label className="text-xl font-bold " htmlFor="notes">
                 Notes
               </label>
               <textarea
@@ -289,7 +290,7 @@ export default function Register() {
                 placeholder="Is there anything else you'd like us to know? Could you use a ride from Logan Airport? "
                 className="textarea textarea-primary min-h-40 w-80"
               />
-              <label className=" font-bold text-xl" htmlFor="photoConsent">
+              <label className="text-xl font-bold " htmlFor="photoConsent">
                 Photo Consent
               </label>
               <input
@@ -298,9 +299,9 @@ export default function Register() {
                 name="photoConsent"
                 id="photoConsent"
                 value={photoConsent}
-                onChange={()=> setPhotoConsent(prev=>!prev)}
+                onChange={() => setPhotoConsent((prev) => !prev)}
               />
-              <label className=" font-bold text-xl" htmlFor="textUpdates">
+              <label className="text-xl font-bold " htmlFor="textUpdates">
                 Text Updates
               </label>
               <input
@@ -309,9 +310,9 @@ export default function Register() {
                 name="textUpdates"
                 id="textUpdates"
                 value={textUpdates}
-                onChange={() => setTextUpdates(prev=>!prev)}
+                onChange={() => setTextUpdates((prev) => !prev)}
               />
-              <label className=" font-bold text-xl" htmlFor="emailList">
+              <label className="text-xl font-bold " htmlFor="emailList">
                 Email List
               </label>
               <input
@@ -320,11 +321,11 @@ export default function Register() {
                 name="emailList"
                 id="emailList"
                 value={emailList}
-                onChange={() => setEmailList(prev =>!prev)}
+                onChange={() => setEmailList((prev) => !prev)}
               />
             </div>
             <button
-              className="btn btn-accent btn-wide mb-4 text-xl mt-12"
+              className="mt-12 mb-4 text-xl btn btn-accent btn-wide"
               type="submit"
             >
               Submit

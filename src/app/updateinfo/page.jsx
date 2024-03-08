@@ -6,6 +6,7 @@ import PleaseSignIn from "@/components/PleaseSignIn";
 import { useSession } from "next-auth/react";
 import { useStore } from "@/store/ZustandProvider";
 import { useRouter } from "next/navigation";
+import Loading from "@/components/Loading";
 
 const special = Special_Elite({
   weight: "400",
@@ -19,6 +20,7 @@ const amatic = Amatic_SC({
 export default function UpdateInfo() {
   const { data: session, status: loading } = useSession();
   const [errors, setErrors] = useState([]);
+  const [hasLoaded, setHasLoaded] = useState(false)
   const router = useRouter();
   const { user, fetchUserData, updateUserInfo } = useStore((state) => ({
     user: state.user,
@@ -29,6 +31,7 @@ export default function UpdateInfo() {
   useEffect(() => {
     const loadUser = async () => {
       fetchUserData();
+      setHasLoaded(true)
     };
     if (session) loadUser();
   }, [session, fetchUserData]);
@@ -49,7 +52,7 @@ export default function UpdateInfo() {
       lastName: user?.lastName ? user.lastName : "",
       dateOfBirth: user?.dateOfBirth
         ? user.dateOfBirth
-        : new Date().toISOString,
+        : new Date().toISOString(),
       email: user?.email ? user.email : "",
     });
   }, [
@@ -60,7 +63,7 @@ export default function UpdateInfo() {
     user?.password,
     user?.confirmPassword,
   ]);
-
+console.log('DOB', dateOfBirth)
   const validate = () => {
     const err = [];
     if (
@@ -110,6 +113,7 @@ export default function UpdateInfo() {
     }
   };
   if (!session) return <PleaseSignIn />;
+  if (!hasLoaded) return <Loading />
   return (
     <div
       className={special.className + " p-16 max-w-screen-xl mx-auto leading-8"}
@@ -117,22 +121,22 @@ export default function UpdateInfo() {
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
         Update User Info
       </h2>
-      <div className=" text-base fade-in ">
+      <div className="text-base fade-in">
         <form
-          className="p-5 flex flex-col items-center"
+          className="flex flex-col items-center p-5"
           onSubmit={handleSubmit}
         >
           {errors.map((error, i) => (
             <div
               key={`error${i}`}
-              className=" w-full bg-red-300 text-red-950 rounded-2xl my-3 flex flex-row p-3 fade-in"
+              className="flex flex-row w-full p-3 my-3 bg-red-300 text-red-950 rounded-2xl fade-in"
             >
               <IconExclamation /> {error}
             </div>
           ))}
 
           <div className="grid grid-cols-2 gap-4">
-            <label className=" text-cyan-500 font-bold  " htmlFor="firstName">
+            <label className="font-bold text-cyan-500" htmlFor="firstName">
               First Name
             </label>
             <input
@@ -142,9 +146,9 @@ export default function UpdateInfo() {
               value={firstName}
               onChange={handleChange}
               required
-              className="input input-bordered input-primary w-full max-w-xs"
+              className="w-full max-w-xs input input-bordered input-primary"
             />
-            <label className=" text-cyan-500 font-bold  " htmlFor="lastName">
+            <label className="font-bold text-cyan-500" htmlFor="lastName">
               Last Name
             </label>
             <input
@@ -154,9 +158,9 @@ export default function UpdateInfo() {
               value={lastName}
               onChange={handleChange}
               required
-              className="input input-bordered input-secondary w-full max-w-xs"
+              className="w-full max-w-xs input input-bordered input-secondary"
             />
-            <label className=" text-cyan-500 font-bold  " htmlFor="dateOfBirth">
+            <label className="font-bold text-cyan-500" htmlFor="dateOfBirth">
               Date Of Birth
             </label>
             <input
@@ -166,9 +170,9 @@ export default function UpdateInfo() {
               value={dateOfBirth}
               onChange={handleChange}
               required
-              className="input input-bordered input-info w-full max-w-xs"
+              className="w-full max-w-xs input input-bordered input-info"
             />
-            <label className=" text-cyan-500 font-bold  " htmlFor="email">
+            <label className="font-bold text-cyan-500" htmlFor="email">
               Email
             </label>
             <input
@@ -178,13 +182,13 @@ export default function UpdateInfo() {
               value={email}
               onChange={handleChange}
               required
-              className="input input-bordered input-success w-full max-w-xs"
+              className="w-full max-w-xs input input-bordered input-success"
             />
             <label
-              className=" text-cyan-500 thasadith font-bold  "
+              className="font-bold text-cyan-500 thasadith"
               htmlFor="password"
             >
-              Password
+              New Password
             </label>
             <input
               type="password"
@@ -193,13 +197,13 @@ export default function UpdateInfo() {
               value={password}
               onChange={handleChange}
 
-              className="input input-bordered input-warning w-full max-w-xs"
+              className="w-full max-w-xs input input-bordered input-warning"
             />
             <label
-              className=" text-cyan-500 thasadith font-bold  "
+              className="font-bold text-cyan-500 thasadith"
               htmlFor="confirmPassword"
             >
-              Confirm Password
+              New Confirm Password
             </label>
             <input
               type="confirmPassword"
@@ -208,11 +212,11 @@ export default function UpdateInfo() {
               value={confirmPassword}
               onChange={handleChange}
 
-              className="input input-bordered input-error w-full max-w-xs"
+              className="w-full max-w-xs input input-bordered input-error"
             />
           </div>
           <div className="flex flex-row justify-around mt-12">
-            <button type="submit" className=" btn btn-primary btn-wide text-xl">
+            <button type="submit" className="text-xl btn btn-primary btn-wide">
               Confirm Info
             </button>
           </div>

@@ -61,9 +61,13 @@ export default function Header() {
     const data = await signOut({ redirect: true, callbackUrl: "/" });
     await dismissUserData();
   };
+  const seawood = bookings.length
+    ? bookings.filter((b) => b.conferenceId == 1)[0]
+    : null;
+    console.log(seawood)
   return (
     <div
-      className=" max-w-screen-xl h-fit self-center flex flex-col items-center mx-auto "
+      className="flex flex-col items-center self-center max-w-screen-xl mx-auto  h-fit"
       id="header"
     >
       <Link
@@ -75,11 +79,11 @@ export default function Header() {
       <Image
         src={darkCampFire}
         alt={`friends are gathered around a campfire`}
-        className="max-w-screen-lg h-96 object-bottom object-cover absolute"
+        className="absolute object-cover object-bottom max-w-screen-lg h-96"
         width={2000}
         height={2000}
       />
-      <div className=" w-32 z-10 svg-spin ease-in-out">
+      <div className="z-10 w-32 ease-in-out  svg-spin">
         <WagonWheel />
       </div>
       <ul
@@ -115,7 +119,7 @@ export default function Header() {
               onClick={openMenu}
               className="relative flex flex-row items-center btn btn-ghost"
             >
-              <span className=" cursor-pointer scale-125">
+              <span className="scale-125 cursor-pointer ">
                 <IconGear />
               </span>
               <div
@@ -124,9 +128,9 @@ export default function Header() {
                 } ${gloria.className}`}
                 ref={ulRef}
               >
-                <div className=" flex flex-row ml-4 text-xl">
+                <div className="flex flex-row ml-4 text-xl ">
                   <IconUser />{" "}
-                  <span className=" ml-4">
+                  <span className="ml-4 ">
                     {user?.firstName} {user?.lastName}
                   </span>
                   <div className="divider"></div>
@@ -134,21 +138,27 @@ export default function Header() {
                 <div className="flex flex-col w-full h-4 my-0">
                   <div className="divider"></div>
                 </div>
-                <ul className="menu bg-base-200 w-64 rounded-box text-xl gap-4">
+                <ul className="w-64 gap-4 text-xl menu bg-base-200 rounded-box">
                   <li>
-                    <Link href={"/updateinfo"}>Update User Info</Link>
-                  </li>
-                  <li>
-                    <Link href={"/registration/update"}>
-                      Update Registration
+                    <Link href={"/updateinfo"} onClick={closeMenu}>
+                      Update User Info
                     </Link>
                   </li>
                   <li>
+                    <Link href={"/registration/update"} onClick={closeMenu}>
+                      Update Registration
+                    </Link>
+                  </li>
+                  {seawood && (
+
+                  <li>
                     <Link
                       href={"/registration/cancel"}
+                      onClick={closeMenu}
                     >{`Cancel Registration `}</Link>
                   </li>
-                  <li onClick={handleSignOut} className="btn btn-info text-xl">
+                  )}
+                  <li onClick={handleSignOut} className="text-xl btn btn-info">
                     Log out
                   </li>
                 </ul>

@@ -12,13 +12,13 @@ const gloria = Gloria_Hallelujah({
 export default function SplashHero() {
   return (
     <div
-      className="hero min-h-screen"
+      className="min-h-screen hero"
       style={{
         backgroundImage: "url(/images/sparks.jpg)",
       }}
     >
       <div className="hero-overlay bg-opacity-70"></div>
-      <div className="hero-content text-center text-neutral-content">
+      <div className="text-center hero-content text-neutral-content">
         <div className="max-w-md text-white">
           <h1
             className={amatic.className + " mb-5 text-8xl font-bold"}
@@ -27,13 +27,16 @@ export default function SplashHero() {
             To a conference for rad humans
           </p>
           <p className={gloria.className + " my-5 text-xl"}>
-            Where we remember  to believe in people
+            Where we remember to believe in people
           </p>
           <p className={gloria.className + " my-5 text-xl"}>
             And feel inspired through community
           </p>
 
-          <Link href="/aboutus" className={gloria.className + " btn btn-primary  mt-12 text-xl"}>
+          <Link
+            href="/aboutus"
+            className={gloria.className + " btn btn-primary  mt-12 text-xl"}
+          >
             About Us
           </Link>
         </div>

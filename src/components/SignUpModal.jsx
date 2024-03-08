@@ -15,7 +15,7 @@ export default function SignUpModal() {
   const { firstName, lastName, dateOfBirth, email, password, confirmPassword } =
     userData;
 
-  const validate =  () => {
+  const validate = () => {
     const err = [];
     if (
       !email ||
@@ -42,7 +42,7 @@ export default function SignUpModal() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
-    setErrors(validationErrors)
+    setErrors(validationErrors);
     if (validationErrors.length) return;
     else if (
       !errors.length &&
@@ -61,7 +61,7 @@ export default function SignUpModal() {
   };
   return (
     <>
-      <button className="btn btn-ghost text-xl" onClick={() => setOpen(true)}>
+      <button className="text-xl btn btn-ghost" onClick={() => setOpen(true)}>
         sign up
       </button>
       <Modal open={open} setOpen={setOpen}>
@@ -70,18 +70,17 @@ export default function SignUpModal() {
             Sign Up
           </h1>
           <form className="p-5" onSubmit={handleSubmit}>
-
-              {errors.map((error, i) => (
-                <div
-                  key={`error${i}`}
-                  className=" w-full bg-red-300 text-red-950 rounded-2xl my-3 flex flex-row p-3 fade-in text-base"
-                >
-                  <IconExclamation /> {error}
-                </div>
-              ))}
+            {errors.map((error, i) => (
+              <div
+                key={`error${i}`}
+                className="flex flex-row w-full p-3 my-3 text-base bg-red-300  text-red-950 rounded-2xl fade-in"
+              >
+                <IconExclamation /> {error}
+              </div>
+            ))}
 
             <div className="grid grid-cols-2 gap-4">
-              <label className=" text-cyan-500 font-bold  " htmlFor="firstName">
+              <label className="font-bold  text-cyan-500" htmlFor="firstName">
                 First Name
               </label>
               <input
@@ -91,9 +90,9 @@ export default function SignUpModal() {
                 value={firstName}
                 onChange={handleChange}
                 required
-                className="input input-bordered input-primary w-full max-w-xs"
+                className="w-full max-w-xs input input-bordered input-primary"
               />
-              <label className=" text-cyan-500 font-bold  " htmlFor="lastName">
+              <label className="font-bold  text-cyan-500" htmlFor="lastName">
                 Last Name
               </label>
               <input
@@ -103,10 +102,10 @@ export default function SignUpModal() {
                 value={lastName}
                 onChange={handleChange}
                 required
-                className="input input-bordered input-secondary w-full max-w-xs"
+                className="w-full max-w-xs input input-bordered input-secondary"
               />
               <label
-                className=" text-cyan-500 font-bold  "
+                className="font-bold  text-cyan-500"
                 htmlFor="dateOfBirth"
               >
                 Date Of Birth
@@ -118,9 +117,9 @@ export default function SignUpModal() {
                 value={dateOfBirth}
                 onChange={handleChange}
                 required
-                className="input input-bordered input-accent w-full max-w-xs"
+                className="w-full max-w-xs input input-bordered input-accent"
               />
-              <label className=" text-cyan-500 font-bold  " htmlFor="email">
+              <label className="font-bold  text-cyan-500" htmlFor="email">
                 Email
               </label>
               <input
@@ -130,12 +129,9 @@ export default function SignUpModal() {
                 value={email}
                 onChange={handleChange}
                 required
-                className="input input-bordered input-info w-full max-w-xs"
+                className="w-full max-w-xs input input-bordered input-info"
               />
-              <label
-                className=" text-cyan-500 font-bold  "
-                htmlFor="password"
-              >
+              <label className="font-bold  text-cyan-500" htmlFor="password">
                 Password
               </label>
               <input
@@ -145,10 +141,10 @@ export default function SignUpModal() {
                 value={password}
                 onChange={handleChange}
                 required
-                className="input input-bordered input-error w-full max-w-xs"
+                className="w-full max-w-xs input input-bordered input-error"
               />
               <label
-                className=" text-cyan-500 font-bold  "
+                className="font-bold  text-cyan-500"
                 htmlFor="confirmPassword"
               >
                 Confirm Password
@@ -160,13 +156,13 @@ export default function SignUpModal() {
                 value={confirmPassword}
                 onChange={handleChange}
                 required
-                className="input input-bordered input-warning w-full max-w-xs"
+                className="w-full max-w-xs input input-bordered input-warning"
               />
             </div>
             <div className="flex flex-row justify-around mt-12">
               <button
                 type="submit"
-                className=" btn btn-primary btn-wide text-xl"
+                className="text-xl  btn btn-primary btn-wide"
               >
                 Sign Up
               </button>

@@ -10,7 +10,7 @@ export default function CountDown() {
       setTimeLeft(calculateTimeLeft(targetDate));
     }, 1000);
     return () => clearTimeout(timer);
-  }, [timeLeft]);
+  }, [timeLeft,targetDate]);
 
   function calculateTimeLeft(date) {
     const now = new Date();
@@ -42,33 +42,33 @@ export default function CountDown() {
 
   return (
     <>
-      <div className="grid grid-flow-col gap-3 md:gap-5 text-center auto-cols-max">
+      <div className="grid grid-flow-col gap-3 text-center md:gap-5 auto-cols-max">
         <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-          <span className="countdown font-mono text-5xl md:text-6xl">
+          <span className="font-mono text-5xl countdown md:text-6xl">
             <span style={{ "--value": timeLeft.months ?? 0 }}></span>
           </span>
           months
         </div>
         <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-          <span className="countdown font-mono text-5xl md:text-6xl">
+          <span className="font-mono text-5xl countdown md:text-6xl">
             <span style={{ "--value": timeLeft.days ?? 0 }}></span>
           </span>
           days
         </div>
         <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-          <span className="countdown font-mono text-5xl md:text-6xl">
+          <span className="font-mono text-5xl countdown md:text-6xl">
             <span style={{ "--value": timeLeft.hours ?? 0 }}></span>
           </span>
           hours
         </div>
         <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-          <span className="countdown font-mono text-5xl md:text-6xl">
+          <span className="font-mono text-5xl countdown md:text-6xl">
             <span style={{ "--value": timeLeft.minutes ?? 0 }}></span>
           </span>
           min
         </div>
         <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-          <span className="countdown font-mono text-5xl md:text-6xl">
+          <span className="font-mono text-5xl countdown md:text-6xl">
             <span style={{ "--value": timeLeft.seconds ?? 0 }}></span>
           </span>
           sec

@@ -1,7 +1,7 @@
 export default function CancellationSuccess() {
   return (
     <>
-      <div className="w-full flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center w-full">
         <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
           {`😟We hope to see you next year!`}
         </h2>

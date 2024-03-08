@@ -26,11 +26,12 @@ export default function CancelRegistration() {
   const [deleted, setDeleted] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const router = useRouter();
-  const { bookings, deleteBookingInfo } = useStore(state=>({
+  const { bookings, deleteBookingInfo,fetchUsersBookings } = useStore(state=>({
     bookings: state.bookings,
+    deleteBookingInfo: state.deleteBookingInfo,
     fetchUsersBookings: state.fetchUsersBookings
   }));
-  const booking = bookings.filter((b) => b.id == 1)[0];
+  const booking = bookings.filter((b) => b.conferenceId == 1)[0];
 
   useEffect(()=> {
     const loadData = async () => {
@@ -38,7 +39,7 @@ export default function CancelRegistration() {
       setLoaded(true)
     }
     loadData()
-  }, [bookings])
+  }, [fetchUsersBookings])
   const handleCancel = async (e) => {
     e.preventDefault();
     if (booking.id) {

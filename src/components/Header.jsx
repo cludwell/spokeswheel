@@ -64,10 +64,10 @@ export default function Header() {
   const seawood = bookings.length
     ? bookings.filter((b) => b.conferenceId == 1)[0]
     : null;
-    console.log(seawood)
+  console.log("BOOKINGS", bookings);
   return (
     <div
-      className="flex flex-col items-center self-center max-w-screen-xl mx-auto  h-fit"
+      className="flex flex-col items-center self-center max-w-screen-xl mx-auto h-fit"
       id="header"
     >
       <Link
@@ -82,8 +82,9 @@ export default function Header() {
         className="absolute object-cover object-bottom max-w-screen-lg h-96"
         width={2000}
         height={2000}
+        priority
       />
-      <div className="z-10 w-32 ease-in-out  svg-spin">
+      <div className="z-10 w-32 ease-in-out svg-spin">
         <WagonWheel />
       </div>
       <ul
@@ -149,14 +150,13 @@ export default function Header() {
                       Update Registration
                     </Link>
                   </li>
-                  {seawood && (
-
-                  <li>
-                    <Link
-                      href={"/registration/cancel"}
-                      onClick={closeMenu}
-                    >{`Cancel Registration `}</Link>
-                  </li>
+                  {!!bookings.length && (
+                    <li>
+                      <Link
+                        href={"/registration/cancel"}
+                        onClick={closeMenu}
+                      >{`Cancel Registration `}</Link>
+                    </li>
                   )}
                   <li onClick={handleSignOut} className="text-xl btn btn-info">
                     Log out

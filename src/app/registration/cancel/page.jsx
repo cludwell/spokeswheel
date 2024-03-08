@@ -6,7 +6,9 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Amatic_SC, Special_Elite } from "next/font/google";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { staticGenerationAsyncStorage } from "next/dist/client/components/static-generation-async-storage.external";
+import Loading from "@/components/Loading";
 const amatic = Amatic_SC({
   weight: "700",
   subsets: ["latin"],
@@ -22,10 +24,21 @@ export default function CancelRegistration() {
   const [reveal2, setReveal2] = useState(false);
   const [reveal3, setReveal3] = useState(false);
   const [deleted, setDeleted] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const router = useRouter();
-  const { bookings, deleteBookingInfo } = useStore();
+  const { bookings, deleteBookingInfo } = useStore(state=>({
+    bookings: state.bookings,
+    fetchUsersBookings: state.fetchUsersBookings
+  }));
   const booking = bookings.filter((b) => b.id == 1)[0];
 
+  useEffect(()=> {
+    const loadData = async () => {
+      await fetchUsersBookings()
+      setLoaded(true)
+    }
+    loadData()
+  }, [bookings])
   const handleCancel = async (e) => {
     e.preventDefault();
     if (booking.id) {
@@ -38,6 +51,7 @@ export default function CancelRegistration() {
 
   if (!booking) router.push("/");
   if (!session) return <PleaseSignIn />;
+  if (!loaded) return <Loading />
   return (
     <div
       className={
@@ -50,7 +64,7 @@ export default function CancelRegistration() {
           <h2 className={amatic.className + " mb-12 text-5xl"}>
             Cancel Registration 😟
           </h2>
-          <div className="mx-auto my-12  w-96">
+          <div className="mx-auto my-12 w-96">
             <p
               className={``}
             >{`Did something come up? Couldn't get time off work? Need to cancel?`}</p>
@@ -79,7 +93,7 @@ export default function CancelRegistration() {
               </div>
               {reveal1 && (
                 <>
-                  <div className="flex flex-row items-center  fade-in">
+                  <div className="flex flex-row items-center fade-in">
                     <input
                       type="checkbox"
                       name="reveal2"
@@ -88,17 +102,17 @@ export default function CancelRegistration() {
                       className="checkbox border-orange-400 checked:border-indigo-800 [--chkbg:theme(colors.indigo.600)] [--chkfg:orange]"
                     />
                   </div>
-                  <label htmlFor="reveal2" className="text-lg  fade-in">
+                  <label htmlFor="reveal2" className="text-lg fade-in">
                     Wait, like for real?
                   </label>
                 </>
               )}
               {reveal2 && (
                 <>
-                  <label htmlFor="reveal3" className="text-lg  fade-in">
+                  <label htmlFor="reveal3" className="text-lg fade-in">
                     <Link href={"/"}>You can still go back</Link>
                   </label>
-                  <div className="flex flex-row items-center justify-end  fade-in">
+                  <div className="flex flex-row items-center justify-end fade-in">
                     <input
                       type="checkbox"
                       name="reveal3"

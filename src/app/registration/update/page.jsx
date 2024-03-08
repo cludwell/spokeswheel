@@ -19,7 +19,13 @@ const amatic = Amatic_SC({
 });
 export default function UpdateRegistration() {
   const { data: session, status: loading } = useSession();
-  const { bookings, updateBookingInfo, fetchUsersBookings } = useStore();
+  const { bookings, updateBookingInfo, fetchUsersBookings } = useStore(
+    (state) => ({
+      bookings: state.bookings,
+      updateBookingInfo: state.updateBookingInfo,
+      fetchUsersBookings: state.fetchUsersBookings,
+    })
+  );
   const [errors, setErrors] = useState({});
   const [emailList, setEmailList] = useState(false);
   const [photoConsent, setPhotoConsent] = useState(false);
@@ -180,10 +186,10 @@ export default function UpdateRegistration() {
         <UpdateSuccessful />
       ) : (
         <form
-          className="flex flex-col items-center w-3/4 mx-auto  fade-in"
+          className="flex flex-col items-center w-3/4 mx-auto fade-in"
           onSubmit={handleSubmit}
         >
-          <div className="flex flex-col gap-4  md:grid md:grid-cols-2">
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
             <div className="text-2xl ">Emergency Contact </div>
             <div></div>
             <label className="text-xl font-bold " htmlFor="emergencyName">
@@ -200,7 +206,7 @@ export default function UpdateRegistration() {
                 className="w-full max-w-xs input input-bordered input-primary"
               />
               {errors && errors.emergencyName && (
-                <div className="flex flex-row p-3 my-3 bg-red-300  text-red-950 rounded-2xl fade-in w-80">
+                <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-2xl fade-in w-80">
                   <IconExclamation /> {errors.emergencyName}
                 </div>
               )}
@@ -242,13 +248,13 @@ export default function UpdateRegistration() {
                 className="w-full max-w-xs input input-bordered input-accent"
               />
               {errors && errors.emergencyRelation && (
-                <div className="flex flex-row p-3 my-3 bg-red-300  text-red-950 rounded-2xl fade-in w-80">
+                <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-2xl fade-in w-80">
                   <IconExclamation /> {errors.emergencyRelation}
                 </div>
               )}
             </div>
             <label
-              className="text-xl font-bold  md:mt-8"
+              className="text-xl font-bold md:mt-8"
               htmlFor="dietaryRestrictions"
             >
               Dietary Restrictions
@@ -262,7 +268,7 @@ export default function UpdateRegistration() {
                 value={dietaryRestrictions}
                 onChange={handleChange}
               >
-                <option value="" disabled selected>
+                <option value="" disabled defaultValue>
                   Please make a selection
                 </option>{" "}
                 <option value={"Omnivore"}>Omnivore</option>
@@ -270,12 +276,12 @@ export default function UpdateRegistration() {
                 <option value={"Vegetarian"}>Vegetarian</option>
               </select>
               {errors && errors.dietaryRestrictions && (
-                <div className="flex flex-row p-3 my-3 bg-red-300  text-red-950 rounded-2xl fade-in w-80">
+                <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-2xl fade-in w-80">
                   <IconExclamation /> {errors.dietaryRestrictions}
                 </div>
               )}
             </div>
-            <label className="text-xl font-bold  md:mt-8" htmlFor="lodging">
+            <label className="text-xl font-bold md:mt-8" htmlFor="lodging">
               Lodging
             </label>
             <div>
@@ -287,14 +293,14 @@ export default function UpdateRegistration() {
                 value={lodging}
                 onChange={handleChange}
               >
-                <option value="" disabled selected>
+                <option value="" disabled defaultValue>
                   Please make a selection
                 </option>{" "}
                 <option value={"Lodges"}>Lodges</option>
                 <option value={"Adirondacks"}>Adirondacks</option>
               </select>
               {errors && errors.lodging && (
-                <div className="flex flex-row p-3 my-3 bg-red-300  text-red-950 rounded-2xl fade-in w-80">
+                <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-2xl fade-in w-80">
                   <IconExclamation /> {errors.lodging}
                 </div>
               )}

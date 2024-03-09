@@ -64,7 +64,6 @@ export default function Header() {
   const seawood = bookings.length
     ? bookings.filter((b) => b.conferenceId == 1)[0]
     : null;
-  console.log("BOOKINGS", bookings);
   return (
     <div
       className="flex flex-col items-center self-center max-w-screen-xl mx-auto h-fit"

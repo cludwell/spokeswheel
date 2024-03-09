@@ -2,9 +2,11 @@
 import { useEffect, useState } from "react";
 
 export default function CountDown() {
+
   const targetDate = new Date(2024, 7, 15, 17); // Target date (August 15, 2024)
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
+  
   useEffect(() => {
     const timer = setTimeout(() => {
       setTimeLeft(calculateTimeLeft(targetDate));

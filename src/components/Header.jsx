@@ -11,7 +11,9 @@ import { Amatic_SC, Gloria_Hallelujah } from "next/font/google";
 import { useStore } from "@/store/ZustandProvider";
 import IconUser from "./Icons/IconUser";
 import IconGear from "./Icons/IconGear";
-
+import Logo from "./Logo";
+import { motion } from "framer-motion";
+import ConferenceName from "./ConferenceName";
 const amatic = Amatic_SC({
   weight: "700",
   subsets: ["latin"],
@@ -31,6 +33,7 @@ export default function Header() {
       fetchUsersBookings: state.fetchUsersBookings,
     }));
   const [showMenu, setShowMenu] = useState(false);
+  const [loaded, setLoaded] = useState(false)
   const ulRef = useRef();
   const openMenu = () => {
     if (showMenu) return;
@@ -48,7 +51,7 @@ export default function Header() {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
   const closeMenu = (e) => setShowMenu(false);
-
+  useEffect(() => setLoaded(true), [])
   useEffect(() => {
     const loadUser = async () => {
       fetchUserData();
@@ -69,23 +72,35 @@ export default function Header() {
       className="flex flex-col items-center self-center max-w-screen-xl mx-auto h-fit"
       id="header"
     >
-      <Link
-        href={"/"}
-        className={amatic.className + ` z-10 text-white text-6xl`}
+      {/* <motion.div
+        className="z-10"
+        initial={{ opacity: 0, y: -200 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{delay: 1, duration: .5, type: "spring", stiffness: 200}}
       >
-        Spokeswheel Conference
-      </Link>
+        <Link
+          href={"/"}
+          className={amatic.className + ` z-10 text-white text-6xl`}
+        >
+          Spokeswheel Conference
+        </Link>
+      </motion.div> */}
+      <ConferenceName />
       <Image
         src={darkCampFire}
         alt={`friends are gathered around a campfire`}
-        className="absolute object-cover object-bottom max-w-screen-lg h-96"
+        className={`absolute object-cover object-bottom max-w-screen-lg h-96 transition-all duration-1000 ease-in-out ${
+          loaded ? 'opacity-100' : 'opacity-0'
+        }` }
         width={2000}
         height={2000}
         priority
       />
-      <div className="z-10 w-32 ease-in-out svg-spin">
+
+      <Logo />
+      {/* <div className="z-10 w-32 ease-in-out svg-spin">
         <WagonWheel />
-      </div>
+      </div> */}
       <ul
         className={
           gloria.className +
@@ -117,9 +132,9 @@ export default function Header() {
             </li>
             <div
               onClick={openMenu}
-              className="relative flex flex-row items-center btn btn-ghost"
+              className="relative flex flex-row items-center "
             >
-              <span className="scale-125 cursor-pointer ">
+              <span className="scale-125 cursor-pointer btn btn-ghost">
                 <IconGear />
               </span>
               <div

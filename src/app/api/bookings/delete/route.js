@@ -1,6 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 import { getToken } from "next-auth/jwt";
+import { isDynamicServerError } from "next/dist/client/components/hooks-server-context";
+
 export async function DELETE(req, res) {
   if (req.method == "DELETE") {
     try {
@@ -44,6 +46,9 @@ export async function DELETE(req, res) {
       }
     } catch (error) {
       console.error("Failed to retrieve user data:", error);
+      if (isDynamicServerError(error)) {
+        throw error;
+      }
       return new Response(JSON.stringify({ error: "Internal server error" }), {
         status: 500,
         headers: {

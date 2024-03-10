@@ -2,6 +2,7 @@ import { getToken } from "next-auth/jwt";
 import { PrismaClient } from "@prisma/client";
 import { hashPassword } from "../../../../../lib/auth";
 const prisma = new PrismaClient();
+import { isDynamicServerError } from "next/dist/client/components/hooks-server-context";
 
 export async function PUT(req, res) {
   if (req.method == "PUT") {
@@ -62,6 +63,9 @@ export async function PUT(req, res) {
       }
     } catch (error) {
       console.error("Failed to retrieve user data:", error);
+      if (isDynamicServerError(error)) {
+        throw error;
+      }
       return new Response(JSON.stringify({ error: "Internal server error" }), {
         status: 500,
         headers: {

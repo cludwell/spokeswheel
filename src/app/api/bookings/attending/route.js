@@ -1,6 +1,7 @@
 import { getToken } from "next-auth/jwt";
 import { PrismaClient, Bookings } from "@prisma/client";
 const prisma = new PrismaClient();
+import { isDynamicServerError } from "next/dist/client/components/hooks-server-context";
 
 export async function POST(req, res) {
   if (req.method == "POST") {
@@ -78,6 +79,9 @@ export async function POST(req, res) {
         );
     } catch (error) {
       console.error("Failed to create booking data:", error);
+      if (isDynamicServerError(error)) {
+        throw error;
+      }
       return new Response(JSON.stringify({ error: "Internal server error" }), {
         status: 500,
         headers: {

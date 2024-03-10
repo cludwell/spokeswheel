@@ -1,6 +1,7 @@
 import { getToken } from "next-auth/jwt";
-import { PrismaClient, Users } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
+import { isDynamicServerError } from "next/dist/client/components/hooks-server-context";
 
 export async function GET(req, res) {
   // Changed to default export
@@ -56,6 +57,9 @@ export async function GET(req, res) {
       }
     } catch (error) {
       console.error("Failed to retrieve user data:", error);
+      if (isDynamicServerError(error)) {
+        throw error;
+      }
       return new Response(JSON.stringify({ error: "Internal server error" }), {
         status: 500,
         headers: {

@@ -52,7 +52,7 @@ export default function CancelRegistration() {
   };
 
   if (!booking) router.push("/");
-  if (!session) return <PleaseSignIn />;
+  if (!session) router.push('/pleasesignin');
   if (!loaded) return <Loading />
 
   return (

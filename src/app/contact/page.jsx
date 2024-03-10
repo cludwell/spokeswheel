@@ -12,11 +12,11 @@ export default function ContactUs() {
   return (
     <div
       className={
-        special.className + " p-16 max-w-screen-xl mx-auto leading-8 fade-in min-h-screen"
+        special.className + " p-16 max-w-screen-xl mx-auto leading-8 min-h-screen"
       }
     >
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>Contact Us</h2>
-      <p className="my-8 ">
+      <p className="my-8 fade-in">
         {`Questions? Suggestions? Would you like to participate in the planning? We need your help! We can't emphasis enough that this con is what each one of us brings to it. Please think about planning a workshop, a worship, or start practices a few songs to perform. If you would like to participate we need help with the following roles`}
       </p>
       <ul className="m-8 fade-in">

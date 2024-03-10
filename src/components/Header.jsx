@@ -113,7 +113,7 @@ export default function Header() {
           <Link href={"/plans2024"}>2024 plans</Link>
         </li>
         <li>
-          <Link href={"/contact#header"}>contact</Link>
+          <Link href={"/contact"}>contact</Link>
         </li>
         {!session ? (
           <>

@@ -168,7 +168,7 @@ export default function UpdateRegistration() {
       };
       await updateBookingInfo(userData);
       setUpdated(true);
-      if (typeof window?.location !== "undefined") {
+      if (typeof window !== "undefined") {
         window.location.href = "#header";
       }
     }

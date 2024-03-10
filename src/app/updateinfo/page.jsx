@@ -63,7 +63,7 @@ export default function UpdateInfo() {
     user?.password,
     user?.confirmPassword,
   ]);
-console.log('DOB', dateOfBirth)
+// console.log('DOB', dateOfBirth)
   const validate = () => {
     const err = [];
     if (

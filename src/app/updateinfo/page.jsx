@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 import { useStore } from "@/store/ZustandProvider";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/Loading";
-
+export const dynamic = "force-dynamic"
 const special = Special_Elite({
   weight: "400",
   subsets: ["latin"],

@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { Amatic_SC, Special_Elite } from "next/font/google";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
+export const dynamic = "force-dynamic"
 import Loading from "@/components/Loading";
 const amatic = Amatic_SC({
   weight: "700",

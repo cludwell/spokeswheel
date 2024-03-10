@@ -8,7 +8,7 @@ import { Special_Elite, Amatic_SC } from "next/font/google";
 import UpdateSuccessful from "@/components/UpdateSuccessful";
 import Loading from "@/components/Loading";
 import PleaseRegister from "@/components/PleaseRegister";
-
+export const dynamic = "force-dynamic"
 const special = Special_Elite({
   weight: "400",
   subsets: ["latin"],

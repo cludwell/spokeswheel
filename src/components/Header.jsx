@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import darkCampFire from "../../public/images/dark-campfire.jpg";
-import WagonWheel from "./WagonWheel";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import LogInModal from "./LogInModal";

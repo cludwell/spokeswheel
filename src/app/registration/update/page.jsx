@@ -168,8 +168,10 @@ export default function UpdateRegistration() {
       };
       await updateBookingInfo(userData);
       setUpdated(true);
-      window.location.href = "#header";
-    }
+      if (typeof window !== "undefined") {
+        window.location.href = "#header";
+      }
+          }
   };
 
   if (!session) return <PleaseSignIn />;

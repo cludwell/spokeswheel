@@ -1,4 +1,3 @@
-import sparks from "../../public/images/sparks.jpg";
 import Link from "next/link";
 import { Amatic_SC, Gloria_Hallelujah } from "next/font/google";
 const amatic = Amatic_SC({

@@ -11,7 +11,6 @@ const special = Special_Elite({
   subsets: ["latin"],
 });
 export default function Plans2024() {
-  console.log('PLANS 2024 ===========================')
 
   return (
     <div

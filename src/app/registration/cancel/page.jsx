@@ -33,6 +33,7 @@ export default function CancelRegistration() {
   }));
   const booking = bookings.filter((b) => b.conferenceId == 1)[0];
 
+  console.log('CANCEL REGISTRATION ===========================')
   useEffect(()=> {
     const loadData = async () => {
       await fetchUsersBookings()
@@ -53,7 +54,6 @@ export default function CancelRegistration() {
   if (!booking) router.push("/");
   if (!session) return <PleaseSignIn />;
   if (!loaded) return <Loading />
-  console.log('CANCEL REGISTRATION ===========================')
 
   return (
     <div

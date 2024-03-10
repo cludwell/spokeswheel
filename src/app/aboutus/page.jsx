@@ -9,6 +9,7 @@ const special = Special_Elite({
   subsets: ["latin"],
 });
 export default function AboutUs() {
+  console.log('ABOUT US ===========================')
   return (
     <div
       className={

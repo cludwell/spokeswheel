@@ -11,6 +11,8 @@ const special = Special_Elite({
   subsets: ["latin"],
 });
 export default function Plans2024() {
+  console.log('PLANS 2024 ===========================')
+
   return (
     <div
       className={
@@ -20,7 +22,7 @@ export default function Plans2024() {
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
         Location - Camp Seawood
       </h2>
-      <p className="my-8  fade-in">
+      <p className="my-8 fade-in">
         {`At the moment we are considering renting the Camp Seawood from the Girl Scouts as the location for our first conference. It's a walkable distance from the ocean and downtown Portsmouth, NH and a straight shot from Logan Airport going north on Rt 1. It's also very affordable. We wanted to keep things cheap while we gauge excitement for this new project.`}
       </p>
       <ul className="ml-12 fade-in">

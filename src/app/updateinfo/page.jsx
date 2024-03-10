@@ -114,6 +114,8 @@ export default function UpdateInfo() {
   };
   if (!session) return <PleaseSignIn />;
   if (!hasLoaded) return <Loading />
+  console.log('REGISTRATION ===========================')
+
   return (
     <div
       className={special.className + " p-16 max-w-screen-xl mx-auto leading-8"}

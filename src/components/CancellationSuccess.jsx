@@ -4,6 +4,8 @@ const amatic = Amatic_SC({
   subsets: ["latin"],
 });
 export default function CancellationSuccess() {
+  console.log('CANCEL SUCCESS ===========================')
+
   return (
     <>
       <div className="flex flex-col items-center justify-center w-full">

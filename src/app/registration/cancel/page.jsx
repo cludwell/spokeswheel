@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { Amatic_SC, Special_Elite } from "next/font/google";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { staticGenerationAsyncStorage } from "next/dist/client/components/static-generation-async-storage.external";
+
 import Loading from "@/components/Loading";
 const amatic = Amatic_SC({
   weight: "700",

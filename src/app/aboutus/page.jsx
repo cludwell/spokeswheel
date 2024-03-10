@@ -2,11 +2,11 @@ import { Amatic_SC, Special_Elite } from "next/font/google";
 
 const amatic = Amatic_SC({
   weight: "700",
-  // subsets: ["latin"],
+  subsets: ["latin"],
 });
 const special = Special_Elite({
   weight: "400",
-  // subsets: ["latin"],
+  subsets: ["latin"],
 });
 export default function AboutUs() {
   return (

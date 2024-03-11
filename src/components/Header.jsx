@@ -13,7 +13,6 @@ import IconGear from "./Icons/IconGear";
 import Logo from "./Logo";
 import { motion } from "framer-motion";
 import ConferenceName from "./ConferenceName";
-export const dynamic = "force-dynamic"
 
 const amatic = Amatic_SC({
   weight: "700",

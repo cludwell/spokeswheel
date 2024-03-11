@@ -5,7 +5,6 @@ import { useSession } from "next-auth/react";
 import PleaseSignIn from "@/components/PleaseSignIn";
 import { useStore } from "@/store/ZustandProvider";
 import { Special_Elite, Amatic_SC } from "next/font/google";
-export const dynamic = "force-dynamic"
 const special = Special_Elite({
   weight: "400",
   subsets: ["latin"],

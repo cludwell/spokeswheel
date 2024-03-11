@@ -9,6 +9,7 @@ export const metadata = {
   description: "A spiritual conference for dissidents",
 };
 
+export const dynamic = 'force-dynamic'
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

@@ -8,7 +8,6 @@ const special = Special_Elite({
   subsets: ["latin"],
 });
 export default function ContactUs() {
-  console.log('CONTACT US ===========================')
 
   return (
     <div

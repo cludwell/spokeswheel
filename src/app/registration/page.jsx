@@ -111,7 +111,6 @@ export default function Register() {
     }
   };
   let booked = bookings.filter((b) => b.conferenceId == 1);
-  // console.log("bookings", bookings);
   if (!session) return <PleaseSignIn />;
   return (
     <>

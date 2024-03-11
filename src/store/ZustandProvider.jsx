@@ -128,6 +128,9 @@ const createStore = create((set) => ({
       console.error("There was a problem updating the booking.");
     }
   },
+  fetchAllBookings: async (conferenceId) => {
+    const response = await fetch()
+  }
 }));
 
 const ZustandContext = createContext(null);

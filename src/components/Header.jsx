@@ -33,7 +33,7 @@ export default function Header() {
       fetchUsersBookings: state.fetchUsersBookings,
     }));
   const [showMenu, setShowMenu] = useState(false);
-  const [loaded, setLoaded] = useState(false)
+  const [loaded, setLoaded] = useState(false);
   const ulRef = useRef();
   const openMenu = () => {
     if (showMenu) return;
@@ -51,7 +51,7 @@ export default function Header() {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
   const closeMenu = (e) => setShowMenu(false);
-  useEffect(() => setLoaded(true), [])
+  useEffect(() => setLoaded(true), []);
   useEffect(() => {
     const loadUser = async () => {
       fetchUserData();
@@ -90,8 +90,8 @@ export default function Header() {
         src={darkCampFire}
         alt={`friends are gathered around a campfire`}
         className={`absolute object-cover object-bottom max-w-screen-lg h-96 transition-all duration-1000 ease-in-out ${
-          loaded ? 'opacity-100' : 'opacity-0'
-        }` }
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
         width={2000}
         height={2000}
         priority
@@ -138,11 +138,12 @@ export default function Header() {
                 <IconGear />
               </span>
               <div
-                className={`absolute right-0 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-fit z-10 ${
-                  showMenu ? "scale-100" : "scale-0"
+                className={`absolute right-0 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-fit z-10 border-2  border-slate-700 ${
+                  showMenu ? " scale-100" : " scale-0"
                 } ${gloria.className}`}
                 ref={ulRef}
               >
+                
                 <div className="flex flex-row ml-4 text-xl ">
                   <IconUser />{" "}
                   <span className="ml-4 ">

@@ -20,9 +20,10 @@ export async function GET(req, res) {
               "Content-Type": "application/json",
             },
           }
-        );
-      }
-      const conferenceId = parseInt(req.query.conferenceId);
+          );
+        }
+        const conferenceId = parseInt(req.url.split('/').at(-1));
+        console.log('ENTERING ROUTE======================', conferenceId)
       const bookings = await prisma.bookings.findMany({
         where: {
           conferenceId: conferenceId,

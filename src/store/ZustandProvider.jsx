@@ -131,6 +131,7 @@ const createStore = create((set) => ({
     }
   },
   fetchAllBookings: async (conferenceId) => {
+    console.log("zuuuuuustand", conferenceId);
     const response = await fetch(`/api/bookings/conference/${conferenceId}`);
     if (response.ok) {
       const data = await response.json();

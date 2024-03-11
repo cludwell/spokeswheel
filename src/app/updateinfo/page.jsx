@@ -62,7 +62,6 @@ export default function UpdateInfo() {
     user?.password,
     user?.confirmPassword,
   ]);
-// console.log('DOB', dateOfBirth)
   const validate = () => {
     const err = [];
     if (
@@ -113,7 +112,6 @@ export default function UpdateInfo() {
   };
   if (!session) return <PleaseSignIn />;
   if (!hasLoaded) return <Loading />
-  console.log('REGISTRATION ===========================')
 
   return (
     <div

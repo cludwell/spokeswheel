@@ -52,7 +52,6 @@ export default function CancelRegistration() {
   if (!booking) router.push("/");
   if (!session) return <PleaseSignIn />;
   if (!loaded) return <Loading />
-  console.log('CANCEL REGISTRATION ===========================')
 
   return (
     <div

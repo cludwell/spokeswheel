@@ -24,9 +24,7 @@ const handler = NextAuth({
 
       // trying to assign a specific type to the authorize promise results in an error
       authorize: async (credentials, req) => {
-        // console.log("ENTERING THE ROUTE", credentials);
         if (credentials && credentials.action === "signup") {
-          // console.log("ENTERING SIGNUP");
           const existingEmail = await prisma.users.findUnique({
             where: { email: credentials.email },
           });
@@ -44,7 +42,6 @@ const handler = NextAuth({
               dateOfBirth: credentials.dateOfBirth,
             },
           });
-          // console.log("NEW USER", newUser);
           return newUser;
         }
         if (!credentials || !credentials.email || !credentials.password)

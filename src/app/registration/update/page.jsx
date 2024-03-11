@@ -172,7 +172,6 @@ export default function UpdateRegistration() {
       // }
     }
   };
-  console.log('UPDATE REGISTRATION ===========================')
 
   if (!session) return <PleaseSignIn />;
   if (!isLoaded) return <Loading />;

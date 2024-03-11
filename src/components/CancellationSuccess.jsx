@@ -4,7 +4,6 @@ const amatic = Amatic_SC({
   subsets: ["latin"],
 });
 export default function CancellationSuccess() {
-  console.log('CANCEL SUCCESS ===========================')
 
   return (
     <>

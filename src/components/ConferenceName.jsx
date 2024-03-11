@@ -13,7 +13,7 @@ export default function ConferenceName() {
   return (
     <Link href={"/"} className={amatic.className + ` z-10 text-white text-6xl flex flex-row `}>
       {letters.map((l, i) => (
-        <motion.div
+        <motion.span
           className={`z-10 ${l === " " ? "w-2" : ''}`} // Adjust space handling
           initial={{ opacity: 0, x: 100, rotate: 720 }} // Start rotated -90 degrees
           animate={{ opacity: 1, x: 0, rotate: 0 }} // End at rotate: 0 for upright position
@@ -26,7 +26,7 @@ export default function ConferenceName() {
           key={l + i}
         >
           {l}
-        </motion.div>
+        </motion.span>
       ))}
     </Link>
   );

@@ -1,4 +1,3 @@
-Vercel database is set up
 
 Generic single-database configuration.
 

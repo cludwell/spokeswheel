@@ -22,14 +22,23 @@ export async function GET(req, res) {
           }
         );
       }
+      const conferenceId = parseInt(req.query.conferenceId);
       const bookings = await prisma.bookings.findMany({
         where: {
-            conferenceId: 1
+          conferenceId: conferenceId,
         },
         include: {
-            user: true
-        }
-      })
+          user: true,
+        },
+      });
+      if (bookings) {
+        return new Response(JSON.stringify({ bookings: bookings }), {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      }
     } catch (error) {
       console.error("Failed to get booking data:", error);
       if (isDynamicServerError(error)) {

@@ -5,8 +5,10 @@ import { create } from "zustand";
 const createStore = create((set) => ({
   user: null,
   bookings: [],
+  allBookings: [],
   setUser: (user) => set({ user }),
   setBookings: (bookings) => set({ bookings }),
+  setAllBookings: (allBookings) => set({ allBookings }),
   fetchUserData: async () => {
     try {
       const response = await fetch("/api/auth/authenticated", {
@@ -26,7 +28,7 @@ const createStore = create((set) => ({
     }
   },
   dismissUserData: async () => {
-    set({ user: null})
+    set({ user: null });
   },
   fetchUsersBookings: async () => {
     try {
@@ -129,8 +131,14 @@ const createStore = create((set) => ({
     }
   },
   fetchAllBookings: async (conferenceId) => {
-    const response = await fetch()
-  }
+    const response = await fetch(`/api/bookings/conference/${conferenceId}`);
+    if (response.ok) {
+      const data = await response.json();
+      set({
+        allBookings: [...data],
+      });
+    }
+  },
 }));
 
 const ZustandContext = createContext(null);

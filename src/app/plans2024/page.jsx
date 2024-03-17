@@ -43,7 +43,7 @@ export default function Plans2024() {
       </div>
       <h2 className={amatic.className + " my-12 text-5xl"}>Workshops</h2>
       <div className="flex flex-row justify-center w-full overflow-x-auto">
-        <table className="table-lg table-zebra">
+        <table className="table-xs sm:table-sm md:table-lg table-zebra">
           {/* head */}
           <thead>
             <tr>

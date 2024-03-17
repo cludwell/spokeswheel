@@ -1,13 +1,5 @@
-import { Amatic_SC, Special_Elite } from "next/font/google";
+import { amatic, special } from "../app/fonts";
 
-const amatic = Amatic_SC({
-  weight: "700",
-  subsets: ["latin"],
-});
-const special = Special_Elite({
-  weight: "400",
-  subsets: ["latin"],
-});
 export default function PleaseSignIn() {
   return (
     <div

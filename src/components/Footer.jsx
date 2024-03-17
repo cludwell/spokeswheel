@@ -1,14 +1,6 @@
-import { Amatic_SC, Special_Elite } from "next/font/google";
 import tornpaper from "../../public/images/tornpaper.png";
 import Image from "next/image";
-const amatic = Amatic_SC({
-  weight: "700",
-  subsets: ["latin"],
-});
-const special = Special_Elite({
-  weight: "400",
-  subsets: ["latin"],
-});
+import { amatic, special } from "../app/fonts";
 
 export default function Footer() {
   return (
@@ -35,7 +27,7 @@ export default function Footer() {
           “The ultimate, hidden truth of the world is that it is something that
           we make, and could just as easily make differently.”
           <br />
-          <span className="text-right  w-96 float-end">- David Graeber</span>
+          <span className="text-right w-96 float-end">- David Graeber</span>
         </p>
       </div>
     </div>

@@ -1,15 +1,8 @@
 import seawoodmap from "../../../public/images/seawoodmap.png";
 import Image from "next/image";
 import CountDown from "@/components/CountDown";
-import { Amatic_SC, Special_Elite } from "next/font/google";
-const amatic = Amatic_SC({
-  weight: "700",
-  subsets: ["latin"],
-});
-const special = Special_Elite({
-  weight: "400",
-  subsets: ["latin"],
-});
+import { amatic, special } from "../fonts";
+
 export default function Plans2024() {
 
   return (

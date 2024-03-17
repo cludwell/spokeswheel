@@ -1,11 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Amatic_SC } from "next/font/google";
-
-const amatic = Amatic_SC({
-  weight: "700",
-  subsets: ["latin"],
-});
+import { amatic } from "../app/fonts";
 
 export default function ConferenceName() {
   const text = "Spokeswheel Conference";
@@ -14,7 +9,7 @@ export default function ConferenceName() {
     <Link href={"/"} className={amatic.className + ` z-10 text-white text-6xl flex flex-row `}>
       {letters.map((l, i) => (
         <motion.span
-          className={`z-10 ${l === " " ? "w-2" : ''}`} 
+          className={`z-10 ${l === " " ? "w-2" : ''}`}
           initial={{ opacity: 0, x: 100, rotate: 720 }}
           animate={{ opacity: 1, x: 0, rotate: 0 }}
           transition={{

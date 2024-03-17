@@ -4,18 +4,11 @@ import PleaseSignIn from "@/components/PleaseSignIn";
 import { useStore } from "@/store/ZustandProvider";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { Amatic_SC, Special_Elite } from "next/font/google";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Loading from "@/components/Loading";
-const amatic = Amatic_SC({
-  weight: "700",
-  subsets: ["latin"],
-});
-const special = Special_Elite({
-  weight: "400",
-  subsets: ["latin"],
-});
+
+import { amatic, special } from "../../fonts";
 
 export default function CancelRegistration() {
   const { data: session, loading: status } = useSession();
@@ -25,20 +18,22 @@ export default function CancelRegistration() {
   const [deleted, setDeleted] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const router = useRouter();
-  const { bookings, deleteBookingInfo,fetchUsersBookings } = useStore(state=>({
-    bookings: state.bookings,
-    deleteBookingInfo: state.deleteBookingInfo,
-    fetchUsersBookings: state.fetchUsersBookings
-  }));
+  const { bookings, deleteBookingInfo, fetchUsersBookings } = useStore(
+    (state) => ({
+      bookings: state.bookings,
+      deleteBookingInfo: state.deleteBookingInfo,
+      fetchUsersBookings: state.fetchUsersBookings,
+    })
+  );
   const booking = bookings.filter((b) => b.conferenceId == 1)[0];
 
-  useEffect(()=> {
+  useEffect(() => {
     const loadData = async () => {
-      await fetchUsersBookings()
-      setLoaded(true)
-    }
-    loadData()
-  }, [fetchUsersBookings])
+      await fetchUsersBookings();
+      setLoaded(true);
+    };
+    loadData();
+  }, [fetchUsersBookings]);
   const handleCancel = async (e) => {
     e.preventDefault();
     if (booking.id) {
@@ -51,7 +46,7 @@ export default function CancelRegistration() {
 
   if (!booking) router.push("/");
   if (!session) return <PleaseSignIn />;
-  if (!loaded) return <Loading />
+  if (!loaded) return <Loading />;
 
   return (
     <div

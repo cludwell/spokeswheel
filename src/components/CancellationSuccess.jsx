@@ -1,10 +1,5 @@
-import { Amatic_SC } from "next/font/google";
-const amatic = Amatic_SC({
-  weight: "700",
-  subsets: ["latin"],
-});
+import { amatic } from "../app/fonts";
 export default function CancellationSuccess() {
-
   return (
     <>
       <div className="flex flex-col items-center justify-center w-full">

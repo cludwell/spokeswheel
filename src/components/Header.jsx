@@ -6,22 +6,12 @@ import { useEffect, useRef, useState } from "react";
 import LogInModal from "./LogInModal";
 import SignUpModal from "./SignUpModal";
 import { signOut, useSession } from "next-auth/react";
-import { Amatic_SC, Gloria_Hallelujah } from "next/font/google";
 import { useStore } from "@/store/ZustandProvider";
 import IconUser from "./Icons/IconUser";
 import IconGear from "./Icons/IconGear";
 import Logo from "./Logo";
-import { motion } from "framer-motion";
 import ConferenceName from "./ConferenceName";
-
-const amatic = Amatic_SC({
-  weight: "700",
-  subsets: ["latin"],
-});
-const gloria = Gloria_Hallelujah({
-  weight: "400",
-  subsets: ["latin"],
-});
+import { amatic, gloria } from "../app/fonts";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
@@ -143,7 +133,6 @@ export default function Header() {
                 } ${gloria.className}`}
                 ref={ulRef}
               >
-                
                 <div className="flex flex-row ml-4 text-xl ">
                   <IconUser />{" "}
                   <span className="ml-4 ">

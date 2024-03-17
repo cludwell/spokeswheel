@@ -1,13 +1,6 @@
 import Link from "next/link";
-import { Amatic_SC, Gloria_Hallelujah } from "next/font/google";
-const amatic = Amatic_SC({
-  weight: "700",
-  subsets: ["latin"],
-});
-const gloria = Gloria_Hallelujah({
-  weight: "400",
-  subsets: ["latin"],
-});
+import { amatic, gloria } from "../app/fonts";
+
 export default function SplashHero() {
   return (
     <div

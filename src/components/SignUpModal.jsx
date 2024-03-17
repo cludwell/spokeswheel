@@ -73,14 +73,14 @@ export default function SignUpModal() {
             {errors.map((error, i) => (
               <div
                 key={`error${i}`}
-                className="flex flex-row w-full p-3 my-3 text-base bg-red-300  text-red-950 rounded-2xl fade-in"
+                className="flex flex-row w-full p-3 my-3 text-base bg-red-300 text-red-950 rounded-2xl fade-in"
               >
                 <IconExclamation /> {error}
               </div>
             ))}
 
             <div className="grid grid-cols-2 gap-4">
-              <label className="font-bold  text-cyan-500" htmlFor="firstName">
+              <label className="font-bold text-cyan-500" htmlFor="firstName">
                 First Name
               </label>
               <input
@@ -92,7 +92,7 @@ export default function SignUpModal() {
                 required
                 className="w-full max-w-xs input input-bordered input-primary"
               />
-              <label className="font-bold  text-cyan-500" htmlFor="lastName">
+              <label className="font-bold text-cyan-500" htmlFor="lastName">
                 Last Name
               </label>
               <input
@@ -104,10 +104,7 @@ export default function SignUpModal() {
                 required
                 className="w-full max-w-xs input input-bordered input-secondary"
               />
-              <label
-                className="font-bold  text-cyan-500"
-                htmlFor="dateOfBirth"
-              >
+              <label className="font-bold text-cyan-500" htmlFor="dateOfBirth">
                 Date Of Birth
               </label>
               <input
@@ -119,7 +116,7 @@ export default function SignUpModal() {
                 required
                 className="w-full max-w-xs input input-bordered input-accent"
               />
-              <label className="font-bold  text-cyan-500" htmlFor="email">
+              <label className="font-bold text-cyan-500" htmlFor="email">
                 Email
               </label>
               <input
@@ -131,7 +128,7 @@ export default function SignUpModal() {
                 required
                 className="w-full max-w-xs input input-bordered input-info"
               />
-              <label className="font-bold  text-cyan-500" htmlFor="password">
+              <label className="font-bold text-cyan-500" htmlFor="password">
                 Password
               </label>
               <input
@@ -144,7 +141,7 @@ export default function SignUpModal() {
                 className="w-full max-w-xs input input-bordered input-error"
               />
               <label
-                className="font-bold  text-cyan-500"
+                className="font-bold text-cyan-500"
                 htmlFor="confirmPassword"
               >
                 Confirm Password
@@ -162,7 +159,7 @@ export default function SignUpModal() {
             <div className="flex flex-row justify-around mt-12">
               <button
                 type="submit"
-                className="text-xl  btn btn-primary btn-wide"
+                className="text-xl btn btn-primary btn-wide"
               >
                 Sign Up
               </button>

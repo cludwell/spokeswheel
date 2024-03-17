@@ -1,20 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Special_Elite, Amatic_SC } from "next/font/google";
 import IconExclamation from "@/components/Icons/IconExclamation";
 import PleaseSignIn from "@/components/PleaseSignIn";
 import { useSession } from "next-auth/react";
 import { useStore } from "@/store/ZustandProvider";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/Loading";
-const special = Special_Elite({
-  weight: "400",
-  subsets: ["latin"],
-});
-const amatic = Amatic_SC({
-  weight: "700",
-  subsets: ["latin"],
-});
+import { amatic, special } from "../../fonts";
 
 export default function UpdateInfo() {
   const { data: session, status: loading } = useSession();

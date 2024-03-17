@@ -59,7 +59,7 @@ export default function Header() {
     : null;
   return (
     <div
-      className="flex flex-col items-center self-center w-screen max-w-screen-xl mx-auto h-fit"
+      className="flex flex-col items-center self-center w-screen max-w-screen-xl mx-auto overflow-auto h-fit"
       id="header"
     >
       {/* <motion.div
@@ -79,7 +79,7 @@ export default function Header() {
       <Image
         src={darkCampFire}
         alt={`friends are gathered around a campfire`}
-        className={`absolute object-cover object-bottom max-w-screen-sm md:max-w-screen-lg h-64 md:h-96 transition-all duration-1000 ease-in-out ${
+        className={`absolute object-cover object-bottom max-w-screen-sm md:max-w-screen-lg h-64 md:h-96 transition-all duration-1000 ease-in-out  w-screen ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
         width={2000}

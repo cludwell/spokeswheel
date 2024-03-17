@@ -79,7 +79,7 @@ export default function Header() {
       <Image
         src={darkCampFire}
         alt={`friends are gathered around a campfire`}
-        className={`absolute object-cover object-bottom max-w-screen-lg h-96 transition-all duration-1000 ease-in-out ${
+        className={`absolute object-cover object-bottom max-w-screen-sm md:max-w-screen-lg h-64 md:h-96 transition-all duration-1000 ease-in-out ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
         width={2000}
@@ -93,7 +93,7 @@ export default function Header() {
       </div> */}
       <ul
         className={
-          `${gloria.className} menu menu-horizontal rounded-box z-10 w-full justify-around sm:text-xl mt-40 `
+          `${gloria.className} menu menu-horizontal rounded-box z-10 w-full justify-around sm:text-xl mt-11 md:mt-40 `
         }
       >
         <li >

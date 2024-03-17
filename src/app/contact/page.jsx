@@ -5,7 +5,7 @@ export default function ContactUs() {
   return (
     <div
       className={
-        special.className + "p-4 sm:p-16 max-w-screen-xl mx-auto leading-8 fade-in min-h-screen"
+        `${special.className}  p-4 sm:p-16 max-w-screen-xl mx-auto leading-8 fade-in min-h-screen`
       }
     >
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>Contact Us</h2>

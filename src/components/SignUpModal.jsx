@@ -65,7 +65,7 @@ export default function SignUpModal() {
         sign up
       </button>
       <Modal open={open} setOpen={setOpen}>
-        <div className="overflow-y-auto max-h-[80vh] text-base">
+        <div className="overflow-y-auto max-h-[80vh] ">
           <h1 className={" text-center text-xl sm:text-3xl font-bold mb-6"}>
             Sign Up
           </h1>
@@ -79,7 +79,7 @@ export default function SignUpModal() {
               </div>
             ))}
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="flex flex-col gap-4 sm:grid sm:grid-cols-2 ">
               <label className="font-bold text-cyan-500" htmlFor="firstName">
                 First Name
               </label>

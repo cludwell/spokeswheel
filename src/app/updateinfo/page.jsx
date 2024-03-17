@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react";
 import { useStore } from "@/store/ZustandProvider";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/Loading";
-import { amatic, special } from "../../fonts";
+import { amatic, special } from "../fonts";
 
 export default function UpdateInfo() {
   const { data: session, status: loading } = useSession();

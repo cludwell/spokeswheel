@@ -4,18 +4,11 @@ import IconExclamation from "@/components/Icons/IconExclamation";
 import { useSession } from "next-auth/react";
 import PleaseSignIn from "@/components/PleaseSignIn";
 import { useStore } from "@/store/ZustandProvider";
-import { Special_Elite, Amatic_SC } from "next/font/google";
 import UpdateSuccessful from "@/components/UpdateSuccessful";
 import Loading from "@/components/Loading";
 import PleaseRegister from "@/components/PleaseRegister";
-const special = Special_Elite({
-  weight: "400",
-  subsets: ["latin"],
-});
-const amatic = Amatic_SC({
-  weight: "700",
-  subsets: ["latin"],
-});
+import { amatic, special } from "../app/fonts";
+
 export default function UpdateRegistration() {
   const { data: session, status: loading } = useSession();
   const { bookings, updateBookingInfo, fetchUsersBookings } = useStore(

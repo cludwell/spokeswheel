@@ -4,7 +4,7 @@ import IconExclamation from "@/components/Icons/IconExclamation";
 import { useSession } from "next-auth/react";
 import PleaseSignIn from "@/components/PleaseSignIn";
 import { useStore } from "@/store/ZustandProvider";
-import { amatic, special } from "../../fonts";
+import { amatic, special } from "../fonts";
 
 export default function Register() {
   const { data: session, status: loading } = useSession();

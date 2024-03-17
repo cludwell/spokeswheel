@@ -65,8 +65,8 @@ export default function SignUpModal() {
         sign up
       </button>
       <Modal open={open} setOpen={setOpen}>
-        <div className="overflow-y-auto xl:overflow-visible max-h-[80vh] text-base">
-          <h1 className={" text-center text-3xl font-bold mb-6 montserrat"}>
+        <div className="overflow-y-auto max-h-[80vh] text-base">
+          <h1 className={" text-center text-xl sm:text-3xl font-bold mb-6"}>
             Sign Up
           </h1>
           <form className="p-5" onSubmit={handleSubmit}>

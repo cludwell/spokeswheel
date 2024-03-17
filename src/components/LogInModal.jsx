@@ -38,7 +38,10 @@ export default function LogInModal() {
   };
   return (
     <>
-      <button className="sm:text-xl btn btn-ghost" onClick={() => setOpen(true)}>
+      <button
+        className=" sm:text-xl btn btn-ghost"
+        onClick={() => setOpen(true)}
+      >
         log in
       </button>
       <Modal open={open} setOpen={setOpen}>

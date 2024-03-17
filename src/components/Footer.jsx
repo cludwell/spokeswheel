@@ -27,7 +27,7 @@ export default function Footer() {
           “The ultimate, hidden truth of the world is that it is something that
           we make, and could just as easily make differently.”
           <br />
-          <span className="text-right w-96 float-end">- David Graeber</span>
+          <span className="mr-12 text-right w-96 float-end">- David Graeber</span>
         </p>
       </div>
     </div>

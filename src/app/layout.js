@@ -13,7 +13,7 @@ export const dynamic = 'force-dynamic'
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className} data-theme="dark">
+      <body className={`${inter.className} text-sm sm:text-base`} data-theme="dark">
         <Providers>
           <Header />
           {children}

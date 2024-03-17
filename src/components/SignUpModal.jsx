@@ -61,7 +61,7 @@ export default function SignUpModal() {
   };
   return (
     <>
-      <button className="text-xl btn btn-ghost" onClick={() => setOpen(true)}>
+      <button className="sm:text-xl btn btn-ghost" onClick={() => setOpen(true)}>
         sign up
       </button>
       <Modal open={open} setOpen={setOpen}>

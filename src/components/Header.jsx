@@ -93,18 +93,17 @@ export default function Header() {
       </div> */}
       <ul
         className={
-          gloria.className +
-          ` menu menu-horizontal rounded-box z-10 w-full justify-around text-xl mt-40`
+          `${gloria.className} menu menu-horizontal rounded-box z-10 w-full justify-around sm:text-xl mt-40 `
         }
       >
-        <li>
-          <Link href={`/aboutus`}>about us</Link>
+        <li >
+          <Link href={`/aboutus`} >about us</Link>
         </li>
-        <li>
-          <Link href={"/plans2024"}>2024 plans</Link>
+        <li >
+          <Link href={"/plans2024"} >2024 plans</Link>
         </li>
-        <li>
-          <Link href={"/contact"}>contact</Link>
+        <li >
+          <Link href={"/contact"} >contact</Link>
         </li>
         {!session ? (
           <>
@@ -124,7 +123,7 @@ export default function Header() {
               onClick={openMenu}
               className="relative flex flex-row items-center "
             >
-              <span className="scale-125 cursor-pointer btn btn-ghost">
+              <span className="cursor-pointer md:scale-125 btn btn-ghost">
                 <IconGear />
               </span>
               <div
@@ -143,7 +142,7 @@ export default function Header() {
                 <div className="flex flex-col w-full h-4 my-0">
                   <div className="divider"></div>
                 </div>
-                <ul className="w-64 gap-4 text-xl menu bg-base-200 rounded-box">
+                <ul className="w-64 gap-4 sm:text-xl menu bg-base-200 rounded-box">
                   <li>
                     <Link href={"/updateinfo"} onClick={closeMenu}>
                       Update User Info

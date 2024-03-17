@@ -2,7 +2,7 @@ import SplashHero from "@/components/SplashHero";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-row items-center justify-between p-12 bg-black max-w-screen-xl mx-auto">
+    <main className="flex flex-row items-center justify-between min-h-screen p-4 mx-auto bg-black max-w-screen-xl: sm:p-12">
       <SplashHero />
     </main>
   );

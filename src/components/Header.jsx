@@ -100,7 +100,7 @@ export default function Header() {
           <Link href={`/aboutus`} >about us</Link>
         </li>
         <li >
-          <Link href={"/plans2024"} >2024 plans</Link>
+          <Link href={"/plans2024"} >{`plans '24`}</Link>
         </li>
         <li >
           <Link href={"/contact"} >contact</Link>
@@ -117,7 +117,7 @@ export default function Header() {
         ) : (
           <>
             <li>
-              <Link href={"/registration"}>register 2024</Link>
+              <Link href={"/registration"}>register</Link>
             </li>
             <div
               onClick={openMenu}

@@ -14,14 +14,14 @@ export default function ConferenceName() {
     <Link href={"/"} className={amatic.className + ` z-10 text-white text-6xl flex flex-row `}>
       {letters.map((l, i) => (
         <motion.span
-          className={`z-10 ${l === " " ? "w-2" : ''}`} // Adjust space handling
-          initial={{ opacity: 0, x: 100, rotate: 720 }} // Start rotated -90 degrees
-          animate={{ opacity: 1, x: 0, rotate: 0 }} // End at rotate: 0 for upright position
+          className={`z-10 ${l === " " ? "w-2" : ''}`} 
+          initial={{ opacity: 0, x: 100, rotate: 720 }}
+          animate={{ opacity: 1, x: 0, rotate: 0 }}
           transition={{
-            delay: 0.5 + i * 0.15, // Slightly faster start and consistent stagger
+            delay: 0.5 + i * 0.15,
             type: "spring",
             stiffness: 100,
-            damping: 10, // Added damping for a bit of overshoot control
+            damping: 10,
           }}
           key={l + i}
         >

@@ -3,7 +3,7 @@ export default function AboutUs() {
   return (
     <div
       className={
-        special.className + " p-16 max-w-screen-xl mx-auto leading-8"
+        special.className + " p-4 sm:p-16 max-w-screen-xl mx-auto leading-8"
       }
     >
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>Who we are</h2>

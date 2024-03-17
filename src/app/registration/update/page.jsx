@@ -7,7 +7,7 @@ import { useStore } from "@/store/ZustandProvider";
 import UpdateSuccessful from "@/components/UpdateSuccessful";
 import Loading from "@/components/Loading";
 import PleaseRegister from "@/components/PleaseRegister";
-import { amatic, special } from "../app/fonts";
+import { amatic, special } from  '../../fonts'
 
 export default function UpdateRegistration() {
   const { data: session, status: loading } = useSession();

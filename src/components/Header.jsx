@@ -11,7 +11,7 @@ import IconUser from "./Icons/IconUser";
 import IconGear from "./Icons/IconGear";
 import Logo from "./Logo";
 import ConferenceName from "./ConferenceName";
-import { amatic, gloria } from "../app/fonts";
+import { gloria } from "../app/fonts";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
@@ -62,19 +62,6 @@ export default function Header() {
       className="flex flex-col items-center self-center w-screen max-w-screen-xl mx-auto h-fit"
       id="header"
     >
-      {/* <motion.div
-        className="z-10"
-        initial={{ opacity: 0, y: -200 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{delay: 1, duration: .5, type: "spring", stiffness: 200}}
-      >
-        <Link
-          href={"/"}
-          className={amatic.className + ` z-10 text-white text-6xl`}
-        >
-          Spokeswheel Conference
-        </Link>
-      </motion.div> */}
       <ConferenceName />
       <Image
         src={darkCampFire}
@@ -88,22 +75,18 @@ export default function Header() {
       />
 
       <Logo />
-      {/* <div className="z-10 w-32 ease-in-out svg-spin">
-        <WagonWheel />
-      </div> */}
+
       <ul
-        className={
-          `${gloria.className} menu menu-horizontal rounded-box z-10 w-full justify-around sm:text-xl mt-11 md:mt-40 `
-        }
+        className={`${gloria.className} menu menu-horizontal rounded-box z-10 w-full justify-around sm:text-xl mt-11 md:mt-40 `}
       >
-        <li >
-          <Link href={`/aboutus`} >about us</Link>
+        <li>
+          <Link href={`/aboutus`}>about us</Link>
         </li>
-        <li >
-          <Link href={"/plans2024"} >{`plans '24`}</Link>
+        <li>
+          <Link href={"/plans2024"}>{`plans '24`}</Link>
         </li>
-        <li >
-          <Link href={"/contact"} >contact</Link>
+        <li>
+          <Link href={"/contact"}>contact</Link>
         </li>
         {!session ? (
           <>
@@ -127,11 +110,12 @@ export default function Header() {
                 <IconGear />
               </span>
               <div
-                className={`absolute right-4 top-4 sm:top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-fit z-10 border-2  border-slate-700 scale-75 sm:scale-100 ${
-                  showMenu ? " scale-100" : " scale-0"
-                } ${gloria.className}`}
+                className={`${gloria.className} absolute right-4 top-4 sm:top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-fit z-10 border-2  border-slate-700  ${
+                  showMenu ? " scale-75 sm:scale-100" : " scale-0"
+                } `}
                 ref={ulRef}
               >
+
                 <div className="flex flex-row ml-4 text-xl ">
                   <IconUser />{" "}
                   <span className="ml-4 ">

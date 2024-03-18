@@ -59,7 +59,7 @@ export default function Header() {
     : null;
   return (
     <div
-      className="flex flex-col items-center self-center w-screen max-w-screen-xl mx-auto overflow-auto h-fit"
+      className="flex flex-col items-center self-center w-screen max-w-screen-xl mx-auto h-fit"
       id="header"
     >
       {/* <motion.div

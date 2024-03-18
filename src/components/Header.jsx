@@ -127,7 +127,7 @@ export default function Header() {
                 <IconGear />
               </span>
               <div
-                className={`absolute right-0 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-fit z-10 border-2  border-slate-700 ${
+                className={`absolute right-4 top-4 sm:top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-fit z-10 border-2  border-slate-700 scale-75 sm:scale-100 ${
                   showMenu ? " scale-100" : " scale-0"
                 } ${gloria.className}`}
                 ref={ulRef}

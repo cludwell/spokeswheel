@@ -82,7 +82,7 @@ export default function SignUpModal() {
               </div>
             ))}
 
-            <div className="flex flex-col gap-4 sm:grid sm:grid-cols-2 ">
+            <div className="flex flex-col gap-4 sm:grid sm:grid-cols-2">
               <label className="font-bold text-cyan-500" htmlFor="firstName">
                 First Name
               </label>

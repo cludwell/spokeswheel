@@ -59,8 +59,8 @@ export default function LogInModal() {
               </li>
             ))}
           </ul>
-          <div className="flex flex-col gap-4">
-            <label className="text-xl font-bold text-cyan-500" htmlFor="email">
+          <div className="flex flex-col gap-4 ">
+            <label className="font-bold md:text-xl text-cyan-500" htmlFor="email">
               Email
             </label>
             <input
@@ -70,11 +70,11 @@ export default function LogInModal() {
               value={email}
               onChange={handleChange}
               required
-              className="w-full max-w-xs input input-bordered input-primary"
+              className="w-full max-w-xs text-xs input input-bordered input-primary"
             />
             <div></div>
             <label
-              className="text-xl font-bold text-cyan-500 "
+              className="font-bold md:text-xl text-cyan-500 "
               htmlFor="password"
             >
               Password
@@ -86,7 +86,7 @@ export default function LogInModal() {
               value={password}
               onChange={handleChange}
               required
-              className="w-full max-w-xs input input-bordered input-accent"
+              className="w-full max-w-xs text-xs input input-bordered input-accent"
             />
           </div>
           <div className="flex flex-row justify-around mt-12">

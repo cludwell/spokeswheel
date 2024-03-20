@@ -70,7 +70,7 @@ export default function LogInModal() {
               value={email}
               onChange={handleChange}
               required
-              className="w-full max-w-xs text-xs input input-bordered input-primary"
+              className="w-full max-w-xs input input-bordered input-primary"
             />
             <div></div>
             <label
@@ -86,7 +86,7 @@ export default function LogInModal() {
               value={password}
               onChange={handleChange}
               required
-              className="w-full max-w-xs text-xs input input-bordered input-accent"
+              className="w-full max-w-xs input input-bordered input-accent"
             />
           </div>
           <div className="flex flex-row justify-around mt-12">

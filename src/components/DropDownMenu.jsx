@@ -65,6 +65,7 @@ export default function DropDownMenu() {
           <motion.div
             className={`${gloria.className} absolute right-4 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-fit z-10 border-2  border-slate-700 min-w-40  `}
             ref={ulRef}
+            initial="closed"
             animate={showMenu ? "open" : "closed"}
             variants={wrapperVariants}
             style={{ originY: "top" }}

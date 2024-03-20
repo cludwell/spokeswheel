@@ -12,6 +12,7 @@ import IconGear from "./Icons/IconGear";
 import Logo from "./Logo";
 import ConferenceName from "./ConferenceName";
 import { gloria } from "../app/fonts";
+import DropDownMenu from "./DropDownMenu";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
@@ -22,8 +23,8 @@ export default function Header() {
       bookings: state.bookings,
       fetchUsersBookings: state.fetchUsersBookings,
     }));
-  const [showMenu, setShowMenu] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
   const openMenu = () => {
     if (showMenu) return;
@@ -77,18 +78,18 @@ export default function Header() {
       <Logo />
 
       <ul
-        className={`${gloria.className} menu menu-horizontal rounded-box z-10 w-full justify-around sm:text-xl mt-11 md:mt-40 `}
+        className={`${gloria.className} flex flex-row rounded-box z-10 w-full justify-around sm:text-xl mt-11 md:mt-40 `}
       >
-        <li>
+        <li className="text-lg btn btn-ghost">
           <Link href={`/aboutus`}>about us</Link>
         </li>
-        <li>
+        <li className="text-lg btn btn-ghost">
           <Link href={"/plans2024"}>{`plans '24`}</Link>
         </li>
-        <li>
+        <li className="text-lg btn btn-ghost">
           <Link href={"/contact"}>contact</Link>
         </li>
-        {!session ? (
+        {/* {!session ? (
           <>
             <div>
               <LogInModal />
@@ -110,12 +111,13 @@ export default function Header() {
                 <IconGear />
               </span>
               <div
-                className={`${gloria.className} absolute right-4 top-4 sm:top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-fit z-10 border-2  border-slate-700  ${
+                className={`${
+                  gloria.className
+                } absolute right-4 top-4 sm:top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-fit z-10 border-2  border-slate-700  ${
                   showMenu ? " scale-75 sm:scale-100" : " scale-0"
                 } `}
                 ref={ulRef}
               >
-
                 <div className="flex flex-row ml-4 text-xl ">
                   <IconUser />{" "}
                   <span className="ml-4 ">
@@ -152,7 +154,8 @@ export default function Header() {
               </div>
             </div>
           </>
-        )}
+        )} */}
+        <DropDownMenu />
       </ul>
     </div>
   );

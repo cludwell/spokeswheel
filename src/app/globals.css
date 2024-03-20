@@ -47,4 +47,35 @@
 .fade-in {
   animation: fadeIn 0.5s forwards;
 }
+@keyframes spinIn {
+  from {
+    transform: rotateX(0deg);
+    scale: .75;
+  }
+  to {
+    scale: 1;
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes spinOut {
+  from {
+    transform: rotateX(360deg);
+    scale: 1;
+  }
+  to {
+    scale: .75;
+    transform: rotateX(0deg);
+  }
+}
+
+
+.spin-in {
+  animation: spinIn 0.5s forwards;
+}
+
+.spin-out {
+  animation: spinOut 0.5s forwards;
+}
+
 

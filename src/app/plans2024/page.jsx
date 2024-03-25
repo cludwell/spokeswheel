@@ -4,12 +4,9 @@ import CountDown from "@/components/CountDown";
 import { amatic, special } from "../fonts";
 
 export default function Plans2024() {
-
   return (
     <div
-      className={
-         `${special.className} p-4 sm:p-16 max-w-screen-xl mx-auto leading-8 min-h-screen`
-      }
+      className={`${special.className} p-4 sm:p-16 max-w-screen-xl mx-auto leading-8 min-h-screen`}
     >
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
         Location - Camp Seawood
@@ -42,8 +39,12 @@ export default function Plans2024() {
         <CountDown />
       </div>
       <h2 className={amatic.className + " my-12 text-5xl"}>Workshops</h2>
+      <p className="my-8 fade-in">
+        {" "}
+        {`The following is just a joke, we'll let you know the real workshops once some are submitted!`}
+      </p>
       <div className="flex flex-row justify-center w-full overflow-x-auto">
-        <table className="table-xs sm:table-sm md:table-lg table-zebra">
+        <table className="table-xs sm:table-sm md:table-lg table-zebra bg-base-300 rounded-xl">
           {/* head */}
           <thead>
             <tr>

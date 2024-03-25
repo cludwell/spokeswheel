@@ -61,6 +61,9 @@ export default function Header() {
         <li className="text-sm btn btn-ghost sm:text-lg">
           <Link href={"/contact"}>contact</Link>
         </li>
+        <li className="text-sm btn btn-ghost sm:text-lg">
+          <Link href={"/registration"}>register</Link>
+        </li>
         <DropDownMenu />
       </ul>
     </div>

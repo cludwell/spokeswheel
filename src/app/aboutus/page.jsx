@@ -20,31 +20,31 @@ export default function AboutUs() {
       </p>
 
       <ul className="ml-4 fade-in">
-        <li className="flex flex-row">
+        <li className="flex flex-row my-2">
           <div className="w-6 mx-2 ">👩🏾‍🤝‍🧑🏻</div>
           <div>Consensus decision making</div>
         </li>
-        <li className="flex flex-row">
+        <li className="flex flex-row my-2">
           <div className="w-6 mx-2 ">🌎</div>
           <div>Prefiguring the world we want to see</div>
         </li>
-        <li className="flex flex-row">
+        <li className="flex flex-row my-2">
           <div className="w-6 mx-2 ">✊</div>
           <div>Workshops on collective liberation</div>
         </li>
-        <li className="flex flex-row">
+        <li className="flex flex-row my-2">
           <div className="w-6 mx-2 ">🎁</div>
           <div>Being present in the moment</div>
         </li>
-        <li className="flex flex-row">
+        <li className="flex flex-row my-2">
           <div className="w-6 mx-2 ">🚨</div>
           <div>Not policing each other</div>
         </li>
-        <li className="flex flex-row">
+        <li className="flex flex-row my-2">
           <div className="w-6 mx-2 ">👨🏼‍💻</div>
           <div>Intentionally disconnecting from technology</div>
         </li>
-        <li className="flex flex-row">
+        <li className="flex flex-row my-2">
           <div className="w-6 mx-2 ">🤝🏼</div>
           <div>Being anti-racist</div>
         </li>
@@ -53,39 +53,39 @@ export default function AboutUs() {
         What To Expect
       </h2>
       <p className="my-8 ">{`This community is what we make of it. Think of it as a stone soup, where everyone is contributing brings something to contribute. As this will be our first conference, we're still imagining what this could be. We've floated ideas of traveling the country together, going on a backpacking trip through a national park to an isolated hot spring, or staying in a haunted hotel on an island. Everything here is a living document open to change with your participation. The general structure to expect is: `}</p>
-      <ul className="ml-4">
-        <li className="flex flex-row">
-          <div className="w-6 mx-2 ">👨🏼🏕</div>
-          <div className="w-12 text-center">
+      <ul className="ml-4 ">
+        <li className="flex flex-row my-2">
+          <div className="w-6 mx-2 ">🏕</div>
+          <div className="">
             Summer camp for all ages if summer camp were punk rock.
           </div>
         </li>
-        <li className="flex flex-row">
+        <li className="flex flex-row my-2">
           <div className="w-6 mx-2 ">👨🏼‍🍳</div>
           <div>
             {`Cooking giant amounts of food and eating collective meals together.`}
           </div>
         </li>
-        <li className="flex flex-row">
+        <li className="flex flex-row my-2">
           <div className="w-6 mx-2 ">👩🏼‍🏫</div>
           <div>
             {`Workshops on things we're passionate about during the day.`}
           </div>
         </li>
-        <li className="flex flex-row">
+        <li className="flex flex-row my-2">
           <div className="w-6 mx-2 ">🧘‍♂️</div>
           <div>
             {`Evening worship, some reflection about this human experience, completely voluntary.`}
           </div>
         </li>
-        <li className="flex flex-row">
+        <li className="flex flex-row" my-2>
           <div className="w-6 mx-2 ">👨‍👩‍👦‍👦</div>
           <div>
             {`Break out groups, called family groups, to foster building connections
           with other conferees.`}
           </div>
         </li>
-        <li className="flex flex-row">
+        <li className="flex flex-row my-2">
           <div className="w-6 mx-2 ">🎸</div>
           <div>
             {`A coffee house at the end of the conference, a time to play music, sing, or share some other performance, completely voluntary. In the past this has looked like a punk show in the middle of the woods.`}

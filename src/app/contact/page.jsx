@@ -8,7 +8,7 @@ export default function ContactUs() {
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
         Contact Us
       </h2>
-      <p className="my-8 ">
+      <p className="my-8 fade-in">
         {`Questions? Suggestions? Would you like to participate in the planning? We need your help! We can't emphasis enough that this conference is what each one of us brings to it. Please think about planning a workshop, a meditation/worship, or start practicing a few songs to perform. As an organization we're rather ad hoc at the moment but you're welcome to reach out about joining our meetings if interested. If you would like to participate we need help with the following roles.`}
       </p>
       <ul className="m-8 fade-in">
@@ -18,7 +18,7 @@ export default function ContactUs() {
         </li>
       </ul>
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>Website </h2>
-      <p className="my-8 ">
+      <p className="my-8 fade-in">
         {`For any technical problems with registration or the website, please
         email me at `}
         <a className="link link-error" href="mailto:cludwell@gmail.com">
@@ -28,7 +28,7 @@ export default function ContactUs() {
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
         Workshop Coordinator
       </h2>
-      <p className="my-8 ">
+      <p className="my-8 fade-in">
         {`Sarah Mc is our workshop coordinator. The workshops that will be available will be the ones that attendees plan! So please think if there is something you would like to share? A report back from an important demonstration or protest? A history of a niche subject? Making pottery from foraged clay? `}
       </p>
       <p className="my-8 ">

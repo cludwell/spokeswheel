@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import PleaseSignIn from "@/components/PleaseSignIn";
 import { useStore } from "@/store/ZustandProvider";
 import { amatic, special } from "../fonts";
+import IconInfo from "@/components/Icons/IconInfo";
 
 export default function Register() {
   const { data: session, status: loading } = useSession();
@@ -128,7 +129,7 @@ export default function Register() {
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
-              <div className="text-2xl ">Emergency Contact </div>
+              <div className="text-xl ">Emergency Contact </div>
               <div></div>
               <label className="text-xl font-bold " htmlFor="emergencyName">
                 - Name
@@ -144,7 +145,7 @@ export default function Register() {
                   className="w-full max-w-xs input input-bordered input-primary"
                 />
                 {errors && errors.emergencyName && (
-                  <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-2xl fade-in w-80">
+                  <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-xl fade-in w-80">
                     <IconExclamation /> {errors.emergencyName}
                   </div>
                 )}
@@ -166,7 +167,7 @@ export default function Register() {
                   className="w-full max-w-xs input input-bordered input-secondary"
                 />
                 {errors && errors.emergencyNumber && (
-                  <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-2xl fade-in w-80">
+                  <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-xl fade-in w-80">
                     <IconExclamation /> {errors.emergencyNumber}
                   </div>
                 )}
@@ -186,7 +187,7 @@ export default function Register() {
                   className="w-full max-w-xs input input-bordered input-accent"
                 />
                 {errors && errors.emergencyRelation && (
-                  <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-2xl fade-in w-80">
+                  <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-xl fade-in w-80">
                     <IconExclamation /> {errors.emergencyRelation}
                   </div>
                 )}
@@ -214,7 +215,7 @@ export default function Register() {
                   <option value={"Vegetarian"}>Vegetarian</option>
                 </select>
                 {errors && errors.dietaryRestrictions && (
-                  <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-2xl fade-in w-80">
+                  <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-xl fade-in w-80">
                     <IconExclamation /> {errors.dietaryRestrictions}
                   </div>
                 )}
@@ -238,10 +239,13 @@ export default function Register() {
                   <option value={"Adirondacks"}>Adirondacks</option>
                 </select>
                 {errors && errors.lodging && (
-                  <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-2xl fade-in w-80">
+                  <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-xl fade-in w-80">
                     <IconExclamation /> {errors.lodging}
                   </div>
                 )}
+                <div className="flex flex-row p-3 my-3 bg-yellow-300 border-2 border-yellow-900 rounded-xl text-yellow-950 fade-in w-80">
+                  <span className="mr-3"><IconInfo /></span> Cost of Adirondacks are about $7 more per night, please be aware that supply is extremely limited.
+                </div>
               </div>
               <label className="text-xl font-bold " htmlFor="allergies">
                 Allergies

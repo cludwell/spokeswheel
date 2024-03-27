@@ -7,7 +7,7 @@ import { useStore } from "@/store/ZustandProvider";
 import UpdateSuccessful from "@/components/UpdateSuccessful";
 import Loading from "@/components/Loading";
 import PleaseRegister from "@/components/PleaseRegister";
-import { amatic, special } from  '../../fonts'
+import { amatic, special } from "../../fonts";
 
 export default function UpdateRegistration() {
   const { data: session, status: loading } = useSession();
@@ -38,6 +38,7 @@ export default function UpdateRegistration() {
     notes: "",
     specialAccomodations: "",
     lodging: "",
+    paymentAmount: 0
   });
 
   const {
@@ -66,6 +67,7 @@ export default function UpdateRegistration() {
   }
 
   const booking = bookings.filter((b) => b.conferenceId == 1)[0];
+  console.log('booking ================', booking)
   useEffect(() => {
     setUserData({
       emergencyName: booking?.emergencyName ? booking?.emergencyName : "",
@@ -82,6 +84,7 @@ export default function UpdateRegistration() {
         ? booking?.specialAccomodations
         : "",
       lodging: booking?.lodging ? booking?.lodging : "",
+      paymentAmount: booking?.paymentAmount ? booking?.paymentAmount : 0
     });
   }, [
     booking?.emergencyName,
@@ -96,6 +99,7 @@ export default function UpdateRegistration() {
     booking?.emailList,
     booking?.photoConsent,
     booking?.textUpdates,
+    booking?.paymentAmount
   ]);
 
   useEffect(() => {
@@ -371,6 +375,10 @@ export default function UpdateRegistration() {
               value={emailList}
               onChange={() => setEmailList((prev) => !prev)}
             />
+            <div className="divider mr-[-1rem]"></div>
+            <div className="divider "></div>
+            <p className="flex flex-row text-xl font-bold ">Total</p>
+            <p className="flex flex-row text-xl ">${userData?.paymentAmount}</p>
           </div>
           <button
             className="mt-12 mb-4 text-xl btn btn-accent btn-wide"

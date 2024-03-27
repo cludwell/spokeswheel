@@ -37,6 +37,7 @@ export async function POST(req, res) {
         notes,
         specialAccomodations,
         lodging,
+        paymentAmount
       } = await req.json();
       const userId = parseInt(token.sub);
 
@@ -45,6 +46,7 @@ export async function POST(req, res) {
           conferenceId: conferenceId,
           photoConsent: photoConsent,
           paid: paid,
+          paymentAmount: paymentAmount,
           emergencyName: emergencyName,
           emergencyNumber: emergencyNumber,
           emergencyRelation: emergencyRelation,

@@ -41,12 +41,16 @@ export default function Register() {
     notes,
     specialAccomodations,
     lodging,
-    paymentAmount
+    paymentAmount,
   } = userData;
 
-  useEffect(()=> {
-    if (lodging) setUserData(prev=> ({...prev, paymentAmount: lodging == "Adirondacks" ? 105: 81}))
-  },[lodging])
+  useEffect(() => {
+    if (lodging)
+      setUserData((prev) => ({
+        ...prev,
+        paymentAmount: lodging == "Adirondacks" ? 105 : 81,
+      }));
+  }, [lodging]);
 
   function formatPhoneNumber(value) {
     if (!value) return value;
@@ -331,6 +335,10 @@ export default function Register() {
                 value={emailList}
                 onChange={() => setEmailList((prev) => !prev)}
               />
+              <div className="divider mr-[-1rem]"></div>
+              <div className="divider "></div>
+              <p className="flex flex-row text-xl font-bold ">Total</p>
+              <p className="flex flex-row text-xl ">${paymentAmount}</p>
             </div>
             <button
               className="mt-12 mb-4 text-xl btn btn-accent btn-wide"
@@ -340,7 +348,6 @@ export default function Register() {
             </button>
           </form>
         )}
-        <p>{paymentAmount}</p>
       </div>
     </>
   );

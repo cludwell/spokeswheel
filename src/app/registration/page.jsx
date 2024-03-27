@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import IconExclamation from "@/components/Icons/IconExclamation";
 import { useSession } from "next-auth/react";
 import PleaseSignIn from "@/components/PleaseSignIn";
@@ -29,6 +29,7 @@ export default function Register() {
     notes: "",
     specialAccomodations: "",
     lodging: "",
+    paymentAmount: 0,
   });
 
   const {
@@ -40,7 +41,13 @@ export default function Register() {
     notes,
     specialAccomodations,
     lodging,
+    paymentAmount
   } = userData;
+
+  useEffect(()=> {
+    if (lodging) setUserData(prev=> ({...prev, paymentAmount: lodging == "Adirondacks" ? 105: 81}))
+  },[lodging])
+
   function formatPhoneNumber(value) {
     if (!value) return value;
     const phoneNumber = value.replace(/[^\d]/g, "");
@@ -78,6 +85,7 @@ export default function Register() {
       }));
     }
   };
+
   const validate = () => {
     const err = {};
     if (!emergencyName || emergencyName.length < 6)
@@ -244,7 +252,11 @@ export default function Register() {
                   </div>
                 )}
                 <div className="flex flex-row p-3 my-3 bg-yellow-300 border-2 border-yellow-900 rounded-xl text-yellow-950 fade-in w-80">
-                  <span className="mr-3"><IconInfo /></span> Cost of Adirondacks are about $7 more per night, please be aware that supply is extremely limited.
+                  <span className="block mr-3">
+                    <IconInfo />
+                  </span>{" "}
+                  Cost of Adirondacks are about $7 more per night, please be
+                  aware that supply is extremely limited.
                 </div>
               </div>
               <label className="text-xl font-bold " htmlFor="allergies">
@@ -328,6 +340,7 @@ export default function Register() {
             </button>
           </form>
         )}
+        <p>{paymentAmount}</p>
       </div>
     </>
   );

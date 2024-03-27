@@ -16,6 +16,7 @@ async function seedUsers() {
             {
               photoConsent: true,
               paid: false,
+              paymentAmount: 84.00,
               emergencyName: "Kathleen Ludwell",
               emergencyNumber: "352-593-5067",
               emergencyRelation: "Mother",
@@ -106,6 +107,7 @@ async function seedUsers() {
   } finally {
     await prisma.$disconnect();
   }
+
 }
 async function seedConferences() {
   try {

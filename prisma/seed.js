@@ -40,9 +40,9 @@ async function seedUsers() {
   try {
     await prisma.users.create({
       data: {
-        firstName: "Bryce",
-        lastName: "Dagenais",
-        email: "bryce.dagenais86@gmail.com",
+        firstName: "Demo",
+        lastName: "User",
+        email: "demouser@gmail.com",
         hashedPassword:
           "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         dateOfBirth: new Date(1986, 3, 1),
@@ -51,8 +51,8 @@ async function seedUsers() {
             {
               photoConsent: true,
               paid: false,
-              emergencyName: "Mark Dagenais",
-              emergencyNumber: "603-494-6325",
+              emergencyName: "Papa Demo",
+              emergencyNumber: "123-456-7890",
               emergencyRelation: "Father",
               emailList: true,
               textUpdates: true,
@@ -74,9 +74,9 @@ async function seedUsers() {
   try {
     await prisma.users.create({
       data: {
-        firstName: "Matt",
-        lastName: "Morin",
-        email: "matthewpatrickmorin@gmail.com",
+        firstName: "Hank",
+        lastName: "Hill",
+        email: "propaneguy@gmail.com",
         hashedPassword:
           "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         dateOfBirth: new Date(1984, 3, 1),
@@ -85,9 +85,9 @@ async function seedUsers() {
             {
               photoConsent: true,
               paid: false,
-              emergencyName: "Starla",
-              emergencyNumber: "Need to update",
-              emergencyRelation: "Partner",
+              emergencyName: "Bobby",
+              emergencyNumber: "098-765-4331",
+              emergencyRelation: "Son",
               emailList: true,
               textUpdates: true,
               dietaryRestrictions: "Omnivore",

@@ -54,7 +54,7 @@ const handler = NextAuth({
           credentials.password,
           user.hashedPassword
         );
-        if (!isValid) throw new Error("Password doesnt match");
+        if (!isValid) throw new Error("badpassword");
 
         return user;
       },

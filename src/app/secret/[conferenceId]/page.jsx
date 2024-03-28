@@ -20,8 +20,16 @@ export default function Secret({ params }) {
     if (session && conferenceId) loadUsers();
   }, [session, fetchAllBookings, conferenceId]);
   console.log("ALL BOOKINGS================", allBookings);
-  if (user?.email != "cludwell@gmail.com") return <PleaseSignIn />;
-  // if (!loaded) return <Loading />
+  const validEmails = [
+    "cludwell@gmail.com",
+    "bryce.dagenais86@gmail.com",
+    "matthewpatrickmorin@gmail.com",
+    "smcmullen719@gmail.com",
+    "jareddefrancesco@gmail.com",
+    "mkguilfoyle90@gmail.com",
+  ];
+  if (!validEmails.includes(user?.email)) return <PleaseSignIn />;
+  if (!loaded) return <Loading />;
   return (
     <div className={" p-16 max-w-screen-xl min-h-screen mx-auto leading-8"}>
       {allBookings.map((book, i) => (

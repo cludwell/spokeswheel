@@ -68,7 +68,7 @@ export default function BookingData({ booking }) {
       <div className="ml-6 ">
         <span>paymentIntentId: </span>
         <span>
-          {booking?.paymentIntentId ? booking.paymentIntentId : "null"} ,
+          {booking?.paymentIntentId ? booking.paymentIntentId : "null"},
         </span>
       </div>
       <div className="ml-6 ">
@@ -97,7 +97,7 @@ export default function BookingData({ booking }) {
       <div className="ml-6 ">
         <span>emergencyRelation: </span>
         <span>
-          {booking?.emergencyRelation ? booking.emergencyRelation : "null"},
+          &quot;{booking?.emergencyRelation ? booking.emergencyRelation : "null"}&quot; ,
         </span>
       </div>
       <div className="ml-6 ">

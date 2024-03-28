@@ -1,6 +1,7 @@
 import { Prisma, PrismaClient } from "@prisma/client";
 import { getToken } from "next-auth/jwt";
 import { isDynamicServerError } from "next/dist/client/components/hooks-server-context";
+import { Ruthie } from "next/font/google";
 const prisma = new PrismaClient();
 export async function GET(req, res) {
   if (req.method == "GET") {
@@ -29,9 +30,24 @@ export async function GET(req, res) {
           conferenceId: conferenceId,
         },
         include: {
-          user: true,
+          user: {
+            select: {
+              id: true,
+              firstName: true,
+              lastName: true,
+              email: true,
+              dateOfBirth: true,
+              createdAt: true,
+              updatedAt: true,
+              bookings: false,
+              hashedPassword: false
+            },
+          },
         },
       });
+
+      console.log("BOOKINGS ROUTE======================", bookings);
+
       if (bookings) {
         return new Response(JSON.stringify({ bookings: bookings }), {
           status: 200,

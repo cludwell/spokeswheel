@@ -136,7 +136,7 @@ const createStore = create((set) => ({
     if (response.ok) {
       const data = await response.json();
       set({
-        allBookings: [...data],
+        allBookings: [...data.bookings],
       });
     }
   },

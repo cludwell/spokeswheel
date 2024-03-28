@@ -37,7 +37,7 @@ export async function POST(req, res) {
         notes,
         specialAccomodations,
         lodging,
-        paymentAmount
+        paymentAmount,
       } = await req.json();
       const userId = parseInt(token.sub);
 
@@ -47,6 +47,8 @@ export async function POST(req, res) {
           photoConsent: photoConsent,
           paid: paid,
           paymentAmount: paymentAmount,
+          paymentIntentId: paymentIntentId,
+          paymentMethodId: paymentMethodId,
           emergencyName: emergencyName,
           emergencyNumber: emergencyNumber,
           emergencyRelation: emergencyRelation,

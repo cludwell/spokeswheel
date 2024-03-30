@@ -4,7 +4,7 @@ import { amatic, gloria } from "../app/fonts";
 export default function SplashHero() {
   return (
     <div
-      className="min-h-screen hero"
+      className="max-w-screen-lg min-h-screen hero"
       style={{
         backgroundImage: "url(/images/sparks.jpg)",
       }}

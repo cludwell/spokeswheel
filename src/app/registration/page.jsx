@@ -348,6 +348,7 @@ export default function Register() {
             </button>
           </form>
         )}
+        <a href="https://buy.stripe.com/test_28og304TG5lQ97G6oo" className="text-xl btn btn-wide btn-info">Stripe</a>
       </div>
     </>
   );

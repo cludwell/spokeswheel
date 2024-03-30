@@ -24,6 +24,18 @@ Prisma commands
 
 git ls-files | xargs wc -l
 
+INSTALLING STRIPE CLI
+
+curl -L https://github.com/stripe/stripe-cli/releases/download/v1.14.0/stripe_1.14.0_linux_x86_64.tar.gz > stripe.tar.gz
+
+After unarchiving it
+tar -xvf stripe.tar.gz
+
+Remove unused archive
+rm -f stripe.tar.gz
+
+Done ✅ Your stripe-cli is ready, try to check
+./stripe --help
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

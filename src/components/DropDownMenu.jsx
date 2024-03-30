@@ -101,6 +101,8 @@ export default function DropDownMenu() {
                   Update User Info
                 </Link>
               </motion.li>
+              {!!bookings.length ? (
+                <>
               <motion.li
                 variants={itemVariants}
                 className="flex flex-row p-1 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
@@ -114,7 +116,6 @@ export default function DropDownMenu() {
                   Update Registration
                 </Link>
               </motion.li>
-              {!!bookings.length && (
                 <motion.li
                   variants={itemVariants}
                   className="flex flex-row p-1 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
@@ -126,6 +127,21 @@ export default function DropDownMenu() {
                     className="ml-4 "
                   >{`Cancel Registration `}</Link>
                 </motion.li>
+                </>
+              ) : (
+                <motion.li
+                variants={itemVariants}
+                className="flex flex-row p-1 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
+              >
+                <IconClipboard />
+                <Link
+                  href={"/registration"}
+                  onClick={closeMenu}
+                  className="ml-4 "
+                >
+                  Register!
+                </Link>
+              </motion.li>
               )}
               <motion.li
                 variants={itemVariants}

@@ -6,15 +6,16 @@ import PleaseSignIn from "@/components/PleaseSignIn";
 import { useStore } from "@/store/ZustandProvider";
 import { amatic, special } from "../fonts";
 import IconInfo from "@/components/Icons/IconInfo";
-
+import { useRouter } from "next/navigation";
 export default function Register() {
   const { data: session, status: loading } = useSession();
-  const { bookings, createBooking } = useStore();
+  const { bookings, createBooking, fetchUserBookings } = useStore();
   const [errors, setErrors] = useState({});
   const [emailList, setEmailList] = useState(false);
   const [photoConsent, setPhotoConsent] = useState(false);
   const [textUpdates, setTextUpdates] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
   let [userData, setUserData] = useState({
     conferenceId: 1,
     photoConsent: false,
@@ -30,6 +31,8 @@ export default function Register() {
     specialAccomodations: "",
     lodging: "",
     paymentAmount: 0,
+    paymentIntentId: null,
+    paymentMethodId: null,
   });
 
   const {
@@ -51,6 +54,15 @@ export default function Register() {
         paymentAmount: lodging == "Adirondacks" ? 105 : 81,
       }));
   }, [lodging]);
+
+  useEffect(() => {
+    const loadData = async () => {
+      fetchUserBookings();
+    };
+    loadData()
+    if (bookings.length && bookings[0]?.paid == true) router.push("/registration/success");
+
+  }, [fetchUserBookings, bookings,router]);
 
   function formatPhoneNumber(value) {
     if (!value) return value;
@@ -115,6 +127,7 @@ export default function Register() {
       setSubmitted(true);
     }
   };
+  console.log("bookings", bookings);
   let booked = bookings.filter((b) => b.conferenceId == 1);
   if (!session) return <PleaseSignIn />;
   return (
@@ -128,12 +141,18 @@ export default function Register() {
         <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
           2024 Registration At Camp Seawood!
         </h2>
-        {!!booked.length || submitted ? (
+        {booked.paid == false && submitted ? (
           <div className="flex flex-col items-center justify-center w-full">
             <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
-              {`✅We'll see you there!`}
+              {`💸All that's Left is Payment💸`}
             </h2>
-            <p className="fade-in">{`Your registration is complete! We're looking forward to seeing you at the conference!`}</p>
+            <p className="fade-in">{`For the time being all registration fees are nonrefundable.`}</p>
+            <a
+              href={`https://buy.stripe.com/test_28og304TG5lQ97G6oo?client_reference_id=${session.user.id}`}
+              className="my-12 text-xl btn btn-wide btn-info"
+            >
+              Stripe
+            </a>
           </div>
         ) : (
           <form
@@ -348,7 +367,6 @@ export default function Register() {
             </button>
           </form>
         )}
-        <a href="https://buy.stripe.com/test_28og304TG5lQ97G6oo" className="text-xl btn btn-wide btn-info">Stripe</a>
       </div>
     </>
   );

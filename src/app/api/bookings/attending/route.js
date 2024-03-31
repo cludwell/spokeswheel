@@ -38,6 +38,8 @@ export async function POST(req, res) {
         specialAccomodations,
         lodging,
         paymentAmount,
+        paymentIntentId,
+        paymentMethodId
       } = await req.json();
       const userId = parseInt(token.sub);
 

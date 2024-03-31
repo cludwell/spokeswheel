@@ -1,19 +1,18 @@
 import Stripe from "stripe";
-import getRawBody from "raw-body";
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: "2023-10-16",
-});
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
+const stripe = require("stripe")(process.env.WEBHOOK_SECRET);
 const endpointSecret = process.env.WEBHOOK_SECRET;
 // not doing this results in a next.js 'stream not readable error'
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+// export const config = {
+//   api: {
+//     bodyParser: false,
+//   },
+// };
 
 export async function POST(req, res) {
   try {
-    console.log("req.headers", req.headers);
+    // console.log("req.headers", req.headers);
     if (req.method !== "POST")
       return new Response(
         JSON.stringify({ error: "Only POST requests allowed" }),
@@ -24,11 +23,15 @@ export async function POST(req, res) {
           },
         }
       );
-    const sig = req.headers["stripe-signature"];
-    const rawBody = await getRawBody(req);
-    let event;
+    const sig = req.headers.get("stripe-signature");
+    const rawBody = await req.text(); //getRawBody(req);
+    // console.log("rawbody", rawBody);
+    let event, userId;
+    // console.log("BEFORE TRY CATCH=================================",);
     try {
+      // console.log('BEFORE EVENT')
       event = stripe.webhooks.constructEvent(rawBody, sig, endpointSecret);
+      // console.log("event", event.data.object.receipt_email);
     } catch (err) {
       return new Response(
         JSON.stringify({ "Webhook Error": `${err.message}` }),
@@ -40,14 +43,21 @@ export async function POST(req, res) {
         }
       );
     }
-    console.log("event.type", JSON.stringify(event.type));
-    if (event.type == "checkout.session.completed") {
+    let userEmail;
+
+    if (
+      event.type == "checkout.session.completed" ||
+      event.type == "charge.succeeded"
+    ) {
       const sessionWithLineItems = await stripe.checkout.sessions.retrieve(
         event.data.object.id,
         {
           expand: ["line_items"],
         }
       );
+      // console.log("session ===========================", sessionWithLineItems);
+
+      userEmail = event.data.object.receipt_email;
       const lineItems = sessionWithLineItems.line_items;
       if (!lineItems)
         return new Response(
@@ -59,12 +69,36 @@ export async function POST(req, res) {
             },
           }
         );
-
+      const session = event.data.object;
+      console.log("SESSION", session.metadata);
       try {
         // business logic, save the data, change customer account info etc
       } catch (error) {
         console.error("LINE ITEM ERROR", error);
       }
+    }
+    // find the booking and update the paid status
+    const user = await prisma.users.findFirst({
+      where: {
+        email: userEmail,
+      },
+    });
+    if (user) {
+      const booking = await prisma.bookings.findFirst({
+        where: {
+          conferenceId: 1,
+          userId: user.id
+        },
+      });
+      const updated = await prisma.bookings.update({
+        where: {
+          id: booking.id
+        },
+        data: {
+          paid: true,
+        },
+      })
+      console.log("BOOOOOOKING", updated);
     }
     return new Response(JSON.stringify({ message: "success!" }), {
       status: 200,

@@ -33,7 +33,8 @@ export default function CancelRegistration() {
       setLoaded(true);
     };
     loadData();
-  }, [fetchUsersBookings]);
+  }, [fetchUsersBookings,bookings]);
+
   const handleCancel = async (e) => {
     e.preventDefault();
     if (booking.id) {

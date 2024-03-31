@@ -24,7 +24,7 @@ export async function GET(req, res) {
         );
       }
       const conferenceId = parseInt(req.url.split("/").at(-1));
-      console.log("ENTERING ROUTE======================", conferenceId);
+      // console.log("ENTERING ROUTE======================", conferenceId);
       const bookings = await prisma.bookings.findMany({
         where: {
           conferenceId: conferenceId,
@@ -46,7 +46,7 @@ export async function GET(req, res) {
         },
       });
 
-      console.log("BOOKINGS ROUTE======================", bookings);
+      // console.log("BOOKINGS ROUTE======================", bookings);
 
       if (bookings) {
         return new Response(JSON.stringify({ bookings: bookings }), {

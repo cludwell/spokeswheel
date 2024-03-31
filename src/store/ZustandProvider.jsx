@@ -52,6 +52,7 @@ const createStore = create((set) => ({
   },
   createBooking: async (userData) => {
     try {
+      console.log('entering backend fetch')
       const response = await fetch("/api/bookings/attending", {
         method: "POST",
         headers: {
@@ -59,11 +60,12 @@ const createStore = create((set) => ({
         },
         body: JSON.stringify(userData),
       });
+      console.log('response went to backend')
       if (response.ok) {
         const bookingData = await response.json();
         set({ bookings: [bookingData] });
       } else {
-        console.error("There was an error assigning state or on backend.");
+        console.error("Bad response from the backend.");
       }
     } catch (error) {
       console.error("There was a problem registering the user.");
@@ -131,7 +133,6 @@ const createStore = create((set) => ({
     }
   },
   fetchAllBookings: async (conferenceId) => {
-    console.log("zuuuuuustand", conferenceId);
     const response = await fetch(`/api/bookings/conference/${conferenceId}`);
     if (response.ok) {
       const data = await response.json();

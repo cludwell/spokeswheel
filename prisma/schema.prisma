@@ -22,6 +22,7 @@ model Users {
   dateOfBirth    DateTime   @db.Timestamptz()
   createdAt      DateTime   @default(now()) @db.Timestamptz()
   updatedAt      DateTime   @default(now()) @db.Timestamptz()
+  phoneNumber    String?    @db.VarChar(255)
   bookings       Bookings[]
 
   @@map("users")

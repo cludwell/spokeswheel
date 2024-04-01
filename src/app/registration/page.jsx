@@ -7,6 +7,7 @@ import { useStore } from "@/store/ZustandProvider";
 import { amatic, special } from "../fonts";
 import IconInfo from "@/components/Icons/IconInfo";
 import { useRouter } from "next/navigation";
+import Loading from "@/components/Loading";
 export default function Register() {
   const { data: session, status: loading } = useSession();
   const { bookings, createBooking, fetchUserBookings } = useStore();
@@ -15,6 +16,7 @@ export default function Register() {
   const [photoConsent, setPhotoConsent] = useState(false);
   const [textUpdates, setTextUpdates] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [loaded, setLoaded] = useState(false)
   const router = useRouter();
   let [userData, setUserData] = useState({
     conferenceId: 1,
@@ -58,6 +60,7 @@ export default function Register() {
   useEffect(() => {
     const loadData = async () => {
       fetchUserBookings();
+      setLoaded(true)
     };
     loadData()
     if (bookings.length && bookings[0]?.paid == true) router.push("/registration/success");
@@ -91,7 +94,7 @@ export default function Register() {
       const formattedPhoneNumber = formatPhoneNumber(value);
       setUserData((prevState) => ({
         ...prevState,
-        [name]: formattedPhoneNumber, // Use the formatted number
+        [name]: formattedPhoneNumber, 
       }));
     } else {
       // For all other inputs, use the value as-is
@@ -130,6 +133,7 @@ export default function Register() {
   console.log("bookings", bookings);
   let booked = bookings.filter((b) => b.conferenceId == 1);
   if (!session) return <PleaseSignIn />;
+  if (!loaded) return <Loading />
   return (
     <>
       <div

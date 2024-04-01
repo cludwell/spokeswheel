@@ -3,12 +3,6 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 const stripe = require("stripe")(process.env.WEBHOOK_SECRET);
 const endpointSecret = process.env.WEBHOOK_SECRET;
-// not doing this results in a next.js 'stream not readable error'
-// export const config = {
-//   api: {
-//     bodyParser: false,
-//   },
-// };
 
 export async function POST(req, res) {
   try {

@@ -11,9 +11,17 @@ export default function SignUpModal() {
     dateOfBirth: new Date().t,
     email: "",
     password: "",
+    phoneNumber: "",
   });
-  const { firstName, lastName, dateOfBirth, email, password, confirmPassword } =
-    userData;
+  const {
+    firstName,
+    lastName,
+    dateOfBirth,
+    email,
+    password,
+    confirmPassword,
+    phoneNumber,
+  } = userData;
 
   const validate = () => {
     const err = [];
@@ -32,13 +40,34 @@ export default function SignUpModal() {
     return err;
   };
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUserData({
-      ...userData,
-      [name]: value,
-    });
+    const { name, value, type } = e.target;
+    if (name == "phoneNumber") {
+      const formattedPhoneNumber = formatPhoneNumber(value);
+      setUserData((prev) => ({
+        ...prev,
+        [name]: formattedPhoneNumber,
+      }));
+    } else {
+      setUserData({
+        ...userData,
+        [name]: value,
+      });
+    }
+    console.log("userdata", userData);
   };
-
+  function formatPhoneNumber(value) {
+    if (!value) return value;
+    const phoneNumber = value.replace(/[^\d]/g, "");
+    const phoneNumberLength = phoneNumber.length;
+    if (phoneNumberLength < 4) return phoneNumber;
+    if (phoneNumberLength < 7) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+    }
+    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(
+      3,
+      6
+    )}-${phoneNumber.slice(6, 10)}`;
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
@@ -68,7 +97,7 @@ export default function SignUpModal() {
         sign up
       </button>
       <Modal open={open} setOpen={setOpen}>
-        <div className="overflow-y-auto max-h-[80vh] ">
+        <div className="overflow-y-auto max-h-[80vh]  ">
           <h1 className={" text-center text-xl sm:text-3xl font-bold mb-6"}>
             Sign Up
           </h1>
@@ -93,7 +122,7 @@ export default function SignUpModal() {
                 value={firstName}
                 onChange={handleChange}
                 required
-                className="w-full max-w-xs input input-bordered input-primary"
+                className="w-full max-w-xs input input-sm sm:input-md input-bordered input-primary"
               />
               <label className="font-bold text-cyan-500" htmlFor="lastName">
                 Last Name
@@ -105,7 +134,7 @@ export default function SignUpModal() {
                 value={lastName}
                 onChange={handleChange}
                 required
-                className="w-full max-w-xs input input-bordered input-secondary"
+                className="w-full max-w-xs input input-sm sm:input-md input-bordered input-secondary"
               />
               <label className="font-bold text-cyan-500" htmlFor="dateOfBirth">
                 Date Of Birth
@@ -117,7 +146,7 @@ export default function SignUpModal() {
                 value={dateOfBirth}
                 onChange={handleChange}
                 required
-                className="w-full max-w-xs input input-bordered input-accent"
+                className="w-full max-w-xs input input-sm sm:input-md input-bordered input-accent"
               />
               <label className="font-bold text-cyan-500" htmlFor="email">
                 Email
@@ -129,7 +158,22 @@ export default function SignUpModal() {
                 value={email}
                 onChange={handleChange}
                 required
-                className="w-full max-w-xs input input-bordered input-info"
+                className="w-full max-w-xs input input-sm sm:input-md input-bordered input-info"
+              />
+              <label className="font-bold text-cyan-500" htmlFor="phoneNumber">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                name="phoneNumber"
+                id="phoneNumber"
+                value={phoneNumber}
+                onChange={handleChange}
+                pattern="\(\d{3}\) \d{3}-\d{4}"
+                placeholder="(123) 456-7890"
+                maxLength={14}
+                required
+                className="w-full max-w-xs input input-sm sm:input-md input-bordered input-secondary"
               />
               <label className="font-bold text-cyan-500" htmlFor="password">
                 Password
@@ -141,7 +185,7 @@ export default function SignUpModal() {
                 value={password}
                 onChange={handleChange}
                 required
-                className="w-full max-w-xs input input-bordered input-error"
+                className="w-full max-w-xs input input-sm sm:input-md input-bordered input-error"
               />
               <label
                 className="font-bold text-cyan-500"
@@ -156,13 +200,13 @@ export default function SignUpModal() {
                 value={confirmPassword}
                 onChange={handleChange}
                 required
-                className="w-full max-w-xs input input-bordered input-warning"
+                className="w-full max-w-xs input input-sm sm:input-md input-bordered input-warning"
               />
             </div>
             <div className="flex flex-row justify-around mt-12">
               <button
                 type="submit"
-                className="text-xl btn btn-primary btn-wide"
+                className="text-xl btn btn-primary btn-wide "
               >
                 Sign Up
               </button>

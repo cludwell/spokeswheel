@@ -8,6 +8,7 @@ async function seedUsers() {
         firstName: "Chris",
         lastName: "Ludwell",
         email: "cludwell@gmail.com",
+        phoneNumber: "(510) 393-7938",
         hashedPassword:
           "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         dateOfBirth: new Date(1987, 2, 28),
@@ -16,7 +17,7 @@ async function seedUsers() {
             {
               photoConsent: true,
               paid: false,
-              paymentAmount: 84.00,
+              paymentAmount: 84.0,
               emergencyName: "Kathleen Ludwell",
               emergencyNumber: "352-593-5067",
               emergencyRelation: "Mother",
@@ -107,7 +108,6 @@ async function seedUsers() {
   } finally {
     await prisma.$disconnect();
   }
-
 }
 async function seedConferences() {
   try {

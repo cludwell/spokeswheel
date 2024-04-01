@@ -60,7 +60,7 @@ const createStore = create((set) => ({
         },
         body: JSON.stringify(userData),
       });
-      console.log('response went to backend')
+      // console.log('response went to backend')
       if (response.ok) {
         const bookingData = await response.json();
         set({ bookings: [bookingData] });

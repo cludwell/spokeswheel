@@ -29,7 +29,7 @@ const handler = NextAuth({
             where: { email: credentials.email },
           });
 
-          if (existingEmail) throw new Error("User already exists");
+          if (existingEmail) throw new Error("Email already exists in database");
 
           // Hash the password and save the new user in your database
           const hashedPassword = await hashPassword(credentials.password);

@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import Loading from "@/components/Loading";
 export default function Register() {
   const { data: session, status: loading } = useSession();
-  const { bookings, createBooking, fetchUserBookings } = useStore();
+  const { bookings, createBooking, fetchUsersBookings } = useStore();
   const [errors, setErrors] = useState({});
   const [emailList, setEmailList] = useState(false);
   const [photoConsent, setPhotoConsent] = useState(false);
@@ -59,13 +59,13 @@ export default function Register() {
 
   useEffect(() => {
     const loadData = async () => {
-      fetchUserBookings();
+      fetchUsersBookings();
       setLoaded(true)
     };
     loadData()
     if (bookings.length && bookings[0]?.paid == true) router.push("/registration/success");
 
-  }, [fetchUserBookings, bookings,router]);
+  }, [fetchUsersBookings, bookings,router]);
 
   function formatPhoneNumber(value) {
     if (!value) return value;
@@ -94,7 +94,7 @@ export default function Register() {
       const formattedPhoneNumber = formatPhoneNumber(value);
       setUserData((prevState) => ({
         ...prevState,
-        [name]: formattedPhoneNumber, 
+        [name]: formattedPhoneNumber,
       }));
     } else {
       // For all other inputs, use the value as-is

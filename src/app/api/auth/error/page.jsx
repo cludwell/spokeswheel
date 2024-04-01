@@ -1,5 +1,12 @@
+"use client";
 import { special, amatic } from "@/app/fonts";
+import { useSearchParams } from 'next/navigation'
 export default function ErrorPage() {
+  const searchParams = useSearchParams()
+
+  const search = searchParams.get('error')
+
+  console.log(search)
   return (
     <div
       className={
@@ -11,7 +18,7 @@ export default function ErrorPage() {
         404: Bad Credentials 😔
       </h1>
       <p className={`${special.className} my-12`}>
-        Did you forget your email or password?
+        {search.length > 0 ? search : `Did you forget your email or password?`}
       </p>
     </div>
   );

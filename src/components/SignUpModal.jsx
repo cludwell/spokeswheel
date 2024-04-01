@@ -53,7 +53,7 @@ export default function SignUpModal() {
         [name]: value,
       });
     }
-    console.log("userdata", userData);
+    // console.log("userdata", userData);
   };
   function formatPhoneNumber(value) {
     if (!value) return value;
@@ -81,6 +81,7 @@ export default function SignUpModal() {
       lastName &&
       dateOfBirth
     ) {
+      console.log('USER DATA GOING IN============', userData)
       await signIn("credentials", {
         ...userData,
         dateOfBirth: new Date(dateOfBirth).toISOString(),

@@ -11,7 +11,7 @@ import { amatic, special } from "../fonts";
 export default function UpdateInfo() {
   const { data: session, status: loading } = useSession();
   const [errors, setErrors] = useState([]);
-  const [hasLoaded, setHasLoaded] = useState(false)
+  const [hasLoaded, setHasLoaded] = useState(false);
   const router = useRouter();
   const { user, fetchUserData, updateUserInfo } = useStore((state) => ({
     user: state.user,
@@ -22,7 +22,7 @@ export default function UpdateInfo() {
   useEffect(() => {
     const loadUser = async () => {
       fetchUserData();
-      setHasLoaded(true)
+      setHasLoaded(true);
     };
     if (session) loadUser();
   }, [session, fetchUserData]);
@@ -32,10 +32,17 @@ export default function UpdateInfo() {
     lastName: user?.lastName ? user.lastName : "",
     dateOfBirth: user?.dateOfBirth ? user.dateOfBirth : new Date().toISOString,
     email: user?.email ? user.email : "",
-    password: "",
+    phoneNumber: user?.phoneNumber ? user?.phoneNumber : "null",
   });
-  const { firstName, lastName, dateOfBirth, email, password, confirmPassword } =
-    userData;
+  const {
+    firstName,
+    lastName,
+    dateOfBirth,
+    email,
+    password,
+    confirmPassword,
+    phoneNumber,
+  } = userData;
 
   useEffect(() => {
     setUserData({
@@ -45,6 +52,7 @@ export default function UpdateInfo() {
         ? user.dateOfBirth
         : new Date().toISOString(),
       email: user?.email ? user.email : "",
+      phoneNumber: user?.phoneNumber ? user?.phoneNumber : "null",
     });
   }, [
     user?.firstName,
@@ -53,6 +61,7 @@ export default function UpdateInfo() {
     user?.email,
     user?.password,
     user?.confirmPassword,
+    user?.phoneNumber,
   ]);
   const validate = () => {
     const err = [];
@@ -68,14 +77,38 @@ export default function UpdateInfo() {
     if (password != confirmPassword) err.push("Passwords do not match.");
     if (!firstName || !lastName) err.push("Please enter your name.");
     if (!dateOfBirth) err.push("Please enter your date of birth.");
+    if (phoneNumber.length < 14) err.push("Please enter a valid phone number.");
+
     return err;
   };
+  function formatPhoneNumber(value) {
+    if (!value) return value;
+    const phoneNumber = value.replace(/[^\d]/g, "");
+    const phoneNumberLength = phoneNumber.length;
+    if (phoneNumberLength < 4) return phoneNumber;
+    if (phoneNumberLength < 7) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+    }
+    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(
+      3,
+      6
+    )}-${phoneNumber.slice(6, 10)}`;
+  }
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUserData({
-      ...userData,
-      [name]: value,
-    });
+    if (name == "phoneNumber") {
+      const formattedPhoneNumber = formatPhoneNumber(value);
+      setUserData((prev) => ({
+        ...prev,
+        [name]: formattedPhoneNumber,
+      }));
+    } else {
+      setUserData({
+        ...userData,
+        [name]: value,
+      });
+    }
+    console.log("userdata", userData);
   };
 
   const handleSubmit = async (e) => {
@@ -99,11 +132,11 @@ export default function UpdateInfo() {
         email,
       });
       await fetchUserData();
-      router.push('/')
+      router.push("/");
     }
   };
   if (!session) return <PleaseSignIn />;
-  if (!hasLoaded) return <Loading />
+  if (!hasLoaded) return <Loading />;
 
   return (
     <div
@@ -163,6 +196,21 @@ export default function UpdateInfo() {
               required
               className="w-full max-w-xs input input-bordered input-info"
             />
+            <label className="font-bold text-cyan-500" htmlFor="phoneNumber">
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              name="phoneNumber"
+              id="phoneNumber"
+              value={phoneNumber}
+              onChange={handleChange}
+              pattern="\(\d{3}\) \d{3}-\d{4}"
+              placeholder="(123) 456-7890"
+              maxLength={14}
+              required
+              className="w-full max-w-xs input input-sm sm:input-md input-bordered input-secondary"
+            />
             <label className="font-bold text-cyan-500" htmlFor="email">
               Email
             </label>
@@ -187,7 +235,6 @@ export default function UpdateInfo() {
               id="password"
               value={password}
               onChange={handleChange}
-
               className="w-full max-w-xs input input-bordered input-warning"
             />
             <label
@@ -202,7 +249,6 @@ export default function UpdateInfo() {
               id="confirmPassword"
               value={confirmPassword}
               onChange={handleChange}
-
               className="w-full max-w-xs input input-bordered input-error"
             />
           </div>

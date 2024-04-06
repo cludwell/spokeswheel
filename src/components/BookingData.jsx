@@ -26,6 +26,13 @@ export default function BookingData({ booking }) {
         </span>
       </div>
       <div className="ml-12">
+        <span className="mx-4">phoneNumber:</span>
+        <span>
+          &quot;{booking.user.phoneNumber ? booking.user.phoneNumber : "null"}
+          &quot;
+        </span>
+      </div>
+      <div className="ml-12">
         <span className="mx-4">dateOfBirth:</span>
         <span>
           {booking.user.dateOfBirth ? booking.user.dateOfBirth : "null"}
@@ -41,7 +48,6 @@ export default function BookingData({ booking }) {
       </div>
       <div className="ml-12">{"}"}</div>
 
-
       <div className="ml-6 ">
         <span>id:</span>
         <span>{booking?.id},</span>
@@ -49,7 +55,7 @@ export default function BookingData({ booking }) {
 
       <div className="ml-6 ">
         <span>conferenceId:</span>
-        <span>{booking?.conferenceId },</span>
+        <span>{booking?.conferenceId},</span>
       </div>
       <div className="ml-6 ">
         <span>photoConsent: </span>
@@ -97,7 +103,9 @@ export default function BookingData({ booking }) {
       <div className="ml-6 ">
         <span>emergencyRelation: </span>
         <span>
-          &quot;{booking?.emergencyRelation ? booking.emergencyRelation : "null"}&quot; ,
+          &quot;
+          {booking?.emergencyRelation ? booking.emergencyRelation : "null"}
+          &quot; ,
         </span>
       </div>
       <div className="ml-6 ">

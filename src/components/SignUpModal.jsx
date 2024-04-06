@@ -37,10 +37,11 @@ export default function SignUpModal() {
     if (password != confirmPassword) err.push("Passwords do not match.");
     if (!firstName || !lastName) err.push("Please enter your name.");
     if (!dateOfBirth) err.push("Please enter your date of birth.");
+    if (phoneNumber.length < 14) err.push("Please enter a valid phone number.");
     return err;
   };
   const handleChange = (e) => {
-    const { name, value, type } = e.target;
+    const { name, value } = e.target;
     if (name == "phoneNumber") {
       const formattedPhoneNumber = formatPhoneNumber(value);
       setUserData((prev) => ({
@@ -81,7 +82,7 @@ export default function SignUpModal() {
       lastName &&
       dateOfBirth
     ) {
-      console.log('USER DATA GOING IN============', userData)
+      // console.log('USER DATA GOING IN============', userData)
       await signIn("credentials", {
         ...userData,
         dateOfBirth: new Date(dateOfBirth).toISOString(),

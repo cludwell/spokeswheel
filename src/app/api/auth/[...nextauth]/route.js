@@ -29,7 +29,7 @@ const handler = NextAuth({
             where: { email: credentials.email },
           });
 
-          if (existingEmail) throw new Error("Email already exists in database");
+          if (existingEmail) throw new Error("Email already exists in database.");
 
           // Hash the password and save the new user in your database
           const hashedPassword = await hashPassword(credentials.password);
@@ -45,16 +45,16 @@ const handler = NextAuth({
           return newUser;
         }
         if (!credentials || !credentials.email || !credentials.password)
-          throw new Error("Invalid Credentials");
+          throw new Error("Invalid Credentials.");
         const user = await prisma.users.findUnique({
           where: { email: credentials.email },
         });
-        if (!user) throw new Error("No user found");
+        if (!user) throw new Error("No user found was found in the database.");
         const isValid = await verifyPassword(
           credentials.password,
           user.hashedPassword
         );
-        if (!isValid) throw new Error("badpassword");
+        if (!isValid) throw new Error("Your password was bad and you should feel bad.");
 
         return user;
       },

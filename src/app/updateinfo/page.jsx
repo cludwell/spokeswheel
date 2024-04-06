@@ -108,13 +108,13 @@ export default function UpdateInfo() {
         [name]: value,
       });
     }
-    console.log("userdata", userData);
+    // console.log("userdata", userData);
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     setErrors(validationErrors);
+    // console.log(errors)
     if (validationErrors.length) return;
     else if (
       !errors.length &&

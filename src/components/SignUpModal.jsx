@@ -8,7 +8,7 @@ export default function SignUpModal() {
   const [userData, setUserData] = useState({
     firstName: "",
     lastName: "",
-    dateOfBirth: new Date().t,
+    dateOfBirth: new Date(),
     email: "",
     password: "",
     phoneNumber: "",

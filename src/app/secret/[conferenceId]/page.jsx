@@ -19,7 +19,6 @@ export default function Secret({ params }) {
     };
     if (session && conferenceId) loadUsers();
   }, [session, fetchAllBookings, conferenceId]);
-  console.log("ALL BOOKINGS================", allBookings);
   const validEmails = [
     "cludwell@gmail.com",
     "bryce.dagenais86@gmail.com",

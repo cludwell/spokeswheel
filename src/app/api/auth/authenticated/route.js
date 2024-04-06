@@ -38,6 +38,7 @@ export async function GET(req, res) {
             email: user.email,
             createdAt: user.createdAt,
             updatedAt: user.updatedAt,
+            phoneNumber: user.phoneNumber
           }),
           {
             status: 200,

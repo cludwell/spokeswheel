@@ -8,7 +8,7 @@ import UpdateSuccessful from "@/components/UpdateSuccessful";
 import Loading from "@/components/Loading";
 import PleaseRegister from "@/components/PleaseRegister";
 import { amatic, special } from "../../fonts";
-
+import IconInfo from "@/components/Icons/IconInfo";
 export default function UpdateRegistration() {
   const { data: session, status: loading } = useSession();
   const { bookings, updateBookingInfo, fetchUsersBookings } = useStore(
@@ -38,7 +38,7 @@ export default function UpdateRegistration() {
     notes: "",
     specialAccomodations: "",
     lodging: "",
-    paymentAmount: 0
+    paymentAmount: 105,
   });
 
   const {
@@ -50,7 +50,7 @@ export default function UpdateRegistration() {
     notes,
     specialAccomodations,
     lodging,
-    id,
+    paymentAmount,
   } = userData;
   function formatPhoneNumber(value) {
     if (!value) return value;
@@ -67,7 +67,7 @@ export default function UpdateRegistration() {
   }
 
   const booking = bookings.filter((b) => b.conferenceId == 1)[0];
-  console.log('booking ================', booking)
+  // console.log('booking ================', booking)
   useEffect(() => {
     setUserData({
       emergencyName: booking?.emergencyName ? booking?.emergencyName : "",
@@ -84,7 +84,7 @@ export default function UpdateRegistration() {
         ? booking?.specialAccomodations
         : "",
       lodging: booking?.lodging ? booking?.lodging : "",
-      paymentAmount: booking?.paymentAmount ? booking?.paymentAmount : 0
+      paymentAmount: booking?.paymentAmount ? booking?.paymentAmount : 0,
     });
   }, [
     booking?.emergencyName,
@@ -99,7 +99,7 @@ export default function UpdateRegistration() {
     booking?.emailList,
     booking?.photoConsent,
     booking?.textUpdates,
-    booking?.paymentAmount
+    booking?.paymentAmount,
   ]);
 
   useEffect(() => {
@@ -164,9 +164,6 @@ export default function UpdateRegistration() {
       };
       await updateBookingInfo(userData);
       setUpdated(true);
-      // if (typeof window !== "undefined") {
-      //   window.location.href = "#header";
-      // }
     }
   };
 
@@ -295,6 +292,7 @@ export default function UpdateRegistration() {
                   Please make a selection
                 </option>{" "}
                 <option value={"Lodges"}>Lodges</option>
+                <option value={"Tent Camping"}>Tent Camping</option>
                 <option value={"Adirondacks"}>Adirondacks</option>
               </select>
               {errors && errors.lodging && (
@@ -302,6 +300,15 @@ export default function UpdateRegistration() {
                   <IconExclamation /> {errors.lodging}
                 </div>
               )}
+              <div className="flex flex-row p-3 my-3 bg-yellow-300 border-2 border-yellow-900 rounded-xl text-yellow-950 fade-in w-80">
+                <span className="block mr-3">
+                  <IconInfo />
+                </span>{" "}
+                On site camping is available if you bring a tent. Adirondacks
+                offer privacy but are extremely limited and do not have
+                mattresses - you will have to bring your own! Let use know who
+                will be in your adirondack in the Notes.
+              </div>
             </div>
             <label className="text-xl font-bold " htmlFor="allergies">
               Allergies
@@ -339,7 +346,7 @@ export default function UpdateRegistration() {
               id="notes"
               value={notes}
               onChange={handleChange}
-              placeholder="Is there anything else you'd like us to know? Could you use a ride from Logan Airport? "
+              placeholder="Is there anything else you'd like us to know? Do you need a ride from Logan? Who are you sharing an adirondack with?"
               className="textarea textarea-primary min-h-40 w-80"
             />
             <label className="text-xl font-bold " htmlFor="photoConsent">

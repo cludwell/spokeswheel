@@ -30,7 +30,6 @@ export default function Header() {
     if (session) loadUser();
   }, [session, fetchUserData, fetchUsersBookings]);
 
-
   return (
     <div
       className="flex flex-col items-center self-center w-screen max-w-screen-xl mx-auto h-fit"
@@ -62,9 +61,11 @@ export default function Header() {
         <li className="text-sm btn btn-ghost sm:text-lg">
           <Link href={"/contact"}>contact</Link>
         </li>
-        {user && <li className="text-sm btn btn-ghost sm:text-lg">
-          <Link href={"/registration"}>register</Link>
-        </li>}
+        {user && bookings.length == 0 && (
+          <li className="text-sm btn btn-ghost sm:text-lg">
+            <Link href={"/registration"}>register</Link>
+          </li>
+        )}
         <DropDownMenu />
       </ul>
     </div>

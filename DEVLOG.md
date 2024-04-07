@@ -40,4 +40,14 @@ Lesson: Leave assignment of connections until the end
 ✅ When user signs out, user is removed from state
 secret page for admin to see all bookings
 
-🔲 Make error handling for frontend and backend if user password doesnt match database
+✅ Make error handling for frontend and backend if user password doesnt match database
+
+🔲 Create $.25 test payment link for active Stripe
+🔲 Merge Stripe payments to main
+🔲 General testing
+    -made sure that registration link is not in header if registered
+    -drop down responsive to registration status
+    -tested log in error handling redirect
+✅ DOB working on user update
+🔲 Correct pricing on Registration and Reg Update
+🔲 On Reg Update, will want conditional send to Stripe if user has not paid yet

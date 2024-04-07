@@ -8,6 +8,7 @@ import { amatic, special } from "../fonts";
 import IconInfo from "@/components/Icons/IconInfo";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/Loading";
+import StripeDirection from "@/components/StripeDirection";
 export default function Register() {
   const { data: session, status: loading } = useSession();
   const { bookings, createBooking, fetchUsersBookings } = useStore();
@@ -53,7 +54,7 @@ export default function Register() {
     if (lodging)
       setUserData((prev) => ({
         ...prev,
-        paymentAmount: lodging == "Adirondacks" ? 105 : 81,
+        paymentAmount: 105,
       }));
   }, [lodging]);
 
@@ -116,6 +117,7 @@ export default function Register() {
         "Please let us know your relationship to this person.";
     if (dietaryRestrictions.length < 5)
       err.dietaryRestrictions = "Please make a diet selection";
+    if (!lodging) err.lodging = "Please select lodgin accomodations"
     setErrors(err);
     return err;
   };
@@ -130,10 +132,11 @@ export default function Register() {
       setSubmitted(true);
     }
   };
-  console.log("bookings", bookings);
-  let booked = bookings.filter((b) => b.conferenceId == 1);
+  // find one registration and check paid status
+  let booked = bookings.filter((b) => b.conferenceId == 1)[0];
   if (!session) return <PleaseSignIn />;
   if (!loaded) return <Loading />
+  // console.log('booked',booked)
   return (
     <>
       <div
@@ -145,19 +148,8 @@ export default function Register() {
         <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
           2024 Registration At Camp Seawood!
         </h2>
-        {booked.paid == false && submitted ? (
-          <div className="flex flex-col items-center justify-center w-full">
-            <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
-              {`💸All that's Left is Payment💸`}
-            </h2>
-            <p className="fade-in">{`For the time being all registration fees are nonrefundable.`}</p>
-            <a
-              href={`https://buy.stripe.com/test_28og304TG5lQ97G6oo?client_reference_id=${session.user.id}`}
-              className="my-12 text-xl btn btn-wide btn-info"
-            >
-              Stripe
-            </a>
-          </div>
+        {booked?.paid == false && submitted ? (
+          <StripeDirection id={session.user.id} />
         ) : (
           <form
             className="flex flex-col items-center w-3/4 mx-auto fade-in"
@@ -271,6 +263,7 @@ export default function Register() {
                     Please make a selection
                   </option>{" "}
                   <option value={"Lodges"}>Lodges</option>
+                  <option value={"Tent Camping"}>Tent Camping</option>
                   <option value={"Adirondacks"}>Adirondacks</option>
                 </select>
                 {errors && errors.lodging && (
@@ -282,8 +275,7 @@ export default function Register() {
                   <span className="block mr-3">
                     <IconInfo />
                   </span>{" "}
-                  Cost of Adirondacks are about $7 more per night, please be
-                  aware that supply is extremely limited.
+                  On site camping is available if you bring a tent. Adirondacks offer privacy but are extremely limited and do not have mattresses - you will have to bring your own! Let use know who will be in your adirondack in the Notes.
                 </div>
               </div>
               <label className="text-xl font-bold " htmlFor="allergies">
@@ -322,7 +314,7 @@ export default function Register() {
                 id="notes"
                 value={notes}
                 onChange={handleChange}
-                placeholder="Is there anything else you'd like us to know? Could you use a ride from Logan Airport? "
+                placeholder="Is there anything else you'd like us to know? Do you need a ride from Logan? Who are you sharing an adirondack with?"
                 className="textarea textarea-primary min-h-40 w-80"
               />
               <label className="text-xl font-bold " htmlFor="photoConsent">
@@ -358,7 +350,7 @@ export default function Register() {
                 value={emailList}
                 onChange={() => setEmailList((prev) => !prev)}
               />
-              <div className="divider mr-[-1rem]"></div>
+              <div className="divider mr-[-1rem] sm:block hidden"></div>
               <div className="divider "></div>
               <p className="flex flex-row text-xl font-bold ">Total</p>
               <p className="flex flex-row text-xl ">${paymentAmount}</p>

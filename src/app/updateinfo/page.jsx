@@ -49,7 +49,7 @@ export default function UpdateInfo() {
       firstName: user?.firstName ? user.firstName : "",
       lastName: user?.lastName ? user.lastName : "",
       dateOfBirth: user?.dateOfBirth
-        ? user.dateOfBirth
+        ? user.dateOfBirth.slice(0,10)
         : new Date().toISOString(),
       email: user?.email ? user.email : "",
       phoneNumber: user?.phoneNumber ? user?.phoneNumber : "null",
@@ -138,6 +138,7 @@ export default function UpdateInfo() {
   if (!session) return <PleaseSignIn />;
   if (!hasLoaded) return <Loading />;
 
+  console.log('user info', userData)
   return (
     <div
       className={special.className + " p-16 max-w-screen-xl mx-auto leading-8"}

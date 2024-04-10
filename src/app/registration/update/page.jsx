@@ -9,6 +9,7 @@ import Loading from "@/components/Loading";
 import PleaseRegister from "@/components/PleaseRegister";
 import { amatic, special } from "../../fonts";
 import IconInfo from "@/components/Icons/IconInfo";
+import StripeDirection from "@/components/StripeDirection";
 export default function UpdateRegistration() {
   const { data: session, status: loading } = useSession();
   const { bookings, updateBookingInfo, fetchUsersBookings } = useStore(
@@ -166,6 +167,7 @@ export default function UpdateRegistration() {
       setUpdated(true);
     }
   };
+  const booked = bookings.filter((e) => e.conferenceId == 1)[0];
 
   if (!session) return <PleaseSignIn />;
   if (!isLoaded) return <Loading />;
@@ -177,8 +179,15 @@ export default function UpdateRegistration() {
       <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
         Update 2024 Registration
       </h2>
-      {updated ? (
+      {updated && booked.paid ? (
         <UpdateSuccessful />
+      ) : updated && booked.paid == false ? (
+        <>
+          <h2 className={amatic.className + " mb-12 text-5xl fade-in text-center"}>
+            ✅ Update Successful!
+          </h2>
+          <StripeDirection id={session.user.id} />
+        </>
       ) : (
         <form
           className="flex flex-col items-center w-3/4 mx-auto fade-in"

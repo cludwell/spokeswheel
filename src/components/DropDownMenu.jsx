@@ -44,9 +44,9 @@ export default function DropDownMenu() {
     const data = await signOut({ redirect: true, callbackUrl: "/" });
     await dismissUserData();
   };
-  const seawood = bookings.length
-    ? bookings.filter((b) => b.conferenceId == 1)[0]
-    : null;
+  // const seawood = bookings.length
+  //   ? bookings.filter((b) => b.conferenceId == 1)[0]
+  //   : null;
   return (
     <>
       {!session ? (
@@ -90,7 +90,7 @@ export default function DropDownMenu() {
             >
               <motion.li
                 variants={itemVariants}
-                className="flex flex-row p-1 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
+                className="flex flex-row p-2 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
               >
                 <IconId />
                 <Link
@@ -103,45 +103,45 @@ export default function DropDownMenu() {
               </motion.li>
               {!!bookings.length ? (
                 <>
-              <motion.li
-                variants={itemVariants}
-                className="flex flex-row p-1 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
-              >
-                <IconClipboard />
-                <Link
-                  href={"/registration/update"}
-                  onClick={closeMenu}
-                  className="ml-4 "
-                >
-                  Update Registration
-                </Link>
-              </motion.li>
-                <motion.li
-                  variants={itemVariants}
-                  className="flex flex-row p-1 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
-                >
-                  <IconClose />
-                  <Link
-                    href={"/registration/cancel"}
-                    onClick={closeMenu}
-                    className="ml-4 "
-                  >{`Cancel Registration `}</Link>
-                </motion.li>
+                  <motion.li
+                    variants={itemVariants}
+                    className="flex flex-row p-2 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
+                  >
+                    <IconClipboard />
+                    <Link
+                      href={"/registration/update"}
+                      onClick={closeMenu}
+                      className="ml-4 "
+                    >
+                      Update Registration
+                    </Link>
+                  </motion.li>
+                  <motion.li
+                    variants={itemVariants}
+                    className="flex flex-row p-2 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
+                  >
+                    <IconClose />
+                    <Link
+                      href={"/registration/cancel"}
+                      onClick={closeMenu}
+                      className="ml-4 "
+                    >{`Cancel Registration `}</Link>
+                  </motion.li>
                 </>
               ) : (
                 <motion.li
-                variants={itemVariants}
-                className="flex flex-row p-1 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
-              >
-                <IconClipboard />
-                <Link
-                  href={"/registration"}
-                  onClick={closeMenu}
-                  className="ml-4 "
+                  variants={itemVariants}
+                  className="flex flex-row p-2 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
                 >
-                  Register!
-                </Link>
-              </motion.li>
+                  <IconClipboard />
+                  <Link
+                    href={"/registration"}
+                    onClick={closeMenu}
+                    className="ml-4 "
+                  >
+                    Register!
+                  </Link>
+                </motion.li>
               )}
               <motion.li
                 variants={itemVariants}

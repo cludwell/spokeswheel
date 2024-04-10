@@ -122,7 +122,8 @@ const createStore = create((set) => ({
       });
       if (response.ok) {
         const message = await response.json();
-        const { bookingId } = data;
+        console.log('mssg',message)
+        const { bookingId } = message;
         const editted = bookings.filter((b) => b.id != bookingId);
         set({
           bookings: [...editted],

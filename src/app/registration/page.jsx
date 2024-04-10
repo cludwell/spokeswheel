@@ -28,7 +28,7 @@ export default function Register() {
     emergencyRelation: "",
     emailList: false,
     textUpdates: false,
-    dietaryRestrictions: "Please make a selection",
+    dietaryRestrictions: "",
     allergies: "",
     notes: "",
     specialAccomodations: "",
@@ -109,15 +109,15 @@ export default function Register() {
   const validate = () => {
     const err = {};
     if (!emergencyName || emergencyName.length < 6)
-      err.emergencyName = "Please enter a name for emergency contact.";
+      err.emergencyName = "Please enter a full name for emergency contact.";
     if (!emergencyNumber || emergencyNumber.length < 14)
       err.emergencyNumber = "Please enter a valid phone number.";
     if (!emergencyRelation || emergencyRelation.length < 3)
       err.emergencyRelation =
         "Please let us know your relationship to this person.";
-    if (dietaryRestrictions.length < 5)
-      err.dietaryRestrictions = "Please make a diet selection";
-    if (!lodging) err.lodging = "Please select lodgin accomodations"
+    if (!dietaryRestrictions)
+      err.dietaryRestrictions = "Please make a diet selection.";
+    if (!lodging) err.lodging = "Please select lodging accomodations."
     setErrors(err);
     return err;
   };
@@ -125,7 +125,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
-    if (validationErrors.length) return;
+    if (Object.values(validationErrors)) return;
     else {
       userData = { ...userData, emailList, photoConsent, textUpdates };
       await createBooking(userData);
@@ -271,8 +271,8 @@ export default function Register() {
                     <IconExclamation /> {errors.lodging}
                   </div>
                 )}
-                <div className="flex flex-row p-3 my-3 bg-yellow-300 border-2 border-yellow-900 rounded-xl text-yellow-950 fade-in w-80">
-                  <span className="block mr-3">
+                <div className="flex flex-row p-3 my-3 text-sm leading-6 bg-yellow-300 border-2 border-yellow-900 rounded-xl text-yellow-950 fade-in w-80">
+                  <span className="block mr-1">
                     <IconInfo />
                   </span>{" "}
                   On site camping is available if you bring a tent. Adirondacks offer privacy but are extremely limited and do not have mattresses - you will have to bring your own! Let use know who will be in your adirondack in the Notes.

@@ -8,7 +8,7 @@ export default function Plans2024() {
     <div
       className={`${special.className} p-4 sm:p-16 max-w-screen-xl mx-auto leading-8 min-h-screen`}
     >
-      <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
+      <h2 className={amatic.className + " mb-24 text-5xl fade-in"}>
         Location - Camp Seawood
       </h2>
       <p className="my-8 fade-in">
@@ -31,17 +31,17 @@ export default function Plans2024() {
         alt={`a map of camp seawood displaying the adirondacks and main buildings`}
         width={2000}
         height={2000}
-        className="w-1/2 mx-auto my-12 rounded-lg "
+        className="w-1/2 mx-auto my-24 rounded-lg "
       />
 
-      <h2 className={amatic.className + " mb-12 text-5xl"}>When? Aug 15-19</h2>
+      <h2 className={amatic.className + " mb-24 text-5xl"}>When? Aug 15-19</h2>
       <div className="flex flex-col items-center">
         <CountDown />
       </div>
-      <h2 className={amatic.className + " my-12 text-5xl"}>Workshops</h2>
+      <h2 className={amatic.className + " my-24 text-5xl"}>Workshops</h2>
       <p className="my-8 fade-in">
         {" "}
-        {`The following is just a joke, we'll let you know the real workshops once some are submitted!`}
+        {`Let us know what workshops you want to lead so we can update this!`}
       </p>
       <div className="flex flex-row justify-center w-full overflow-x-auto">
         <table className="table-xs sm:table-sm md:table-lg table-zebra bg-base-300 rounded-xl">
@@ -61,17 +61,17 @@ export default function Plans2024() {
               <td>Come get a stick and poke from Sarah!</td>
             </tr>
             {/* row 2 */}
-            <tr>
+            {/* <tr>
               <td>Matty Mo</td>
               <td>Bunnies 101</td>
               <td>We catch a wild jackrabbit and go over bunnycare basics</td>
-            </tr>
+            </tr> */}
             {/* row 3 */}
-            <tr>
+            {/* <tr>
               <td>Bryce</td>
               <td>Gen Z Slang</td>
               <td>Gonna be lit fam, on god.</td>
-            </tr>
+            </tr> */}
           </tbody>
         </table>
       </div>

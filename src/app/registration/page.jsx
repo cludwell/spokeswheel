@@ -125,7 +125,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
-    if (Object.values(validationErrors)) return;
+    if (Object.values(validationErrors).length > 0) return;
     else {
       userData = { ...userData, emailList, photoConsent, textUpdates };
       await createBooking(userData);
@@ -136,7 +136,6 @@ export default function Register() {
   let booked = bookings.filter((b) => b.conferenceId == 1)[0];
   if (!session) return <PleaseSignIn />;
   if (!loaded) return <Loading />
-  // console.log('booked',booked)
   return (
     <>
       <div

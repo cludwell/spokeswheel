@@ -44,7 +44,7 @@ secret page for admin to see all bookings
 
 🔲 Create $.25 test payment link for active Stripe
 🔲 Merge Stripe payments to main
-🔲 General testing
+✅ General testing
     -made sure that registration link is not in header if registered
     -drop down responsive to registration status
     -tested log in error handling redirect

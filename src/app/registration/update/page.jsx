@@ -68,7 +68,6 @@ export default function UpdateRegistration() {
   }
 
   const booking = bookings.filter((b) => b.conferenceId == 1)[0];
-  // console.log('booking ================', booking)
   useEffect(() => {
     setUserData({
       emergencyName: booking?.emergencyName ? booking?.emergencyName : "",
@@ -136,6 +135,13 @@ export default function UpdateRegistration() {
     }
   };
 
+  useEffect(() => {
+    if (lodging)
+      setUserData((prev) => ({
+        ...prev,
+        paymentAmount: lodging == "Adirondacks" ? 125 : 105
+      }));
+  }, [lodging]);
   const validate = () => {
     const err = {};
     if (!emergencyName || emergencyName.length < 6)

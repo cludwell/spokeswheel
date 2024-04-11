@@ -1,14 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
-import IconExclamation from "@/components/Icons/IconExclamation";
 import { useSession } from "next-auth/react";
-import PleaseSignIn from "@/components/PleaseSignIn";
 import { useStore } from "@/store/ZustandProvider";
-import { amatic, special } from "../fonts";
-import IconInfo from "@/components/Icons/IconInfo";
 import { useRouter } from "next/navigation";
+import IconExclamation from "@/components/Icons/IconExclamation";
+import PleaseSignIn from "@/components/PleaseSignIn";
+import IconInfo from "@/components/Icons/IconInfo";
 import Loading from "@/components/Loading";
 import StripeDirection from "@/components/StripeDirection";
+import SuccessMessage from "@/components/SuccessMessage";
+import { amatic, special } from "../fonts";
 export default function Register() {
   const { data: session, status: loading } = useSession();
   const { bookings, createBooking, fetchUsersBookings } = useStore();
@@ -16,8 +17,7 @@ export default function Register() {
   const [emailList, setEmailList] = useState(false);
   const [photoConsent, setPhotoConsent] = useState(false);
   const [textUpdates, setTextUpdates] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [loaded, setLoaded] = useState(false)
+  const [loaded, setLoaded] = useState(false);
   const router = useRouter();
   let [userData, setUserData] = useState({
     conferenceId: 1,
@@ -54,19 +54,19 @@ export default function Register() {
     if (lodging)
       setUserData((prev) => ({
         ...prev,
-        paymentAmount: 105,
+        paymentAmount: lodging == "Adirondacks" ? 125 : 105,
       }));
   }, [lodging]);
 
   useEffect(() => {
     const loadData = async () => {
       fetchUsersBookings();
-      setLoaded(true)
+      setLoaded(true);
     };
-    loadData()
-    if (bookings.length && bookings[0]?.paid == true) router.push("/registration/success");
-
-  }, [fetchUsersBookings, bookings,router]);
+    loadData();
+    if (bookings.length && bookings[0]?.paid == true)
+      router.push("/registration/success");
+  }, [fetchUsersBookings, bookings, router]);
 
   function formatPhoneNumber(value) {
     if (!value) return value;
@@ -102,6 +102,7 @@ export default function Register() {
       setUserData((prevState) => ({
         ...prevState,
         [name]: value,
+        // paymentAmount: lodging == "Adirondacks" ? 125 : 105,
       }));
     }
   };
@@ -117,7 +118,7 @@ export default function Register() {
         "Please let us know your relationship to this person.";
     if (!dietaryRestrictions)
       err.dietaryRestrictions = "Please make a diet selection.";
-    if (!lodging) err.lodging = "Please select lodging accomodations."
+    if (!lodging) err.lodging = "Please select lodging accomodations.";
     setErrors(err);
     return err;
   };
@@ -129,13 +130,12 @@ export default function Register() {
     else {
       userData = { ...userData, emailList, photoConsent, textUpdates };
       await createBooking(userData);
-      setSubmitted(true);
     }
   };
   // find one registration and check paid status
   let booked = bookings.filter((b) => b.conferenceId == 1)[0];
   if (!session) return <PleaseSignIn />;
-  if (!loaded) return <Loading />
+  if (!loaded) return <Loading />;
   return (
     <>
       <div
@@ -147,8 +147,10 @@ export default function Register() {
         <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
           2024 Registration At Camp Seawood!
         </h2>
-        {booked?.paid == false && submitted ? (
+        {booked && booked?.paid == false ? (
           <StripeDirection id={session.user.id} />
+        ) : booked && booked.paid == true ? (
+          <SuccessMessage />
         ) : (
           <form
             className="flex flex-col items-center w-3/4 mx-auto fade-in"
@@ -274,7 +276,10 @@ export default function Register() {
                   <span className="block mr-1">
                     <IconInfo />
                   </span>{" "}
-                  On site camping is available if you bring a tent. Adirondacks offer privacy but are extremely limited and do not have mattresses - you will have to bring your own! Let use know who will be in your adirondack in the Notes.
+                  On site camping is available if you bring a tent. Adirondacks
+                  offer privacy but are extremely limited and do not have
+                  mattresses - you will have to bring your own! Let use know who
+                  will be in your adirondack in the Notes.
                 </div>
               </div>
               <label className="text-xl font-bold " htmlFor="allergies">

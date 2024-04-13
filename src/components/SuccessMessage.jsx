@@ -1,3 +1,4 @@
+import { amatic } from "@/app/fonts";
 export default function SuccessMessage() {
   return (
     <div className="flex flex-col items-center justify-center w-full">

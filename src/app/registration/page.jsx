@@ -54,7 +54,7 @@ export default function Register() {
     if (lodging)
       setUserData((prev) => ({
         ...prev,
-        paymentAmount: lodging == "Adirondacks" ? 125 : 105,
+        paymentAmount: lodging == "Adirondacks" ? 138.91 : 123.48,
       }));
   }, [lodging]);
 
@@ -148,7 +148,7 @@ export default function Register() {
           2024 Registration At Camp Seawood!
         </h2>
         {booked && booked?.paid == false ? (
-          <StripeDirection id={session.user.id} />
+          <StripeDirection id={session.user.id} lodging={lodging ? lodging : booked.lodging}/>
         ) : booked && booked.paid == true ? (
           <SuccessMessage />
         ) : (

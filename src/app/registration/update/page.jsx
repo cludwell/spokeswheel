@@ -84,6 +84,7 @@ export default function UpdateRegistration() {
         ? booking?.specialAccomodations
         : "",
       lodging: booking?.lodging ? booking?.lodging : "",
+      paid: booking?.paid ? booking?.paid : false,
       paymentAmount: booking?.paymentAmount ? booking?.paymentAmount : 0,
     });
   }, [
@@ -139,7 +140,7 @@ export default function UpdateRegistration() {
     if (lodging)
       setUserData((prev) => ({
         ...prev,
-        paymentAmount: lodging == "Adirondacks" ? 125 : 105
+        paymentAmount: lodging == "Adirondacks" ? 138.91 : 123.48,
       }));
   }, [lodging]);
   const validate = () => {
@@ -192,7 +193,7 @@ export default function UpdateRegistration() {
           <h2 className={amatic.className + " mb-12 text-5xl fade-in text-center"}>
             ✅ Update Successful!
           </h2>
-          <StripeDirection id={session.user.id} />
+          <StripeDirection id={session.user.id} lodging={lodging ? lodging : booked.lodging}/>
         </>
       ) : (
         <form

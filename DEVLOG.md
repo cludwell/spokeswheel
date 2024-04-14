@@ -49,7 +49,7 @@ secret page for admin to see all bookings
     -drop down responsive to registration status
     -tested log in error handling redirect
 ✅ DOB working on user update
-🔲 Correct pricing on Registration and Reg Update
+✅ Correct pricing on Registration and Reg Update
 ✅ On Reg Update, will want conditional send to Stripe if user has not paid yet
-🔲 Theres currently a problem updating state after a booking has been deleted
+✅ Theres currently a problem updating state after a booking has been deleted
 🔲 Error handling is not happening on registration creation and backend fetch is being sent

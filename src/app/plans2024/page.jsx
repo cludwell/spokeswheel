@@ -35,9 +35,13 @@ export default function Plans2024() {
       />
 
       <h2 className={amatic.className + " mb-24 text-5xl"}>When? Aug 15-19</h2>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mb-24">
         <CountDown />
       </div>
+      <h2 className={amatic.className + " mb-24 text-5xl"}>How Much?</h2>
+      <p className="my-8 fade-in">
+        {`Our goal is to make this conference accessible and affordable, especially since we hope that friends from around the country will fly in to attend. Costs are roughly 20 dollars a night depending on the lodging that you would like, and 20 dollars a day for food. We're hoping to break even 😰. As a community we can decide what to do with any excess funds if any.`}
+      </p>
       <h2 className={amatic.className + " my-24 text-5xl"}>Workshops</h2>
       <p className="my-8 fade-in">
         {" "}

@@ -27,7 +27,7 @@ export async function POST(req, res) {
     try {
       // console.log('BEFORE EVENT')
       event = stripe.webhooks.constructEvent(rawBody, sig, endpointSecret);
-      console.log("event", event.data.object.receipt_email);
+      // console.log("event", event.data.object.receipt_email);
     } catch (err) {
       return new Response(
         JSON.stringify({ "Webhook Error": `${err.message}` }),

@@ -61,3 +61,4 @@ secret page for admin to see all bookings
 🔲 Paid status is not being updated via the webhook, probably secret key related
 
 npm run deploy
+npm install && npm run setup && npm run build

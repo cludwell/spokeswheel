@@ -105,7 +105,7 @@ const createStore = create((set) => ({
         const updatedBooking = await response.json();
         set({ bookings: [...bookings, updatedBooking] });
       } else {
-        console.error("There was a problem updating the booking.");
+        console.error("There was a problem updating the booking on the backend.");
       }
     } catch (error) {
       console.error("There was a problem updating the booking.");

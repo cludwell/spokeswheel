@@ -17,9 +17,9 @@ async function seedUsers() {
             {
               photoConsent: true,
               paid: false,
-              paymentAmount: 84.0,
+              paymentAmount: 123.48,
               emergencyName: "Kathleen Ludwell",
-              emergencyNumber: "352-593-5067",
+              emergencyNumber: "(123) 456-7890",
               emergencyRelation: "Mother",
               emailList: true,
               textUpdates: true,

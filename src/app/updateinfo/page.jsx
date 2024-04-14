@@ -138,7 +138,7 @@ export default function UpdateInfo() {
   if (!session) return <PleaseSignIn />;
   if (!hasLoaded) return <Loading />;
 
-  console.log('user info', userData)
+  // console.log('user info', userData)
   return (
     <div
       className={special.className + " p-16 max-w-screen-xl mx-auto leading-8"}

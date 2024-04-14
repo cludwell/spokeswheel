@@ -57,4 +57,4 @@ secret page for admin to see all bookings
 🔲 Copy payment links in Stripe to production mode
 🔲 Create a test payment link for .25 cents to make sure stripe is working in production
 🔲 Update redirection from Stripe to my app's url
-
+🔲 Remember to handle secret keys

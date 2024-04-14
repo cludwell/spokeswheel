@@ -179,7 +179,7 @@ export default function UpdateRegistration() {
   if (!session) return <PleaseSignIn />;
   if (!isLoaded) return <Loading />;
   if (!booking) return <PleaseRegister />;
-  console.log('booooooking', booked.paid)
+  console.log('booooooking', booked)
   return (
     <div
       className={special.className + " p-16 max-w-screen-xl mx-auto leading-8"}

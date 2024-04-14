@@ -55,9 +55,9 @@ secret page for admin to see all bookings
 ✅ Error handling is not happening on registration creation and backend fetch is being sent
 🔲 We're ready for production!
 ✅ Copy payment links in Stripe to production mode
-🔲 Create a test payment link for .25 cents to make sure stripe is working in production
+✅ Create a test payment link for .25 cents to make sure stripe is working in production
 ✅ Update redirection from Stripe to my app's url
-🔲 Remember to handle secret keys
+✅ Remember to handle secret keys
 🔲 Paid status is not being updated via the webhook, probably secret key related
 
 npm run deploy

@@ -38,76 +38,76 @@ async function seedUsers() {
   } catch (error) {
     console.error("User 1 seeding error: ", error);
   }
-  try {
-    await prisma.users.create({
-      data: {
-        firstName: "Demo",
-        lastName: "User",
-        email: "demouser@gmail.com",
-        hashedPassword:
-          "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
-        dateOfBirth: new Date(1986, 3, 1),
-        bookings: {
-          create: [
-            {
-              photoConsent: true,
-              paid: false,
-              emergencyName: "Papa Demo",
-              emergencyNumber: "123-456-7890",
-              emergencyRelation: "Father",
-              emailList: true,
-              textUpdates: true,
-              dietaryRestrictions: "Omnivore",
-              allergies: "N/A",
-              notes: "Staff",
-              lodging: "Lodges",
-              conference: {
-                connect: { id: 1 },
-              },
-            },
-          ],
-        },
-      },
-    });
-  } catch (error) {
-    console.error("User 2 seeding error: ", error);
-  }
-  try {
-    await prisma.users.create({
-      data: {
-        firstName: "Hank",
-        lastName: "Hill",
-        email: "propaneguy@gmail.com",
-        hashedPassword:
-          "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
-        dateOfBirth: new Date(1984, 3, 1),
-        bookings: {
-          create: [
-            {
-              photoConsent: true,
-              paid: false,
-              emergencyName: "Bobby",
-              emergencyNumber: "098-765-4331",
-              emergencyRelation: "Son",
-              emailList: true,
-              textUpdates: true,
-              dietaryRestrictions: "Omnivore",
-              allergies: "N/A",
-              notes: "Staff",
-              lodging: "Lodges",
-              conference: {
-                connect: { id: 1 },
-              },
-            },
-          ],
-        },
-      },
-    });
-  } catch (error) {
-    console.error("User 2 seeding error: ", error);
-  } finally {
-    await prisma.$disconnect();
-  }
+  // try {
+  //   await prisma.users.create({
+  //     data: {
+  //       firstName: "Demo",
+  //       lastName: "User",
+  //       email: "demouser@gmail.com",
+  //       hashedPassword:
+  //         "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
+  //       dateOfBirth: new Date(1986, 3, 1),
+  //       bookings: {
+  //         create: [
+  //           {
+  //             photoConsent: true,
+  //             paid: false,
+  //             emergencyName: "Papa Demo",
+  //             emergencyNumber: "123-456-7890",
+  //             emergencyRelation: "Father",
+  //             emailList: true,
+  //             textUpdates: true,
+  //             dietaryRestrictions: "Omnivore",
+  //             allergies: "N/A",
+  //             notes: "Staff",
+  //             lodging: "Lodges",
+  //             conference: {
+  //               connect: { id: 1 },
+  //             },
+  //           },
+  //         ],
+  //       },
+  //     },
+  //   });
+  // } catch (error) {
+  //   console.error("User 2 seeding error: ", error);
+  // }
+  // try {
+  //   await prisma.users.create({
+  //     data: {
+  //       firstName: "Hank",
+  //       lastName: "Hill",
+  //       email: "propaneguy@gmail.com",
+  //       hashedPassword:
+  //         "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
+  //       dateOfBirth: new Date(1984, 3, 1),
+  //       bookings: {
+  //         create: [
+  //           {
+  //             photoConsent: true,
+  //             paid: false,
+  //             emergencyName: "Bobby",
+  //             emergencyNumber: "098-765-4331",
+  //             emergencyRelation: "Son",
+  //             emailList: true,
+  //             textUpdates: true,
+  //             dietaryRestrictions: "Omnivore",
+  //             allergies: "N/A",
+  //             notes: "Staff",
+  //             lodging: "Lodges",
+  //             conference: {
+  //               connect: { id: 1 },
+  //             },
+  //           },
+  //         ],
+  //       },
+  //     },
+  //   });
+  // } catch (error) {
+  //   console.error("User 2 seeding error: ", error);
+  // } finally {
+  //   await prisma.$disconnect();
+  // }
 }
 async function seedConferences() {
   try {

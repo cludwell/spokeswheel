@@ -58,7 +58,7 @@ export default function CancelRegistration() {
     >
       {!deleted ? (
         <>
-          <h2 className={amatic.className + " mb-12 text-5xl"}>
+          <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl"}>
             Cancel Registration 😟
           </h2>
           <div className="mx-auto my-12 w-96">

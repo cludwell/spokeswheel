@@ -184,14 +184,14 @@ export default function UpdateRegistration() {
     <div
       className={special.className + " p-16 max-w-screen-xl mx-auto leading-8"}
     >
-      <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
+      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
         Update 2024 Registration
       </h2>
       {updated && booked.paid ? (
         <UpdateSuccessful />
       ) : updated && booked.paid == false ? (
         <>
-          <h2 className={amatic.className + " mb-12 text-5xl fade-in text-center"}>
+          <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in text-center"}>
             ✅ Update Successful! {booked?.paid}
           </h2>
           <StripeDirection id={session.user.id} lodging={lodging ? lodging : booked.lodging}/>

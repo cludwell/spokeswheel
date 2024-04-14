@@ -5,7 +5,7 @@ import { amatic, special } from "../app/fonts";
 export default function Footer() {
   return (
     <div className="w-full max-w-screen-xl p-4 mx-auto">
-      {/* <h2 className={amatic.className + ` text-white text-5xl`}>SOCIALS</h2>
+      {/* <h2 className={amatic.className + ` text-white text-4xl sm:text-5xl`}>SOCIALS</h2>
       <ul className="ml-4 list-disc ">
         <li>youtube</li>
         <li>instagram</li>

@@ -143,7 +143,7 @@ export default function UpdateInfo() {
     <div
       className={special.className + " p-16 max-w-screen-xl mx-auto leading-8"}
     >
-      <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
+      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
         Update User Info
       </h2>
       <div className="text-base fade-in">

@@ -5,7 +5,7 @@ export default function ContactUs() {
     <div
       className={`${special.className} p-4 sm:p-16 max-w-screen-xl mx-auto leading-8 min-h-screen `}
     >
-      <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
+      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
         Contact Us
       </h2>
       <p className="my-8 fade-in">
@@ -17,7 +17,7 @@ export default function ContactUs() {
           Member at Large - Would handle various oddball tasks
         </li>
       </ul>
-      <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>Website </h2>
+      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>Website </h2>
       <p className="my-8 fade-in">
         {`For any technical problems with registration or the website, please
         email me at `}
@@ -25,7 +25,7 @@ export default function ContactUs() {
           cludwell@gmail.com
         </a>
       </p>
-      <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
+      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
         Workshop Coordinator
       </h2>
       <p className="my-8 fade-in">
@@ -37,7 +37,7 @@ export default function ContactUs() {
           smcmullen719@gmail.com
         </a>
       </p>
-      <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
+      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
         Reflections Coordinator
       </h2>
       <p className="my-8 ">
@@ -49,7 +49,7 @@ export default function ContactUs() {
           mkguilfoyle90@gmail.com
         </a>
       </p>
-      <h2 className={amatic.className + " mb-12 text-5xl"}>Meal Coordinator</h2>
+      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl"}>Meal Coordinator</h2>
       <p className="my-8 ">
         {`Jared will be coordinating food for us! If you have any dietary restrictions or concerns you can reach Jared at `}
         <a
@@ -59,7 +59,7 @@ export default function ContactUs() {
           jareddefrancesco@gmail.com
         </a>
       </p>
-      <h2 className={amatic.className + " mb-12 text-5xl"}>
+      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl"}>
         Family Group Coordinator
       </h2>
       <p className="my-8 ">

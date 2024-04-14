@@ -8,7 +8,7 @@ export default function StripeDirection({ id, lodging }) {
   // console.log('inside the stripe component', lodging)
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
+      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
         {`💸All that's Left is Payment💸`}
       </h2>
       <p className="fade-in">{`For the time being all registration fees are nonrefundable.`}</p>

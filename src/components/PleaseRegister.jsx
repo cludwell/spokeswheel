@@ -10,7 +10,7 @@ export default function PleaseRegister() {
       }
     >
       <div className="flex flex-col items-center justify-center w-full">
-        <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
+        <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
           {`😣 You have to register first!`}
         </h2>
 

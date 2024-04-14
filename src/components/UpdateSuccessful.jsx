@@ -9,7 +9,7 @@ export default function UpdateSuccessful() {
       }
     >
       <div className="flex flex-col items-center justify-center w-full text-balance">
-        <h2 className={amatic.className + " mb-12 text-5xl fade-in"}>
+        <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
           {`😊Data successfully updated!`}
         </h2>
         <p className="fade-in">{`Hooray!`}</p>

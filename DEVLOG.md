@@ -53,3 +53,8 @@ secret page for admin to see all bookings
 ✅ On Reg Update, will want conditional send to Stripe if user has not paid yet
 ✅ Theres currently a problem updating state after a booking has been deleted
 🔲 Error handling is not happening on registration creation and backend fetch is being sent
+🔲 We're ready for production!
+🔲 Copy payment links in Stripe to production mode
+🔲 Create a test payment link for .25 cents to make sure stripe is working in production
+🔲 Update redirection from Stripe to my app's url
+

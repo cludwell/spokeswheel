@@ -191,7 +191,7 @@ export default function UpdateRegistration() {
       ) : updated && booked.paid == false ? (
         <>
           <h2 className={amatic.className + " mb-12 text-5xl fade-in text-center"}>
-            ✅ Update Successful!
+            ✅ Update Successful! {booked?.paid}
           </h2>
           <StripeDirection id={session.user.id} lodging={lodging ? lodging : booked.lodging}/>
         </>

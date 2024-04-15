@@ -76,14 +76,14 @@ export async function POST(req, res) {
       }
     }
     // find the booking and update the paid status
-    console.log('USER EMAIL',userEmail)
+    // console.log('USER EMAIL',userEmail)
     const user = await prisma.users.findUnique({
       where: {
         email: userEmail
       },
     });
     if (user) {
-      console.log("USEEEEER", user, "useremailA", userEmail);
+      // console.log("USEEEEER", user, "useremailA", userEmail);
 
       const booking = await prisma.bookings.findFirst({
         where: {

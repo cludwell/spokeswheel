@@ -84,7 +84,6 @@ export async function POST(req, res) {
     });
     if (user) {
       // console.log("USEEEEER", user, "useremailA", userEmail);
-
       const booking = await prisma.bookings.findFirst({
         where: {
           conferenceId: 1,

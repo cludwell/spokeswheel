@@ -60,5 +60,8 @@ secret page for admin to see all bookings
 ✅ Remember to handle secret keys
 🔲 Paid status is not being updated via the webhook, probably secret key related
 
+this command will be used to update frontend without effecting database
 npm run deploy
+
+this command will be used to wipe database
 npm install && npm run setup && npm run build

@@ -42,7 +42,7 @@ secret page for admin to see all bookings
 
 ✅ Make error handling for frontend and backend if user password doesnt match database
 
-🔲 Create $.25 test payment link for active Stripe
+✅ Create $.25 test payment link for active Stripe
 ✅ Merge Stripe payments to main
 ✅ General testing
     -made sure that registration link is not in header if registered
@@ -53,12 +53,13 @@ secret page for admin to see all bookings
 ✅ On Reg Update, will want conditional send to Stripe if user has not paid yet
 ✅ Theres currently a problem updating state after a booking has been deleted
 ✅ Error handling is not happening on registration creation and backend fetch is being sent
-🔲 We're ready for production!
+✅ We're ready for production!
 ✅ Copy payment links in Stripe to production mode
 ✅ Create a test payment link for .25 cents to make sure stripe is working in production
 ✅ Update redirection from Stripe to my app's url
 ✅ Remember to handle secret keys
-🔲 Paid status is not being updated via the webhook, probably secret key related
+✅ Paid status is not being updated via the webhook, probably secret key related
+🔲 If user has paid they are unable to change lodging on registration update
 
 this command will be used to update frontend without effecting database
 npm run deploy

@@ -191,10 +191,18 @@ export default function UpdateRegistration() {
         <UpdateSuccessful />
       ) : updated && booked.paid == false ? (
         <>
-          <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in text-center"}>
+          <h2
+            className={
+              amatic.className +
+              " mb-12 text-4xl sm:text-5xl fade-in text-center"
+            }
+          >
             ✅ Update Successful! {booked?.paid}
           </h2>
-          <StripeDirection id={session.user.id} lodging={lodging ? lodging : booked.lodging}/>
+          <StripeDirection
+            id={session.user.id}
+            lodging={lodging ? lodging : booked.lodging}
+          />
         </>
       ) : (
         <form
@@ -305,12 +313,18 @@ export default function UpdateRegistration() {
                 value={lodging}
                 onChange={handleChange}
               >
-                <option value="" disabled defaultValue>
-                  Please make a selection
-                </option>{" "}
-                <option value={"Lodges"}>Lodges</option>
-                <option value={"Tent Camping"}>Tent Camping</option>
-                <option value={"Adirondacks"}>Adirondacks</option>
+                {booked.paid == true ? (
+                  <option>{booked.lodging}</option>
+                ) : (
+                  <>
+                    <option value="" disabled defaultValue>
+                      Please make a selection
+                    </option>{" "}
+                    <option value={"Lodges"}>Lodges</option>
+                    <option value={"Tent Camping"}>Tent Camping</option>
+                    <option value={"Adirondacks"}>Adirondacks</option>
+                  </>
+                )}
               </select>
               {errors && errors.lodging && (
                 <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-2xl fade-in w-80">

@@ -99,7 +99,7 @@ export async function POST(req, res) {
           paid: true,
         },
       });
-      console.log("BOOOOOOKING", updated);
+      // console.log("BOOOOOOKING", updated);
     }
     return new Response(JSON.stringify({ message: "success!" }), {
       status: 200,

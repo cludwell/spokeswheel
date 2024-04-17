@@ -47,7 +47,7 @@ export default function Plans2024() {
         {" "}
         {`Let us know what workshops you want to lead so we can update this!`}
       </p>
-      <div className="flex flex-row justify-center w-full overflow-x-auto">
+      <div className="flex flex-row justify-center w-full overflow-x-auto ">
         <table className="table-xs sm:table-sm md:table-lg table-zebra bg-base-300 rounded-xl">
           {/* head */}
           <thead>
@@ -71,11 +71,11 @@ export default function Plans2024() {
               <td>We catch a wild jackrabbit and go over bunnycare basics</td>
             </tr> */}
             {/* row 3 */}
-            {/* <tr>
-              <td>Bryce</td>
-              <td>Gen Z Slang</td>
-              <td>Gonna be lit fam, on god.</td>
-            </tr> */}
+            <tr>
+              <td>Bryce & Alex</td>
+              <td>Arnis/eskrima</td>
+              <td>An intro to the Phillipines' national martial art.</td>
+            </tr>
           </tbody>
         </table>
       </div>

@@ -14,6 +14,7 @@ export default function Plans2024() {
       <p className="my-8 fade-in">
         {`At the moment we are considering renting the Camp Seawood from the Girl Scouts as the location for our first conference. It's a walkable distance from the ocean and downtown Portsmouth, NH and a straight shot from Logan Airport going north on Rt 1. It's also very affordable. We wanted to keep things cheap while we gauge excitement for this new project.`}
       </p>
+      <p className="my-8 fade-in">{`Please register in advance as it will allow us to rent additional facilities as needed. We kind of need to know by June 1st to rent additional facilities. `}</p>
       <ul className="ml-12 fade-in">
         <li className="list-disc ">{`Two main lodges, Thaxter's Lodge and Ranger's Roost, with 16 bunk beds each`}</li>
         <li className="list-disc ">
@@ -59,17 +60,17 @@ export default function Plans2024() {
           </thead>
           <tbody>
             {/* row 1 */}
-            <tr>
+            {/* <tr>
               <td>Sarah</td>
               <td>Happy Accidents</td>
               <td>Come get a stick and poke from Sarah!</td>
-            </tr>
-            {/* row 2 */}
-            {/* <tr>
-              <td>Matty Mo</td>
-              <td>Bunnies 101</td>
-              <td>We catch a wild jackrabbit and go over bunnycare basics</td>
             </tr> */}
+            {/* row 2 */}
+            <tr>
+              <td>Matty Mo</td>
+              <td>Cryptids</td>
+              <td>A deep dive into the Mothman, etc</td>
+            </tr>
             {/* row 3 */}
             <tr>
               <td>Bryce & Alex</td>

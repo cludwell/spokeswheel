@@ -93,7 +93,7 @@ export default function SignUpModal() {
   return (
     <>
       <button
-        className="sm:text-xl btn btn-ghost"
+        className="text-xs btn btn-ghost sm:text-base md:text-lg"
         onClick={() => setOpen(true)}
       >
         sign up

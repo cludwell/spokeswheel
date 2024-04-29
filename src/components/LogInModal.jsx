@@ -39,7 +39,7 @@ export default function LogInModal() {
   return (
     <>
       <button
-        className=" sm:text-xl btn btn-ghost"
+        className="text-xs btn btn-ghost sm:text-base md:text-lg"
         onClick={() => setOpen(true)}
       >
         log in

@@ -52,17 +52,17 @@ export default function Header() {
       <ul
         className={`${gloria.className} flex flex-row rounded-box z-10 w-full justify-around sm:text-xl mt-11 md:mt-40 `}
       >
-        <li className="text-sm btn btn-ghost sm:text-lg">
+        <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
           <Link href={`/aboutus`}>about us</Link>
         </li>
-        <li className="text-sm btn btn-ghost sm:text-lg">
+        <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
           <Link href={"/plans2024"}>{`plans '24`}</Link>
         </li>
-        <li className="text-sm btn btn-ghost sm:text-lg">
+        <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
           <Link href={"/contact"}>contact</Link>
         </li>
         {user && bookings.length == 0 && (
-          <li className="text-sm btn btn-ghost sm:text-lg">
+          <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
             <Link href={"/registration"}>register</Link>
           </li>
         )}

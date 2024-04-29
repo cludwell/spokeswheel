@@ -35,7 +35,7 @@ export default function Plans2024() {
         className="w-1/2 mx-auto my-24 rounded-lg "
       />
 
-      <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>When? Aug 15-19</h2>
+      <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>When? Aug 15-18</h2>
       <div className="flex flex-col items-center mb-24">
         <CountDown />
       </div>

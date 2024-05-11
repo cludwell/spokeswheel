@@ -12,14 +12,14 @@ export default function Plans2024() {
         Location - Camp Seawood
       </h2>
       <p className="my-8 fade-in">
-        {`At the moment we are considering renting the Camp Seawood from the Girl Scouts as the location for our first conference. It's a walkable distance from the ocean and downtown Portsmouth, NH and a straight shot from Logan Airport going north on Rt 1. It's also very affordable. We wanted to keep things cheap while we gauge excitement for this new project.`}
+        {`At the moment we are renting  Camp Seawood from the Girl Scouts as the location for our first conference. It's a walkable distance from the ocean and downtown Portsmouth, NH and a straight shot from Logan Airport going north on Rt 1. It's also very affordable. We wanted to keep things cheap while we gauge excitement for this new project. Please be sure to bring sleeping bags/bedding, and if you plan on staying in an adirondack please bring a sleeping mattress.`}
       </p>
       <p className="my-8 fade-in">{`Please register in advance as it will allow us to rent additional facilities as needed. We kind of need to know by June 1st to rent additional facilities. `}</p>
       <ul className="ml-12 fade-in">
         <li className="list-disc ">{`Two main lodges, Thaxter's Lodge and Ranger's Roost, with 16 bunk beds each`}</li>
         <li className="list-disc ">
-          Adirondacks may also be rented for privacy with spouse/family or light
-          sleepers.
+          {`Adirondacks may also be rented for privacy with spouse/family or light
+          sleepers.`}
         </li>
         <li className="list-disc ">{`Ranger's Roose has a commercial kitchen with two stoves, double sinks, and a dishwasher. Also large industrial refrigerators and a standalone freezer.`}</li>
         <li className="list-disc ">Both buildings have wheel chair ramps.</li>
@@ -35,15 +35,21 @@ export default function Plans2024() {
         className="w-1/2 mx-auto my-24 rounded-lg "
       />
 
-      <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>When? Aug 15-18</h2>
+      <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>
+        When? Aug 15-18
+      </h2>
       <div className="flex flex-col items-center mb-24">
         <CountDown />
       </div>
-      <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>How Much?</h2>
+      <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>
+        How Much?
+      </h2>
       <p className="my-8 fade-in">
         {`Our goal is to make this conference accessible and affordable, especially since we hope that friends from around the country will fly in to attend. Costs are roughly 20 dollars a night depending on the lodging that you would like, and 20 dollars a day for food. We're hoping to break even 😰. As a community we can decide what to do with any excess funds if any.`}
       </p>
-      <h2 className={amatic.className + " my-24 text-4xl sm:text-5xl"}>Workshops</h2>
+      <h2 className={amatic.className + " my-24 text-4xl sm:text-5xl"}>
+        Workshops
+      </h2>
       <p className="my-8 fade-in">
         {" "}
         {`Let us know what workshops you want to lead so we can update this!`}

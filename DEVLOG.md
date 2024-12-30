@@ -1,3 +1,18 @@
+#2025
+Dropdown menu for different conferences
+Create a page with info about our first conference
+-image carousels
+-interactive cards/media
+-video
+--host or compress video?
+Create new page with tentative information about upcoming conference
+
+Refactor registration page for 2025
+-allow users to register multiple people at once
+
+
+
+#2024
 ✅ Get Prisma installed
 ✅Try using Next font imports from google
 ✅ Splash page

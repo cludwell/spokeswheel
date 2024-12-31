@@ -10,6 +10,7 @@ Create new page with tentative information about upcoming conference
 Refactor registration page for 2025
 -allow users to register multiple people at once
 
+something 3d on the landing page?
 
 
 #2024

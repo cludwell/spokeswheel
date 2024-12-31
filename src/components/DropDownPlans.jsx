@@ -29,8 +29,7 @@ export default function DropDownPlans() {
         onClick={openMenu}>
             plans
         </span>
-        <motion.div
-    className=``
+        
 
       </div>
     </>

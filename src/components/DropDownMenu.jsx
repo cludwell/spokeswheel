@@ -11,6 +11,7 @@ import IconClipboard from "./Icons/IconClipboard";
 import IconClose from "./Icons/IconClose";
 import { motion } from "framer-motion";
 import IconId from "./Icons/IconId";
+import IconUserProfile from "./Icons/IconUserProfile";
 
 export default function DropDownMenu() {
   const { data: session, status: loading } = useSession();
@@ -60,7 +61,7 @@ export default function DropDownMenu() {
             className="cursor-pointer md:scale-125 btn btn-ghost"
             onClick={openMenu}
           >
-            <IconGear />
+            <IconUser />
           </span>
           <motion.div
             className={`${gloria.className} absolute right-4 top-16 bg-base-200 rounded-xl drop-shadow-2xl p-4 transition ease-in-out duration-400 w-fit z-10 border-2  border-slate-700 min-w-40  `}
@@ -74,7 +75,7 @@ export default function DropDownMenu() {
               className="flex flex-row ml-4 text-xl "
               variants={itemVariants}
             >
-              <IconUser />{" "}
+              <IconUserProfile />
               <span className="ml-4 ">
                 {user?.firstName} {user?.lastName}
               </span>

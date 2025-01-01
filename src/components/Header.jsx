@@ -56,7 +56,7 @@ export default function Header() {
           <Link href={`/aboutus`}>about us</Link>
         </li>
         <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
-          <Link href={"/plans2024"}>{`plans '24`}</Link>
+          <Link href={"/plans2025"}>{`plans '25`}</Link>
         </li>
         <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
           <Link href={"/contact"}>contact</Link>

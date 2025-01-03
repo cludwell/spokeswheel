@@ -5,7 +5,7 @@ Create a page with info about our first conference
 -interactive cards/media
 -video
 --host or compress video?
-Create new page with tentative information about upcoming conference
+✅Create new page with tentative information about upcoming conference
 
 Refactor registration page for 2025
 -allow users to register multiple people at once
@@ -39,7 +39,7 @@ Lesson: Leave assignment of connections until the end
 --✅Booking CRUD and forms C✅R✅U✅D✅
 --🔲Conference CRUD and forms => would be for the admin, not a high priority
 ✅ Copy and paste Next/Auth functionality
-✅ Tested and working
+✅ Tested and<<>> working
 ✅ Registration Form (Form only, not connected to state or db)
 ✅ Login Form
 ✅ Signup Form TESTED AND WORKING

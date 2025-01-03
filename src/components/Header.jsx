@@ -9,6 +9,7 @@ import Logo from "./Logo";
 import ConferenceName from "./ConferenceName";
 import { gloria } from "../app/fonts";
 import DropDownMenu from "./DropDownMenu";
+import DropDownPlans from "./DropDownPlans";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
@@ -55,9 +56,10 @@ export default function Header() {
         <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
           <Link href={`/aboutus`}>about us</Link>
         </li>
-        <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
+        {/* <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
           <Link href={"/plans2025"}>{`plans '25`}</Link>
-        </li>
+        </li> */}
+        <DropDownPlans/>
         <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
           <Link href={"/contact"}>contact</Link>
         </li>

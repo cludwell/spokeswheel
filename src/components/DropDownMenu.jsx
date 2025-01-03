@@ -40,6 +40,7 @@ export default function DropDownMenu() {
     document.addEventListener("click", closeMenu);
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
+  
   const closeMenu = (e) => setShowMenu(false);
   const handleSignOut = async () => {
     const data = await signOut({ redirect: true, callbackUrl: "/" });

@@ -12,13 +12,13 @@ export default function Plans2024() {
         Location - Camp Seawood
       </h2>
       <p className="my-8 fade-in">
-        {`At the moment we are renting  Camp Seawood from the Girl Scouts as the location for our first conference. It's a walkable distance from the ocean and downtown Portsmouth, NH and a straight shot from Logan Airport going north on Rt 1. It's also very affordable. We wanted to keep things cheap while we gauge excitement for this new project. Please be sure to bring sleeping bags/bedding, and if you plan on staying in an adirondack please bring a sleeping mattress.`}
+        {` Our first annual conference was held at Camp Seawood in Portsmouth, New Hampshire! About 20 people, including a few families joined us for a small conference. It was reassuring to hear from attendees that some came just because their friends were attending only to realize that they missed spiritual spaces like this in their lives. It's a walkable distance from the ocean and downtown Portsmouth, NH and a straight shot from Logan Airport going north on Rt 1. It was also very affordable. We wanted to keep things cheap while we gauge excitement for this new project. Attendees made sure to bring sleeping bags and mattresses, as accomodations were more like glamping rather than a stay at an AirBnb.`}
       </p>
-      <p className="my-8 fade-in">{`Please register in advance as it will allow us to rent additional facilities as needed. We kind of need to know by June 1st to rent additional facilities. `}</p>
+
       <ul className="ml-12 fade-in">
         <li className="list-disc ">{`Two main lodges, Thaxter's Lodge and Ranger's Roost, with 16 bunk beds each`}</li>
         <li className="list-disc ">
-          {`Adirondacks may also be rented for privacy with spouse/family or light
+          {`Adirondacks also rented for privacy with spouse/family or light
           sleepers.`}
         </li>
         <li className="list-disc ">{`Ranger's Roose has a commercial kitchen with two stoves, double sinks, and a dishwasher. Also large industrial refrigerators and a standalone freezer.`}</li>
@@ -36,24 +36,21 @@ export default function Plans2024() {
       />
 
       <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>
-        When? Aug 15-18
+        When? Aug 15-18 2024
       </h2>
-      <div className="flex flex-col items-center mb-24">
+      {/* <div className="flex flex-col items-center mb-24">
         <CountDown />
-      </div>
+      </div> */}
       <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>
         How Much?
       </h2>
       <p className="my-8 fade-in">
-        {`Our goal is to make this conference accessible and affordable, especially since we hope that friends from around the country will fly in to attend. Costs are roughly 20 dollars a night depending on the lodging that you would like, and 20 dollars a day for food. We're hoping to break even 😰. As a community we can decide what to do with any excess funds if any.`}
+        {`The conference was roughly 20 dollars a day for lodging and 20 dollars a day for food. In the future we would like to have a little pot saved so that we can offer NOTAFLOF (No One Turned Away For Lack Of Funds). Our goal is to make the conference accessible, which acknowledging that asking folks to take time off work is a big ask.`}
       </p>
       <h2 className={amatic.className + " my-24 text-4xl sm:text-5xl"}>
         Workshops
       </h2>
-      <p className="my-8 fade-in">
-        {" "}
-        {`Let us know what workshops you want to lead so we can update this!`}
-      </p>
+
       <div className="flex flex-row justify-center w-full overflow-x-auto ">
         <table className="table-xs sm:table-sm md:table-lg table-zebra bg-base-300 rounded-xl">
           {/* head */}
@@ -66,22 +63,38 @@ export default function Plans2024() {
           </thead>
           <tbody>
             {/* row 1 */}
-            {/* <tr>
-              <td>Sarah</td>
-              <td>Happy Accidents</td>
-              <td>Come get a stick and poke from Sarah!</td>
-            </tr> */}
+            <tr>
+              <td>Meghan</td>
+              <td>Block Printing</td>
+              <td>
+                Attendings made their own designs or used donated blocks to
+                print Spokeswheel merch!
+              </td>
+            </tr>
             {/* row 2 */}
             <tr>
-              <td>Matty Mo</td>
-              <td>Cryptids</td>
-              <td>A deep dive into the Mothman, etc</td>
+              <td>Langer</td>
+              <td>Parkour</td>
+              <td>
+                Parkour? Parkour! Langer a great introduction to safely
+                practicing parkour
+              </td>
             </tr>
             {/* row 3 */}
             <tr>
               <td>Bryce & Alex</td>
               <td>Arnis/eskrima</td>
               <td>An intro to the Phillipines' national martial art.</td>
+            </tr>
+            {/* row 4 */}
+            <tr>
+              <td>Chris</td>
+              <td>Tantura</td>
+              <td>
+                A screening and light discussion of the documentary film,
+                Tantura, which documents the ethnic cleansing of a Palestinian
+                village during the 1948 Nakba
+              </td>
             </tr>
           </tbody>
         </table>

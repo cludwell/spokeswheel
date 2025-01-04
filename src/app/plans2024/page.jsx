@@ -51,7 +51,7 @@ export default function Plans2024() {
         Workshops
       </h2>
 
-      <div className="flex flex-row justify-center w-full overflow-x-auto ">
+      <div className="m-auto overflow-x-auto rounded-b-lg w-fit">
         <table className="table-xs sm:table-sm md:table-lg table-zebra bg-base-300 rounded-xl">
           {/* head */}
           <thead>

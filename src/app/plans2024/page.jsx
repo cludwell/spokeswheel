@@ -2,6 +2,9 @@ import seawoodmap from "../../../public/images/seawoodmap.png";
 import Image from "next/image";
 import CountDown from "@/components/CountDown";
 import { amatic, special } from "../fonts";
+import CarouselFire2024 from "@/components/2024CarouselFire";
+import CarouselPeople2024 from "@/components/2024CarouselPeople";
+import CarouselSite2024 from "@/components/2024CarouselSite";
 
 export default function Plans2024() {
   return (
@@ -27,17 +30,19 @@ export default function Plans2024() {
           2 showers, 2 toilets in each building, and 3 latrines.
         </li>
       </ul>
-      <Image
+      {/* <Image
         src={seawoodmap}
         alt={`a map of camp seawood displaying the adirondacks and main buildings`}
         width={2000}
         height={2000}
         className="w-1/2 mx-auto my-24 rounded-lg "
-      />
-
-      <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>
+      /> */}
+      <CarouselSite2024 />
+      <CarouselFire2024 />
+      <CarouselPeople2024 />
+      {/* <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>
         When? Aug 15-18 2024
-      </h2>
+      </h2> */}
       {/* <div className="flex flex-col items-center mb-24">
         <CountDown />
       </div> */}
@@ -45,7 +50,7 @@ export default function Plans2024() {
         How Much?
       </h2>
       <p className="my-8 fade-in">
-        {`The conference was roughly 20 dollars a day for lodging and 20 dollars a day for food. In the future we would like to have a little pot saved so that we can offer NOTAFLOF (No One Turned Away For Lack Of Funds). Our goal is to make the conference accessible, which acknowledging that asking folks to take time off work is a big ask.`}
+        {`The conference was roughly 20 dollars a day for lodging and 20 dollars a day for food. Folks ended up paying 120 if staying in the lodges, or about 140 if staying in adirondacks. In the future we would like to have a little pot saved so that we can offer NOTAFLOF (No One Turned Away For Lack Of Funds). Our goal is to make the conference accessible, which acknowledging that asking folks to take time off work is a big ask.`}
       </p>
       <h2 className={amatic.className + " my-24 text-4xl sm:text-5xl"}>
         Workshops

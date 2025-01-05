@@ -6,7 +6,9 @@ export default function SplashHero() {
     <div
       className="max-w-screen-lg min-h-screen hero fade-in"
       style={{
-        backgroundImage: "url(/images/sparks.jpg)",
+        // backgroundImage: "url(/images/sparks.jpg)",
+        backgroundImage: "url(/images/photos/2024/fire.webp)",
+
       }}
     >
       <div className="hero-overlay bg-opacity-70"></div>

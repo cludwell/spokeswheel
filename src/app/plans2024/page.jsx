@@ -81,8 +81,8 @@ export default function Plans2024() {
               <td>Langer</td>
               <td>Parkour</td>
               <td>
-                Parkour? Parkour! Langer a great introduction to safely
-                practicing parkour
+                Parkour? Parkour! A great introduction to safely practicing
+                parkour. Kicks to the head were negligible.
               </td>
             </tr>
             {/* row 3 */}
@@ -94,7 +94,16 @@ export default function Plans2024() {
             {/* row 4 */}
             <tr>
               <td>Chris</td>
-              <td>Tantura</td>
+              <td>
+                <a
+                  href="https://youtu.be/Wgu36w-jYCk?si=LWP-HFIFokzGnDCQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-primary link"
+                >
+                  Tantura
+                </a>
+              </td>
               <td>
                 A screening and light discussion of the documentary film,
                 Tantura, which documents the ethnic cleansing of a Palestinian

@@ -15,7 +15,7 @@ export default function Plans2024() {
         Location - Camp Seawood
       </h2>
       <p className="my-8 fade-in">
-        {` Our first annual conference was held at Camp Seawood in Portsmouth, New Hampshire! About 20 people, including a few families joined us for a small conference. It was reassuring to hear from attendees that some came just because their friends were attending only to realize that they missed spiritual spaces like this in their lives. It's a walkable distance from the ocean and downtown Portsmouth, NH and a straight shot from Logan Airport going north on Rt 1. It was also very affordable. We wanted to keep things cheap while we gauge excitement for this new project. Attendees made sure to bring sleeping bags and mattresses, as accomodations were more like glamping rather than a stay at an AirBnb.`}
+        {` Our first annual conference was held at Camp Seawood in Portsmouth, New Hampshire! About 20 people, including a few families joined us for a small conference. It was reassuring to hear from attendees that some came just because their friends were attending only to realize that they missed spiritual spaces like this in their lives. Camp Seawood was a walkable distance from the ocean and downtown Portsmouth, NH and a straight shot from Logan Airport going north on Rt 1. It was also very affordable. We wanted to keep things cheap while we gauge excitement for this new project. Attendees made sure to bring sleeping bags and mattresses, as accomodations were more like glamping rather than a stay at an AirBnb.`}
       </p>
 
       <ul className="ml-12 fade-in">

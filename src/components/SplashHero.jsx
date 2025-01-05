@@ -21,10 +21,10 @@ export default function SplashHero() {
             To a conference for rad humans
           </p>
           <p className={gloria.className + " my-5 sm:text-xl"}>
-            Where we remember to believe in people
+            In a collective search for meaning
           </p>
           <p className={gloria.className + " my-5 sm:text-xl"}>
-            And feel inspired through community
+            Where we remember to believe in people
           </p>
 
           <Link

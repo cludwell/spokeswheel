@@ -16,10 +16,15 @@ const images = [
 ];
 export default function CarouselSite2024() {
   return (
-    <div className="my-12 carousel carousel-center rounded-box">
+    <div className="my-4 md:my-12 carousel carousel-center rounded-box h-[40vh]">
       {images.map((img, i) => (
-        <div className="w-1/3 carousel-item" key={`siteimage${i}`}>
-          <Image src={img} width={2000} height={2000} className="" />
+        <div className="carousel-item" key={`siteimage${i}`}>
+          <Image
+            src={img}
+            width={2000}
+            height={2000}
+            className="w-auto h-auto"
+          />
         </div>
       ))}
     </div>

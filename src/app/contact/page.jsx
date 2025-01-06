@@ -17,7 +17,9 @@ export default function ContactUs() {
           Member at Large - Would handle various oddball tasks
         </li>
       </ul>
-      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>Website </h2>
+      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
+        Website{" "}
+      </h2>
       <p className="my-8 fade-in">
         {`For any technical problems with registration or the website, please
         email me at `}
@@ -49,7 +51,9 @@ export default function ContactUs() {
           mkguilfoyle90@gmail.com
         </a>
       </p>
-      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl"}>Meal Coordinator</h2>
+      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl"}>
+        Meal Coordinator
+      </h2>
       <p className="my-8 ">
         {`Jared will be coordinating food for us! If you have any dietary restrictions or concerns you can reach Jared at `}
         <a
@@ -74,7 +78,7 @@ export default function ContactUs() {
           matthewpatrickmorin@gmail.com
         </a>
       </p>
-      <div className="flex flex-col items-center">
+      <div className="m-auto overflow-x-auto rounded-b-lg w-fit">
         <table className="table-xs sm:table-sm md:table-lg table-zebra bg-base-300 rounded-xl">
           {/* head */}
           <thead>
@@ -86,18 +90,7 @@ export default function ContactUs() {
           </thead>
           <tbody>
             {/* row 1 */}
-            <tr>
-              <td>Sarah</td>
-              <td>Workshops</td>
-              <td>
-                <a
-                  className="link link-primary "
-                  href="mailto:smcmullen719@gmail.com"
-                >
-                  smcmullen719@gmail.com
-                </a>
-              </td>
-            </tr>
+
             {/* row 2 */}
             <tr>
               <td>Matty Mo</td>

@@ -16,7 +16,7 @@ const images = [
 ];
 export default function CarouselFire2024() {
   return (
-    <div className="my-4 md:my-12 carousel carousel-center rounded-box h-[40vh]">
+    <div className="my-4 md:my-12 carousel carousel-center rounded-box h-[50vh]">
       {images.map((img, i) => (
         <div className=" carousel-item" key={`fireimage${i}`}>
           <Image

@@ -15,5 +15,7 @@ export default function FocusImageModal({ data, chosenImage, setChosenImage }) {
   }, [chosenImage, current]);
   if (!data || !data.length) return null;
 
-  return <></>;
+  return (<>
+  
+  </>);
 }

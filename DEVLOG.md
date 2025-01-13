@@ -11,7 +11,19 @@ Refactor registration page for 2025
 -allow users to register multiple people at once
 
 something 3d on the landing page?
+Carousel is becoming a roadblock
+-use Daisy component and learn how to build it someother time?
 
+-three images in horizontal scroll bar
+-clicking left and right slides image bar
+-clicking image opens it in a modal to focus on it
+
+-problem is responsiveness for mobile devices
+-can use daisy component but all my pictures are portrait so it might look weird, especially on small media queries
+
+-fastest solution is to use daisy
+-can still try implementing focus modal
+--use limits to height and width
 
 #2024
 ✅ Get Prisma installed

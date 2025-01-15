@@ -24,7 +24,7 @@ Carousel is becoming a roadblock
 -fastest solution is to use daisy
 -can still try implementing focus modal
 --use limits to height and width
-
+shameless line so i can commit
 #2024
 ✅ Get Prisma installed
 ✅Try using Next font imports from google

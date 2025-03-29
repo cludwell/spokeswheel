@@ -4,7 +4,7 @@ import IconChevronLeft from "./Icons/IconChevronLeft";
 import IconChevronRight from "./Icons/IconChevronRight";
 import { useRef } from "react";
 
-const images = [
+const siteImages = [
   "/images/photos/2024/site01.jpg",
   "/images/photos/2024/site02.jpg",
   "/images/photos/2024/site03.jpg",
@@ -49,7 +49,7 @@ export default function CarouselSite2024() {
         className="flex flex-row overflow-hidden rounded-box h-[50vh] relative snap-x snap-mandatory scroll-smooth "
         ref={carouselRef}
       >
-        {images.map((img, i) => (
+        {siteImages.map((img, i) => (
           <div className="flex-shrink-0 snap-center" key={`siteimage${i}`}>
             <Image
               src={img}

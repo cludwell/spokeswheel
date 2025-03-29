@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const images = [
+const fireImages = [
   "/images/photos/2024/fire1.jpg",
   "/images/photos/2024/fire2.jpg",
   "/images/photos/2024/fire3.jpg",
@@ -22,7 +22,7 @@ export default function CarouselFire2024() {
 
   return (
     <div className="my-4 md:my-12 carousel carousel-center rounded-box h-[50vh] relative">
-      {images.map((img, i) => (
+      {fireImages.map((img, i) => (
         <div className=" carousel-item" key={`fireimage${i}`}>
           <Image
             src={img}

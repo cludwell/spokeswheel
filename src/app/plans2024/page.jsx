@@ -5,6 +5,49 @@ import { amatic, special } from "../fonts";
 import CarouselFire2024 from "@/components/2024CarouselFire";
 import CarouselPeople2024 from "@/components/2024CarouselPeople";
 import CarouselSite2024 from "@/components/2024CarouselSite";
+import { SwipeCarousel } from "@/components/SwipeCarousel";
+
+const fireImages = [
+  "/images/photos/2024/fire1.jpg",
+  "/images/photos/2024/fire2.jpg",
+  "/images/photos/2024/fire3.jpg",
+  "/images/photos/2024/fire4.jpg",
+  "/images/photos/2024/fire5.jpg",
+  "/images/photos/2024/fire6.jpg",
+  "/images/photos/2024/fire7.jpg",
+  "/images/photos/2024/fire8.jpg",
+  //   "/images/photos/2024/fire9.jpg",
+  "/images/photos/2024/fire10.jpg",
+  "/images/photos/2024/fire11.jpg",
+  "/images/photos/2024/fire12.jpg",
+];
+
+const peopleImages = [
+  "/images/photos/2024/people1.jpg",
+  "/images/photos/2024/people2.jpg",
+  "/images/photos/2024/people3.jpg",
+  "/images/photos/2024/people4.jpg",
+  "/images/photos/2024/people5.jpg",
+  //   "/images/photos/2024/people6.jpg",
+  "/images/photos/2024/people7.jpg",
+  "/images/photos/2024/people8.jpg",
+  "/images/photos/2024/people9.jpg",
+];
+
+const siteImages = [
+  "/images/photos/2024/site01.jpg",
+  "/images/photos/2024/site02.jpg",
+  "/images/photos/2024/site03.jpg",
+  "/images/photos/2024/site04.jpg",
+  "/images/photos/2024/site05.jpg",
+  "/images/photos/2024/site06.jpg",
+  "/images/photos/2024/site07.jpg",
+  // "/images/photos/2024/site08.jpg",
+  "/images/photos/2024/site09.jpg",
+  "/images/photos/2024/site10.jpg",
+  "/images/photos/2024/site11.jpg",
+  "/images/photos/2024/site12.jpg",
+];
 
 export default function Plans2024() {
   return (
@@ -37,15 +80,10 @@ export default function Plans2024() {
         height={2000}
         className="w-1/2 mx-auto my-24 rounded-lg "
       /> */}
-      <CarouselSite2024 />
-      <CarouselFire2024 />
-      <CarouselPeople2024 />
-      {/* <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>
-        When? Aug 15-18 2024
-      </h2> */}
-      {/* <div className="flex flex-col items-center mb-24">
-        <CountDown />
-      </div> */}
+      <SwipeCarousel imgs={fireImages} />
+      <SwipeCarousel imgs={peopleImages} />
+      <SwipeCarousel imgs={siteImages} />
+
       <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>
         How Much?
       </h2>

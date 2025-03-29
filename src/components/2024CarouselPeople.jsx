@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const images = [
+const peopleImages = [
   "/images/photos/2024/people1.jpg",
   "/images/photos/2024/people2.jpg",
   "/images/photos/2024/people3.jpg",
@@ -14,7 +14,7 @@ const images = [
 export default function CarouselPeople2024() {
   return (
     <div className="my-4 md:my-12 carousel carousel-center rounded-box h-[50vh]">
-      {images.map((img, i) => (
+      {peopleImages.map((img, i) => (
         <div className="carousel-item" key={`peopleimage${i}`}>
           <Image
             src={img}

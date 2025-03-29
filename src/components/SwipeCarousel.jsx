@@ -104,7 +104,7 @@ const Images = ({ imgIndex, imgs }) => {
               scale: imgIndex === idx ? 0.95 : 0.85,
             }}
             transition={SPRING_OPTIONS}
-            className="object-cover w-full aspect-video shrink-0 rounded-xl bg-neutral-800 overflow-clip"
+            className="object-cover w-full aspect-square shrink-0 rounded-xl bg-neutral-800 overflow-clip"
           >
             <Image
               src={imgs[idx]}

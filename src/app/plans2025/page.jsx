@@ -1,8 +1,21 @@
 import farnsworthsitemap from "../../../public/images/farnsworth/farnsworth.png";
+import cabins from "../../../public/images/farnsworth/cabins.jpg";
+import dininghall from "../../../public/images/farnsworth/dininghall.png";
+import farnsworth from "../../../public/images/farnsworth/farnsworth.png";
+import outsidehall from "../../../public/images/farnsworth/outsidehall.JPG";
 import Image from "next/image";
 import CountDown from "@/components/CountDown";
 import { amatic, special } from "../fonts";
+// import { Fanwood_Text } from "next/font/google";
+import { SwipeCarousel } from "@/components/SwipeCarousel";
 
+const farnsworthImages = [
+  cabins,
+  dininghall,
+  farnsworth,
+  outsidehall,
+  farnsworthsitemap,
+];
 export default function Plans2024() {
   return (
     <div
@@ -15,15 +28,15 @@ export default function Plans2024() {
         {`BIG NEWS! We've finally reserved a camp! We'll be staying at the Camp Farnsworth Girl Scout Camp in Thetford Vermont! It's a little further from most of us in the Boston Metro area, but we think the facilities will be a great fit for us! We will be renting their dining hall which can accomodate up to 200 people as well as the Tovariche Cabins, if you're familiar with the site.`}
       </p>
       <p className="my-8 fade-in">{`Please register in advance as it will allow us to rent additional facilities as needed. We kind of need to know by June 1st to rent additional facilities! `}</p>
-
-
+{/*
       <Image
         src={farnsworthsitemap}
         alt={`a map of camp seawood displaying the adirondacks and main buildings`}
         width={2000}
         height={2000}
         className="w-1/2 mx-auto my-24 rounded-lg "
-      />
+      /> */}
+      <SwipeCarousel imgs={farnsworthImages} />
       <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl fade-in"}>
         Theme - Stone Soup
       </h2>
@@ -37,10 +50,10 @@ export default function Plans2024() {
         When? Aug 22-26
       </h2>
       <p className="my-8 fade-in">
-        {`We will be arriving Friday evening and leaving Tuesday morning! PLEASE PLEASE PLEASE, ask for time off work now or prepare to use your sick time 😉. `}
+        {`We will be arriving Friday evening and leaving Tuesday morning! PLEASE PLEASE PLEASE, ask for time off work now or prepare to use your sick time 😉. I realize this is a big ask, but I promise it'll be worth it. Life is too short to spend it working all the time!`}
       </p>
       <p className="my-8 fade-in">
-        {`In the future we hope to expand to a week long summer camp!`}
+        {`In the future we hope to expand to a week long conference!`}
       </p>
       <div className="flex flex-col items-center mb-24">
         <CountDown />
@@ -52,7 +65,7 @@ export default function Plans2024() {
         {`Our goal is to make this conference accessible and affordable, especially since we hope that friends from around the country will fly in to attend. Costs are roughly 20 dollars a night depending on the lodging that you would like, and 20 dollars a day for food. We're hoping to break even 😰.`}
       </p>
       <p className="my-8 fade-in">
-        {`We're asking $160 per person and half off for children, (14 years old and younger). `}{" "}
+        {`*We're asking $160 per person and half off for children, (14 years old and younger). `}{" "}
         <a className="link link-error" href="mailto:cludwell@gmail.com">
           If price might be a barrier to you attending please reach out to us.
         </a>

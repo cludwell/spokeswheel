@@ -1,7 +1,7 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import Image from "next/image";
-
 // const imgs = [
 //   "/imgs/nature/1.jpg",
 //   "/imgs/nature/2.jpg",
@@ -23,7 +23,7 @@ const SPRING_OPTIONS = {
   damping: 50,
 };
 
-export const SwipeCarousel = (imgs) => {
+export const SwipeCarousel = ({ imgs }) => {
   const [imgIndex, setImgIndex] = useState(0);
 
   const dragX = useMotionValue(0);
@@ -43,7 +43,7 @@ export const SwipeCarousel = (imgs) => {
     }, AUTO_DELAY);
 
     return () => clearInterval(intervalRef);
-  }, []);
+  }, [dragX, imgs.length]);
 
   const onDragEnd = () => {
     const x = dragX.get();
@@ -56,7 +56,7 @@ export const SwipeCarousel = (imgs) => {
   };
 
   return (
-    <div className="relative py-8 overflow-hidden bg-neutral-950">
+    <div className="relative py-8 overflow-hidden bg-neutral-950 ">
       <motion.div
         drag="x"
         dragConstraints={{
@@ -73,40 +73,53 @@ export const SwipeCarousel = (imgs) => {
         onDragEnd={onDragEnd}
         className="flex items-center cursor-grab active:cursor-grabbing"
       >
-        <Images imgIndex={imgIndex} />
+        <Images
+          imgIndex={imgIndex}
+          imgs={imgs}
+          // className="w-full h-full"
+          // width={2000}
+          // height={2000}
+        />
       </motion.div>
 
-      <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} />
+      <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} imgs={imgs} />
       <GradientEdges />
     </div>
   );
 };
 
-const Images = ({ imgIndex }) => {
+const Images = ({ imgIndex, imgs }) => {
   return (
     <>
       {imgs.map((imgSrc, idx) => {
         return (
           <motion.div
-            key={idx}
-            style={{
-              backgroundImage: `url(${imgSrc})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
+            key={imgSrc}
+            // style={{
+            //   backgroundImage: `url(${imgSrc})`,
+            //   backgroundSize: "cover",
+            //   backgroundPosition: "center",
+            // }}
             animate={{
               scale: imgIndex === idx ? 0.95 : 0.85,
             }}
             transition={SPRING_OPTIONS}
-            className="object-cover w-screen aspect-video shrink-0 rounded-xl bg-neutral-800"
-          />
+            className="object-cover w-full aspect-video shrink-0 rounded-xl bg-neutral-800 overflow-clip"
+          >
+            <Image
+              src={imgs[idx]}
+              className="object-cover w-fit"
+              alt={`${imgs[idx]}`}
+              fill
+            />
+          </motion.div>
         );
       })}
     </>
   );
 };
 
-const Dots = ({ imgIndex, setImgIndex }) => {
+const Dots = ({ imgIndex, setImgIndex, imgs }) => {
   return (
     <div className="flex justify-center w-full gap-2 mt-4">
       {imgs.map((_, idx) => {
@@ -114,7 +127,7 @@ const Dots = ({ imgIndex, setImgIndex }) => {
           <button
             key={idx}
             onClick={() => setImgIndex(idx)}
-            className={`h-3 w-3 rounded-full transition-colors ${
+            className={`h-5 w-5 rounded-full transition-colors ${
               idx === imgIndex ? "bg-neutral-50" : "bg-neutral-500"
             }`}
           />

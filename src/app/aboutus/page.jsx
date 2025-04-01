@@ -14,6 +14,12 @@ export default function AboutUs() {
       >{`We are a group of left leaning folks who grew up in Unitarian Universalist (UU) or UU adjacent spaces and conferences. Disillusioned by that community, we as adults have struggled to find spiritual spaces that do not bear the authoritarianism of organized religion, celebrate spiritual bypassing (using spiritual ideas and practices to avoid facing psychological wounds caused by capitalism, the state, patriarchy, etc.) or the appropriative practices of what passes as "spirituality." You won't hear us saying corny stuff like "low vibration frequency" 🤨. What the heck even is that?`}</p>
 
       <p className="my-8 fade-in">
+        {`These are scary times that we're living through. How do we maintain a radical belief in people when half the country is willing to overlook an active genocide, and the other half willing to excuse fascism? In these atomizing and alienating conditions it's never been more important to build and nurture community. `}
+      </p>
+      <p className="my-8 fade-in">
+        {`We understand this is a hard sell, asking people to take off work to take a risk on a experience they probably have misgivings about. I probably would not be involved with this community myself, if not for the luck of discovering these people and the lightening in a bottle-like experiences we shared together. Has there ever been an experience you've had that changed your life? A zine by an anonymous author? A punk show in somebody's basement? Do you remember the scepticism you had on the first page? The stifling heat of others' bodies while music pummeled your ears? If the opportunity for such an experience presented itself again, would you recognize it?`}
+      </p>
+      <p className="my-8 fade-in">
         {`We are trying to build an intentional spiritual community, across
         generations, that is based on mutual aid, anti-oppression, and social
         solidarity. We embody this through :`}
@@ -52,12 +58,12 @@ export default function AboutUs() {
       <h2 className={amatic.className + " my-12 text-4xl sm:text-5xl fade-in"}>
         What To Expect
       </h2>
-      <p className="my-8 ">{`This community is what we make of it. Think of it as a stone soup, where everyone is contributing brings something to contribute. As this will be our first conference, we're still imagining what this could be. We've floated ideas of traveling the country together, going on a backpacking trip through a national park to an isolated hot spring, or staying in a haunted hotel on an island. Everything here is a living document open to change with your participation. The general structure to expect is: `}</p>
+      <p className="my-8 ">{`This community is what we make of it. Think of it as a stone soup, where everyone  brings something to contribute. As this will be our second conference, we're still imagining what this could be. We've floated ideas of traveling the country together, going on a backpacking trip through a national park to an isolated hot spring, or staying in a haunted hotel on an island. Everything here is a living document open to change with your participation. The general structure to expect is: `}</p>
       <ul className="ml-4 ">
         <li className="flex flex-row my-2">
           <div className="w-6 mx-2 ">🏕</div>
           <div className="">
-            Summer camp for all ages if summer camp were punk rock.
+            Summer camp for all ages if summer camp were punk rock AF.
           </div>
         </li>
         <li className="flex flex-row my-2">
@@ -75,7 +81,7 @@ export default function AboutUs() {
         <li className="flex flex-row my-2">
           <div className="w-6 mx-2 ">🧘‍♂️</div>
           <div>
-            {`Evening worship, some reflection about this human experience, completely voluntary.`}
+            {`Evening worship/mediation, some reflection about this human experience, completely voluntary.`}
           </div>
         </li>
         <li className="flex flex-row" my-2>
@@ -94,11 +100,13 @@ export default function AboutUs() {
       </ul>
 
       <p className="my-8 ">
-        <a className="link link-primary" href="plans2024">
+        <a className="link link-primary" href="plans2025">
           Check out our plans for this year for specifics
         </a>
       </p>
-      <h2 className={amatic.className + " my-12 text-4xl sm:text-5xl"}>Agreements</h2>
+      <h2 className={amatic.className + " my-12 text-4xl sm:text-5xl"}>
+        Agreements
+      </h2>
       <p className="my-8 ">
         Attendance implies consent to the following agreements. All agreements
         are open to review by the community.

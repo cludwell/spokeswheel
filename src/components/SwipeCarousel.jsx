@@ -80,12 +80,11 @@ const Images = ({ imgIndex, imgs, aspect }) => {
         return (
           <motion.div
             key={imgSrc}
-
             animate={{
               scale: imgIndex === idx ? 0.95 : 0.85,
             }}
             transition={SPRING_OPTIONS}
-            className={`object-cover w-full  shrink-0 rounded-xl bg-neutral-800 overflow-clip ${aspect}`}
+            className={`object-cover w-full shrink-0 rounded-xl bg-neutral-800 overflow-clip ${aspect}`}
           >
             <Image
               src={imgs[idx]}

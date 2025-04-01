@@ -2,8 +2,9 @@
 
 3/30/2025
 ✅ Carousels have been fixed
+--✅ Swippable/Draggable bug was fixed
 ✅ Page created for upcoming conference
-🔲 Update Stripe Payments and add items for children and adults
+✅ Update Stripe Payments and add items for children and adults
 🔲 Add payment links to registration form
 🔲 Update registration form
 --🔲 amenities

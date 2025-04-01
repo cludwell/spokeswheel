@@ -80,9 +80,9 @@ export default function Plans2024() {
         height={2000}
         className="w-1/2 mx-auto my-24 rounded-lg "
       /> */}
-      <SwipeCarousel imgs={fireImages} />
-      <SwipeCarousel imgs={peopleImages} />
-      <SwipeCarousel imgs={siteImages} />
+      <SwipeCarousel imgs={fireImages}  aspect={'aspect-square'}/>
+      <SwipeCarousel imgs={peopleImages}  aspect={'aspect-square'}/>
+      <SwipeCarousel imgs={siteImages} aspect={'aspect-square'} />
 
       <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>
         How Much?

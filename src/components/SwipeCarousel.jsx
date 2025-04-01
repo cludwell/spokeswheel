@@ -2,15 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import Image from "next/image";
-// const imgs = [
-//   "/imgs/nature/1.jpg",
-//   "/imgs/nature/2.jpg",
-//   "/imgs/nature/3.jpg",
-//   "/imgs/nature/4.jpg",
-//   "/imgs/nature/5.jpg",
-//   "/imgs/nature/6.jpg",
-//   "/imgs/nature/7.jpg",
-// ];
 
 const ONE_SECOND = 1000;
 const AUTO_DELAY = ONE_SECOND * 10;
@@ -23,7 +14,7 @@ const SPRING_OPTIONS = {
   damping: 50,
 };
 
-export const SwipeCarousel = ({ imgs }) => {
+export const SwipeCarousel = ({ imgs, aspect }) => {
   const [imgIndex, setImgIndex] = useState(0);
 
   const dragX = useMotionValue(0);
@@ -73,13 +64,7 @@ export const SwipeCarousel = ({ imgs }) => {
         onDragEnd={onDragEnd}
         className="flex items-center cursor-grab active:cursor-grabbing"
       >
-        <Images
-          imgIndex={imgIndex}
-          imgs={imgs}
-          // className="w-full h-full"
-          // width={2000}
-          // height={2000}
-        />
+        <Images imgIndex={imgIndex} imgs={imgs} aspect={aspect} />
       </motion.div>
 
       <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} imgs={imgs} />
@@ -88,27 +73,23 @@ export const SwipeCarousel = ({ imgs }) => {
   );
 };
 
-const Images = ({ imgIndex, imgs }) => {
+const Images = ({ imgIndex, imgs, aspect }) => {
   return (
     <>
       {imgs.map((imgSrc, idx) => {
         return (
           <motion.div
             key={imgSrc}
-            // style={{
-            //   backgroundImage: `url(${imgSrc})`,
-            //   backgroundSize: "cover",
-            //   backgroundPosition: "center",
-            // }}
+
             animate={{
               scale: imgIndex === idx ? 0.95 : 0.85,
             }}
             transition={SPRING_OPTIONS}
-            className="object-cover w-full aspect-square shrink-0 rounded-xl bg-neutral-800 overflow-clip"
+            className={`object-cover w-full  shrink-0 rounded-xl bg-neutral-800 overflow-clip ${aspect}`}
           >
             <Image
               src={imgs[idx]}
-              className="object-cover w-fit"
+              className="object-cover pointer-events-none w-fit"
               alt={`${imgs[idx]}`}
               fill
             />

@@ -36,7 +36,7 @@ export default function Plans2024() {
         height={2000}
         className="w-1/2 mx-auto my-24 rounded-lg "
       /> */}
-      <SwipeCarousel imgs={farnsworthImages} />
+      <SwipeCarousel imgs={farnsworthImages} aspect={'aspect-video'}/>
       <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl fade-in"}>
         Theme - Stone Soup
       </h2>

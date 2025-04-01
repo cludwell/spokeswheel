@@ -1,4 +1,18 @@
 #2025
+
+3/30/2025
+✅ Carousels have been fixed
+✅ Page created for upcoming conference
+🔲 Update Stripe Payments and add items for children and adults
+🔲 Add payment links to registration form
+🔲 Update registration form
+--🔲 amenities
+--🔲 child or adult
+--🔲 prices
+--🔲 conditionally sends stripe link based on age
+
+On reflection having a cart on stripe might be really annoying to program and debug, should probably keep system where each person registers for themselves just to deploy quickly.
+
 Dropdown menu for different conferences
 Create a page with info about our first conference
 -image carousels

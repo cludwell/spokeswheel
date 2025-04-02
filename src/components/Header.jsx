@@ -30,7 +30,7 @@ export default function Header() {
     };
     if (session) loadUser();
   }, [session, fetchUserData, fetchUsersBookings]);
-
+//  console.log(user?.dateOfBirth <"2011-08-22T00:00:00.000Z")
   return (
     <div
       className="flex flex-col items-center self-center w-screen max-w-screen-xl mx-auto h-fit"

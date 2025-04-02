@@ -12,7 +12,7 @@ import SuccessMessage from "@/components/SuccessMessage";
 import { amatic, special } from "../fonts";
 export default function Register() {
   const { data: session, status: loading } = useSession();
-  const { bookings, createBooking, fetchUsersBookings } = useStore();
+  const { bookings, createBooking, fetchUsersBookings, user } = useStore();
   const [errors, setErrors] = useState({});
   const [emailList, setEmailList] = useState(false);
   const [photoConsent, setPhotoConsent] = useState(false);
@@ -20,7 +20,7 @@ export default function Register() {
   const [loaded, setLoaded] = useState(false);
   const router = useRouter();
   let [userData, setUserData] = useState({
-    conferenceId: 1,
+    conferenceId: 2,
     photoConsent: false,
     paid: false,
     emergencyName: "",
@@ -51,12 +51,17 @@ export default function Register() {
   } = userData;
 
   useEffect(() => {
-    if (lodging)
+    if (user?.dateOfBirth)
       setUserData((prev) => ({
         ...prev,
-        paymentAmount: lodging == "Adirondacks" ? 138.91 : 123.48,
+        paymentAmount:
+          new Date(user?.dateOfBirth) >= new Date("2011-08-22T00:00:00.000Z")
+            ? 82.32
+            : 164.64,
       }));
-  }, [lodging]);
+  }, [user?.dateOfBirth]);
+
+  const booked = bookings.filter((b) => b.conferenceId == 2)[0];
 
   useEffect(() => {
     const loadData = async () => {
@@ -64,7 +69,7 @@ export default function Register() {
       setLoaded(true);
     };
     loadData();
-    if (bookings.length && bookings[0]?.paid == true)
+    if (booked && booked?.paid == true)
       router.push("/registration/success");
   }, [fetchUsersBookings, bookings, router]);
 
@@ -133,9 +138,9 @@ export default function Register() {
     }
   };
   // find one registration and check paid status
-  let booked = bookings.filter((b) => b.conferenceId == 1)[0];
   if (!session) return <PleaseSignIn />;
   if (!loaded) return <Loading />;
+  // console.log("reg form",user?.dateOfBirth)
   return (
     <>
       <div
@@ -144,11 +149,16 @@ export default function Register() {
           " p-4 sm:p-16 max-w-screen-xl mx-auto leading-8 min-h-[50vh]"
         }
       >
-        <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
-          2024 Registration At Camp Seawood!
+        <h2
+          className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}
+        >
+          2025 Registration At Camp Farnsworth!
         </h2>
         {booked && booked?.paid == false ? (
-          <StripeDirection id={session.user.id} lodging={lodging ? lodging : booked.lodging}/>
+          <StripeDirection
+            id={session.user.id}
+            dateOfBirth={user?.dateOfBirth}
+          />
         ) : booked && booked.paid == true ? (
           <SuccessMessage />
         ) : (
@@ -157,6 +167,7 @@ export default function Register() {
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
+              <div className="divider"></div> <div className="divider"></div>
               <div className="text-xl ">Emergency Contact </div>
               <div></div>
               <label className="text-xl font-bold " htmlFor="emergencyName">
@@ -200,7 +211,6 @@ export default function Register() {
                   </div>
                 )}
               </div>
-
               <label className="text-xl font-bold " htmlFor="emergencyRelation">
                 - Relation
               </label>
@@ -220,6 +230,7 @@ export default function Register() {
                   </div>
                 )}
               </div>
+              <div className="divider"></div> <div className="divider"></div>
               <label
                 className="text-xl font-bold md:mt-8"
                 htmlFor="dietaryRestrictions"
@@ -263,9 +274,8 @@ export default function Register() {
                   <option value="" disabled defaultValue>
                     Please make a selection
                   </option>{" "}
-                  <option value={"Lodges"}>Lodges</option>
+                  <option value={"Cabins"}>Cabins</option>
                   <option value={"Tent Camping"}>Tent Camping</option>
-                  <option value={"Adirondacks"}>Adirondacks</option>
                 </select>
                 {errors && errors.lodging && (
                   <div className="flex flex-row p-3 my-3 bg-red-300 text-red-950 rounded-xl fade-in w-80">
@@ -276,10 +286,10 @@ export default function Register() {
                   <span className="block mr-1">
                     <IconInfo />
                   </span>{" "}
-                  On site camping is available if you bring a tent. Adirondacks
-                  offer privacy but are extremely limited and do not have
-                  mattresses - you will have to bring your own! Let use know who
-                  will be in your adirondack in the Notes.
+                  On site camping is available if you bring a tent. The
+                  Tovariche Cabins range in capacity from 2-8 people. If you
+                  have a strong preference for who you want to stay with please
+                  mention in the notes!
                 </div>
               </div>
               <label className="text-xl font-bold " htmlFor="allergies">
@@ -318,7 +328,7 @@ export default function Register() {
                 id="notes"
                 value={notes}
                 onChange={handleChange}
-                placeholder="Is there anything else you'd like us to know? Do you need a ride from Logan? Who are you sharing an adirondack with?"
+                placeholder="Is there anything else you'd like us to know? Do you need a ride from Logan? Who are you sharing a cabin with?"
                 className="textarea textarea-primary min-h-40 w-80"
               />
               <label className="text-xl font-bold " htmlFor="photoConsent">

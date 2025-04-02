@@ -1,16 +1,25 @@
 #2025
 
+4/1/2025
+🔲Need to ensure that new conference is seeded
+🔲 will need to update the update registration page as well
+
+
+=================
+🔲In the future might want to create a form for the admin so that new conferences can be created without losing the database
+🔲worried about success message displaying correctly when redirected from stripe
+
 3/30/2025
 ✅ Carousels have been fixed
 --✅ Swippable/Draggable bug was fixed
 ✅ Page created for upcoming conference
 ✅ Update Stripe Payments and add items for children and adults
-🔲 Add payment links to registration form
-🔲 Update registration form
---🔲 amenities
---🔲 child or adult
---🔲 prices
---🔲 conditionally sends stripe link based on age
+✅ Add payment links to registration form
+✅ Update registration form
+--✅ amenities
+--✅ child or adult
+--✅ prices
+--✅ conditionally sends stripe link based on age
 
 On reflection having a cart on stripe might be really annoying to program and debug, should probably keep system where each person registers for themselves just to deploy quickly.
 

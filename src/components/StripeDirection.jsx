@@ -1,14 +1,19 @@
 import { amatic } from "@/app/fonts";
 import IconBellAlert from "./Icons/IconBellAlert";
-export default function StripeDirection({ id, lodging }) {
-  const paymentLink = lodging == "Adirondacks"
-    // testing links
-      // ? "https://buy.stripe.com/test_7sI0423PC5lQabKbIL" //adirondacks link
-      // : "https://buy.stripe.com/test_14k9EC99WcOi97G28a"; //camping/lodges link
+export default function StripeDirection({ id, dateOfBirth }) {
+  const paymentLink =
+    new Date(dateOfBirth) >= new Date("2011-08-22T00:00:00.000Z")
+      ? // testing links
+        // ? "https://buy.stripe.com/test_7sI0423PC5lQabKbIL" //adirondacks link
+        // : "https://buy.stripe.com/test_14k9EC99WcOi97G28a"; //camping/lodges link
 
-      // production links
-      ? "https://buy.stripe.com/3cs5kl7Tz9z2d8caEG"
-      : "https://buy.stripe.com/28o9ABgq54eI0lqfZ1";
+        // production links
+        // for child admission
+        "https://buy.stripe.com/aEUbIJ1vbdPi3xCcMS"
+      : // for adult admission
+        "https://buy.stripe.com/9AQ7st6Pv5iM7NS4gl";
+
+  console.log(dateOfBirth);
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>

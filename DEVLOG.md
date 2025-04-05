@@ -2,7 +2,8 @@
 
 4/1/2025
 🔲Need to ensure that new conference is seeded
-🔲 will need to update the update registration page as well
+✅ will need to update the update registration page as well
+--🔲 updated but will need to test
 
 
 =================

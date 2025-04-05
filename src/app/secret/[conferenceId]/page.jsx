@@ -28,6 +28,8 @@ export default function Secret({ params }) {
     "smcmullen719@gmail.com",
     "jareddefrancesco@gmail.com",
     "mkguilfoyle90@gmail.com",
+    "metalfoon@yahoo.com",
+    "agudelo.eva@gmail.com"
   ];
   if (!validEmails.includes(user?.email)) return <PleaseSignIn />;
   if (!loaded) return <Loading />;

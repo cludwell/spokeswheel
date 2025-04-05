@@ -43,7 +43,7 @@ async function seedUsers() {
               dietaryRestrictions: "Vegan",
               allergies: "N/A",
               notes: "Staff",
-              lodging: "Tovariche",
+              lodging: "Cabins",
               conference: {
                 connect: { id: 2 },
               },

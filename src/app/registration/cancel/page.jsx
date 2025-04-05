@@ -25,7 +25,7 @@ export default function CancelRegistration() {
       fetchUsersBookings: state.fetchUsersBookings,
     })
   );
-  const booking = bookings.filter((b) => b.conferenceId == 1)[0];
+  const booking = bookings.filter((b) => b.conferenceId == 2)[0];
 
   useEffect(() => {
     const loadData = async () => {

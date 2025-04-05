@@ -2,9 +2,6 @@ import seawoodmap from "../../../public/images/seawoodmap.png";
 import Image from "next/image";
 import CountDown from "@/components/CountDown";
 import { amatic, special } from "../fonts";
-import CarouselFire2024 from "@/components/2024CarouselFire";
-import CarouselPeople2024 from "@/components/2024CarouselPeople";
-import CarouselSite2024 from "@/components/2024CarouselSite";
 import { SwipeCarousel } from "@/components/SwipeCarousel";
 
 const fireImages = [
@@ -16,7 +13,7 @@ const fireImages = [
   "/images/photos/2024/fire6.jpg",
   "/images/photos/2024/fire7.jpg",
   "/images/photos/2024/fire8.jpg",
-  //   "/images/photos/2024/fire9.jpg",
+    // "/images/photos/2024/fire9.jpg",
   "/images/photos/2024/fire10.jpg",
   "/images/photos/2024/fire11.jpg",
   "/images/photos/2024/fire12.jpg",
@@ -43,7 +40,7 @@ const siteImages = [
   "/images/photos/2024/site06.jpg",
   "/images/photos/2024/site07.jpg",
   // "/images/photos/2024/site08.jpg",
-  "/images/photos/2024/site09.jpg",
+  // "/images/photos/2024/site09.jpg",
   "/images/photos/2024/site10.jpg",
   "/images/photos/2024/site11.jpg",
   "/images/photos/2024/site12.jpg",

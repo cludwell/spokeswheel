@@ -10,13 +10,15 @@ import PleaseRegister from "@/components/PleaseRegister";
 import { amatic, special } from "../../fonts";
 import IconInfo from "@/components/Icons/IconInfo";
 import StripeDirection from "@/components/StripeDirection";
+
 export default function UpdateRegistration() {
   const { data: session, status: loading } = useSession();
-  const { bookings, updateBookingInfo, fetchUsersBookings } = useStore(
+  const { bookings, updateBookingInfo, fetchUsersBookings, user } = useStore(
     (state) => ({
       bookings: state.bookings,
       updateBookingInfo: state.updateBookingInfo,
       fetchUsersBookings: state.fetchUsersBookings,
+      user: state.user,
     })
   );
   const [errors, setErrors] = useState({});
@@ -26,7 +28,7 @@ export default function UpdateRegistration() {
   const [updated, setUpdated] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   let [userData, setUserData] = useState({
-    conferenceId: 1,
+    conferenceId: 2,
     photoConsent: false,
     paid: false,
     emergencyName: "",
@@ -39,7 +41,7 @@ export default function UpdateRegistration() {
     notes: "",
     specialAccomodations: "",
     lodging: "",
-    paymentAmount: 105,
+    paymentAmount: 164.64,
   });
 
   const {
@@ -53,6 +55,7 @@ export default function UpdateRegistration() {
     lodging,
     paymentAmount,
   } = userData;
+
   function formatPhoneNumber(value) {
     if (!value) return value;
     const phoneNumber = value.replace(/[^\d]/g, "");
@@ -135,14 +138,17 @@ export default function UpdateRegistration() {
       }));
     }
   };
-
   useEffect(() => {
-    if (lodging)
+    if (user?.dateOfBirth)
       setUserData((prev) => ({
         ...prev,
-        paymentAmount: lodging == "Adirondacks" ? 138.91 : 123.48,
+        paymentAmount:
+          new Date(user?.dateOfBirth) >= new Date("2011-08-22T00:00:00.000Z")
+            ? 82.32
+            : 164.64,
       }));
-  }, [lodging]);
+  }, [user?.dateOfBirth]);
+
   const validate = () => {
     const err = {};
     if (!emergencyName || emergencyName.length < 6)
@@ -174,18 +180,16 @@ export default function UpdateRegistration() {
       setUpdated(true);
     }
   };
-  const booked = bookings.filter((e) => e.conferenceId == 1)[0];
-
+  const booked = bookings.filter((e) => e.conferenceId == 2)[0];
   if (!session) return <PleaseSignIn />;
   if (!isLoaded) return <Loading />;
   if (!booking) return <PleaseRegister />;
-  // console.log('booooooking', booked)
   return (
     <div
       className={special.className + " p-16 max-w-screen-xl mx-auto leading-8"}
     >
       <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
-        Update 2024 Registration
+        Update 2025 Registration At Camp Farnsworth!
       </h2>
       {updated && booked.paid ? (
         <UpdateSuccessful />
@@ -210,6 +214,7 @@ export default function UpdateRegistration() {
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
+            <div className="divider"></div> <div className="divider"></div>
             <div className="text-2xl ">Emergency Contact </div>
             <div></div>
             <label className="text-xl font-bold " htmlFor="emergencyName">
@@ -253,7 +258,6 @@ export default function UpdateRegistration() {
                 </div>
               )}
             </div>
-
             <label className="text-xl font-bold " htmlFor="emergencyRelation">
               - Relation
             </label>
@@ -273,6 +277,7 @@ export default function UpdateRegistration() {
                 </div>
               )}
             </div>
+            <div className="divider"></div> <div className="divider"></div>
             <label
               className="text-xl font-bold md:mt-8"
               htmlFor="dietaryRestrictions"
@@ -320,9 +325,8 @@ export default function UpdateRegistration() {
                     <option value="" disabled defaultValue>
                       Please make a selection
                     </option>{" "}
-                    <option value={"Lodges"}>Lodges</option>
+                    <option value={"Cabins"}>Cabins</option>
                     <option value={"Tent Camping"}>Tent Camping</option>
-                    <option value={"Adirondacks"}>Adirondacks</option>
                   </>
                 )}
               </select>
@@ -335,10 +339,10 @@ export default function UpdateRegistration() {
                 <span className="block mr-3">
                   <IconInfo />
                 </span>{" "}
-                On site camping is available if you bring a tent. Adirondacks
-                offer privacy but are extremely limited and do not have
-                mattresses - you will have to bring your own! Let use know who
-                will be in your adirondack in the Notes.
+                On site camping is available if you bring a tent. The Tovariche
+                Cabins range in capacity from 2-8 people. If you have a strong
+                preference for who you want to stay with please mention in the
+                notes!
               </div>
             </div>
             <label className="text-xl font-bold " htmlFor="allergies">
@@ -377,7 +381,7 @@ export default function UpdateRegistration() {
               id="notes"
               value={notes}
               onChange={handleChange}
-              placeholder="Is there anything else you'd like us to know? Do you need a ride from Logan? Who are you sharing an adirondack with?"
+              placeholder="Is there anything else you'd like us to know? Do you need a ride from Logan? Who are you sharing a cabin with?"
               className="textarea textarea-primary min-h-40 w-80"
             />
             <label className="text-xl font-bold " htmlFor="photoConsent">

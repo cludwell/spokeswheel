@@ -172,7 +172,7 @@ export default function SignUpModal() {
                 value={phoneNumber}
                 onChange={handleChange}
                 pattern="\(\d{3}\) \d{3}-\d{4}"
-                placeholder="(123) 456-7890"
+                placeholder="(555) 555-5555"
                 maxLength={14}
                 required
                 className="w-full max-w-xs input input-sm sm:input-md input-bordered input-secondary"

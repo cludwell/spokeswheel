@@ -20,6 +20,7 @@ const handler = NextAuth({
         firstName: { label: "First Name", type: "text" },
         lastName: { label: "Last Name", type: "text" },
         dateOfBirth: { label: "Date of Birth", type: "date" },
+        phoneNumber: { label: "Phone Number", type: "text" },
       },
 
       // trying to assign a specific type to the authorize promise results in an error
@@ -40,6 +41,7 @@ const handler = NextAuth({
               firstName: credentials.firstName,
               lastName: credentials.lastName,
               dateOfBirth: credentials.dateOfBirth,
+              phoneNumber: credentials.phoneNumber
             },
           });
           return newUser;

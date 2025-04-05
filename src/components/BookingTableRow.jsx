@@ -1,4 +1,5 @@
 export default function BookingTableRow({ booking }) {
+  console.log(booking)
     return (
 
             <tr>

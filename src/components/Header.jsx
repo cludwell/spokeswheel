@@ -31,7 +31,6 @@ export default function Header() {
     if (session) loadUser();
   }, [session, fetchUserData, fetchUsersBookings]);
   const bookedThisYear = bookings?.filter((b)=> b.conferenceId == 2)[0]
-  console.log(bookedThisYear)
   return (
     <div
       className="flex flex-col items-center self-center w-screen max-w-screen-xl mx-auto h-fit"

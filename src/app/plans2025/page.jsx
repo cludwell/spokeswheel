@@ -108,7 +108,17 @@ export default function Plans2024() {
             <tr>
               <td>Sarah McMuffin</td>
               <td>Happy Accidents</td>
-              <td>Tattoos for consenting adults!</td>
+              <td>Tattoos for consenting adults!  </td>
+            </tr>
+            <tr>
+              <td>Matty</td>
+              <td>Cryptids 101</td>
+              <td>Sometimes the truth really is out there👹</td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>A antifascist discussion</td>
+              <td>wth even is this country?</td>
             </tr>
 
 

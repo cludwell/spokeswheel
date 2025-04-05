@@ -6,7 +6,6 @@ export default function ErrorPage() {
 
   const search = searchParams.get('error')
 
-  console.log(search)
   return (
     <div
       className={

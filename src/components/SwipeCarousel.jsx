@@ -43,6 +43,12 @@ export const SwipeCarousel = ({ imgs, aspect }) => {
       setImgIndex((pv) => pv + 1);
     } else if (x >= DRAG_BUFFER && imgIndex > 0) {
       setImgIndex((pv) => pv - 1);
+      // if at the end of the imgs return to start
+    } else if (x <= -DRAG_BUFFER &&  imgIndex == imgs.length-1) {
+      setImgIndex(pv=>0)
+      // if at start of imgs, send to end
+    } else if (x >= DRAG_BUFFER && imgIndex == 0) {
+      setImgIndex(pv=>imgs.length-1)
     }
   };
 
@@ -107,7 +113,7 @@ const Dots = ({ imgIndex, setImgIndex, imgs }) => {
           <button
             key={idx}
             onClick={() => setImgIndex(idx)}
-            className={`h-5 w-5 rounded-full transition-colors ${
+            className={`h-5 w-5 rounded-full transition-colors btn-ghost ${
               idx === imgIndex ? "bg-neutral-50" : "bg-neutral-500"
             }`}
           />

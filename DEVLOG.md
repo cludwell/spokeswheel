@@ -1,4 +1,8 @@
 #2025
+4/5/2025
+Build commands are located at
+```https://vercel.com/spokeswheel/spokeswheel/settings/build-and-deployment```
+
 
 4/1/2025
 🔲Need to ensure that new conference is seeded

@@ -40,15 +40,14 @@ export default function DropDownMenu() {
     document.addEventListener("click", closeMenu);
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
-  
+
   const closeMenu = (e) => setShowMenu(false);
   const handleSignOut = async () => {
     const data = await signOut({ redirect: true, callbackUrl: "/" });
     await dismissUserData();
   };
-  // const seawood = bookings.length
-  //   ? bookings.filter((b) => b.conferenceId == 1)[0]
-  //   : null;
+  
+  const bookedThisYear = bookings.filter((b)=> b.conferenceId == 2)[0]
   return (
     <>
       {!session ? (
@@ -103,7 +102,7 @@ export default function DropDownMenu() {
                   Update User Info
                 </Link>
               </motion.li>
-              {!!bookings.length ? (
+              {bookedThisYear ? (
                 <>
                   <motion.li
                     variants={itemVariants}

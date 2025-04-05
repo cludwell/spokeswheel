@@ -1,18 +1,23 @@
 import cabins from "../../../public/images/farnsworth/cabins.jpg";
 import dininghall from "../../../public/images/farnsworth/dininghall.png";
 import farnsworth from "../../../public/images/farnsworth/farnsworth.png";
-import tovariche from "../../../public/images/farnsworth/tovarich.jpg";
 import outsidehall from "../../../public/images/farnsworth/outsidehall.JPG";
-import Image from "next/image";
+import lake from "../../../public/images/farnsworth/lake.png";
+import lakeview from "../../../public/images/farnsworth/lakeview.jpg";
+import tov1 from "../../../public/images/farnsworth/tov1.jpg";
+import tov2 from "../../../public/images/farnsworth/tov2.jpg";
 import CountDown from "@/components/CountDown";
 import { amatic, special } from "../fonts";
 import { SwipeCarousel } from "@/components/SwipeCarousel";
 
 const farnsworthImages = [
-  cabins,
+  tov2,
+  tov1,
   dininghall,
   outsidehall,
-  tovariche,
+  lake,
+  lakeview,
+  cabins,
   farnsworth,
 ];
 export default function Plans2024() {
@@ -24,28 +29,20 @@ export default function Plans2024() {
         Location - Camp Farnsworth! ⛺
       </h2>
       <p className="my-8 fade-in">
-        {`BIG NEWS! We've finally reserved a camp! We'll be staying at the Camp Farnsworth Girl Scout Camp in Thetford Vermont! It's a little further from most of us in the Boston Metro area, but we think the facilities will be a great fit for us! We will be renting their dining hall which can accomodate up to 200 people as well as the Tovariche Cabins, if you're familiar with the site.`}
+        {`BIG NEWS! We've finally reserved a camp! We'll be staying at the Camp Farnsworth Girl Scout Camp in Thetford, Vermont! It's a little further from most of us in the Boston Metro area, but we think the facilities will be a great fit for us! We will be renting their dining hall which can accomodate up to 200 people as well as the Tovariche Cabins, if you're familiar with the site.`}
       </p>
-      <p className="my-8 fade-in">{`The Tovariche Cabins can accomodate 2-8 people, and have cots with mattresses. This is a girl scout camp, and not an AirBnb, so think of it as glamping! We recommend you think about bringing: `}</p>
+      <p className="my-8 fade-in">{`Each cabin can accomodate 2-8 people, and have cots with mattresses. This is a girl scout camp, and not an AirBnb, so think of it as glamping! We recommend you think about bringing: `}</p>
       <ul className="ml-10 list-disc">
-        <li>
-          A sleeping bag, as there will NOT be bedding 💤
-        </li>
+        <li>A sleeping bag, as there will NOT be bedding 💤</li>
         <li>
           A camping mattress, especially if comfort is often an issue for you
         </li>
-        <li>
-          A towel and shower kit 🚿
-        </li>
+        <li>A towel and shower kit 🚿</li>
         <li>
           If you'd like more privacy, bring a tent/tarp for dispersed camping.🏕
         </li>
-        <li>
-          Art supplies! 🎨
-        </li>
-        <li>
-          Musical instruments 🎸
-        </li>
+        <li>Art supplies! 🎨</li>
+        <li>Musical instruments 🎸</li>
       </ul>
       <p className="my-8 fade-in">{`If you have any questions please reach out to us! Please register in advance as it will allow us to rent additional facilities as needed. We kind of need to know by June 1st to rent additional facilities! `}</p>
 
@@ -72,18 +69,21 @@ export default function Plans2024() {
       <div className="flex flex-col items-center mb-24">
         <CountDown />
       </div>
-      <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>
+      <h2 className={amatic.className + " mb-24  text-4xl sm:text-5xl"}>
         How Much? - $160* 💳
       </h2>
       <p className="my-8 fade-in">
-        {`Our goal is to make this conference accessible and affordable, especially since we hope that friends from around the country will fly in to attend. Costs are roughly 20 dollars a night depending on the lodging that you would like, and 20 dollars a day for food. We're hoping to break even 😰.`}
+        {`Our goal is to make this conference accessible and affordable, especially since we hope that friends from around the country will fly in to attend. Costs are roughly 20 dollars for lodging and 20 dollars a day for food. We're hoping to break even 😰.`}
       </p>
       <p className="my-8 fade-in">
         {`*We're asking $160 per person and half off for children, (14 years old and younger). `}{" "}
-        <a className="link link-error" href="mailto:cludwell@gmail.com">
+      </p>
+      <p className="my-8 fade-in">
+      <a className="link link-error" href="mailto:cludwell@gmail.com">
           If price might be a barrier to you attending please reach out to us.
         </a>
       </p>
+
       <h2 className={amatic.className + " my-24 text-4xl sm:text-5xl"}>
         Workshops 👨‍🏫
       </h2>
@@ -108,14 +108,10 @@ export default function Plans2024() {
             <tr>
               <td>Sarah McMuffin</td>
               <td>Happy Accidents</td>
-              <td>Tattos for consenting adults!</td>
+              <td>Tattoos for consenting adults!</td>
             </tr>
-            {/* row 3 */}
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+
+
           </tbody>
         </table>
       </div>

@@ -70,7 +70,7 @@ export default function UpdateRegistration() {
     )}-${phoneNumber.slice(6, 10)}`;
   }
 
-  const booking = bookings.filter((b) => b.conferenceId == 1)[0];
+  const booking = bookings.filter((b) => b.conferenceId == 2)[0];
   useEffect(() => {
     setUserData({
       emergencyName: booking?.emergencyName ? booking?.emergencyName : "",
@@ -148,7 +148,6 @@ export default function UpdateRegistration() {
             : 164.64,
       }));
   }, [user?.dateOfBirth]);
-
   const validate = () => {
     const err = {};
     if (!emergencyName || emergencyName.length < 6)

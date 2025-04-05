@@ -11,7 +11,7 @@ export default function AboutUs() {
       </h2>
       <p
         className={" my-8 fade-in"}
-      >{`We are a group of left leaning folks who grew up in Unitarian Universalist (UU) or UU adjacent spaces and conferences. Disillusioned by that community, we as adults have struggled to find spiritual spaces that do not bear the authoritarianism of organized religion, celebrate spiritual bypassing (using spiritual ideas and practices to avoid facing psychological wounds caused by capitalism, the state, patriarchy, etc.) or the appropriative practices of what passes as "spirituality." You won't hear us saying corny stuff like "low vibration frequency" 🤨. What the heck even is that?`}</p>
+      >{`We are a group of left leaning folks in a collective search for meaning. Many of us grew up in Unitarian Universalist (UU) or UU adjacent spaces and conferences. Disillusioned by that community, as adults we have struggled to find spiritual spaces that do not bear the authoritarianism of organized religion, celebrate spiritual bypassing (using spiritual ideas and practices to avoid facing psychological wounds caused by capitalism, the state, patriarchy, etc.) or the appropriative practices of what passes as "spirituality." You won't hear us saying corny stuff like "low vibration frequency" 🤨. What the heck even is that?`}</p>
 
       <p className="my-8 fade-in">
         {`These are scary times that we're living through. How do we maintain a radical belief in people when half the country is willing to overlook an active genocide, and the other half willing to excuse fascism? In these atomizing and alienating conditions it's never been more important to build and nurture community. `}
@@ -19,11 +19,11 @@ export default function AboutUs() {
       <p className="my-8 fade-in">
         {`We understand this is a hard sell, asking people to take off work to take a risk on a experience they probably have misgivings about. I probably would not be involved with this community myself, if not for the luck of discovering these people and the lightning in a bottle-like experiences we shared together. Has there ever been an experience you've had that changed your life? A zine by an anonymous author? A punk show in somebody's basement? Do you remember the scepticism you had on the first page? The stifling heat of others' bodies while music pummeled your ears? If the opportunity for such an experience presented itself again, would you recognize it?`}
       </p>
-   
+
       <p className="my-8 fade-in">
         {`We are trying to build an intentional spiritual community, across
         generations, that is based on mutual aid, anti-oppression, and social
-        solidarity. We embody this through :`}
+        solidarity. We embody this through:`}
       </p>
 
       <ul className="ml-4 fade-in">

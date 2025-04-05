@@ -47,7 +47,7 @@ export const SwipeCarousel = ({ imgs, aspect }) => {
   };
 
   return (
-    <div className="relative py-8 overflow-hidden bg-neutral-950 ">
+    <div className="relative py-8 overflow-hidden bg-neutral-950 fade-in">
       <motion.div
         drag="x"
         dragConstraints={{

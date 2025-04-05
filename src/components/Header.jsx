@@ -30,7 +30,8 @@ export default function Header() {
     };
     if (session) loadUser();
   }, [session, fetchUserData, fetchUsersBookings]);
-//  console.log(user?.dateOfBirth <"2011-08-22T00:00:00.000Z")
+  const bookedThisYear = bookings?.filter((b)=> b.conferenceId == 2)[0]
+  console.log(bookedThisYear)
   return (
     <div
       className="flex flex-col items-center self-center w-screen max-w-screen-xl mx-auto h-fit"
@@ -63,7 +64,7 @@ export default function Header() {
         <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
           <Link href={"/contact"}>contact</Link>
         </li>
-        {user && bookings.length == 0 && (
+        {user && !!bookedThisYear == 0 && (
           <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
             <Link href={"/registration"}>register</Link>
           </li>

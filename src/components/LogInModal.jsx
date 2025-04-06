@@ -50,12 +50,12 @@ export default function LogInModal() {
           Login
         </h1>
         <form className="p-5" onSubmit={handleSubmit}>
-          <div className="flex flex-row p-1 my-4 text-xs text-red-800 bg-pink-300 border-2 border-red-800 rounded-xl max-w-64">
+          {/* <div className="flex flex-row p-1 my-4 text-xs text-red-800 bg-pink-300 border-2 border-red-800 rounded-xl max-w-64">
             <span className="mr-2">
               <IconBellAlert />
             </span>
             Returning 2024 users, please create a new account.{" "}
-          </div>
+          </div> */}
           <ul>
             {errors.map((error, i) => (
               <li

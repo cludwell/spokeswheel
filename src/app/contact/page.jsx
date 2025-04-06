@@ -3,7 +3,7 @@ import { amatic, special } from "../fonts";
 export default function ContactUs() {
   return (
     <div
-      className={`${special.className} p-4 sm:p-16 max-w-screen-xl mx-auto leading-8 min-h-screen `}
+      className={`${special.className} p-4 sm:p-16 max-w-screen-xl mx-auto leading-8 min-h-screen overflow-clip`}
     >
       <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
         Contact Us

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import IconExclamation from "./Icons/IconExclamation";
 import Modal from "./Modal";
 import { signIn } from "next-auth/react";
+import IconBellAlert from "./Icons/IconBellAlert";
 export default function LogInModal() {
   const [open, setOpen] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -49,6 +50,12 @@ export default function LogInModal() {
           Login
         </h1>
         <form className="p-5" onSubmit={handleSubmit}>
+          <div className="flex flex-row p-1 my-4 text-xs text-red-800 bg-pink-300 border-2 border-red-800 rounded-xl max-w-64">
+            <span className="mr-2">
+              <IconBellAlert />
+            </span>
+            Returning 2024 users, please create a new account.{" "}
+          </div>
           <ul>
             {errors.map((error, i) => (
               <li
@@ -60,7 +67,10 @@ export default function LogInModal() {
             ))}
           </ul>
           <div className="flex flex-col gap-4 ">
-            <label className="font-bold md:text-xl text-cyan-500" htmlFor="email">
+            <label
+              className="font-bold md:text-xl text-cyan-500"
+              htmlFor="email"
+            >
               Email
             </label>
             <input

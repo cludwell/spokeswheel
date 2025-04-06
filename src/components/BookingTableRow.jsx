@@ -8,8 +8,8 @@ export default function BookingTableRow({ booking }) {
               <td>{booking.user.phoneNumber ? booking.user.phoneNumber : "null"}</td>
               <td>{booking?.paid ? "✅" : "❌"}</td>
               <td>{booking.user.dateOfBirth ? booking.user.dateOfBirth.slice(0,10) : "null"}</td>
-            <td>{booking?.createdAt}</td>
-            <td>{booking?.updatedAt}</td>
+            <td>'{booking?.createdAt.slice(2,16)}</td>
+            <td>'{booking?.updatedAt.slice(2,16)}</td>
             </tr>
 
 

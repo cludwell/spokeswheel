@@ -43,11 +43,19 @@ export default function Plans2024() {
         </li>
         <li>Art supplies! 🎨</li>
         <li>Musical instruments 🎸</li>
+        <li>A book you've read lately that's changed your life 📚</li>
       </ul>
       <p className="my-8 fade-in">{`If you have any questions please reach out to us! Please register in advance as it will allow us to rent additional facilities as needed. We kind of need to know by June 1st to rent additional facilities! `}</p>
 
       <SwipeCarousel imgs={farnsworthImages} aspect={"aspect-video"} />
-      <p className="my-8"></p>
+      {/* <p className="my-8"></p> */}
+      <h2 className={amatic.className + " my-24 text-4xl sm:text-5xl"}>
+        The Book Nook 📚
+      </h2>
+      <p className="my-8 fade-in">
+        {" "}
+        {`We're going to experiment with THE BOOK NOOK. (Stolen from a conference that is sadly no more). Please bring a book that has changed your life and perspective in order to share with everyone at the conference. Politically, spiritually, whatever! We're keeping it open ended!`}
+      </p>
       <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl fade-in"}>
         Theme - Stone Soup 🥣
       </h2>
@@ -91,6 +99,7 @@ export default function Plans2024() {
         {" "}
         {`Let us know what workshops you want to lead so we can update this!`}
       </p>
+
       <div className="m-auto overflow-x-auto rounded-b-lg w-fit">
         <table className="table-xs sm:table-sm md:table-lg table-zebra bg-base-300 rounded-xl">
           {/* head */}

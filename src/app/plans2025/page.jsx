@@ -117,8 +117,8 @@ export default function Plans2024() {
             </tr>
             <tr>
               <td>C</td>
-              <td>A antifascist discussion</td>
-              <td>wth even is this country?</td>
+              <td>An antifascist discussion</td>
+              <td>We'll talk about definitions, theory, and wth even is this country?</td>
             </tr>
 
 

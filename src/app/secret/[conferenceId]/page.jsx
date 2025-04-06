@@ -33,6 +33,7 @@ export default function Secret({ params }) {
   ];
   if (!validEmails.includes(user?.email)) return <PleaseSignIn />;
   if (!loaded) return <Loading />;
+  console.log('booking', allBookings)
   return (
     <>
       <div className="m-auto rounded-b-lg w-fit">

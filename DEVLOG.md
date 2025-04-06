@@ -3,7 +3,10 @@
 Build commands are located at
 ```https://vercel.com/spokeswheel/spokeswheel/settings/build-and-deployment```
 
+✅ corrected bug in which phone numbers were not being saved to the database
+✅ Fixed dependency issues
 
+I'm going to wipe the database so that 
 4/1/2025
 🔲Need to ensure that new conference is seeded
 ✅ will need to update the update registration page as well

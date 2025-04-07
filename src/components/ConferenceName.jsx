@@ -6,7 +6,7 @@ export default function ConferenceName() {
   const text = "Spokeswheel Conference";
   const letters = text.split("");
   return (
-    <Link href={"/"} className={amatic.className + ` z-10 text-white text-5xl sm:text-6xl flex flex-row `}>
+    <Link href={"/"} className={amatic.className + ` z-10 text-white text-3xl sm:text-6xl flex flex-row `}>
       {letters.map((l, i) => (
         <motion.span
           className={`z-10 ${l === " " ? "w-2" : ''}`}

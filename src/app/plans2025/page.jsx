@@ -23,10 +23,17 @@ const farnsworthImages = [
 export default function Plans2024() {
   return (
     <div
-      className={`${special.className} p-4 sm:p-16 max-w-screen-xl mx-auto leading-8 min-h-screen`}
+      className={
+        special.className +
+        " p-4 sm:p-16 max-w-screen-xl mx-auto leading-5 md:leading-8 text-xs sm:text-sm"
+      }
     >
-      <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl fade-in"}>
-        Location - Camp Farnsworth! ⛺
+      <h2
+        className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }
+      >
+        Location - Camp Farnsworth! <span className="hidden sm:visible">⛺</span>
       </h2>
       <p className="my-8 fade-in">
         {`BIG NEWS! We've finally reserved a camp! We'll be staying at the Camp Farnsworth Girl Scout Camp in Thetford, Vermont! It's a little further from most of us in the Boston Metro area, but we think the facilities will be a great fit for us! We will be renting their dining hall which can accomodate up to 200 people as well as the Tovariche Cabins, if you're familiar with the site.`}
@@ -49,14 +56,22 @@ export default function Plans2024() {
 
       <SwipeCarousel imgs={farnsworthImages} aspect={"aspect-video"} />
       {/* <p className="my-8"></p> */}
-      <h2 className={amatic.className + " my-24 text-4xl sm:text-5xl"}>
+      <h2
+        className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }
+      >
         The Book Nook 📚
       </h2>
       <p className="my-8 fade-in">
         {" "}
         {`We're going to experiment with THE BOOK NOOK. (Stolen from a conference that is sadly no more). Please bring a book that has changed your life and perspective in order to share with everyone at the conference. Politically, spiritually, whatever! We're keeping it open ended!`}
       </p>
-      <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl fade-in"}>
+      <h2
+        className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }
+      >
         Theme - Stone Soup 🥣
       </h2>
       <p className="my-8 fade-in">
@@ -65,7 +80,11 @@ export default function Plans2024() {
       <p className="my-8 fade-in">
         {`At this conference we hope to remember our radical belief in people. Inspiring each other is the only way we're going to make it through these dispiriting times.`}
       </p>
-      <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>
+      <h2
+        className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }
+      >
         When? Aug 22-26 📅
       </h2>
       <p className="my-8 fade-in">
@@ -77,7 +96,11 @@ export default function Plans2024() {
       <div className="flex flex-col items-center mb-24">
         <CountDown />
       </div>
-      <h2 className={amatic.className + " mb-24  text-4xl sm:text-5xl"}>
+      <h2
+        className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }
+      >
         How Much? - $160* 💳
       </h2>
       <p className="my-8 fade-in">
@@ -87,12 +110,16 @@ export default function Plans2024() {
         {`*We're asking $160 per person and half off for children, (14 years old and younger). `}{" "}
       </p>
       <p className="my-8 fade-in">
-      <a className="link link-error" href="mailto:cludwell@gmail.com">
+        <a className="link link-error" href="mailto:cludwell@gmail.com">
           If price might be a barrier to you attending please reach out to us.
         </a>
       </p>
 
-      <h2 className={amatic.className + " my-24 text-4xl sm:text-5xl"}>
+      <h2
+        className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }
+      >
         Workshops 👨‍🏫
       </h2>
       <p className="my-8 fade-in">
@@ -117,7 +144,7 @@ export default function Plans2024() {
             <tr>
               <td>Sarah McMuffin</td>
               <td>Happy Accidents</td>
-              <td>Tattoos for consenting adults!  </td>
+              <td>Tattoos for consenting adults! </td>
             </tr>
             <tr>
               <td>Matty</td>
@@ -127,10 +154,11 @@ export default function Plans2024() {
             <tr>
               <td>C</td>
               <td>An antifascist discussion</td>
-              <td>We'll talk about definitions, theory, and wth even is this country?</td>
+              <td>
+                We'll talk about definitions, theory, and wth even is this
+                country?
+              </td>
             </tr>
-
-
           </tbody>
         </table>
       </div>

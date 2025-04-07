@@ -11,7 +11,7 @@ export default function Logo() {
         delay: 1,
         // type: "spring",
       }}
-      className="z-10 w-32 rounded-full "
+      className="z-10 w-24 rounded-full sm:w-32 "
     >
       <motion.div
         initial={{ opacity: 0 }}

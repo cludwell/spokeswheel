@@ -3,9 +3,13 @@ import { amatic, special } from "../fonts";
 export default function ContactUs() {
   return (
     <div
-      className={`${special.className} p-4 sm:p-16 max-w-screen-xl mx-auto leading-8 min-h-screen overflow-clip`}
+    className={
+      special.className + " p-4 sm:p-16 max-w-screen-xl mx-auto leading-5 md:leading-8 text-xs sm:text-sm"
+    }
     >
-      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
+      <h2         className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }>
         Contact Us
       </h2>
       <p className="my-8 fade-in">
@@ -17,7 +21,9 @@ export default function ContactUs() {
           Member at Large - Would handle various oddball tasks
         </li>
       </ul>
-      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
+      <h2         className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }>
         Website{" "}
       </h2>
       <p className="my-8 fade-in">
@@ -27,7 +33,9 @@ export default function ContactUs() {
           cludwell@gmail.com
         </a>
       </p>
-      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
+      <h2         className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }>
         Workshop Coordinator
       </h2>
       <p className="my-8 fade-in">
@@ -39,7 +47,9 @@ export default function ContactUs() {
           smcmullen719@gmail.com
         </a>
       </p>
-      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
+      <h2         className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }>
         Reflections Coordinator
       </h2>
       <p className="my-8 ">
@@ -51,7 +61,9 @@ export default function ContactUs() {
           mkguilfoyle90@gmail.com
         </a>
       </p>
-      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl"}>
+      <h2         className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }>
         Meal Coordinator
       </h2>
       <p className="my-8 ">
@@ -63,7 +75,9 @@ export default function ContactUs() {
           jareddefrancesco@gmail.com
         </a>
       </p>
-      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl"}>
+      <h2         className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }>
         Family Group Coordinator
       </h2>
       <p className="my-8 ">

@@ -49,9 +49,13 @@ const siteImages = [
 export default function Plans2024() {
   return (
     <div
-      className={`${special.className} p-4 sm:p-16 max-w-screen-xl mx-auto leading-8 min-h-screen`}
+    className={
+      special.className + " p-4 sm:p-16 max-w-screen-xl mx-auto leading-5 md:leading-8 text-xs sm:text-sm"
+    }
     >
-      <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl fade-in"}>
+      <h2         className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }>
         Location - Camp Seawood
       </h2>
       <p className="my-8 fade-in">
@@ -83,13 +87,17 @@ export default function Plans2024() {
       <SwipeCarousel imgs={peopleImages} aspect={"aspect-square"} />
       <SwipeCarousel imgs={siteImages} aspect={"aspect-square"} />
 
-      <h2 className={amatic.className + " mb-24 text-4xl sm:text-5xl"}>
+      <h2         className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }>
         How Much?
       </h2>
       <p className="my-8 fade-in">
         {`The conference was roughly 20 dollars a day for lodging and 20 dollars a day for food. Folks ended up paying 120 if staying in the lodges, or about 140 if staying in adirondacks. In the future we would like to have a little pot saved so that we can offer NOTAFLOF (No One Turned Away For Lack Of Funds). Our goal is to make the conference accessible, which acknowledging that asking folks to take time off work is a big ask.`}
       </p>
-      <h2 className={amatic.className + " my-24 text-4xl sm:text-5xl"}>
+      <h2         className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }>
         Workshops
       </h2>
 

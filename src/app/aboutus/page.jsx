@@ -3,10 +3,14 @@ export default function AboutUs() {
   return (
     <div
       className={
-        special.className + " p-4 sm:p-16 max-w-screen-xl mx-auto leading-8"
+        special.className + " p-4 sm:p-16 max-w-screen-xl mx-auto leading-5 md:leading-8 text-xs sm:text-sm"
       }
     >
-      <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
+      <h2
+        className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }
+      >
         Who we are
       </h2>
       <p
@@ -56,7 +60,11 @@ export default function AboutUs() {
           <div>Being anti-racist</div>
         </li>
       </ul>
-      <h2 className={amatic.className + " my-12 text-4xl sm:text-5xl fade-in"}>
+      <h2
+        className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }
+      >
         What To Expect
       </h2>
       <p className="my-8 ">{`This community is what we make of it. Think of it as a stone soup, where everyone  brings something to contribute. As this will be our second conference, we're still imagining what this could be. We've floated ideas of traveling the country together, going on a backpacking trip through a national park to an isolated hot spring, or staying in a haunted hotel on an island. Everything here is a living document open to change with your participation. The general structure to expect is: `}</p>
@@ -105,7 +113,11 @@ export default function AboutUs() {
           Check out our plans for this year for specifics
         </a>
       </p>
-      <h2 className={amatic.className + " my-12 text-4xl sm:text-5xl"}>
+      <h2
+        className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }
+      >
         Agreements
       </h2>
       <p className="my-8 ">

@@ -51,7 +51,7 @@ export default function Header() {
       <Logo />
 
       <ul
-        className={`${gloria.className} flex flex-row rounded-box z-10 w-full justify-around sm:text-xl mt-20 md:mt-40  `}
+        className={`${gloria.className} flex flex-row rounded-box z-10 w-full justify-around sm:text-xl mt-24 md:mt-40  `}
       >
         <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
           <Link href={`/aboutus`}>about us</Link>

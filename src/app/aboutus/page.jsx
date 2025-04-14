@@ -32,7 +32,7 @@ export default function AboutUs() {
 
       <ul className="ml-4 fade-in">
         <li className="flex flex-row my-2">
-          <div className="w-6 mx-2 ">👩🏾‍🤝‍🧑🏻</div>
+          <div className="w-6 mx-2 ">🤝</div>
           <div>Consensus decision making</div>
         </li>
         <li className="flex flex-row my-2">

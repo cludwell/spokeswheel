@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 export default function CountDown() {
-  const targetDate = new Date(2025, 7, 22, 17); 
+  const targetDate = new Date(2025, 12, 31, 17); 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
   useEffect(() => {
@@ -37,6 +37,7 @@ export default function CountDown() {
         seconds: Math.floor((difference / 1000) % 60),
       };
     }
+    console.log(timeLeft)
     return timeLeft;
   }
 

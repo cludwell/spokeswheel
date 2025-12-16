@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 export default function CountDown() {
-  const targetDate = new Date(2025, 12, 31, 17); 
+  const targetDate = new Date(2026, 7, 14, 17);
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
   useEffect(() => {
@@ -10,14 +10,17 @@ export default function CountDown() {
       setTimeLeft(calculateTimeLeft(targetDate));
     }, 1000);
     return () => clearTimeout(timer);
-  }, [timeLeft,targetDate]);
+  }, [targetDate]);
 
   function calculateTimeLeft(date) {
     const now = new Date();
     const difference = +date - +now;
     let timeLeft = {};
     if (difference > 0) {
-      const months = date.getMonth() - now.getMonth();
+      const months =
+        now.getMonth() >= date.getMonth()
+          ? date.getMonth() + (12 - now.getMonth())
+          : date.getMonth() - now.getMonth();
       let days = date.getDate() - now.getDate();
       if (days < 0) {
         const dateCopy = new Date(date);
@@ -28,6 +31,7 @@ export default function CountDown() {
           0
         ).getDate();
         days += totalDaysLastMonth;
+        console.log("days", days);
       }
       timeLeft = {
         months,
@@ -37,7 +41,7 @@ export default function CountDown() {
         seconds: Math.floor((difference / 1000) % 60),
       };
     }
-    console.log(timeLeft)
+    // console.log(months)
     return timeLeft;
   }
 

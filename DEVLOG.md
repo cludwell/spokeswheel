@@ -1,3 +1,18 @@
+
+#2026
+🔲 create a directory and pages for worship examples
+🔲 update the payment process
+🔲...on stripe
+🔲...on spokeswheel
+🔲 create a page for 2026 at seawood 
+🔲 ...and use photos of first year at seawood
+🔲 create a sidebar or drop down table as more content is added to the website
+
+🔲 create ephemera as patches and totebags
+🔲 create seed data for new year and push it to vercel
+
+
+
 #2025
 4/5/2025
 Build commands are located at

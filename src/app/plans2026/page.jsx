@@ -19,10 +19,10 @@ export default function Plans2026() {
         <span className="hidden sm:visible">⛺</span>
       </h2>
       <p className="my-8 fade-in">
-        {`WE'VE RESERVED A SITE! So exciting! This year we are going to be returning to camp Seawood. While it isn't as nice as Farnsworth, felt the benefits of being close to the Boston metro area and the lower price will make it more accessible to much of community. This is a Girl Scout day camp and not an AirBnb, however that doesn't mean that staff won't be doing what we can to make you attendance comfortable and accessible. Please reach out to us about how we might accomodate any disabilities if we are able.`}
+        {`WE'VE RESERVED A SITE! This year we are going to be returning to Camp Seawood. While it isn't as nice as Farnsworth, we felt the benefits of being close to the Boston metro area and the lower price will make it more accessible to much of community. This is a Girl Scout day camp and not an AirBnb, however that doesn't mean that staff won't be doing what we can to make you attendance comfortable and accessible. Please reach out to us about how we might accomodate any disabilities if we are able.`}
       </p>
       <p className="my-8 fade-in">
-        {`Camp Seawood has two main lodges with 7 adirondacks available for rent. Communal sleeping is encouraged in the lodges as the adirondacks are a bit pricey and it makes the conference more afforable for everybody. Addtionally, if have a tent, you're welcome to disperse camp. We will have ear plugs, power strips for charging devices, and other accomodations available. The adirondacks are cute 3 walled structured, with the remaining wall being screened, that have hand washing stations and latrines near by. They can each accomodate about 4 people.`}
+        {`Camp Seawood has two main lodges with 7 adirondacks available for rent. Communal sleeping is encouraged in the lodges as the adirondacks are a bit pricey and it makes the conference more afforable for everybody. Additionally, if you have a tent, dispersed camping is available. We will have ear plugs, power strips for charging devices, and other accomodations as well. The adirondacks are cute 3 walled structures, with the remaining side being screened, that have hand washing stations and latrines near by. They can each accomodate about 4 people.`}
       </p>
       <p className="my-8 fade-in">{`We recommend you think about bringing: `}</p>
       <ul className="ml-10 list-disc">
@@ -36,18 +36,17 @@ export default function Plans2026() {
         </li>
         <li>A room divider or privacy screen, if that's your preference.</li>
         <li>
-          Lawn chairs, inflatable couches, or the the like you might bring to a
-          music festival.
+          Lawn chairs, inflatable couches, or that sort of camp/festival furniture.
         </li>
         <li>Art supplies! 🎨</li>
         <li>Musical instruments 🎸</li>
-        <li>A book you've read lately that's changed your life 📚</li>
+        {/* <li>A book you've read lately that's changed your life 📚</li> */}
       </ul>
       <p className="my-8 fade-in">{`If you have any questions please reach out to us! Please register in advance as it will allow us to rent additional facilities as needed. We kind of need to know by June 1st to rent additional facilities! `}</p>
 
       {/* <SwipeCarousel imgs={farnsworthImages} aspect={"aspect-video"} /> */}
       {/* <p className="my-8"></p> */}
-      <h2
+      {/* <h2
         className={
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
@@ -57,7 +56,7 @@ export default function Plans2026() {
       <p className="my-8 fade-in">
         {" "}
         {`We're going to experiment with THE BOOK NOOK. (Stolen from a conference that is sadly no more). Please bring a book that has changed your life and perspective in order to share with everyone at the conference. Politically, spiritually, whatever! We're keeping it open ended!`}
-      </p>
+      </p> */}
       <h2
         className={
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
@@ -79,7 +78,7 @@ export default function Plans2026() {
         When? Aug 14-19 📅
       </h2>
       <p className="my-8 fade-in">
-        {`We will be arriving Friday evening and leaving Tuesday morning! PLEASE PLEASE PLEASE, ask for time off work now or prepare to use your sick time 😉. I realize this is a big ask, but I promise it'll be worth it. Life is too short to spend it working all the time!`}
+        {`We will be arriving Friday evening and leaving Wednesday morning! PLEASE PLEASE PLEASE, ask for time off work now or prepare to use your sick time 😉. I realize this is a big ask, but I promise it'll be worth it. Life is too short to spend it working all the time!`}
       </p>
       <p className="my-8 fade-in">
         {`In the future we hope to expand to a week long conference!`}
@@ -92,13 +91,13 @@ export default function Plans2026() {
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
-        How Much? - $160* 💳
+        How Much? - $220* 💳
       </h2>
       <p className="my-8 fade-in">
         {`Our goal is to make this conference accessible and affordable, especially since we hope that friends from around the country will fly in to attend. Costs are roughly 20 dollars for lodging and 20 dollars a day for food. We're hoping to break even 😰.`}
       </p>
       <p className="my-8 fade-in">
-        {`*We're asking $160 per person and half off for children, (14 years old and younger). `}{" "}
+        {`*We're asking $220 per person and half off for children, (14 years old and younger). `}{" "}
       </p>
       <p className="my-8 fade-in">
         <a className="link link-error" href="mailto:cludwell@gmail.com">

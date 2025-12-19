@@ -93,9 +93,9 @@ export default function Plans2024() {
       <p className="my-8 fade-in">
         {`In the future we hope to expand to a week long conference!`}
       </p>
-      <div className="flex flex-col items-center mb-24">
+      {/* <div className="flex flex-col items-center mb-24">
         <CountDown />
-      </div>
+      </div> */}
       <h2
         className={
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"

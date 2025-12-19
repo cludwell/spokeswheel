@@ -30,7 +30,7 @@ export default function Header() {
     };
     if (session) loadUser();
   }, [session, fetchUserData, fetchUsersBookings]);
-  const bookedThisYear = bookings?.filter((b)=> b.conferenceId == 2)[0]
+  const bookedThisYear = bookings?.filter((b) => b.conferenceId == 2)[0];
   return (
     <div
       className="flex flex-col items-center self-center w-screen max-w-screen-xl mx-auto h-fit"
@@ -56,7 +56,7 @@ export default function Header() {
         <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
           <Link href={`/aboutus`}>about us</Link>
         </li>
-        <DropDownPlans/>
+        <DropDownPlans />
         <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
           <Link href={"/contact"}>contact</Link>
         </li>

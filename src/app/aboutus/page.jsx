@@ -3,7 +3,8 @@ export default function AboutUs() {
   return (
     <div
       className={
-        special.className + " p-4 sm:p-16 max-w-screen-xl mx-auto leading-5 md:leading-8 text-xs sm:text-sm"
+        special.className +
+        " p-4 sm:p-16 max-w-screen-xl mx-auto leading-5 md:leading-8 text-xs sm:text-sm"
       }
     >
       <h2
@@ -130,6 +131,16 @@ export default function AboutUs() {
         <li className="list-disc ">{`No bigotry`}</li>
         <li className="list-disc ">{`We're an intergenerational conference. If there are little ones, we all look after their safety.`}</li>
       </ul>
+      <h2
+        className={
+          amatic.className + " my-8 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }
+      >
+        Lighting The Fire
+      </h2>
+      <p className="w-full my-8 text-lg text-center">{`This is the flame we hold in our hearts as we strive for justice for everyone,`}</p>
+      <p className="w-full my-8 text-lg text-center">{`This is the light we shine on systems of oppression until they are no more,`}</p>
+      <p className="w-full my-8 text-lg text-center">{`This is the warmth we share with one another as our struggle becomes our salvation.`}</p>
     </div>
   );
 }

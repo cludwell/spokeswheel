@@ -12,6 +12,15 @@
 🔲 create seed data for new year and push it to vercel
 
 
+Info
+-about us
+-plans
+-contact
+
+Acct
+-log in
+-sign up
+-register
 
 #2025
 4/5/2025

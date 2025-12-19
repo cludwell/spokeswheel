@@ -1,7 +1,33 @@
 import CountDown from "@/components/CountDown";
 import { amatic, special } from "../fonts";
 import { SwipeCarousel } from "@/components/SwipeCarousel";
-
+import site01 from "../../../public/images/photos/2024/site01.jpg";
+import site02 from "../../../public/images/photos/2024/site02.jpg";
+import site03 from "../../../public/images/photos/2024/site03.jpg";
+import site04 from "../../../public/images/photos/2024/site04.jpg";
+import site05 from "../../../public/images/photos/2024/site05.jpg";
+import site06 from "../../../public/images/photos/2024/site06.jpg";
+import site07 from "../../../public/images/photos/2024/site07.jpg";
+import site08 from "../../../public/images/photos/2024/site08.jpg";
+import site09 from "../../../public/images/photos/2024/site09.jpg";
+import site10 from "../../../public/images/photos/2024/site10.jpg";
+import site11 from "../../../public/images/photos/2024/site11.jpg";
+import site12 from "../../../public/images/photos/2024/site12.jpg";
+const seawoodImages01 = [
+  site01,
+  site02,
+  site03,
+  site04,
+  site05,
+  site06,
+  site07,
+  site08,
+  site09,
+  site10,
+  site11,
+  site12,
+  
+]
 export default function Plans2026() {
   return (
     <div
@@ -15,8 +41,8 @@ export default function Plans2026() {
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
-        Location - Camp Farnsworth!{" "}
-        <span className="hidden sm:visible">⛺</span>
+        Location - Camp Seawood!{" "}
+        <span className="">⛺</span>
       </h2>
       <p className="my-8 fade-in">
         {`WE'VE RESERVED A SITE! This year we are going to be returning to Camp Seawood. While it isn't as nice as Farnsworth, we felt the benefits of being close to the Boston metro area and the lower price will make it more accessible to much of community. This is a Girl Scout day camp and not an AirBnb, however that doesn't mean that staff won't be doing what we can to make you attendance comfortable and accessible. Please reach out to us about how we might accomodate any disabilities if we are able.`}
@@ -44,7 +70,6 @@ export default function Plans2026() {
       </ul>
       <p className="my-8 fade-in">{`If you have any questions please reach out to us! Please register in advance as it will allow us to rent additional facilities as needed. We kind of need to know by June 1st to rent additional facilities! `}</p>
 
-      {/* <SwipeCarousel imgs={farnsworthImages} aspect={"aspect-video"} /> */}
       {/* <p className="my-8"></p> */}
       {/* <h2
         className={
@@ -57,6 +82,7 @@ export default function Plans2026() {
         {" "}
         {`We're going to experiment with THE BOOK NOOK. (Stolen from a conference that is sadly no more). Please bring a book that has changed your life and perspective in order to share with everyone at the conference. Politically, spiritually, whatever! We're keeping it open ended!`}
       </p> */}
+      <SwipeCarousel imgs={seawoodImages01} aspect={"aspect-square"}/>
       <h2
         className={
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"

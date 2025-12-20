@@ -2,6 +2,7 @@
 #2026
 🔲 create a directory and pages for worship examples
 🔲 update the payment process
+🔲 update 2025 page with pictures and a report back of how the conference went
 🔲...on stripe
 🔲...on spokeswheel
 🔲 create a page for 2026 at seawood 
@@ -11,11 +12,18 @@
 🔲 create ephemera as patches and totebags
 🔲 create seed data for new year and push it to vercel
 
+New Header layout, two drop down menus
 
 Info
 -about us
--plans
+-worships
+-flier
 -contact
+
+plans
+--2024
+--2025
+--2025
 
 Acct
 -log in

@@ -13,125 +13,129 @@ export default function Worships() {
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
-        What Do We Mean By Spiritual
+        What Do We Mean By Spiritual?
       </h2>
       <p
         className={" my-8 fade-in"}
       >{`Before I found this community I would not be inclined probably to think of myself as a spiritual person. `}</p>
 
       <p className="my-8 fade-in">
-        {`As I write this there is an eruption of dicourse online about Jasmine Crockett running for the Senate in Texas. Controversially, she has been pro Israel and voted for funding Israel during the genocide in Gaza. Liberals have been attacking leftists as dividing opposition to fascism by offering critique of Crockett, and offered bromides like "Don't let perfect be the enemy of good." They have argued that leftists believe in a mill `}
+        {`As I write this there is an eruption of dicourse online about Jasmine Crockett running for the Senate in Texas. Controversially, she has been pro Israel and voted for funding Israel during the genocide in Gaza multiple times. Leftists have been pointing to her zionism is an unaccpetable redline, and liberals have attacked them as single issue voters who have been dividing the support for Democrats by even daring to make a critique. "Both options are going to be pro Israel, anyway." `}
       </p>
       <p className="my-8 fade-in"></p>
       <p className="my-8 fade-in">
-        {`We understand this is a hard sell, asking people to take off work to take a risk on a experience they probably have misgivings about. I probably would not be involved with this community myself, if not for the luck of discovering these people and the lightning in a bottle-like experiences we shared together. Has there ever been an experience you've had that changed your life? A zine by an anonymous author? A punk show in somebody's basement? Do you remember the scepticism you had on the first page? The stifling heat of others' bodies while music pummeled your ears? If the opportunity for such an experience presented itself again, would you recognize it?`}
+        {`That's a fundamentally spiritual question, the phrasing of which as liberals have put forward is pretty corrosive to the soul. "Should we accept the systemic murder and dispossession of an entire people because it's politically expedient to protect our own liberties?" The assumptions of which are unproven.`}
       </p>
-
       <p className="my-8 fade-in">
-        {`We are trying to build an intentional spiritual community, across
-                generations, that is based on mutual aid, anti-oppression, and social
-                solidarity. We embody this through:`}
+        {`Our culture doesn't allow many spaces for healthy discussion of spiritual topics. The critique of organzied religion needs no repeating, but there are plenty of grifters with shallow ideas of "vibrational frequency" or "the divine feminine." The following is an example of a Worship or Reflection that was had at the conference last year, in an attempt portray the sort of culture we are trying to build when we say we're a community in a collective search of meaning.`}
       </p>
 
-      <ul className="ml-4 fade-in">
-        <li className="flex flex-row my-2">
-          <div className="w-6 mx-2 ">🤝</div>
-          <div>Consensus decision making</div>
-        </li>
-        <li className="flex flex-row my-2">
-          <div className="w-6 mx-2 ">🌎</div>
-          <div>Prefiguring the world we want to see</div>
-        </li>
-        <li className="flex flex-row my-2">
-          <div className="w-6 mx-2 ">✊</div>
-          <div>Workshops on collective liberation</div>
-        </li>
-        <li className="flex flex-row my-2">
-          <div className="w-6 mx-2 ">🎁</div>
-          <div>Being present in the moment</div>
-        </li>
-        <li className="flex flex-row my-2">
-          <div className="w-6 mx-2 ">🚨</div>
-          <div>Not policing each other</div>
-        </li>
-        <li className="flex flex-row my-2">
-          <div className="w-6 mx-2 ">👨🏼‍💻</div>
-          <div>Intentionally disconnecting from technology</div>
-        </li>
-        <li className="flex flex-row my-2">
-          <div className="w-6 mx-2 ">🤝🏼</div>
-          <div>Being anti-racist</div>
-        </li>
-      </ul>
       <h2
         className={
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
-        What To Expect
+        What if People Were Our Religion?
       </h2>
-      <p className="my-8 ">{`This community is what we make of it. Think of it as a stone soup, where everyone  brings something to contribute. As this will be our second conference, we're still imagining what this could be. We've floated ideas of traveling the country together, going on a backpacking trip through a national park to an isolated hot spring, or staying in a haunted hotel on an island. Everything here is a living document open to change with your participation. The general structure to expect is: `}</p>
+
+      <h3 className="my-8 text-xl ">Paul Robeson</h3>
+      <p className="w-full text-lg text-center">- Gwendolyn Brooks</p>
       <ul className="ml-4 ">
+        <li className="flex flex-row my-2">That time</li>
+        <li className="flex flex-row my-2">we all heard it,</li>
+        <li className="flex flex-row my-2">cool and clear,</li>
         <li className="flex flex-row my-2">
-          <div className="w-6 mx-2 ">🏕</div>
-          <div className="">
-            Summer camp for all ages if summer camp were punk rock AF.
-          </div>
+          cutting across the hot grit of the day.
         </li>
+
+        <li className="flex flex-row my-2">The major Voice.</li>
+        <li className="flex flex-row my-2">The adult Voice</li>
+        <li className="flex flex-row my-2">forgoing Rolling River,</li>
         <li className="flex flex-row my-2">
-          <div className="w-6 mx-2 ">👨🏼‍🍳</div>
-          <div>
-            {`Cooking giant amounts of food and eating collective meals together.`}
-          </div>
-        </li>
-        <li className="flex flex-row my-2">
-          <div className="w-6 mx-2 ">👩🏼‍🏫</div>
-          <div>
-            {`Workshops on things we're passionate about during the day.`}
-          </div>
+          forgoing tearful tale of bale and barge,
         </li>
         <li className="flex flex-row my-2">
-          <div className="w-6 mx-2 ">🧘‍♂️</div>
-          <div>
-            {`Evening worship/mediation, some reflection about this human experience, completely voluntary.`}
-          </div>
+          and other syptoms of an old despond.
         </li>
-        <li className="flex flex-row" my-2>
-          <div className="w-6 mx-2 ">👨‍👩‍👦‍👦</div>
-          <div>
-            {`Break out groups, called family groups, to foster building connections
-                  with other conferees.`}
-          </div>
-        </li>
-        <li className="flex flex-row my-2">
-          <div className="w-6 mx-2 ">🎸</div>
-          <div>
-            {`A coffee house at the end of the conference, a time to play music, sing, or share some other performance, completely voluntary. In the past this has looked like a punk show in the middle of the woods.`}
-          </div>
-        </li>
+        <li className="flex flex-row my-2">Warning, in music-words</li>
+        <li className="flex flex-row my-2">devout and large,</li>
+        <li className="flex flex-row my-2">that we are each other's</li>
+        <li className="flex flex-row my-2">harvest:</li>
+        <li className="flex flex-row my-2">we are each other's</li>
+        <li className="flex flex-row my-2">business:</li>
+        <li className="flex flex-row my-2">we are each other's</li>
+        <li className="flex flex-row my-2">magnitude and bond.</li>
       </ul>
 
       <p className="my-8 ">
-        <a className="link link-primary" href="plans2025">
-          Check out our plans for this year for specifics
-        </a>
+        In the past twenty months of this genocide, I began talking with a lot
+        of Palestinian Americans about what was happening. What I've found
+        shocking is the more Muslims that I've spoken to, is the everyday
+        practice of their religion. In Islam, there is the concept of the ummah,
+        the brotherhood and sisterhood of all followers of the prophet Muhammad.
+        In Christian terms, this might be like thinking about your congregation
+        as your flock. Palestinians, who were witnessing the live-streamed
+        genocide of their people, were so welcoming to people not of their
+        creed, to anyone who was able to witness their humanity. I have felt
+        with many Muslims welcomed in a way I never experienced in my Catholic
+        upbringing. An invitation to dialogue about the dignity of others'
+        humanity, an experience I felt no right to speak on.
       </p>
-      <h2
-        className={
-          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
-        }
-      >
-        Agreements
-      </h2>
       <p className="my-8 ">
-        Attendance implies consent to the following agreements. All agreements
-        are open to review by the community.
+        I'm not interested in God, but those conversations were inspiring. What
+        would living in a way that centers people above everything else look
+        like? We will probably never have any answers to our big questions about
+        the universe, but we can be certain of suffering and injustice now,
+        today. What if people were our religion and God didn't get in the way?
       </p>
+
+      <p className="my-8 ">
+        Some of the ways in which our world conditions so much of our view of
+        humanity:
+      </p>
+
       <ul className="ml-12">
-        <li className="list-disc ">{`Let's keep the conference inclusive to sober people and not bring substances`}</li>
-        <li className="list-disc ">{`No weapons or violence`}</li>
-        <li className="list-disc ">{`No bigotry`}</li>
-        <li className="list-disc ">{`We're an intergenerational conference. If there are little ones, we all look after their safety.`}</li>
+        <li className="list-disc ">{`Through familiar forms of oppression, cishetero patriarchy, white supremacy, imperialist capitalism, and the state all reinforce dehumanization`}</li>
+        <li className="list-disc ">{`Living through a genocide in Gaza, an exceptional moment of industrialized barbarism, normalized by both political parties`}</li>
+        <li className="list-disc ">{`Religion in service of the institution rather than the spirit`}</li>
+      </ul>
+      <p className="my-8 ">
+        Without stepping back, it's easy to have a pessimistic and cynical view
+        of humanity. Every day you suffer a moral injury. We are already
+        survivors in a dystopian movie living in the wreckage of what our lives
+        could be.
+      </p>
+      <p className="my-8 ">
+        Can we imagine a new way of moving through the world? A close friend and
+        comrade once told me he didn't want to live his life as a martyr. He
+        imagined the work and career that he should have been doing to make the
+        world a better place but it was work that wouldn't be compensated. It
+        was thankless duty, spending every evening organizing meetings. Do we
+        have to pit our own well-being against doing the right thing? Is that
+        dichotomy real or imagined?
+      </p>
+      <p className="my-8 ">
+        Trying to hold on to a belief in people is like being pulled in two
+        directions, towards love for the down trodden and oppressed, and
+        cynicism and misanthropy when confronted with privilege and injustice.
+        To believe in people is to have hope in our potential while ignoring the
+        evidence to the contrary.
+      </p>
+      <p className="my-8 ">As Rebecca Solnit explains in “Hope In the Dark”:</p>
+      <p className="my-8 ml-10 ">
+        “Hope is not a lottery ticket you can sit on the sofa and clutch,
+        feeling lucky. It is an axe you break down doors with in an emergency.
+        Hope should shove you out the door, because it will take everything you
+        have to steer the future away from endless war, from the annihilation of
+        the earth's treasures and the grinding down of the poor and marginal...
+        To hope is to give yourself to the future - and that commitment to the
+        future is what makes the present inhabitable.”
+      </p>
+      <p className="my-8 ">Please write and cast into the fire:</p>
+      <ul className="ml-12">
+        <li className="list-disc ">{`If you have experienced loss this year? What did loss teach you?`}</li>
+        <li className="list-disc ">{`What cynicism do you want to leave behind? What worldview no longer serves a purpose?`}</li>
+        <li className="list-disc ">{`What inspires hope in you?`}</li>
       </ul>
     </div>
   );

@@ -10,6 +10,7 @@ import ConferenceName from "./ConferenceName";
 import { gloria } from "../app/fonts";
 import DropDownMenu from "./DropDownMenu";
 import DropDownPlans from "./DropDownPlans";
+import DropDownInfo from "./DropDownInfo";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
@@ -53,13 +54,9 @@ export default function Header() {
       <ul
         className={`${gloria.className} flex flex-row rounded-box z-10 w-full justify-around sm:text-xl mt-24 md:mt-40  `}
       >
-        <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
-          <Link href={`/aboutus`}>about us</Link>
-        </li>
+        <DropDownInfo />
         <DropDownPlans />
-        <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
-          <Link href={"/contact"}>contact</Link>
-        </li>
+
         {user && !!bookedThisYear == 0 && (
           <li className="text-xs btn btn-ghost sm:text-base md:text-lg">
             <Link href={"/registration"}>register</Link>

@@ -144,6 +144,15 @@ async function seedConferences() {
         locationLong: -72.23845628850779
       },
     });
+    await prisma.conferences.create({
+      data: {
+        date: new Date(2025, 7, 14, 17),
+        registrationCutoff: new Date(2025, 7, 13, 17),
+        locationName: "Camp Seawood",
+        locationLat: 43.043368704656324,
+        locationLong: -70.78873188956963,
+      },
+    });
     const cons = await prisma.conferences.findMany();
     console.log("Seeded Conferences successfully", cons);
   } catch (error) {

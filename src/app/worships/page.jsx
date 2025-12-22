@@ -13,10 +13,17 @@ export default function Worships() {
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
-        What Do We Mean By Spiritual?
+        What Do We Mean By Worships or Reflections?
       </h2>
+      <p className="my-8 fade-in">
+        {`Our friend Kat has described worships, or reflections, as "making room for the numinous; and taking time to connect to something bigger than ourselves, even if that's just the community at large." `}
+      </p>
+      <p className={" my-8 fade-in"}>{` Our friend Juki has described them as:`}</p>
       <p
-        className={" my-8 fade-in"}
+        className={" my-8 fade-in ml-10"}
+      >{` "a moment to quiet things down, connect and reflect. And I really emphasize that it can be whatever you want it to be. For some people it's religious, for some people it's spiritual, for some peoiple it's just a moment to get grounded/connected/thoughtful.`}</p>
+      <p
+        className={" my-8 fade-in "}
       >{`Before I found this community I would not be inclined probably to think of myself as a spiritual person. `}</p>
 
       <p className="my-8 fade-in">
@@ -101,18 +108,16 @@ export default function Worships() {
       </ul>
       <p className="my-8 ">
         Without stepping back, it's easy to have a pessimistic and cynical view
-        of humanity. Every day you suffer a moral injury. We are already
-        survivors in a dystopian movie living in the wreckage of what our lives
-        could be.
+        of humanity. Every day you suffer moral injuries.
       </p>
       <p className="my-8 ">
         Can we imagine a new way of moving through the world? A close friend and
         comrade once told me he didn't want to live his life as a martyr. He
         imagined the work and career that he should have been doing to make the
         world a better place but it was work that wouldn't be compensated. It
-        was thankless duty, spending every evening organizing meetings. Do we
-        have to pit our own well-being against doing the right thing? Is that
-        dichotomy real or imagined?
+        was thankless duty, spending every evening in community organizing
+        meetings. Do we have to pit our own well-being against doing the right
+        thing? Is that dichotomy real or imagined?
       </p>
       <p className="my-8 ">
         Trying to hold on to a belief in people is like being pulled in two

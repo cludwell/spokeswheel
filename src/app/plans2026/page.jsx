@@ -26,7 +26,6 @@ const seawoodImages01 = [
   site10,
   site11,
   site12,
-  
 ]
 export default function Plans2026() {
   return (

@@ -9,6 +9,16 @@ import tov2 from "../../../public/images/farnsworth/tov2.jpg";
 import CountDown from "@/components/CountDown";
 import { amatic, special } from "../fonts";
 import { SwipeCarousel } from "@/components/SwipeCarousel";
+import group_01 from "../../../public/images/photos/2025/group_01.jpg"
+import group_02 from "../../../public/images/photos/2025/group_02.jpg"
+import group_03 from "../../../public/images/photos/2025/group_03.jpg"
+import group_04 from "../../../public/images/photos/2025/group_04.jpg"
+import group_05 from "../../../public/images/photos/2025/group_05.jpg"
+import group_06 from "../../../public/images/photos/2025/group_06.jpg"
+import group_07 from "../../../public/images/photos/2025/group_07.jpg"
+import group_08 from "../../../public/images/photos/2025/group_08.jpg"
+import group_09 from "../../../public/images/photos/2025/group_09.jpg"
+import group_10 from "../../../public/images/photos/2025/group_10.jpg"
 
 const farnsworthImages = [
   tov2,

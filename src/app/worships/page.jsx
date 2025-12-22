@@ -45,9 +45,9 @@ export default function Worships() {
         What if People Were Our Religion?
       </h2>
 
-      <h3 className="my-8 text-xl ">Paul Robeson</h3>
-      <p className="w-full text-lg text-center">- Gwendolyn Brooks</p>
-      <ul className="ml-4 ">
+      <h3 className="my-8 text-xl fade-in">Paul Robeson</h3>
+      <p className="w-full text-lg text-center fade-in">- Gwendolyn Brooks</p>
+      <ul className="ml-4 fade-in">
         <li className="flex flex-row my-2">That time</li>
         <li className="flex flex-row my-2">we all heard it,</li>
         <li className="flex flex-row my-2">cool and clear,</li>
@@ -74,7 +74,7 @@ export default function Worships() {
         <li className="flex flex-row my-2">magnitude and bond.</li>
       </ul>
 
-      <p className="my-8 ">
+      <p className="my-8 fade-in">
         In the past twenty months of this genocide, I began talking with a lot
         of Palestinian Americans about what was happening. What I've found
         shocking is the more Muslims that I've spoken to, is the everyday
@@ -88,7 +88,7 @@ export default function Worships() {
         upbringing. An invitation to dialogue about the dignity of others'
         humanity, an experience I felt no right to speak on.
       </p>
-      <p className="my-8 ">
+      <p className="my-8 fade-in">
         I'm not interested in God, but those conversations were inspiring. What
         would living in a way that centers people above everything else look
         like? We will probably never have any answers to our big questions about
@@ -96,21 +96,21 @@ export default function Worships() {
         today. What if people were our religion and God didn't get in the way?
       </p>
 
-      <p className="my-8 ">
+      <p className="my-8 fade-in">
         Some of the ways in which our world conditions so much of our view of
         humanity:
       </p>
 
-      <ul className="ml-12">
+      <ul className="ml-12 fade-in">
         <li className="list-disc ">{`Through familiar forms of oppression, cishetero patriarchy, white supremacy, imperialist capitalism, and the state all reinforce dehumanization`}</li>
         <li className="list-disc ">{`Living through a genocide in Gaza, an exceptional moment of industrialized barbarism, normalized by both political parties`}</li>
         <li className="list-disc ">{`Religion in service of the institution rather than the spirit`}</li>
       </ul>
-      <p className="my-8 ">
+      <p className="my-8 fade-in">
         Without stepping back, it's easy to have a pessimistic and cynical view
         of humanity. Every day you suffer moral injuries.
       </p>
-      <p className="my-8 ">
+      <p className="my-8 fade-in">
         Can we imagine a new way of moving through the world? A close friend and
         comrade once told me he didn't want to live his life as a martyr. He
         imagined the work and career that he should have been doing to make the
@@ -119,15 +119,15 @@ export default function Worships() {
         meetings. Do we have to pit our own well-being against doing the right
         thing? Is that dichotomy real or imagined?
       </p>
-      <p className="my-8 ">
+      <p className="my-8 fade-in">
         Trying to hold on to a belief in people is like being pulled in two
         directions, towards love for the down trodden and oppressed, and
         cynicism and misanthropy when confronted with privilege and injustice.
         To believe in people is to have hope in our potential while ignoring the
         evidence to the contrary.
       </p>
-      <p className="my-8 ">As Rebecca Solnit explains in “Hope In the Dark”:</p>
-      <p className="my-8 ml-10 ">
+      <p className="my-8 fade-in">As Rebecca Solnit explains in “Hope In the Dark”:</p>
+      <p className="my-8 ml-10 fade-in">
         “Hope is not a lottery ticket you can sit on the sofa and clutch,
         feeling lucky. It is an axe you break down doors with in an emergency.
         Hope should shove you out the door, because it will take everything you
@@ -136,8 +136,8 @@ export default function Worships() {
         To hope is to give yourself to the future - and that commitment to the
         future is what makes the present inhabitable.”
       </p>
-      <p className="my-8 ">Please write and cast into the fire:</p>
-      <ul className="ml-12">
+      <p className="my-8 fade-in">Please write and cast into the fire:</p>
+      <ul className="ml-12 fade-in">
         <li className="list-disc ">{`If you have experienced loss this year? What did loss teach you?`}</li>
         <li className="list-disc ">{`What cynicism do you want to leave behind? What worldview no longer serves a purpose?`}</li>
         <li className="list-disc ">{`What inspires hope in you?`}</li>

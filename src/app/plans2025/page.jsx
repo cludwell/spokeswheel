@@ -20,6 +20,8 @@ const farnsworthImages = [
   cabins,
   farnsworth,
 ];
+
+
 export default function Plans2024() {
   return (
     <div
@@ -33,13 +35,14 @@ export default function Plans2024() {
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
-        Location - Camp Farnsworth! <span className="hidden sm:visible">⛺</span>
+        Location - Camp Farnsworth!{" "}
+        <span className="hidden sm:visible">⛺</span>
       </h2>
       <p className="my-8 fade-in">
-        {`BIG NEWS! We've finally reserved a camp! We'll be staying at the Camp Farnsworth Girl Scout Camp in Thetford, Vermont! It's a little further from most of us in the Boston Metro area, but we think the facilities will be a great fit for us! We will be renting their dining hall which can accomodate up to 200 people as well as the Tovariche Cabins, if you're familiar with the site.`}
+        {`Our second annual conference was held at Camp Farnsworth in Thetford, VT. About 20 people attended, cycling in and out with other obligations. While there were a few logistical hiccups, we'll learn from them in the future! Camp Farnsworth wasa little further from most of us in the Boston Metro area, but the site was absolutely beautiful and the facilities were great! We rented their huge dining hall as well as the Tovariche Cabins, if you're familiar with the site.`}
       </p>
-      <p className="my-8 fade-in">{`Each cabin can accomodate 2-8 people, and have cots with mattresses. This is a girl scout camp, and not an AirBnb, so think of it as glamping! We recommend you think about bringing: `}</p>
-      <ul className="ml-10 list-disc">
+      <p className="my-8 fade-in">{`The site was phenomenal but it's popularity with other groups trying to rent it, in addition to it's price and distance from Boston make it challenging for a conference of our size currently. Hopefully we'll return in a couple of years! `}</p>
+      {/* <ul className="ml-10 list-disc">
         <li>A sleeping bag, as there will NOT be bedding 💤</li>
         <li>
           A camping mattress, especially if comfort is often an issue for you
@@ -51,12 +54,20 @@ export default function Plans2024() {
         <li>Art supplies! 🎨</li>
         <li>Musical instruments 🎸</li>
         <li>A book you've read lately that's changed your life 📚</li>
-      </ul>
-      <p className="my-8 fade-in">{`If you have any questions please reach out to us! Please register in advance as it will allow us to rent additional facilities as needed. We kind of need to know by June 1st to rent additional facilities! `}</p>
+      </ul> */}
+      <p className="my-8 fade-in">{`These photos kind of give you an idea of what the site looked like.`}</p>
 
       <SwipeCarousel imgs={farnsworthImages} aspect={"aspect-video"} />
-      {/* <p className="my-8"></p> */}
+
       <h2
+        className={
+          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }
+      >
+        Con Photos
+      </h2>
+      {/* <p className="my-8"></p> */}
+      {/* <h2
         className={
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
@@ -66,7 +77,7 @@ export default function Plans2024() {
       <p className="my-8 fade-in">
         {" "}
         {`We're going to experiment with THE BOOK NOOK. (Stolen from a conference that is sadly no more). Please bring a book that has changed your life and perspective in order to share with everyone at the conference. Politically, spiritually, whatever! We're keeping it open ended!`}
-      </p>
+      </p> */}
       <h2
         className={
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
@@ -85,7 +96,7 @@ export default function Plans2024() {
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
-        When? Aug 22-26 📅
+        When? Aug 22-26, 2025 📅
       </h2>
       <p className="my-8 fade-in">
         {`We will be arriving Friday evening and leaving Tuesday morning! PLEASE PLEASE PLEASE, ask for time off work now or prepare to use your sick time 😉. I realize this is a big ask, but I promise it'll be worth it. Life is too short to spend it working all the time!`}

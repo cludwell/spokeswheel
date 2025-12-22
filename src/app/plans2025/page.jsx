@@ -9,16 +9,16 @@ import tov2 from "../../../public/images/farnsworth/tov2.jpg";
 import CountDown from "@/components/CountDown";
 import { amatic, special } from "../fonts";
 import { SwipeCarousel } from "@/components/SwipeCarousel";
-import group_01 from "../../../public/images/photos/2025/group_01.jpg"
-import group_02 from "../../../public/images/photos/2025/group_02.jpg"
-import group_03 from "../../../public/images/photos/2025/group_03.jpg"
-import group_04 from "../../../public/images/photos/2025/group_04.jpg"
-import group_05 from "../../../public/images/photos/2025/group_05.jpg"
-import group_06 from "../../../public/images/photos/2025/group_06.jpg"
-import group_07 from "../../../public/images/photos/2025/group_07.jpg"
-import group_08 from "../../../public/images/photos/2025/group_08.jpg"
-import group_09 from "../../../public/images/photos/2025/group_09.jpg"
-import group_10 from "../../../public/images/photos/2025/group_10.jpg"
+import group_01 from "../../../public/images/photos/2025/group_01.jpg";
+import group_02 from "../../../public/images/photos/2025/group_02.jpg";
+import group_03 from "../../../public/images/photos/2025/group_03.jpg";
+import group_04 from "../../../public/images/photos/2025/group_04.jpg";
+import group_05 from "../../../public/images/photos/2025/group_05.jpg";
+import group_06 from "../../../public/images/photos/2025/group_06.jpg";
+import group_07 from "../../../public/images/photos/2025/group_07.jpg";
+import group_08 from "../../../public/images/photos/2025/group_08.jpg";
+import group_09 from "../../../public/images/photos/2025/group_09.jpg";
+import group_10 from "../../../public/images/photos/2025/group_10.jpg";
 
 const farnsworthImages = [
   tov2,
@@ -30,7 +30,6 @@ const farnsworthImages = [
   cabins,
   farnsworth,
 ];
-
 
 export default function Plans2024() {
   return (
@@ -71,23 +70,12 @@ export default function Plans2024() {
 
       <h2
         className={
-          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+          amatic.className + " my-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
         Con Photos
       </h2>
-      {/* <p className="my-8"></p> */}
-      {/* <h2
-        className={
-          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
-        }
-      >
-        The Book Nook 📚
-      </h2>
-      <p className="my-8 fade-in">
-        {" "}
-        {`We're going to experiment with THE BOOK NOOK. (Stolen from a conference that is sadly no more). Please bring a book that has changed your life and perspective in order to share with everyone at the conference. Politically, spiritually, whatever! We're keeping it open ended!`}
-      </p> */}
+
       <h2
         className={
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
@@ -109,10 +97,10 @@ export default function Plans2024() {
         When? Aug 22-26, 2025 📅
       </h2>
       <p className="my-8 fade-in">
-        {`We will be arriving Friday evening and leaving Tuesday morning! PLEASE PLEASE PLEASE, ask for time off work now or prepare to use your sick time 😉. I realize this is a big ask, but I promise it'll be worth it. Life is too short to spend it working all the time!`}
+        {`It always feels like a big ask for people to take off work, but they did. Total attendance fluctuating as people cycled in and out for work, weddings, and other obligations.`}
       </p>
       <p className="my-8 fade-in">
-        {`In the future we hope to expand to a week long conference!`}
+        {`In the future we hope to expand to a week long conference! Every year we make it about one day longer.`}
       </p>
       {/* <div className="flex flex-col items-center mb-24">
         <CountDown />
@@ -125,14 +113,14 @@ export default function Plans2024() {
         How Much? - $160* 💳
       </h2>
       <p className="my-8 fade-in">
-        {`Our goal is to make this conference accessible and affordable, especially since we hope that friends from around the country will fly in to attend. Costs are roughly 20 dollars for lodging and 20 dollars a day for food. We're hoping to break even 😰.`}
+        {`Our goal is to make this conference accessible and affordable, especially since we hope that friends from around the country will fly in to attend. Costs are roughly 20 dollars for lodging and 20 dollars a day for food. We always hope to break even, at the very least!`}
       </p>
       <p className="my-8 fade-in">
         {`*We're asking $160 per person and half off for children, (14 years old and younger). `}{" "}
       </p>
       <p className="my-8 fade-in">
         <a className="link link-error" href="mailto:cludwell@gmail.com">
-          If price might be a barrier to you attending please reach out to us.
+          If price might be a barrier to you attending always reach out to us.
         </a>
       </p>
 
@@ -145,7 +133,7 @@ export default function Plans2024() {
       </h2>
       <p className="my-8 fade-in">
         {" "}
-        {`Let us know what workshops you want to lead so we can update this!`}
+        {`I think I'm forgetting a few, but here are the ones that I attended!`}
       </p>
 
       <div className="m-auto overflow-x-auto rounded-b-lg w-fit">
@@ -159,26 +147,20 @@ export default function Plans2024() {
             </tr>
           </thead>
           <tbody className="">
-            {/* row 1 */}
-
-            {/* row 2 */}
             <tr>
-              <td>Sarah McMuffin</td>
-              <td>Happy Accidents</td>
-              <td>Tattoos for consenting adults! </td>
+              <td>Alec</td>
+              <td>Fundamentals of AI</td>
+              <td>What is AI? How is it going to change society?</td>
             </tr>
             <tr>
-              <td>Matty</td>
-              <td>Cryptids 101</td>
-              <td>Sometimes the truth really is out there👹</td>
+              <td>Meagan</td>
+              <td>Move your Body</td>
+              <td>Stretching and Yoga and Dancing</td>
             </tr>
             <tr>
-              <td>C</td>
-              <td>An antifascist discussion</td>
-              <td>
-                We'll talk about definitions, theory, and wth even is this
-                country?
-              </td>
+              <td>Ella</td>
+              <td>Creative Writing</td>
+              <td>Creative Writing with some light guidance and sharing</td>
             </tr>
           </tbody>
         </table>

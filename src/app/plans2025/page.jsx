@@ -19,7 +19,28 @@ import group_07 from "../../../public/images/photos/2025/group_07.jpg";
 import group_08 from "../../../public/images/photos/2025/group_08.jpg";
 import group_09 from "../../../public/images/photos/2025/group_09.jpg";
 import group_10 from "../../../public/images/photos/2025/group_10.jpg";
-
+import siteL_01 from "../../../public/images/photos/2025/siteL_01.jpg";
+import siteL_02 from "../../../public/images/photos/2025/siteL_02.jpg";
+import siteL_03 from "../../../public/images/photos/2025/siteL_03.jpg";
+import siteL_04 from "../../../public/images/photos/2025/siteL_04.jpg";
+import siteL_05 from "../../../public/images/photos/2025/siteL_05.jpg";
+import siteL_06 from "../../../public/images/photos/2025/siteL_06.jpg";
+import siteP_01 from "../../../public/images/photos/2025/siteP_01.jpg";
+import siteP_02 from "../../../public/images/photos/2025/siteP_02.jpg";
+import siteP_03 from "../../../public/images/photos/2025/siteP_03.jpg";
+import siteP_04 from "../../../public/images/photos/2025/siteP_04.jpg";
+import siteP_05 from "../../../public/images/photos/2025/siteP_05.jpg";
+import siteP_06 from "../../../public/images/photos/2025/siteP_06.jpg";
+import siteP_07 from "../../../public/images/photos/2025/siteP_07.jpg";
+import siteP_08 from "../../../public/images/photos/2025/siteP_08.jpg";
+import siteP_09 from "../../../public/images/photos/2025/siteP_09.jpg";
+import siteP_10 from "../../../public/images/photos/2025/siteP_10.jpg";
+import siteP_11 from "../../../public/images/photos/2025/siteP_11.jpg";
+import siteP_12 from "../../../public/images/photos/2025/siteP_12.jpg";
+import siteP_13 from "../../../public/images/photos/2025/siteP_13.jpg";
+import siteP_14 from "../../../public/images/photos/2025/siteP_14.jpg";
+import siteP_15 from "../../../public/images/photos/2025/siteP_15.jpg";
+import siteP_16 from "../../../public/images/photos/2025/siteP_16.jpg";
 const farnsworthImages = [
   tov2,
   tov1,
@@ -31,6 +52,47 @@ const farnsworthImages = [
   farnsworth,
 ];
 
+const groupPhotos = [
+  // group_01,
+  group_02,
+  group_03,
+  group_04,
+  group_05,
+  group_06,
+  group_07,
+  group_08,
+  group_09,
+  group_10,
+  group_01,
+];
+const sitePhotosLandscape = [
+  siteL_01,
+  siteL_02,
+  siteL_03,
+  siteL_04,
+  siteL_06,
+  siteL_05,
+];
+const sitePhotosPortrait = [
+  siteP_01,
+  siteP_08,
+  siteP_02,
+  // siteP_03,
+  siteP_04,
+  // siteP_05,
+  siteP_10,
+  siteP_07,
+  // siteP_06,
+  // siteP_09,
+  // siteP_11,
+  // siteP_12,
+  siteP_13,
+  // siteP_14,
+  // siteP_15,
+  siteP_16,
+];
+
+const sitePortrait = [];
 export default function Plans2024() {
   return (
     <div
@@ -51,22 +113,10 @@ export default function Plans2024() {
         {`Our second annual conference was held at Camp Farnsworth in Thetford, VT. About 20 people attended, cycling in and out with other obligations. While there were a few logistical hiccups, we'll learn from them in the future! Camp Farnsworth wasa little further from most of us in the Boston Metro area, but the site was absolutely beautiful and the facilities were great! We rented their huge dining hall as well as the Tovariche Cabins, if you're familiar with the site.`}
       </p>
       <p className="my-8 fade-in">{`The site was phenomenal but it's popularity with other groups trying to rent it, in addition to it's price and distance from Boston make it challenging for a conference of our size currently. Hopefully we'll return in a couple of years! `}</p>
-      {/* <ul className="ml-10 list-disc">
-        <li>A sleeping bag, as there will NOT be bedding 💤</li>
-        <li>
-          A camping mattress, especially if comfort is often an issue for you
-        </li>
-        <li>A towel and shower kit 🚿</li>
-        <li>
-          If you'd like more privacy, bring a tent/tarp for dispersed camping.🏕
-        </li>
-        <li>Art supplies! 🎨</li>
-        <li>Musical instruments 🎸</li>
-        <li>A book you've read lately that's changed your life 📚</li>
-      </ul> */}
+
       <p className="my-8 fade-in">{`These photos kind of give you an idea of what the site looked like.`}</p>
 
-      <SwipeCarousel imgs={farnsworthImages} aspect={"aspect-video"} />
+      <SwipeCarousel imgs={sitePhotosLandscape} aspect={"aspect-video"} />
 
       <h2
         className={
@@ -76,6 +126,11 @@ export default function Plans2024() {
         Con Photos
       </h2>
 
+      <SwipeCarousel imgs={groupPhotos} aspect={"aspect-square"} />
+      <SwipeCarousel
+        imgs={sitePhotosPortrait}
+        aspect={"aspect-square object-bottom"}
+      />
       <h2
         className={
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"

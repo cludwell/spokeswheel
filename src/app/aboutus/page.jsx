@@ -63,7 +63,7 @@ export default function AboutUs() {
       </ul>
       <h2
         className={
-          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+          amatic.className + " my-8 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
         What To Expect

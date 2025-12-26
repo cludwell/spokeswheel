@@ -47,15 +47,16 @@ export default function Plans2026() {
         {`WE'VE RESERVED A SITE! This year we are going to be returning to Camp Seawood. While it isn't as nice as Farnsworth, we felt the benefits of being close to the Boston metro area and the lower price will make it more accessible to much of community. This is a Girl Scout day camp and not an AirBnb, however that doesn't mean that staff won't be doing what we can to make you attendance comfortable and accessible. Please reach out to us about how we might accomodate any disabilities if we are able.`}
       </p>
       <p className="my-8 fade-in">
-        {`Camp Seawood has two main lodges with 7 adirondacks available for rent. Communal sleeping is encouraged in the lodges as the adirondacks are a bit pricey and it makes the conference more afforable for everybody. Additionally, if you have a tent, dispersed camping is available. We will have ear plugs, power strips for charging devices, and other accomodations as well. The adirondacks are cute 3 walled structures, with the remaining side being screened, that have hand washing stations and latrines near by. They can each accomodate about 4 people.`}
+        {`Camp Seawood has two main lodges with 7 adirondacks available for rent. Each lodge has a bunk room on the second floor. This is not an AirBnb, please come prepared as if you are car camping to have the best experience. Communal sleeping is encouraged in the lodges as the adirondacks are a bit pricey, at an additional $60/night, and it makes the conference more afforable for everybody. Maybe there are friends staying in an adirondack you might want stay with? Maybe it's a good way to meet people? Additionally, if you have a tent, dispersed camping is available. We will have ear plugs, power strips for charging devices, inflatable couches, and other accomodations. The adirondacks are cute 3 walled structures, with the remaining side being screened, that have hand washing stations and latrines near by. They can each accomodate about 4 to 6 people.`}
       </p>
       <p className="my-8 fade-in">{`We recommend you think about bringing: `}</p>
-      <ul className="ml-10 list-disc">
+      <ul className="ml-10 list-disc fade-in">
         <li>A sleeping bag, as there will NOT be bedding.</li>
         <li>
           A camping mattress, especially if comfort is often an issue for you.
         </li>
         <li>A towel and shower kit 🚿</li>
+        <li>A headlamp with a red light mode</li>
         <li>
           If you'd like more privacy, bring a tent/tarp for dispersed camping.
         </li>
@@ -76,11 +77,11 @@ export default function Plans2026() {
         }
       >
         The Book Nook 📚
-      </h2>
+      </h2> */}
       <p className="my-8 fade-in">
         {" "}
-        {`We're going to experiment with THE BOOK NOOK. (Stolen from a conference that is sadly no more). Please bring a book that has changed your life and perspective in order to share with everyone at the conference. Politically, spiritually, whatever! We're keeping it open ended!`}
-      </p> */}
+        {`Here are some photos of the first year that we stayed at Camp Seawood to give an idea of what it looks like.`}
+      </p>
       <SwipeCarousel imgs={seawoodImages01} aspect={"aspect-square"}/>
       <h2
         className={

@@ -102,9 +102,9 @@ export default function Worships() {
       </p>
 
       <ul className="ml-12 fade-in">
-        <li className="list-disc ">{`Through familiar forms of oppression, cishetero patriarchy, white supremacy, imperialist capitalism, and the state all reinforce dehumanization`}</li>
-        <li className="list-disc ">{`Living through a genocide in Gaza, an exceptional moment of industrialized barbarism, normalized by both political parties`}</li>
-        <li className="list-disc ">{`Religion in service of the institution rather than the spirit`}</li>
+        <li className="list-disc ">{`Through familiar forms of oppression, cis-hetero patriarchy, white supremacy, imperialist capitalism, and the state all naturalize dehumanization`}</li>
+        <li className="list-disc ">{`Living through a genocide in Gaza, in South Sudan, and The Congo, all normalized by both political parties`}</li>
+        <li className="list-disc ">{`Religion in service of the institution rather than the spirit `}</li>
       </ul>
       <p className="my-8 fade-in">
         Without stepping back, it's easy to have a pessimistic and cynical view

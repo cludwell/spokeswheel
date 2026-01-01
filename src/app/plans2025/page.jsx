@@ -25,6 +25,7 @@ import siteL_03 from "../../../public/images/photos/2025/siteL_03.jpg";
 import siteL_04 from "../../../public/images/photos/2025/siteL_04.jpg";
 import siteL_05 from "../../../public/images/photos/2025/siteL_05.jpg";
 import siteL_06 from "../../../public/images/photos/2025/siteL_06.jpg";
+import siteL_07 from "../../../public/images/photos/2025/siteL_07.jpg";
 import siteP_01 from "../../../public/images/photos/2025/siteP_01.jpg";
 import siteP_02 from "../../../public/images/photos/2025/siteP_02.jpg";
 import siteP_03 from "../../../public/images/photos/2025/siteP_03.jpg";
@@ -41,6 +42,11 @@ import siteP_13 from "../../../public/images/photos/2025/siteP_13.jpg";
 import siteP_14 from "../../../public/images/photos/2025/siteP_14.jpg";
 import siteP_15 from "../../../public/images/photos/2025/siteP_15.jpg";
 import siteP_16 from "../../../public/images/photos/2025/siteP_16.jpg";
+import ali_01 from "../../../public/images/photos/2025/ali_01.jpg";
+import ella_01 from "../../../public/images/photos/2025/ella_01.jpg";
+import heather_01 from "../../../public/images/photos/2025/heather_01.jpg";
+import matty_01 from "../../../public/images/photos/2025/matty_01.jpg";
+import heather_03 from "../../../public/images/photos/2025/heather_03.jpg";
 const farnsworthImages = [
   tov2,
   tov1,
@@ -64,6 +70,10 @@ const groupPhotos = [
   group_09,
   group_10,
   group_01,
+  ali_01,
+  ella_01,
+  heather_01,
+  matty_01
 ];
 const sitePhotosLandscape = [
   siteL_01,
@@ -72,6 +82,7 @@ const sitePhotosLandscape = [
   siteL_04,
   siteL_06,
   siteL_05,
+  siteL_07
 ];
 const sitePhotosPortrait = [
   siteP_01,
@@ -91,6 +102,7 @@ const sitePhotosPortrait = [
   // siteP_15,
   siteP_16,
 ];
+const people = [];
 
 const sitePortrait = [];
 export default function Plans2024() {
@@ -133,7 +145,7 @@ export default function Plans2024() {
       />
       <h2
         className={
-          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+          amatic.className + " my-8 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
         Theme - Stone Soup 🥣

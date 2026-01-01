@@ -44,10 +44,13 @@ export default function Plans2026() {
         <span className="">⛺</span>
       </h2>
       <p className="my-8 fade-in">
-        {`WE'VE RESERVED A SITE! This year we are going to be returning to Camp Seawood. While it isn't as nice as Farnsworth, we felt the benefits of being close to the Boston metro area and the lower price will make it more accessible to much of community. This is a Girl Scout day camp and not an AirBnb, however that doesn't mean that staff won't be doing what we can to make you attendance comfortable and accessible. Please reach out to us about how we might accomodate any disabilities if we are able.`}
+        {`WE'VE RESERVED THE SITE! This year we are going to be returning to Camp Seawood. While it isn't as nice as Farnsworth, we felt the benefits of being close to the Boston metro area and the lower price will make it more accessible to much of the community. This is a Girl Scout day camp and not an AirBnb, however that doesn't mean that staff won't be doing what we can to make you attendance comfortable and accessible. Please reach out to us about how we might accomodate any disabilities if we are able.`}
       </p>
       <p className="my-8 fade-in">
-        {`Camp Seawood has two main lodges with 7 adirondacks available for rent. Each lodge has a bunk room on the second floor. This is not an AirBnb, please come prepared as if you are car camping to have the best experience. Communal sleeping is encouraged in the lodges as the adirondacks are a bit pricey, at an additional $60/night, and it makes the conference more afforable for everybody. Maybe there are friends staying in an adirondack you might want stay with? Maybe it's a good way to meet people? Additionally, if you have a tent, dispersed camping is available. We will have ear plugs, power strips for charging devices, inflatable couches, and other accomodations. The adirondacks are cute 3 walled structures, with the remaining side being screened, that have hand washing stations and latrines near by. They can each accomodate about 4 to 6 people.`}
+        {`Camp Seawood has two main lodges with 7 adirondacks available for rent. Each lodge has a bunk room on the second floor. Please come prepared as if you are car camping to have the best experience. Communal sleeping is encouraged in the lodges as the adirondacks are a bit pricey, at an additional $60/night, and it makes the conference more afforable for everybody. Maybe there are friends staying in an adirondack you might want stay with? Maybe it's a good way to meet people? Additionally, if you have a tent, dispersed camping is available. We will have ear plugs, power strips for charging devices, inflatable couches, and other accomodations. The adirondacks are cute 3 walled structures, with the remaining side being screened, that have hand washing stations and latrines near by. They can each accomodate about 4 to 6 people.`}
+      </p>
+      <p className="my-8 fade-in">
+        {`There are restrooms and showers in the lodges, as well as latrines and handwashing stations near the adirondacks.`}
       </p>
       <p className="my-8 fade-in">{`We recommend you think about bringing: `}</p>
       <ul className="ml-10 list-disc fade-in">
@@ -85,7 +88,7 @@ export default function Plans2026() {
       <SwipeCarousel imgs={seawoodImages01} aspect={"aspect-square"}/>
       <h2
         className={
-          amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+          amatic.className + " my-8 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
         Theme - Stone Soup 🥣
@@ -123,7 +126,7 @@ export default function Plans2026() {
         {`Our goal is to make this conference accessible and affordable, especially since we hope that friends from around the country will fly in to attend. Costs are roughly 20 dollars for lodging and 20 dollars a day for food. We're hoping to break even 😰.`}
       </p>
       <p className="my-8 fade-in">
-        {`*We're asking $220 per person and half off for children, (14 years old and younger). `}{" "}
+        {`*We're asking $200 per person and half off for children, (14 years old and younger). `}{" "}
       </p>
       <p className="my-8 fade-in">
         <a className="link link-error" href="mailto:cludwell@gmail.com">

@@ -48,6 +48,23 @@ async function seedUsers() {
                 connect: { id: 2 },
               },
             },
+            {
+              photoConsent: true,
+              paid: true,
+              paymentAmount: 164.64,
+              emergencyName: "Kathleen Ludwell",
+              emergencyNumber: "(123) 456-7890",
+              emergencyRelation: "Mother",
+              emailList: true,
+              textUpdates: true,
+              dietaryRestrictions: "Vegan",
+              allergies: "N/A",
+              notes: "Staff",
+              lodging: "Lodges",
+              conference: {
+                connect: { id: 3 },
+              },
+            },
           ],
         },
       },
@@ -146,7 +163,7 @@ async function seedConferences() {
     });
     await prisma.conferences.create({
       data: {
-        date: new Date(2025, 7, 14, 17),
+        date: new Date(2026, 7, 14, 17),
         registrationCutoff: new Date(2025, 7, 13, 17),
         locationName: "Camp Seawood",
         locationLat: 43.043368704656324,

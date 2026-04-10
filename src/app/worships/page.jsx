@@ -18,7 +18,9 @@ export default function Worships() {
       <p className="my-8 fade-in">
         {`Our friend Kat has described worships, or reflections, as "making room for the numinous; and taking time to connect to something bigger than ourselves, even if that's just the community at large." `}
       </p>
-      <p className={" my-8 fade-in"}>{` Our friend Juki has described them as:`}</p>
+      <p
+        className={" my-8 fade-in"}
+      >{` Our friend Juki has described them as:`}</p>
       <p
         className={" my-8 fade-in ml-10"}
       >{` "a moment to quiet things down, connect and reflect. And I really emphasize that it can be whatever you want it to be. For some people it's religious, for some people it's spiritual, for some peoiple it's just a moment to get grounded/connected/thoughtful.`}</p>
@@ -46,7 +48,7 @@ export default function Worships() {
       </h2>
 
       <h3 className="my-8 text-xl fade-in">Paul Robeson</h3>
-      <p className="w-full text-lg text-center fade-in">- Gwendolyn Brooks</p>
+      <p className="w-full ml-24 text-lg fade-in">- Gwendolyn Brooks</p>
       <ul className="ml-4 fade-in">
         <li className="flex flex-row my-2">That time</li>
         <li className="flex flex-row my-2">we all heard it,</li>
@@ -126,7 +128,9 @@ export default function Worships() {
         To believe in people is to have hope in our potential while ignoring the
         evidence to the contrary.
       </p>
-      <p className="my-8 fade-in">As Rebecca Solnit explains in “Hope In the Dark”:</p>
+      <p className="my-8 fade-in">
+        As Rebecca Solnit explains in “Hope In the Dark”:
+      </p>
       <p className="my-8 ml-10 fade-in">
         “Hope is not a lottery ticket you can sit on the sofa and clutch,
         feeling lucky. It is an axe you break down doors with in an emergency.

@@ -13,6 +13,14 @@ import site09 from "../../../public/images/photos/2024/site09.jpg";
 import site10 from "../../../public/images/photos/2024/site10.jpg";
 import site11 from "../../../public/images/photos/2024/site11.jpg";
 import site12 from "../../../public/images/photos/2024/site12.jpg";
+import site13 from "../../../public/images/photos/2024/site13.jpg";
+import site14 from "../../../public/images/photos/2024/site14.jpg";
+import site15 from "../../../public/images/photos/2024/site15.jpg";
+import site16 from "../../../public/images/photos/2024/site16.jpg";
+import site17 from "../../../public/images/photos/2024/site17.jpg";
+import site18 from "../../../public/images/photos/2024/site18.jpg";
+import site19 from "../../../public/images/photos/2024/site19.jpg";
+import site20 from "../../../public/images/photos/2024/site20.jpg";
 const seawoodImages01 = [
   site01,
   site02,
@@ -22,11 +30,21 @@ const seawoodImages01 = [
   site06,
   site07,
   site08,
-  site09,
+  // site09,
   site10,
   site11,
   site12,
-]
+];
+const seawoodImages02 = [
+  site13,
+  site14,
+  site15,
+  site16,
+  site17,
+  site18,
+  site19,
+  site20,
+];
 export default function Plans2026() {
   return (
     <div
@@ -40,14 +58,13 @@ export default function Plans2026() {
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
-        Location - Camp Seawood!{" "}
-        <span className="">⛺</span>
+        Location - Camp Seawood! <span className="">⛺</span>
       </h2>
       <p className="my-8 fade-in">
         {`WE'VE RESERVED THE SITE! This year we are going to be returning to Camp Seawood. While it isn't as nice as Farnsworth, we felt the benefits of being close to the Boston metro area and the lower price will make it more accessible to much of the community. This is a Girl Scout day camp and not an AirBnb, however that doesn't mean that staff won't be doing what we can to make you attendance comfortable and accessible. Please reach out to us about how we might accomodate any disabilities if we are able.`}
       </p>
       <p className="my-8 fade-in">
-        {`Camp Seawood has two main lodges with 7 adirondacks available for rent. Each lodge has a bunk room on the second floor. Please come prepared as if you are car camping to have the best experience. Communal sleeping is encouraged in the lodges as the adirondacks are a bit pricey, at an additional $60/night, and it makes the conference more afforable for everybody. Maybe there are friends staying in an adirondack you might want stay with? Maybe it's a good way to meet people? Additionally, if you have a tent, dispersed camping is available. We will have ear plugs, power strips for charging devices, inflatable couches, and other accomodations. The adirondacks are cute 3 walled structures, with the remaining side being screened, that have hand washing stations and latrines near by. They can each accomodate about 4 to 6 people.`}
+        {`Camp Seawood has two main lodges with 7 adirondacks available for rent. Each lodge has a bunk room on the second floor. Please come prepared as if you are car camping to have the best experience. Communal sleeping is encouraged in the lodges as the adirondacks are a bit pricey, at an additional $60/night, and it makes the conference more afforable for everybody. Maybe there are friends staying in an adirondack you might want stay with? Maybe it's a good way to meet people? Additionally, if you have a tent, dispersed camping is available. We will have ear plugs (as the site is close to an airport), power strips for charging devices, inflatable couches, and other accomodations. The adirondacks are cute 3 walled structures, with the remaining side being screened, that have hand washing stations and latrines near by. They can each accomodate about 4 people.`}
       </p>
       <p className="my-8 fade-in">
         {`There are restrooms and showers in the lodges, as well as latrines and handwashing stations near the adirondacks.`}
@@ -59,13 +76,14 @@ export default function Plans2026() {
           A camping mattress, especially if comfort is often an issue for you.
         </li>
         <li>A towel and shower kit 🚿</li>
-        <li>A headlamp with a red light mode</li>
+        <li>A headlamp, preferably with a red light mode</li>
         <li>
           If you'd like more privacy, bring a tent/tarp for dispersed camping.
         </li>
         <li>A room divider or privacy screen, if that's your preference.</li>
         <li>
-          Lawn chairs, inflatable couches, or that sort of camp/festival furniture.
+          Lawn chairs, inflatable couches, or that sort of camp/festival
+          furniture.
         </li>
         <li>Art supplies! 🎨</li>
         <li>Musical instruments 🎸</li>
@@ -79,13 +97,19 @@ export default function Plans2026() {
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
-        The Book Nook 📚
+        The Book Nook 📚 
       </h2> */}
       <p className="my-8 fade-in">
         {" "}
         {`Here are some photos of the first year that we stayed at Camp Seawood to give an idea of what it looks like.`}
       </p>
-      <SwipeCarousel imgs={seawoodImages01} aspect={"aspect-square"}/>
+            <h2
+        className={
+          amatic.className + " my-8 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }
+      >Site Photos</h2>
+      <SwipeCarousel imgs={seawoodImages01} aspect={"aspect-square"} />
+      <SwipeCarousel imgs={seawoodImages02} aspect={"aspect-square"} />
       <h2
         className={
           amatic.className + " my-8 sm:mb-12 text-4xl sm:text-5xl fade-in"

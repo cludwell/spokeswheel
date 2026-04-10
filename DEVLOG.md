@@ -2,12 +2,12 @@
 #2026
 ✅ create a directory and pages for worship examples
 🔲 update the payment process
-🔲 update 2025 page with pictures and a report back of how the conference went
 🔲...on stripe
 🔲...on spokeswheel
+✅ update 2025 page with pictures and a report back of how the conference went
+✅ ...and use photos of first year at seawood
 ✅ create a page for 2026 at seawood 
-🔲 ...and use photos of first year at seawood
-🔲 create a sidebar or drop down table as more content is added to the website
+✅ create a sidebar or drop down table as more content is added to the website
 
 🔲 create ephemera as patches and totebags
 🔲 create seed data for new year and push it to vercel

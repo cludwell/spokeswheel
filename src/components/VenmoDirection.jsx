@@ -13,7 +13,7 @@ export default function VenmoDirection({ fee, dateOfBirth }) {
       : // for adult admission
         "https://buy.stripe.com/9AQ7st6Pv5iM7NS4gl";
 
-  console.log(dateOfBirth);
+//   console.log(dateOfBirth);
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>

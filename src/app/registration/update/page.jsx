@@ -19,16 +19,13 @@ export default function UpdateRegistration() {
       updateBookingInfo: state.updateBookingInfo,
       fetchUsersBookings: state.fetchUsersBookings,
       user: state.user,
-    })
+    }),
   );
   const [errors, setErrors] = useState({});
-  const [emailList, setEmailList] = useState(false);
-  const [photoConsent, setPhotoConsent] = useState(false);
-  const [textUpdates, setTextUpdates] = useState(false);
   const [updated, setUpdated] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   let [userData, setUserData] = useState({
-    conferenceId: 2,
+    conferenceId: 3,
     photoConsent: false,
     paid: false,
     emergencyName: "",
@@ -41,7 +38,7 @@ export default function UpdateRegistration() {
     notes: "",
     specialAccomodations: "",
     lodging: "",
-    paymentAmount: 164.64,
+    paymentAmount: 200,
   });
 
   const {
@@ -66,11 +63,12 @@ export default function UpdateRegistration() {
     }
     return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(
       3,
-      6
+      6,
     )}-${phoneNumber.slice(6, 10)}`;
   }
 
-  const booking = bookings.filter((b) => b.conferenceId == 2)[0];
+  const booking = bookings.filter((b) => b.conferenceId == 3)[0];
+
   useEffect(() => {
     setUserData({
       emergencyName: booking?.emergencyName ? booking?.emergencyName : "",
@@ -116,27 +114,21 @@ export default function UpdateRegistration() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    if (type == "checkbox") {
-      let opposite = value;
-      setUserData((prevState) => ({
-        ...prevState,
-        [name]: !opposite,
-      }));
-    }
-    if (name === "emergencyNumber") {
-      // Only format if the input name is 'emergencyNumber'
-      const formattedPhoneNumber = formatPhoneNumber(value);
-      setUserData((prevState) => ({
-        ...prevState,
-        [name]: formattedPhoneNumber, // Use the formatted number
-      }));
-    } else {
-      // For all other inputs, use the value as-is
-      setUserData((prevState) => ({
-        ...prevState,
-        [name]: value,
-      }));
-    }
+
+    setUserData((prev) => {
+      const next = {
+        ...prev,
+        [name]:
+          type === "checkbox"
+            ? checked
+            : name === "emergencyNumber"
+              ? formatPhoneNumber(value)
+              : value,
+      };
+
+      // console.log("next userData", next);
+      return next;
+    });
   };
   useEffect(() => {
     if (user?.dateOfBirth)
@@ -144,10 +136,11 @@ export default function UpdateRegistration() {
         ...prev,
         paymentAmount:
           new Date(user?.dateOfBirth) >= new Date("2011-08-22T00:00:00.000Z")
-            ? 82.32
-            : 164.64,
+            ? 100
+            : 200,
       }));
   }, [user?.dateOfBirth]);
+
   const validate = () => {
     const err = {};
     if (!emergencyName || emergencyName.length < 6)
@@ -166,20 +159,17 @@ export default function UpdateRegistration() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
-    if (validationErrors.length) return;
-    else {
-      userData = {
-        ...userData,
-        emailList,
-        photoConsent,
-        textUpdates,
-        id: booking?.id,
-      };
-      await updateBookingInfo(userData);
-      setUpdated(true);
-    }
+    if (Object.keys(validationErrors).length > 0) return;
+
+    const payload = {
+      ...userData,
+      id: booking?.id,
+    };
+
+    await updateBookingInfo(payload);
+    setUpdated(true);
   };
-  const booked = bookings.filter((e) => e.conferenceId == 2)[0];
+  const booked = bookings.filter((e) => e.conferenceId == 3)[0];
   if (!session) return <PleaseSignIn />;
   if (!isLoaded) return <Loading />;
   if (!booking) return <PleaseRegister />;
@@ -339,10 +329,7 @@ export default function UpdateRegistration() {
                 <span className="block mr-3">
                   <IconInfo />
                 </span>{" "}
-                On site camping is available if you bring a tent. The Tovariche
-                Cabins range in capacity from 2-8 people. If you have a strong
-                preference for who you want to stay with please mention in the
-                notes!
+                On site camping is available if you bring a tent.
               </div>
             </div>
             <label className="text-xl font-bold " htmlFor="allergies">
@@ -392,8 +379,8 @@ export default function UpdateRegistration() {
               className="toggle toggle-success"
               name="photoConsent"
               id="photoConsent"
-              value={photoConsent}
-              onChange={() => setPhotoConsent((prev) => !prev)}
+              checked={userData.photoConsent}
+              onChange={handleChange}
             />
             <label className="text-xl font-bold " htmlFor="textUpdates">
               Text Updates
@@ -403,8 +390,8 @@ export default function UpdateRegistration() {
               className="toggle toggle-warning"
               name="textUpdates"
               id="textUpdates"
-              value={textUpdates}
-              onChange={() => setTextUpdates((prev) => !prev)}
+              checked={userData.textUpdates}
+              onChange={handleChange}
             />
             <label className="text-xl font-bold " htmlFor="emailList">
               Email List
@@ -414,13 +401,13 @@ export default function UpdateRegistration() {
               className="toggle toggle-info"
               name="emailList"
               id="emailList"
-              value={emailList}
-              onChange={() => setEmailList((prev) => !prev)}
+              checked={userData.emailList}
+              onChange={handleChange}
             />
-            <div className="divider mr-[-1rem]"></div>
+            <div className="divider mr-[-1rem] sm:block hidden"></div>
             <div className="divider "></div>
             <p className="flex flex-row text-xl font-bold ">Total</p>
-            <p className="flex flex-row text-xl ">${userData?.paymentAmount}</p>
+            <p className="flex flex-row text-xl ">${paymentAmount}</p>
           </div>
           <button
             className="mt-12 mb-4 text-xl btn btn-accent btn-wide"

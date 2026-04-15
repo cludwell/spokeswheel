@@ -16,13 +16,10 @@ export default function Register() {
   const { data: session, status: loading } = useSession();
   const { bookings, createBooking, fetchUsersBookings, user } = useStore();
   const [errors, setErrors] = useState({});
-  const [emailList, setEmailList] = useState(false);
-  const [photoConsent, setPhotoConsent] = useState(false);
-  const [textUpdates, setTextUpdates] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const router = useRouter();
   let [userData, setUserData] = useState({
-    conferenceId: 2,
+    conferenceId: 3,
     photoConsent: false,
     paid: false,
     emergencyName: "",
@@ -35,7 +32,7 @@ export default function Register() {
     notes: "",
     specialAccomodations: "",
     lodging: "",
-    paymentAmount: 0,
+    paymentAmount: 200,
     paymentIntentId: null,
     paymentMethodId: null,
   });
@@ -63,7 +60,7 @@ export default function Register() {
       }));
   }, [user?.dateOfBirth]);
 
-  const booked = bookings.filter((b) => b.conferenceId == 2)[0];
+  const booked = bookings.filter((b) => b.conferenceId == 3)[0];
 
   useEffect(() => {
     const loadData = async () => {
@@ -93,32 +90,25 @@ export default function Register() {
       6,
     )}-${phoneNumber.slice(6, 10)}`;
   }
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (type == "checkbox") {
-      let opposite = value;
-      setUserData((prevState) => ({
-        ...prevState,
-        [name]: !opposite,
-      }));
-    }
-    if (name === "emergencyNumber") {
-      // Only format if the input name is 'emergencyNumber'
-      const formattedPhoneNumber = formatPhoneNumber(value);
-      setUserData((prevState) => ({
-        ...prevState,
-        [name]: formattedPhoneNumber,
-      }));
-    } else {
-      // For all other inputs, use the value as-is
-      setUserData((prevState) => ({
-        ...prevState,
-        [name]: value,
-        // paymentAmount: lodging == "Adirondacks" ? 125 : 105,
-      }));
-    }
-  };
+  
+const handleChange = (e) => {
+  const { name, value, type, checked } = e.target;
 
+  setUserData((prev) => {
+    const next = {
+      ...prev,
+      [name]:
+        type === "checkbox"
+          ? checked
+          : name === "emergencyNumber"
+            ? formatPhoneNumber(value)
+            : value,
+    };
+
+    console.log("next userData", next);
+    return next;
+  });
+};
   const validate = () => {
     const err = {};
     if (!emergencyName || emergencyName.length < 6)
@@ -149,7 +139,7 @@ export default function Register() {
   // find one registration and check paid status
   if (!loaded) return <Loading />;
   if (!session) return <PleaseSignIn />;
-  console.log("reg form", bookings);
+  // console.log("reg form", bookings);
   return (
     <>
       <div
@@ -297,10 +287,7 @@ export default function Register() {
                   <span className="block mr-1">
                     <IconInfo />
                   </span>{" "}
-                  On site camping is available if you bring a tent. The
-                  Tovariche Cabins range in capacity from 2-8 people. If you
-                  have a strong preference for who you want to stay with please
-                  mention in the notes!
+                  On site camping is available if you bring a tent. 
                 </div>
               </div>
               <label className="text-xl font-bold " htmlFor="allergies">
@@ -350,8 +337,8 @@ export default function Register() {
                 className="toggle toggle-success"
                 name="photoConsent"
                 id="photoConsent"
-                value={photoConsent}
-                onChange={() => setPhotoConsent((prev) => !prev)}
+                checked={userData.photoConsent}
+                onChange={handleChange}
               />
               <label className="text-xl font-bold " htmlFor="textUpdates">
                 Text Updates
@@ -361,8 +348,8 @@ export default function Register() {
                 className="toggle toggle-warning"
                 name="textUpdates"
                 id="textUpdates"
-                value={textUpdates}
-                onChange={() => setTextUpdates((prev) => !prev)}
+                checked={userData.textUpdates}
+                onChange={handleChange}
               />
               <label className="text-xl font-bold " htmlFor="emailList">
                 Email List
@@ -372,8 +359,8 @@ export default function Register() {
                 className="toggle toggle-info"
                 name="emailList"
                 id="emailList"
-                value={emailList}
-                onChange={() => setEmailList((prev) => !prev)}
+                checked={userData.emailList}
+                onChange={handleChange}
               />
               <div className="divider mr-[-1rem] sm:block hidden"></div>
               <div className="divider "></div>

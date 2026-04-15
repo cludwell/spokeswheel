@@ -1,5 +1,10 @@
-const { PrismaClient } = require("@prisma/client");
-const prisma = new PrismaClient();
+import { PrismaClient } from "@prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { Pool } from "pg";
+
+const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+const adapter = new PrismaPg(pool);
+const prisma = new PrismaClient({ adapter });
 
 async function seedUsers() {
   try {
@@ -158,7 +163,7 @@ async function seedConferences() {
         registrationCutoff: new Date(2025, 7, 19, 17),
         locationName: "Camp Farnsworth",
         locationLat: 43.826012776791224,
-        locationLong: -72.23845628850779
+        locationLong: -72.23845628850779,
       },
     });
     await prisma.conferences.create({
@@ -187,8 +192,6 @@ async function seedDatabase() {
   }
 }
 seedDatabase();
-
-
 
 // 2025 Addition of Farnsworth conference
 // async function seedConferences() {

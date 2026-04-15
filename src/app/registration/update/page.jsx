@@ -324,7 +324,8 @@ export default function UpdateRegistration() {
                     <option value="" disabled defaultValue>
                       Please make a selection
                     </option>{" "}
-                    <option value={"Cabins"}>Cabins</option>
+                    <option value={"Adirondacks"}>Adirondacks</option>
+                    <option value={"Lodges"}>Lodges</option>
                     <option value={"Tent Camping"}>Tent Camping</option>
                   </>
                 )}

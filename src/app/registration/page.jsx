@@ -10,6 +10,8 @@ import Loading from "@/components/Loading";
 import StripeDirection from "@/components/StripeDirection";
 import SuccessMessage from "@/components/SuccessMessage";
 import { amatic, special } from "../fonts";
+import VenmoDirection from "@/components/VenmoDirection";
+
 export default function Register() {
   const { data: session, status: loading } = useSession();
   const { bookings, createBooking, fetchUsersBookings, user } = useStore();
@@ -55,9 +57,9 @@ export default function Register() {
       setUserData((prev) => ({
         ...prev,
         paymentAmount:
-          new Date(user?.dateOfBirth) >= new Date("2011-08-22T00:00:00.000Z")
-            ? 82.32
-            : 164.64,
+          new Date(user?.dateOfBirth) >= new Date("2012-08-22T00:00:00.000Z")
+            ? 100.0
+            : 200.0,
       }));
   }, [user?.dateOfBirth]);
 
@@ -65,13 +67,18 @@ export default function Register() {
 
   useEffect(() => {
     const loadData = async () => {
-      fetchUsersBookings();
+      await fetchUsersBookings();
       setLoaded(true);
     };
     loadData();
-    if (booked && booked?.paid == true)
+    if (booked && booked?.paid == true) router.push("/registration/success");
+  }, []);
+
+  useEffect(() => {
+    if (booked?.paid === true) {
       router.push("/registration/success");
-  }, [fetchUsersBookings, bookings, router]);
+    }
+  }, [booked, router]);
 
   function formatPhoneNumber(value) {
     if (!value) return value;
@@ -83,7 +90,7 @@ export default function Register() {
     }
     return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(
       3,
-      6
+      6,
     )}-${phoneNumber.slice(6, 10)}`;
   }
   const handleChange = (e) => {
@@ -130,17 +137,19 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const validationErrors = validate();
     if (Object.values(validationErrors).length > 0) return;
-    else {
-      userData = { ...userData, emailList, photoConsent, textUpdates };
-      await createBooking(userData);
-    }
+
+    const payload = { ...userData, emailList, photoConsent, textUpdates };
+
+    await createBooking(payload);
+    await fetchUsersBookings();
   };
   // find one registration and check paid status
-  if (!session) return <PleaseSignIn />;
   if (!loaded) return <Loading />;
-  // console.log("reg form",user?.dateOfBirth)
+  if (!session) return <PleaseSignIn />;
+  console.log("reg form", bookings);
   return (
     <>
       <div
@@ -155,10 +164,11 @@ export default function Register() {
           2025 Registration At Camp Farnsworth!
         </h2>
         {booked && booked?.paid == false ? (
-          <StripeDirection
-            id={session.user.id}
-            dateOfBirth={user?.dateOfBirth}
-          />
+          // <StripeDirection
+          //   id={session.user.id}
+          //   dateOfBirth={user?.dateOfBirth}
+          // />
+          <VenmoDirection fee={paymentAmount} dateOfBirth={user?.dateOfBirth} />
         ) : booked && booked.paid == true ? (
           <SuccessMessage />
         ) : (
@@ -274,7 +284,8 @@ export default function Register() {
                   <option value="" disabled defaultValue>
                     Please make a selection
                   </option>{" "}
-                  <option value={"Cabins"}>Cabins</option>
+                  <option value={"Adirondacks"}>Adirondacks</option>
+                  <option value={"Lodges"}>Lodges</option>
                   <option value={"Tent Camping"}>Tent Camping</option>
                 </select>
                 {errors && errors.lodging && (

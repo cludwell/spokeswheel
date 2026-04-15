@@ -1,8 +1,7 @@
 
-#2026
+#2026 MVP
 ✅ create a directory and pages for worship examples
-🔲 update the payment process
-🔲...on stripe
+🔲 update the payment process to be venmo
 🔲...on spokeswheel
 ✅ update 2025 page with pictures and a report back of how the conference went
 ✅ ...and use photos of first year at seawood
@@ -11,6 +10,18 @@
 
 🔲 create ephemera as patches and totebags
 🔲 create seed data for new year and push it to vercel
+
+LONGER COMMITMENT
+Refactoring so that families can register multiple people
+🔲-save any data from the website that you need because it's going to be lost
+🔲 add firstName, lastNAme, dateOfBirth, and PhoneNumber to Bookings
+🔲-on register form, ask user if the registration is for themselves
+🔲-change on api
+🔲-change on receiving payment from stripe
+🔲-Change Update Route
+🔲-change update api
+🔲
+
 
 New Header layout, 3 drop down menus
 

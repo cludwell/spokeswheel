@@ -67,42 +67,27 @@ export default function UpdateRegistration() {
     )}-${phoneNumber.slice(6, 10)}`;
   }
 
-  const booking = bookings.filter((b) => b.conferenceId == 3)[0];
+  const booking = bookings.find((b) => b.conferenceId == 3);
 
   useEffect(() => {
-    setUserData({
-      emergencyName: booking?.emergencyName ? booking?.emergencyName : "",
-      emergencyNumber: booking?.emergencyNumber ? booking?.emergencyNumber : "",
-      emergencyRelation: booking?.emergencyRelation
-        ? booking?.emergencyRelation
-        : "",
-      dietaryRestrictions: booking?.dietaryRestrictions
-        ? booking?.dietaryRestrictions
-        : "",
-      allergies: booking?.allergies ? booking?.allergies : "",
-      notes: booking?.notes ? booking?.notes : "",
-      specialAccomodations: booking?.specialAccomodations
-        ? booking?.specialAccomodations
-        : "",
-      lodging: booking?.lodging ? booking?.lodging : "",
-      paid: booking?.paid ? booking?.paid : false,
-      paymentAmount: booking?.paymentAmount ? booking?.paymentAmount : 0,
-    });
-  }, [
-    booking?.emergencyName,
-    booking?.emergencyNumber,
-    booking?.emergencyRelation,
-    booking?.dietaryRestrictions,
-    booking?.allergies,
-    booking?.notes,
-    booking?.specialAccomodations,
-    booking?.lodging,
-    bookings,
-    booking?.emailList,
-    booking?.photoConsent,
-    booking?.textUpdates,
-    booking?.paymentAmount,
-  ]);
+    setUserData((prev) => ({
+      ...prev,
+      conferenceId: 3,
+      emergencyName: booking?.emergencyName || "",
+      emergencyNumber: booking?.emergencyNumber || "",
+      emergencyRelation: booking?.emergencyRelation || "",
+      dietaryRestrictions: booking?.dietaryRestrictions || "",
+      allergies: booking?.allergies || "",
+      notes: booking?.notes || "",
+      specialAccomodations: booking?.specialAccomodations || "",
+      lodging: booking?.lodging || "",
+      paid: booking?.paid || false,
+      paymentAmount: booking?.paymentAmount || 0,
+      emailList: booking?.emailList || false,
+      photoConsent: booking?.photoConsent || false,
+      textUpdates: booking?.textUpdates || false,
+    }));
+  }, [booking]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -135,7 +120,7 @@ export default function UpdateRegistration() {
       setUserData((prev) => ({
         ...prev,
         paymentAmount:
-          new Date(user?.dateOfBirth) >= new Date("2011-08-22T00:00:00.000Z")
+          new Date(user?.dateOfBirth) >= new Date("2012-08-22T00:00:00.000Z")
             ? 100
             : 200,
       }));
@@ -151,7 +136,7 @@ export default function UpdateRegistration() {
       err.emergencyRelation =
         "Please let us know your relationship to this person.";
     if (dietaryRestrictions.length < 5)
-      err.dietaryRestrictions = "Please make a diet selection";
+      err.dietaryRestrictions = "";
     setErrors(err);
     return err;
   };
@@ -169,10 +154,10 @@ export default function UpdateRegistration() {
     await updateBookingInfo(payload);
     setUpdated(true);
   };
-  const booked = bookings.filter((e) => e.conferenceId == 3)[0];
-  if (!session) return <PleaseSignIn />;
   if (!isLoaded) return <Loading />;
+  if (!session) return <PleaseSignIn />;
   if (!booking) return <PleaseRegister />;
+
   return (
     <div
       className={special.className + " p-16 max-w-screen-xl mx-auto leading-8"}
@@ -180,9 +165,9 @@ export default function UpdateRegistration() {
       <h2 className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}>
         Update 2025 Registration At Camp Farnsworth!
       </h2>
-      {updated && booked.paid ? (
+      {updated && booking.paid ? (
         <UpdateSuccessful />
-      ) : updated && booked.paid == false ? (
+      ) : updated && booking.paid == false ? (
         <>
           <h2
             className={
@@ -190,11 +175,11 @@ export default function UpdateRegistration() {
               " mb-12 text-4xl sm:text-5xl fade-in text-center"
             }
           >
-            ✅ Update Successful! {booked?.paid}
+            ✅ Update Successful! {booking?.paid}
           </h2>
           <StripeDirection
             id={session.user.id}
-            lodging={lodging ? lodging : booked.lodging}
+            lodging={lodging ? lodging : booking.lodging}
           />
         </>
       ) : (
@@ -307,8 +292,8 @@ export default function UpdateRegistration() {
                 value={lodging}
                 onChange={handleChange}
               >
-                {booked.paid == true ? (
-                  <option>{booked.lodging}</option>
+                {booking.paid == true ? (
+                  <option>{booking.lodging}</option>
                 ) : (
                   <>
                     <option value="" disabled defaultValue>

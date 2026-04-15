@@ -2,7 +2,7 @@
 import { useState, createContext, useContext, Children } from "react";
 import { create } from "zustand";
 
-const createStore = create((set) => ({
+const createStore = create((set, get) => ({
   user: null,
   bookings: [],
   allBookings: [],

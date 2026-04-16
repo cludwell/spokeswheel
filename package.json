@@ -11,7 +11,7 @@
     "lint": "next lint",
     "push": "npx prisma db push",
     "setup": "npx prisma migrate reset --force && npx prisma generate && npx prisma db push && npm run seed",
-    "deploy": "npm install && npx prisma generate && npm run build"
+    "deploy": "npx prisma generate && npm run build"
   },
   "dependencies": {
     "@prisma/client": "^5.10.2",

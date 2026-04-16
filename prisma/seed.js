@@ -184,6 +184,7 @@ async function seedConferences() {
     console.log("Seeded Conferences successfully", cons);
   } catch (error) {
     console.error("Error during Conference seeding:", error);
+    throw error;
   }
 }
 

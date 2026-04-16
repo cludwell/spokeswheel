@@ -58,7 +58,7 @@ export default function Plans2026() {
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
-        Location - Camp Seawood! <span className="">⛺</span>
+        {`Location - Camp Seawood!`} <span className="">⛺</span>
       </h2>
       <p className="my-8 fade-in">
         {`WE'VE RESERVED THE SITE! This year we are going to be returning to Camp Seawood. While it isn't as nice as Farnsworth, we felt the benefits of being close to the Boston metro area and the lower price will make it more accessible to much of the community. This is a Girl Scout day camp and not an AirBnb, however that doesn't mean that staff won't be doing what we can to make you attendance comfortable and accessible. Please reach out to us about how we might accomodate any disabilities if we are able.`}
@@ -71,19 +71,22 @@ export default function Plans2026() {
       </p>
       <p className="my-8 fade-in">{`We recommend you think about bringing: `}</p>
       <ul className="ml-10 list-disc fade-in">
-        <li>A sleeping bag, as there will NOT be bedding.</li>
+        <li>{`A sleeping bag, as there will NOT be bedding.`}</li>
         <li>
-          A camping mattress, especially if comfort is often an issue for you.
+          {`          A camping mattress, especially if comfort is often an issue for you.
+`}{" "}
         </li>
         <li>A towel and shower kit 🚿</li>
-        <li>A headlamp, preferably with a red light mode</li>
+        <li>{`A headlamp, preferably with a red light mode`}</li>
         <li>
-          If you'd like more privacy, bring a tent/tarp for dispersed camping.
+          {
+            "If you'd like more privacy, bring a tent/tarp for dispersed camping."
+          }
         </li>
-        <li>A room divider or privacy screen, if that's your preference.</li>
+        <li>{`A room divider or privacy screen, if that's your preference.`}</li>
         <li>
-          Lawn chairs, inflatable couches, or that sort of camp/festival
-          furniture.
+          {`  Lawn chairs, inflatable couches, or that sort of camp/festival
+          furniture.`}
         </li>
         <li>Art supplies! 🎨</li>
         <li>Musical instruments 🎸</li>
@@ -103,11 +106,13 @@ export default function Plans2026() {
         {" "}
         {`Here are some photos of the first year that we stayed at Camp Seawood to give an idea of what it looks like.`}
       </p>
-            <h2
+      <h2
         className={
           amatic.className + " my-8 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
-      >Site Photos</h2>
+      >
+        Site Photos
+      </h2>
       <SwipeCarousel imgs={seawoodImages01} aspect={"aspect-square"} />
       <SwipeCarousel imgs={seawoodImages02} aspect={"aspect-square"} />
       <h2
@@ -163,7 +168,7 @@ export default function Plans2026() {
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
-        Workshops 👨‍🏫
+        {`Workshops 👨‍🏫`}{" "}
       </h2>
       <p className="my-8 fade-in">
         {" "}

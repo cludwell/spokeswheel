@@ -2,7 +2,7 @@ import { getToken } from "next-auth/jwt";
 import { PrismaClient, Bookings } from "@prisma/client";
 const prisma = new PrismaClient();
 import { isDynamicServerError } from "next/dist/client/components/hooks-server-context";
-
+export const dynamic = "force-dynamic";
 export async function GET(req, res) {
   if (req.method == "GET") {
     try {

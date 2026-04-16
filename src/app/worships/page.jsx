@@ -66,18 +66,18 @@ export default function Worships() {
         <li className="flex flex-row my-2">
           and other syptoms of an old despond.
         </li>
-        <li className="flex flex-row my-2">Warning, in music-words</li>
-        <li className="flex flex-row my-2">devout and large,</li>
-        <li className="flex flex-row my-2">that we are each other's</li>
-        <li className="flex flex-row my-2">harvest:</li>
-        <li className="flex flex-row my-2">we are each other's</li>
-        <li className="flex flex-row my-2">business:</li>
-        <li className="flex flex-row my-2">we are each other's</li>
-        <li className="flex flex-row my-2">magnitude and bond.</li>
+        <li className="flex flex-row my-2">{"Warning, in music-words"}</li>
+        <li className="flex flex-row my-2">{"devout and large,"}</li>
+        <li className="flex flex-row my-2">{"that we are each other's"}</li>
+        <li className="flex flex-row my-2">{"harvest:"}</li>
+        <li className="flex flex-row my-2">{"we are each other's"}</li>
+        <li className="flex flex-row my-2">{"business:"}</li>
+        <li className="flex flex-row my-2">{"we are each other's"}</li>
+        <li className="flex flex-row my-2">{"magnitude and bond."}</li>
       </ul>
 
       <p className="my-8 fade-in">
-        In the past twenty months of this genocide, I began talking with a lot
+        {`In the past twenty months of this genocide, I began talking with a lot
         of Palestinian Americans about what was happening. What I've found
         shocking is the more Muslims that I've spoken to, is the everyday
         practice of their religion. In Islam, there is the concept of the ummah,
@@ -88,19 +88,19 @@ export default function Worships() {
         creed, to anyone who was able to witness their humanity. I have felt
         with many Muslims welcomed in a way I never experienced in my Catholic
         upbringing. An invitation to dialogue about the dignity of others'
-        humanity, an experience I felt no right to speak on.
+        humanity, an experience I felt no right to speak on.`}
       </p>
       <p className="my-8 fade-in">
-        I'm not interested in God, but those conversations were inspiring. What
+        {`I'm not interested in God, but those conversations were inspiring. What
         would living in a way that centers people above everything else look
         like? We will probably never have any answers to our big questions about
         the universe, but we can be certain of suffering and injustice now,
-        today. What if people were our religion and God didn't get in the way?
+        today. What if people were our religion and God didn't get in the way?`}
       </p>
 
       <p className="my-8 fade-in">
-        Some of the ways in which our world conditions so much of our view of
-        humanity:
+        {`Some of the ways in which our world conditions so much of our view of
+        humanity:`}
       </p>
 
       <ul className="ml-12 fade-in">
@@ -109,38 +109,38 @@ export default function Worships() {
         <li className="list-disc ">{`Religion in service of the institution rather than the spirit `}</li>
       </ul>
       <p className="my-8 fade-in">
-        Without stepping back, it's easy to have a pessimistic and cynical view
-        of humanity. Every day you suffer moral injuries.
+        {`Without stepping back, it's easy to have a pessimistic and cynical view
+        of humanity. Every day you suffer moral injuries.`}
       </p>
       <p className="my-8 fade-in">
-        Can we imagine a new way of moving through the world? A close friend and
+        {` Can we imagine a new way of moving through the world? A close friend and
         comrade once told me he didn't want to live his life as a martyr. He
         imagined the work and career that he should have been doing to make the
         world a better place but it was work that wouldn't be compensated. It
         was thankless duty, spending every evening in community organizing
         meetings. Do we have to pit our own well-being against doing the right
-        thing? Is that dichotomy real or imagined?
+        thing? Is that dichotomy real or imagined?`}
       </p>
       <p className="my-8 fade-in">
-        Trying to hold on to a belief in people is like being pulled in two
+        {`Trying to hold on to a belief in people is like being pulled in two
         directions, towards love for the down trodden and oppressed, and
         cynicism and misanthropy when confronted with privilege and injustice.
         To believe in people is to have hope in our potential while ignoring the
-        evidence to the contrary.
+        evidence to the contrary.`}
       </p>
       <p className="my-8 fade-in">
-        As Rebecca Solnit explains in “Hope In the Dark”:
+        {`As Rebecca Solnit explains in “Hope In the Dark”:`}{" "}
       </p>
       <p className="my-8 ml-10 fade-in">
-        “Hope is not a lottery ticket you can sit on the sofa and clutch,
+        {`“Hope is not a lottery ticket you can sit on the sofa and clutch,
         feeling lucky. It is an axe you break down doors with in an emergency.
         Hope should shove you out the door, because it will take everything you
         have to steer the future away from endless war, from the annihilation of
         the earth's treasures and the grinding down of the poor and marginal...
         To hope is to give yourself to the future - and that commitment to the
-        future is what makes the present inhabitable.”
+        future is what makes the present inhabitable.”`}
       </p>
-      <p className="my-8 fade-in">Please write and cast into the fire:</p>
+      <p className="my-8 fade-in">{`Please write and cast into the fire:`}</p>
       <ul className="ml-12 fade-in">
         <li className="list-disc ">{`If you have experienced loss this year? What did loss teach you?`}</li>
         <li className="list-disc ">{`What cynicism do you want to leave behind? What worldview no longer serves a purpose?`}</li>

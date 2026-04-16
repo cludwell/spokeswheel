@@ -69,7 +69,7 @@ export default function Register() {
     };
     loadData();
     if (booked && booked?.paid == true) router.push("/registration/success");
-  }, []);
+  }, [booked, fetchUsersBookings, router]);
 
   useEffect(() => {
     if (booked?.paid === true) {

@@ -134,7 +134,7 @@ export default function Plans2024() {
             <tr>
               <td>Bryce & Alex</td>
               <td>Arnis/eskrima</td>
-              <td>An intro to the Phillipines' national martial art.</td>
+              <td>{"An intro to the Phillipines' national martial art."}</td>
             </tr>
             {/* row 4 */}
             <tr>

@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 
+const targetDate = new Date(2026, 7, 14, 17);
 export default function CountDown() {
-  const targetDate = new Date(2026, 7, 14, 17);
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
   useEffect(() => {
@@ -10,7 +10,7 @@ export default function CountDown() {
       setTimeLeft(calculateTimeLeft(targetDate));
     }, 1000);
     return () => clearTimeout(timer);
-  }, [targetDate]);
+  }, []);
 
   function calculateTimeLeft(date) {
     const now = new Date();
@@ -28,10 +28,9 @@ export default function CountDown() {
         const totalDaysLastMonth = new Date(
           dateCopy.getFullYear(),
           dateCopy.getMonth() + 1,
-          0
+          0,
         ).getDate();
         days += totalDaysLastMonth;
-        console.log("days", days);
       }
       timeLeft = {
         months,
@@ -41,7 +40,6 @@ export default function CountDown() {
         seconds: Math.floor((difference / 1000) % 60),
       };
     }
-    // console.log(months)
     return timeLeft;
   }
 

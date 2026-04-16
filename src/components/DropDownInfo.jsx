@@ -46,7 +46,7 @@ export default function DropDownInfo() {
             className="flex flex-row p-2 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
             variants={itemVariants}
           >
-            <Link href={"aboutus"} onClick={closeMenu} className="ml-4">
+            <Link href={"/aboutus"} onClick={closeMenu} className="ml-4">
               About Us
             </Link>
           </motion.div>
@@ -54,7 +54,7 @@ export default function DropDownInfo() {
             className="flex flex-row p-2 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
             variants={itemVariants}
           >
-            <Link href={"worships"} onClick={closeMenu} className="ml-4">
+            <Link href={"/worships"} onClick={closeMenu} className="ml-4">
               Worship/Reflections
             </Link>
           </motion.div>
@@ -64,7 +64,7 @@ export default function DropDownInfo() {
             className="flex flex-row p-2 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
             variants={itemVariants}
           >
-            <Link href={"contact"} onClick={closeMenu} className="ml-4">
+            <Link href={"/contact"} onClick={closeMenu} className="ml-4">
               Contact Us
             </Link>
           </motion.div>

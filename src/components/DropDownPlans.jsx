@@ -46,7 +46,7 @@ export default function DropDownPlans() {
             className="flex flex-row p-2 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
             variants={itemVariants}
           >
-            <Link href={"plans2026"} onClick={closeMenu} className="ml-4">
+            <Link href={"/plans2026"} onClick={closeMenu} className="ml-4">
               2026 Conference
             </Link>
           </motion.div>
@@ -54,7 +54,7 @@ export default function DropDownPlans() {
             className="flex flex-row p-2 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
             variants={itemVariants}
           >
-            <Link href={"plans2025"} onClick={closeMenu} className="ml-4">
+            <Link href={"/plans2025"} onClick={closeMenu} className="ml-4">
               2025 Conference
             </Link>
           </motion.div>
@@ -64,7 +64,7 @@ export default function DropDownPlans() {
             className="flex flex-row p-2 m-2 text-base transition-colors rounded-lg cursor-pointer hover:bg-gray-700"
             variants={itemVariants}
           >
-            <Link href={"plans2024"} onClick={closeMenu} className="ml-4">
+            <Link href={"/plans2024"} onClick={closeMenu} className="ml-4">
               2024 Conference
             </Link>
           </motion.div>

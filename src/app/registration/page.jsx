@@ -151,7 +151,7 @@ const handleChange = (e) => {
         <h2
           className={amatic.className + " mb-12 text-4xl sm:text-5xl fade-in"}
         >
-          2025 Registration At Camp Farnsworth!
+          2026 Registration At Camp Seawood!
         </h2>
         {booked && booked?.paid == false ? (
           // <StripeDirection

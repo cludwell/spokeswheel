@@ -1,10 +1,15 @@
-import { PrismaClient } from "@prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
-import { Pool } from "pg";
+//this is the pattern for future versions of Prisma
+// import { PrismaClient } from "@prisma/client";
+// import { PrismaPg } from "@prisma/adapter-pg";
+// import { Pool } from "pg";
 
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-const adapter = new PrismaPg(pool);
-const prisma = new PrismaClient({ adapter });
+// const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+// const adapter = new PrismaPg(pool);
+// const prisma = new PrismaClient({ adapter });
+
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 async function seedUsers() {
   try {
@@ -56,7 +61,7 @@ async function seedUsers() {
             {
               photoConsent: true,
               paid: true,
-              paymentAmount: 164.64,
+              paymentAmount: 220.0,
               emergencyName: "Kathleen Ludwell",
               emergencyNumber: "(123) 456-7890",
               emergencyRelation: "Mother",
@@ -169,7 +174,7 @@ async function seedConferences() {
     await prisma.conferences.create({
       data: {
         date: new Date(2026, 7, 14, 17),
-        registrationCutoff: new Date(2025, 7, 13, 17),
+        registrationCutoff: new Date(2026, 7, 13, 17),
         locationName: "Camp Seawood",
         locationLat: 43.043368704656324,
         locationLong: -70.78873188956963,
@@ -186,9 +191,18 @@ async function seedDatabase() {
   try {
     await seedConferences();
     await seedUsers();
+    const users = await prisma.users.findMany();
+    const bookings = await prisma.bookings.findMany();
+    const conferences = await prisma.conferences.findMany();
+    
+    console.log("USERS =============================================", users)
+    console.log("BOOKINGS ==========================================", bookings);
+    console.log("CONFERENCES =======================================", conferences)
     console.log("Database seeding completed successfully");
   } catch (error) {
     console.error("Error during database seeding:", error);
+  } finally {
+    await prisma.$disconnect();
   }
 }
 seedDatabase();

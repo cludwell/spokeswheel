@@ -11,7 +11,7 @@ import StripeDirection from "@/components/StripeDirection";
 import SuccessMessage from "@/components/SuccessMessage";
 import { amatic, special } from "../fonts";
 import VenmoDirection from "@/components/VenmoDirection";
-
+import IconBellAlert from "@/components/Icons/IconBellAlert";
 export default function Register() {
   const { data: session, status: loading } = useSession();
   const { bookings, createBooking, fetchUsersBookings, user } = useStore();
@@ -90,25 +90,25 @@ export default function Register() {
       6,
     )}-${phoneNumber.slice(6, 10)}`;
   }
-  
-const handleChange = (e) => {
-  const { name, value, type, checked } = e.target;
 
-  setUserData((prev) => {
-    const next = {
-      ...prev,
-      [name]:
-        type === "checkbox"
-          ? checked
-          : name === "emergencyNumber"
-            ? formatPhoneNumber(value)
-            : value,
-    };
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
 
-    console.log("next userData", next);
-    return next;
-  });
-};
+    setUserData((prev) => {
+      const next = {
+        ...prev,
+        [name]:
+          type === "checkbox"
+            ? checked
+            : name === "emergencyNumber"
+              ? formatPhoneNumber(value)
+              : value,
+      };
+
+      console.log("next userData", next);
+      return next;
+    });
+  };
   const validate = () => {
     const err = {};
     if (!emergencyName || emergencyName.length < 6)
@@ -153,6 +153,19 @@ const handleChange = (e) => {
         >
           2026 Registration At Camp Seawood!
         </h2>
+
+        <div className="flex flex-row items-center w-3/4 p-2 mx-auto my-12 text-red-800 bg-pink-300 border-2 border-red-800 rounded-xl">
+          <span className="m-2 r-2 justify-self-auto">
+            <IconBellAlert />
+          </span>{" "}
+          <div>
+            <p className="m-2">
+              {" "}
+              This year we are asking $200 advance, $220 at the door for adults.
+              $100 in advance, $110 at the door for kids younger than 15.
+            </p>
+          </div>
+        </div>
         {booked && booked?.paid == false ? (
           // <StripeDirection
           //   id={session.user.id}
@@ -287,7 +300,7 @@ const handleChange = (e) => {
                   <span className="block mr-1">
                     <IconInfo />
                   </span>{" "}
-                  On site camping is available if you bring a tent. 
+                  On site camping is available if you bring a tent.
                 </div>
               </div>
               <label className="text-xl font-bold " htmlFor="allergies">

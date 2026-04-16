@@ -1,3 +1,7 @@
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
 async function seedConferences() {
   try {
     const conference = await prisma.conferences.create({

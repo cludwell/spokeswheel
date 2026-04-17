@@ -60,7 +60,9 @@ export default function Register() {
       }));
   }, [user?.dateOfBirth]);
 
-  const booked = bookings.filter((b) => b.conferenceId == 3)[0];
+  const booked = bookings.find((b) => b.conferenceId == 3);
+
+  // console.log('bookings',bookings)
 
   useEffect(() => {
     const loadData = async () => {
@@ -69,7 +71,7 @@ export default function Register() {
     };
     loadData();
     if (booked && booked?.paid == true) router.push("/registration/success");
-  }, [booked, fetchUsersBookings, router]);
+  }, [fetchUsersBookings]);
 
   useEffect(() => {
     if (booked?.paid === true) {
@@ -105,7 +107,6 @@ export default function Register() {
               : value,
       };
 
-      console.log("next userData", next);
       return next;
     });
   };
@@ -131,15 +132,16 @@ export default function Register() {
     const validationErrors = validate();
     if (Object.values(validationErrors).length > 0) return;
 
-    const payload = { ...userData, emailList, photoConsent, textUpdates };
+    const payload = { ...userData };
 
     await createBooking(payload);
     await fetchUsersBookings();
   };
+
   // find one registration and check paid status
   if (!loaded) return <Loading />;
   if (!session) return <PleaseSignIn />;
-  // console.log("reg form", bookings);
+
   return (
     <>
       <div

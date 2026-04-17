@@ -7,7 +7,8 @@
 // const adapter = new PrismaPg(pool);
 // const prisma = new PrismaClient({ adapter });
 
-import { PrismaClient } from "@prisma/client";
+
+const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
@@ -181,7 +182,7 @@ async function seedConferences() {
       },
     });
     const cons = await prisma.conferences.findMany();
-    console.log("Seeded Conferences successfully", cons);
+    console.log("Seeded Conferences successfully");
   } catch (error) {
     console.error("Error during Conference seeding:", error);
     throw error;

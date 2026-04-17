@@ -46,7 +46,7 @@ export default function DropDownMenu() {
     const data = await signOut({ redirect: true, callbackUrl: "/" });
     await dismissUserData();
   };
-  const bookedThisYear = bookings.filter((b)=> b.conferenceId == 2)[0]
+  const bookedThisYear = bookings.find((b)=> b.conferenceId == 3)
   return (
     <>
       {!session ? (

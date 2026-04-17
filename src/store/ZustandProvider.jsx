@@ -43,7 +43,7 @@ const createStore = create((set, get) => ({
         set({ bookings: [...bookingData.bookings] });
       } else {
         console.error(
-          "There was an error on the backend or in assigned state."
+          "There was an error on the backend or in assigned state.",
         );
       }
     } catch (error) {
@@ -52,7 +52,6 @@ const createStore = create((set, get) => ({
   },
   createBooking: async (userData) => {
     try {
-      console.log('entering backend fetch')
       const response = await fetch("/api/bookings/attending", {
         method: "POST",
         headers: {
@@ -60,15 +59,18 @@ const createStore = create((set, get) => ({
         },
         body: JSON.stringify(userData),
       });
-      // console.log('response went to backend')
-      if (response.ok) {
-        const bookingData = await response.json();
-        set({ bookings: [bookingData] });
-      } else {
-        console.error("Bad response from the backend.");
+
+      if (!response.ok) {
+        const text = await response.text();
+        throw new Error(`createBooking failed: ${response.status} ${text}`);
       }
+
+      const bookingData = await response.json();
+      set({ bookings: [bookingData] });
+      return bookingData;
     } catch (error) {
-      console.error("There was a problem registering the user.");
+      console.error("There was a problem registering the user.", error);
+      throw error;
     }
   },
   updateUserInfo: async (userData) => {
@@ -85,7 +87,7 @@ const createStore = create((set, get) => ({
         set({ user: { ...user, ...updatedUser } });
       } else {
         console.error(
-          "There was a problem with the response from the backend."
+          "There was a problem with the response from the backend.",
         );
       }
     } catch (error) {
@@ -105,7 +107,9 @@ const createStore = create((set, get) => ({
         const updatedBooking = await response.json();
         set({ bookings: [...bookings, updatedBooking] });
       } else {
-        console.error("There was a problem updating the booking on the backend.");
+        console.error(
+          "There was a problem updating the booking on the backend.",
+        );
       }
     } catch (error) {
       console.error("There was a problem updating the booking.");
@@ -122,7 +126,7 @@ const createStore = create((set, get) => ({
       });
       if (response.ok) {
         const message = await response.json();
-        console.log('mssg',message)
+        console.log("mssg", message);
         const { bookingId } = message;
         const editted = bookings.filter((b) => b.id != bookingId);
         set({

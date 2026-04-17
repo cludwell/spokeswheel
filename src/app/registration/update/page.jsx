@@ -53,6 +53,17 @@ export default function UpdateRegistration() {
     paymentAmount,
   } = userData;
 
+    useEffect(() => {
+    if (user?.dateOfBirth)
+      setUserData((prev) => ({
+        ...prev,
+        paymentAmount:
+          new Date(user?.dateOfBirth) >= new Date("2012-08-22T00:00:00.000Z")
+            ? 100.0
+            : 200.0,
+      }));
+  }, [user?.dateOfBirth]);
+  
   function formatPhoneNumber(value) {
     if (!value) return value;
     const phoneNumber = value.replace(/[^\d]/g, "");
@@ -111,7 +122,6 @@ export default function UpdateRegistration() {
               : value,
       };
 
-      // console.log("next userData", next);
       return next;
     });
   };
@@ -154,6 +164,7 @@ export default function UpdateRegistration() {
     await updateBookingInfo(payload);
     setUpdated(true);
   };
+  
   if (!isLoaded) return <Loading />;
   if (!session) return <PleaseSignIn />;
   if (!booking) return <PleaseRegister />;

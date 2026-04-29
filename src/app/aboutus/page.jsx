@@ -1,4 +1,5 @@
 import { amatic, special } from "../fonts";
+import Image from "next/image";
 export default function AboutUs() {
   return (
     <div
@@ -14,6 +15,12 @@ export default function AboutUs() {
       >
         Who we are
       </h2>
+        <Image
+          src="/images/juki_collage.jpg"
+          width={400}
+          height={400}
+          className="mx-auto"
+        ></Image>
       <p
         className={" my-8 fade-in"}
       >{`We are a group of left leaning folks in a collective search for meaning. Many of us grew up in Unitarian Universalist (UU) or UU adjacent spaces and conferences. Disillusioned by that community, as adults we have struggled to find spiritual spaces that do not bear the authoritarianism of organized religion, celebrate spiritual bypassing (using spiritual ideas and practices to avoid facing psychological wounds caused by capitalism, the state, patriarchy, etc.) or the appropriative practices of what passes as "spirituality." You won't hear us saying corny stuff like "low vibration frequency" 🤨. What the heck even is that?`}</p>

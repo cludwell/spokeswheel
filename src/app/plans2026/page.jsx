@@ -21,6 +21,8 @@ import site17 from "../../../public/images/photos/2024/site17.jpg";
 import site18 from "../../../public/images/photos/2024/site18.jpg";
 import site19 from "../../../public/images/photos/2024/site19.jpg";
 import site20 from "../../../public/images/photos/2024/site20.jpg";
+import Link from "next/link";
+import Image from "next/image";
 const seawoodImages01 = [
   site01,
   site02,
@@ -128,9 +130,31 @@ export default function Plans2026() {
       <p className="my-8 fade-in">
         {`At this conference we hope to remember our radical belief in people. Inspiring each other is the only way we're going to make it through these dispiriting times.`}
       </p>
+
       <h2
         className={
           amatic.className + " mb-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
+        }
+      >
+        Flier - Download and Share!
+      </h2>
+      <div className="flex justify-center w-full ">
+        <Link
+          href="./spokeswheel_flier_2026.pdf"
+          target="_blank"
+          className="mb-6 "
+        >
+          <Image
+            src="/images/spokeswheel_flier_2026.png"
+            width={500}
+            height={500}
+            alt="a picture of the flier for this years conference"
+          ></Image>
+        </Link>
+      </div>
+      <h2
+        className={
+          amatic.className + " my-6 sm:mb-12 text-4xl sm:text-5xl fade-in"
         }
       >
         When? Aug 14-19 📅

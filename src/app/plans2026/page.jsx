@@ -140,7 +140,7 @@ export default function Plans2026() {
       </h2>
       <div className="flex justify-center w-full ">
         <Link
-          href="./spokeswheel_flier_2026.pdf"
+          href="./spokeswheel_flier_2026_2.pdf"
           target="_blank"
           className="mb-6 "
         >
